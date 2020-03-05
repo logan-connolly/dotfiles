@@ -92,6 +92,7 @@ bindsym $mod+Ctrl+Left workspace prev
 bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
 bindsym $mod+F2 exec firefox
 bindsym $mod+F3 exec pcmanfm
+bindsym $mod+F4 exec code
 
 # workspaces
 set $ws1 1
@@ -282,6 +283,10 @@ mode "$mode_gaps_outer" {
 # set power-manager and volume control
 exec --no-startup-id mate-power-manager
 
+# exec --no-startup-id volumeicon
+bindsym $mod+Ctrl+n exec terminal -e 'alsamixer'
+
+# Settings for pulseaudio
 exec --no-startup-id start-pulseaudio-x11
 exec --no-startup-id pa-applet
 bindsym $mod+Ctrl+m exec pavucontrol

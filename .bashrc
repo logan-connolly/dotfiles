@@ -150,4 +150,3 @@ alias l.='ls -d .* --color=auto'
 
 # apps with args
 alias gotop='gotop -sb'
-alias code='code --disable-gpu'
