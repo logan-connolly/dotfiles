@@ -143,6 +143,9 @@ ex ()
 # Add home bin
 PATH=~/bin:$PATH
 
+# use neovim
+alias vim='nvim'
+
 # ls aliases
 alias ll='ls -la --color=auto'
 alias ls='ls --color=auto'
