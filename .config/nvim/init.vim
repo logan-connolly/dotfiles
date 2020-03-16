@@ -40,9 +40,21 @@ tnoremap <C-o> <C-\><C-n><esc><cr>
 
 "Set number and change color
 set number
+set relativenumber
 highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
 
 "Enables to select text without numbers
 set mouse=a
+
+" by default, the indent is 2 spaces. 
+set shiftwidth=2
+set softtabstop=2
+set tabstop=2
+
+" for html files, 2 spaces
+autocmd Filetype html setlocal ts=2 sw=2 expandtab
+
+" for python files, 4 spaces
+autocmd Filetype python setlocal ts=4 sw=4 expandtab
 
 call plug#end()
