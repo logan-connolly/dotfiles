@@ -27,7 +27,13 @@ let g:fzf_action = {
       \ 'ctrl-s': 'split',
       \ 'ctrl-v': 'vsplit'
       \ }
-nnoremap <leader>f :FZF<cr>
+let g:fzf_preview_window = 'right:60%'
+nnoremap <leader>f :Files<cr>
+nnoremap <leader>gf :GFiles<cr>
+nnoremap <leader>gs :GFiles?<cr>
+nnoremap <leader>b :Buffers<cr>
+nnoremap <leader>bl :BLines<cr>
+nnoremap <leader>l :Lines<cr>
 augroup fzf
   autocmd!
   autocmd! FileType fzf
