@@ -1,5 +1,3 @@
-
-
 # ~/.bashrc
 #
 
@@ -145,13 +143,17 @@ PATH=~/bin:$PATH
 
 # git aliases
 alias gs='git status'
+alias gd='git diff'
+alias ga='git add'
+alias gc='git commit -m'
 alias gl='git log --all --graph --decorate --oneline'
 
 # use neovim
 alias vim='nvim'
 
 # ls aliases
-alias ll='ls -la --color=auto'
+alias ll='ls -l --color=auto'
+alias la='ls -la --color=auto'
 alias ls='ls --color=auto'
 alias l.='ls -d .* --color=auto'
 
