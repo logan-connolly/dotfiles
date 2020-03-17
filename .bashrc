@@ -143,6 +143,10 @@ ex ()
 # Add home bin
 PATH=~/bin:$PATH
 
+# git aliases
+alias gs='git status'
+alias gl='git log --all --graph --decorate --oneline'
+
 # use neovim
 alias vim='nvim'
 
@@ -153,3 +157,6 @@ alias l.='ls -d .* --color=auto'
 
 # apps with args
 alias gotop='gotop -sb'
+
+# amixer sound issue
+alias am='amixer -c 0 sset "Auto-Mute Mode" Enabled'
