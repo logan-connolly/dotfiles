@@ -16,6 +16,23 @@ let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
 map <C-n> :NERDTreeToggle<CR>
 Plug 'machakann/vim-highlightedyank'
 Plug 'tmhedberg/SimpylFold'
+Plug 'vim-scripts/indentpython.vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+
+
+"fzf configuration
+let g:fzf_action = {
+      \ 'ctrl-s': 'split',
+      \ 'ctrl-v': 'vsplit'
+      \ }
+nnoremap <leader>f :FZF<cr>
+augroup fzf
+  autocmd!
+  autocmd! FileType fzf
+  autocmd  FileType fzf set laststatus=0 noshowmode noruler
+    \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
+augroup END
 
 "split navigations
 set splitbelow
@@ -55,6 +72,13 @@ set tabstop=2
 autocmd Filetype html setlocal ts=2 sw=2 expandtab
 
 " for python files, 4 spaces
-autocmd Filetype python setlocal ts=4 sw=4 expandtab
+au BufNewFile,BufRead *.py
+    \ set tabstop=4 |
+    \ set softtabstop=4 |
+    \ set shiftwidth=4 |
+    \ set textwidth=88 |
+    \ set expandtab |
+    \ set autoindent|
+    \ set fileformat=unix
 
 call plug#end()
