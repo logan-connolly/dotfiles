@@ -22,6 +22,7 @@ Plug 'junegunn/fzf.vim'
 
 
 "fzf configuration
+let $FZF_DEFAULT_COMMAND = 'fd --type f --hidden --follow --exclude .git'
 let g:fzf_action = {
       \ 'ctrl-s': 'split',
       \ 'ctrl-v': 'vsplit'
