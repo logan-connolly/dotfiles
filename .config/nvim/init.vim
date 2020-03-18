@@ -19,7 +19,15 @@ Plug 'tmhedberg/SimpylFold'
 Plug 'vim-scripts/indentpython.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'mklabs/split-term.vim'
 
+
+"terminal bindings
+nnoremap <leader>t :Term<cr>
+nnoremap <leader>T :VTerm<cr>
+nnoremap <leader>tt :TTerm<cr>
+nnoremap <leader>tp :Term ipython<cr>
+nnoremap <leader>Tp :Term ipython<cr>
 
 "fzf configuration
 let $FZF_DEFAULT_COMMAND = 'fd --type f --hidden --follow --exclude .git'
