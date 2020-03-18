@@ -1,26 +1,32 @@
 call plug#begin('~/.local/share/nvim/plugged')
 
-"Install plugins
-Plug 'davidhalter/jedi-vim'
-" open the go-to function in split, not another buffer
-let g:jedi#use_splits_not_buffers = "right"
+"python
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-let g:deople#enable_at_startup = 1
-Plug 'deoplete-plugins/deoplete-jedi'
-inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+Plug 'zchee/deoplete-jedi' " autocompletion source
+Plug 'vim-scripts/indentpython.vim'
+Plug 'nvie/vim-flake8'
+
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#sources#jedi#show_docstring = 1
+let g:deoplete#enable_ignore_case = 1
+let g:deoplete#enable_smart_case = 1
+let python_highlight_all=1
+syntax on
+
+"general
 Plug 'vim-airline/vim-airline'
 Plug 'jiangmiao/auto-pairs'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
-let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
-map <C-n> :NERDTreeToggle<CR>
 Plug 'machakann/vim-highlightedyank'
 Plug 'tmhedberg/SimpylFold'
-Plug 'vim-scripts/indentpython.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'mklabs/split-term.vim'
 
+"nerd tree
+let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
+map <C-n> :NERDTreeToggle<CR>
 
 "terminal bindings
 nnoremap <leader>t :Term<cr>
@@ -37,6 +43,7 @@ let g:fzf_action = {
       \ }
 let g:fzf_preview_window = 'right:60%'
 nnoremap <leader>f :Files<cr>
+nnoremap <leader>fh :Files ~<cr>
 nnoremap <leader>gf :GFiles<cr>
 nnoremap <leader>gs :GFiles?<cr>
 nnoremap <leader>b :Buffers<cr>
