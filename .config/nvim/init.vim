@@ -1,6 +1,7 @@
 call plug#begin('~/.local/share/nvim/plugged')
 
 "python
+Plug 'davidhalter/jedi-vim'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-jedi' " autocompletion source
 Plug 'vim-scripts/indentpython.vim'
@@ -14,6 +15,7 @@ let python_highlight_all=1
 syntax on
 
 "general
+Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 Plug 'jiangmiao/auto-pairs'
 Plug 'scrooloose/nerdcommenter'
