@@ -6,6 +6,7 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-jedi' " autocompletion source
 Plug 'vim-scripts/indentpython.vim'
 Plug 'nvie/vim-flake8'
+Plug 'psf/black', { 'tag': '19.10b0' }
 
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#sources#jedi#show_docstring = 1
@@ -13,6 +14,8 @@ let g:deoplete#enable_ignore_case = 1
 let g:deoplete#enable_smart_case = 1
 let python_highlight_all=1
 syntax on
+autocmd BufWritePost *.py call flake8#Flake8()
+nnoremap <leader>B :Black<cr>
 
 "general
 Plug 'tpope/vim-fugitive'
@@ -25,6 +28,9 @@ Plug 'tmhedberg/SimpylFold'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'mklabs/split-term.vim'
+
+"add time to airline
+:let g:airline_section_b = '%{strftime("%H:%M")}'
 
 "nerd tree
 let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
