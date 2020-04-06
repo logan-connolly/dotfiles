@@ -144,6 +144,9 @@ PATH=~/bin:$PATH
 # git aliases
 alias gs='git status'
 alias gd='git diff'
+alias gb='git branch'
+alias gnb='git checkout -b'
+alias gco='git checkout'
 alias ga='git add'
 alias gc='git commit -m'
 alias gca='git commit -am'

@@ -1,23 +1,35 @@
 call plug#begin('~/.local/share/nvim/plugged')
 
 "python
-Plug 'davidhalter/jedi-vim'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'zchee/deoplete-jedi' " autocompletion source
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'vim-scripts/indentpython.vim'
+Plug 'dense-analysis/ale'
 Plug 'nvie/vim-flake8'
 Plug 'psf/black', { 'tag': '19.10b0' }
 
-let g:deoplete#enable_at_startup = 1
-let g:deoplete#sources#jedi#show_docstring = 1
-let g:deoplete#enable_ignore_case = 1
-let g:deoplete#enable_smart_case = 1
-let python_highlight_all=1
 syntax on
-autocmd BufWritePost *.py call flake8#Flake8()
+
+nmap <silent> <leader>d <Plug>(coc-definition)
+nnoremap <silent> <leader>K :call <SID>show_documentation()<CR>
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
+nmap <leader>r <Plug>(coc-rename)
+
+let g:ale_linters ={
+			\ 'python': ['flake8']
+			\}
+
+let python_highlight_all=1
 nnoremap <leader>B :Black<cr>
 
 "general
+Plug 'universal-ctags/ctags'
+Plug 'liuchengxu/vista.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 Plug 'jiangmiao/auto-pairs'
@@ -28,6 +40,11 @@ Plug 'tmhedberg/SimpylFold'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'mklabs/split-term.vim'
+
+"add keymapping for vista
+nmap <leader>g :Vista<cr>
+nmap <leader>G :Vista!<cr>
+nmap <leader>F :Vista finder<cr>
 
 "add time to airline
 :let g:airline_section_b = '%{strftime("%H:%M")}'
@@ -52,8 +69,6 @@ let g:fzf_action = {
 let g:fzf_preview_window = 'right:60%'
 nnoremap <leader>f :Files<cr>
 nnoremap <leader>fh :Files ~<cr>
-nnoremap <leader>gf :GFiles<cr>
-nnoremap <leader>gs :GFiles?<cr>
 nnoremap <leader>b :Buffers<cr>
 nnoremap <leader>bl :BLines<cr>
 nnoremap <leader>l :Lines<cr>
