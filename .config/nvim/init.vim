@@ -70,7 +70,6 @@ nmap <silent> gr <Plug>(coc-references)
 nmap <C-t> :TagbarToggle<CR>
 nmap <Leader>t :TagbarToggle<CR>
 nmap <Leader>T :TagbarOpen fj<CR>
-python configuration
 
 
 "python configuration
