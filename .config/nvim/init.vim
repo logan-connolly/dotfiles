@@ -21,14 +21,32 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'mklabs/split-term.vim'
 
+"themes
+Plug 'morhetz/gruvbox'
+
 call plug#end()
 
-
 syntax on
+
+"set colorscheme
+colorscheme gruvbox
 
 "alias for leader key
 nmap <space> \
 xmap <space> \
+
+let g:python_host_prog = '/usr/bin/python2'
+let g:python3_host_prog = '/usr/bin/python3'
+
+set clipboard+=unnamedplus
+set updatetime=250
+
+map <leader>x <esc>:bd<cr>
+
+map <Leader>j <c-w>j
+map <Leader>k <c-w>k
+map <Leader>l <c-w>l
+map <Leader>h <c-w>h
 
 
 "set number and change color
@@ -38,8 +56,16 @@ highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE gui
 
 
 " ---------- COC.NVIM ----------
-"use K to show documentation in preview window
+
+"documentation hover
 nnoremap <silent> K :call <SID>show_documentation()<CR>
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
 
 "use tab for trigger completion with characters ahead and navigate.
 inoremap <silent><expr> <TAB>
@@ -59,12 +85,25 @@ inoremap <silent><expr> <c-space> coc#refresh()
 "map for rename current word
 nmap <silent> rn <Plug>(coc-rename)
 
+" Use `:Format` for format current buffer
+command! -nargs=0 Format :call CocAction('format')
+nmap <leader>F <Plug>(coc-format-selected)
+
 "remap keys for gotos
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
+"coclist functions
+nnoremap <silent> <leader>a :<C-u>CocList diagnostics<cr>
+nnoremap <silent> <leader>c :<C-u>CocList commands<cr>
+nnoremap <silent> <leader>i :CocCommand python.setInterpreter<cr>
+
+" Map for do codeAction of current line
+nmap <leader>ac <Plug>(coc-codeaction)
+vmap <leader>a  <Plug>(coc-codeaction-selected)
+nmap <leader>a  <Plug>(coc-codeaction-selected)
 
 "tagbar
 nmap <C-t> :TagbarToggle<CR>
@@ -73,9 +112,7 @@ nmap <Leader>T :TagbarOpen fj<CR>
 
 
 "python configuration
-
 let python_highlight_all=1
-nnoremap <leader>B :Black<cr> 
 au BufNewFile,BufRead *.py
     \ set tabstop=4 |
     \ set softtabstop=4 |
@@ -104,6 +141,7 @@ let g:airline#extensions#tabline#buffer_nr_show = 0
 let g:airline#extensions#tabline#buffer_idx_mode = 1
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#coc#enabled = 1
+let g:airline_them = 'gruvbox'
 
 
 "buffer switching
@@ -122,11 +160,30 @@ nmap <leader>7 <Plug>AirlineSelectTab7
 nmap <leader>8 <Plug>AirlineSelectTab8
 
 
+" wildignoresettings
+set wildignore+=*.pyc
+set wildignore+=*venv/*
+set wildignore+=*.gem
+set wildignore+=*.bak,*~,*.swp,*.lock
+set wildignore+=*.o,*.lo,*.ko,*.so
+set wildignore+=*.git/*
+set wildignore+=*.svn/*
+set wildignore+=*_build/*
+set wildignore+=*build/*
+set wildignore+=*coverage/*
+set wildignore+=*.egg
+set wildignore+=*.egg-info
+set wildignore+=*.jpg,*.png,*.gif
+set wildignore+=*.pdf,*.ps,*.aux,*.bbl,*.docx,*.doc,*.ppt,*.pptx,*.rtf
+set wildignore+=*.mp3,*.ogg,*.mpg,*.mp4,*.wav,*.mov
+
+
 "nerd tree
-let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
 let NERDTreeQuitOnOpen=1
 let NERDTreeMinimalUI=1
+let NERDTreeRespectWildIgnore=1
 map <C-n> :NERDTreeToggle<CR>
+
 
 
 "terminal bindings
@@ -177,7 +234,7 @@ tnoremap <C-o> <C-\><C-n><esc><cr>
 set mouse=a
 
 
-"by default, the indent is 2 spaces. 
+"by default, the indent is 2 spaces.
 set shiftwidth=2
 set softtabstop=2
 set tabstop=2
