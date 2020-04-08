@@ -78,7 +78,7 @@ time-alt = %H:%M:%S
 
 format-prefix = 
 format-foreground = #1E272B
-format-background = #515151
+format-background = #9d6a47
 format-padding = 2
 
 label = %date% %time%
