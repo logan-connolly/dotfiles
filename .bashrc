@@ -166,3 +166,9 @@ alias gotop='gotop -sb'
 
 # amixer sound issue
 alias am='amixer -c 0 sset "Auto-Mute Mode" Enabled'
+
+# configure pyenv for different python version
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+export PYENV_VIRTUALENV_DISABLE_PROMPT=1
+eval "$(pyenv init -)"

@@ -229,11 +229,12 @@ exec_always --no-startup-id $HOME/.config/polybar/i3wmthemer_bar_launch.sh
 
 
 # Theme colors
-client.focused #c5c8c6 #1d1f21 #c5c8c6 #81a2be #81a2be
-client.focused_inactive #c5c8c6 #1d1f21 #c5c8c6 #5f819d #5f819d
-client.unfocused #c5c8c6 #1d1f21 #c5c8c6 #5f819d #5f819d
-client.urgent #c5c8c6 #1d1f21 #c5c8c6 #5f819d #5f819d
-client.placeholder #c5c8c6 #1d1f21 #c5c8c6 #5f819d #5f819d
+#                       border  backgr. text    indicat child_b
+client.focused          #9d6a47 #1d1f21 #c5c8c6 #c48358 #c48358
+client.focused_inactive #9d6a47 #1d1f21 #c5c8c6 #5f819d #9d6a47
+client.unfocused        #9d6a47 #1d1f21 #c5c8c6 #5f819d #9d6a47
+client.urgent           #9d6a47 #1d1f21 #c5c8c6 #5f819d #9d6a47
+client.placeholder      #9d6a47 #1d1f21 #c5c8c6 #5f819d #9d6a47
 
 client.background #1d1f21
 

@@ -7,17 +7,6 @@ endif
 
 call plug#begin('~/.local/share/nvim/plugged')
 
-"Completions and more using Coc
-if has('nvim')
-    Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
-    Plug 'neoclide/coc-python', {'do': 'yarn install --frozen-lockfile'}
-    Plug 'neoclide/coc-eslint', {'do': 'yarn install --frozen-lockfile'}
-    Plug 'neoclide/coc-css', {'do': 'yarn install --frozen-lockfile'}
-    Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
-    Plug 'neoclide/coc-html', {'do': 'yarn install --frozen-lockfile'}
-    Plug 'neoclide/coc-yaml', {'do': 'yarn install --frozen-lockfile'}
-endif
-
 "ide
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tpope/vim-fugitive'
@@ -61,10 +50,10 @@ set updatetime=250
 
 map <leader>x <esc>:bd<cr>
 
-map <Leader>j <c-w>j
-map <Leader>k <c-w>k
-map <Leader>l <c-w>l
-map <Leader>h <c-w>h
+map <leader>j <c-w>j
+map <leader>k <c-w>k
+map <leader>l <c-w>l
+map <leader>h <c-w>h
 
 
 "set number and change color
@@ -148,7 +137,6 @@ let g:ale_linters ={
 
 
 "airline status bar configuration
-let g:airline_section_b = '%{strftime("%H:%M")}'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#tab_nr_type = 1
 let g:airline#extensions#tabline#tabnr_formatter = 'tabnr'
@@ -223,7 +211,7 @@ nnoremap <leader>f :Files<cr>
 nnoremap <leader>fh :Files ~<cr>
 nnoremap <leader>b :Buffers<cr>
 nnoremap <leader>bl :BLines<cr>
-nnoremap <leader>l :Lines<cr>
+nnoremap <leader>L :Lines<cr>
 augroup fzf
   autocmd!
   autocmd! FileType fzf
