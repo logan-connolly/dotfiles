@@ -44,7 +44,7 @@ wrapping-scroll = false
 
 label-mode-padding = 2
 label-mode-foreground = #1E272B
-label-mode-background = #78824b
+label-mode-background = #515151
 
 label-focused = %index%
 label-focused-background = #9d6a47
@@ -57,7 +57,7 @@ label-unfocused-foreground = #1E272B
 label-unfocused-padding = 2
 
 label-visible = %index%
-label-visible-background = #78824b
+label-visible-background = #515151
 label-visible-foreground = #1E272B
 label-visible-padding = 2
 
