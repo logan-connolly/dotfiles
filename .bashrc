@@ -138,6 +138,9 @@ ex ()
   fi
 }
 
+# Use vim key-bindings
+set -o vi
+
 # Add home bin
 PATH=~/bin:$PATH
 
