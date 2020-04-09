@@ -27,6 +27,7 @@ Plug 'machakann/vim-highlightedyank'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'mklabs/split-term.vim'
+Plug 'plasticboy/vim-markdown'
 
 "themes
 Plug 'morhetz/gruvbox'
@@ -60,6 +61,12 @@ map <leader>h <c-w>h
 set number
 set relativenumber
 highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
+
+
+"git shorcuts
+map <F8> :Git diff<CR>
+map <F9> :Gcommit -a<CR>
+map <F10> :Gpush<CR>
 
 
 " ---------- COC.NVIM ----------
@@ -225,7 +232,7 @@ set splitbelow
 set splitright
 
 
-"enable folding and fold with space
+"enable folding
 set foldmethod=indent
 set foldlevel=99
 nnoremap <C-space> za
