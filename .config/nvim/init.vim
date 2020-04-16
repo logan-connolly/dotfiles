@@ -1,3 +1,10 @@
+" vim-plug autoconfig if not already installed
+if empty(glob('~/.config/nvim/autoload/plug.vim'))
+  silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall
+endif
+
+
 call plug#begin('~/.local/share/nvim/plugged')
 
 "ide
@@ -20,6 +27,7 @@ Plug 'machakann/vim-highlightedyank'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'mklabs/split-term.vim'
+Plug 'plasticboy/vim-markdown'
 
 "themes
 Plug 'morhetz/gruvbox'
@@ -43,16 +51,22 @@ set updatetime=250
 
 map <leader>x <esc>:bd<cr>
 
-map <Leader>j <c-w>j
-map <Leader>k <c-w>k
-map <Leader>l <c-w>l
-map <Leader>h <c-w>h
+map <leader>j <c-w>j
+map <leader>k <c-w>k
+map <leader>l <c-w>l
+map <leader>h <c-w>h
 
 
 "set number and change color
 set number
 set relativenumber
 highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
+
+
+"git shorcuts
+map <F8> :Git diff<CR>
+map <F9> :Gcommit -a<CR>
+map <F10> :Gpush<CR>
 
 
 " ---------- COC.NVIM ----------
@@ -130,7 +144,6 @@ let g:ale_linters ={
 
 
 "airline status bar configuration
-let g:airline_section_b = '%{strftime("%H:%M")}'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#tab_nr_type = 1
 let g:airline#extensions#tabline#tabnr_formatter = 'tabnr'
@@ -205,7 +218,7 @@ nnoremap <leader>f :Files<cr>
 nnoremap <leader>fh :Files ~<cr>
 nnoremap <leader>b :Buffers<cr>
 nnoremap <leader>bl :BLines<cr>
-nnoremap <leader>l :Lines<cr>
+nnoremap <leader>L :Lines<cr>
 augroup fzf
   autocmd!
   autocmd! FileType fzf
@@ -219,7 +232,7 @@ set splitbelow
 set splitright
 
 
-"enable folding and fold with space
+"enable folding
 set foldmethod=indent
 set foldlevel=99
 nnoremap <C-space> za
