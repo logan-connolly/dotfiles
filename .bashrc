@@ -159,8 +159,8 @@ alias gl='git log --all --graph --decorate --oneline'
 alias vim='nvim'
 
 # ls aliases
-alias ll='ls -l --color=auto'
-alias la='ls -la --color=auto'
+alias ll='ls -lh --color=auto'
+alias la='ls -lah --color=auto'
 alias ls='ls --color=auto'
 alias l.='ls -d .* --color=auto'
 
@@ -178,3 +178,7 @@ eval "$(pyenv init -)"
 
 # ignore files/dirs with tree
 alias tree="tree -I '__pycache__|.git|venv'"
+
+# configure poetry
+# curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python
+export PATH="$HOME/.poetry/bin:$PATH"
