@@ -20,6 +20,7 @@ Plug 'tmhedberg/SimpylFold'
 Plug 'vim-scripts/indentpython.vim'
 Plug 'dense-analysis/ale'
 Plug 'psf/black', { 'tag': '19.10b0' }
+Plug 'heavenshell/vim-pydocstring', { 'do': 'make install' }
 
 "general
 Plug 'jiangmiao/auto-pairs'
@@ -142,6 +143,8 @@ let g:ale_linters ={
 			\ 'python': ['flake8']
 			\}
 
+"add docstring
+let g:pydocstring_doq_path = '/home/manjaro/.envs/neovim3/bin/doq'
 
 "airline status bar configuration
 let g:airline#extensions#tabline#enabled = 1
