@@ -4,6 +4,7 @@
     "python.linting.enabled": true,
     "python.linting.flake8Enabled": true,
     "python.linting.flake8Path": "~/.envs/neovim3/bin/flake8",
+    "python.linting.flake8Args": ["max-line-length=88"],
     "python.formatting.provider": "black",
     "python.formatting.blackPath": "~/.envs/neovim3/bin/black",
     "python.sortImports.path": "/home/manjaro/.envs/neovim3/bin/isort"
