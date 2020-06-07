@@ -157,6 +157,7 @@ alias gl='git log --all --graph --decorate --oneline'
 
 # use neovim
 alias vim='nvim'
+alias v='nvim'
 
 # ls aliases
 alias ll='ls -lh --color=auto'
@@ -182,3 +183,9 @@ alias tree="tree -I '__pycache__|.git|venv'"
 # configure poetry
 # curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python
 export PATH="$HOME/.poetry/bin:$PATH"
+
+# shortcut for configuring vim
+alias cv="vim ~/.config/nvim/init.vim"
+
+# shorcut for vifm
+alias vf="vifm"
