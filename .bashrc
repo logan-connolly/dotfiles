@@ -189,3 +189,8 @@ alias cv="vim ~/.config/nvim/init.vim"
 
 # shorcut for vifm
 alias vf="vifm"
+
+# network aliases
+alias nml="nmcli device wifi list"
+alias nm="nmcli connection"
+alias nmc="nmcli --ask device wifi connect"
