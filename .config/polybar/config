@@ -2,10 +2,10 @@
 width = 100%
 height = 27
 radius = 0
-fixed-center = false
+fixed-center = true
 bottom = true
 
-background = #262626
+background = #282828
 foreground = #EAD49B
 
 line-size = 3
@@ -15,10 +15,10 @@ border-size = 0
 border-color =
 
 padding-left = 0
-padding-right = 2
+padding-right = 1
 
 module-margin-left = 1
-module-margin-right = 2
+module-margin-right = 1
 
 font-0 = "Source Code Pro Semibold:size=10;1"
 font-1 = "Font Awesome 5 Free:style=Solid:size=10;1"
@@ -26,11 +26,11 @@ font-2 = "Font Awesome 5 Brands:size=10;1"
 
 modules-left = i3
 modules-center = date
-modules-right = powermenu
+modules-right = network battery powermenu
 
-tray-position = right
+;tray-position = right
 ;tray-padding =
-wm-restack = 
+;wm-restack = 
 override-redirect = false 
 
 cursor-click = pointer
@@ -47,7 +47,7 @@ label-mode-foreground = #1E272B
 label-mode-background = #515151
 
 label-focused = %index%
-label-focused-background = #9d6a47
+label-focused-background = #a89984
 label-focused-foreground = #1E272B
 label-focused-padding = 2
 
@@ -78,7 +78,7 @@ time-alt = %H:%M:%S
 
 format-prefix = 
 format-foreground = #1E272B
-format-background = #9d6a47
+format-background = #a89984
 format-padding = 2
 
 label = %date% %time%
@@ -91,11 +91,11 @@ expand-right = true
 format-spacing = 1
 
 label-open = 
-label-open-foreground = #9d6a47
+label-open-foreground = #a89984
 label-close =  cancel
-label-close-foreground = #9d6a47
+label-close-foreground = #a89984
 label-separator = |
-label-separator-foreground = #9d6a47
+label-separator-foreground = #a89984
 
 menu-0-0 = reboot
 menu-0-0-exec = menu-open-1
@@ -118,6 +118,36 @@ menu-3-0 = log off
 menu-3-0-exec = pkill -KILL -u $USER
 menu-3-1 = cancel
 menu-3-1-exec = menu-open-0
+
+[module/network]
+type = internal/network
+; Name of the network interface to display. You can get the names of the
+; interfaces on your machine with `ip link`
+; Wireless interfaces often start with `wl` and ethernet interface with `eno` or `eth`
+interface = wlp0s20f3
+
+; Seconds to sleep between updates
+; Default: 1
+interval = 3.0
+
+format-connected = " <label-connected> "
+label-connected = %essid%
+
+
+[module/battery]
+type = internal/battery
+
+battery = BAT0
+adapter = AC
+
+label-full = %percentage%%
+format-full = <label-full>
+
+label-charging = %percentage%%
+format-charging = <label-charging>
+
+label-discharging = %percentage%%
+format-discharging = <label-discharging>
 
 [settings]
 screenchange-reload = true

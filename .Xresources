@@ -1,25 +1,25 @@
-*background: #262626
-*foreground: #EAD49B
-*cursorColor: #EAD49B
+*background: #282828
+*foreground: #c5c8c6
+*cursorColor: #c5c8c6
 
-*color0: #1E272B
-*color8: #666666
-*color1: #685742
-*color9: #685743
-*color2: #9D6A47
-*color10: #9D6A47
-*color3: #B36D43
-*color11: #B36D43
-*color4: #78824B
-*color12: #78824B
-*color5: #D99F57
-*color13: #D99F57
-*color6: #C9A554
-*color14: #C9A554
-*color7: #EAD49B
-*color15: #EAD49B
+*color0: #282828
+*color8: #928374
+*color1: #cc241d
+*color9: #fb4934
+*color2: #98971a
+*color10: #b8bb26
+*color3: #d79921
+*color11: #fabd2f
+*color4: #458588
+*color12: #83a598
+*color5: #b16286
+*color13: #d3869b
+*color6: #689d6a
+*color14: #8ec07c
+*color7: #a89984
+*color15: #ebdbb2
 
-URxvt.font: xft:Source Code Pro:size=10.5
+URxvt.font: xft:SauceCodePro Nerd Font Mono:size=10.5
 URxvt.depth:                      32
 URxvt*scrollBar:                  false
 URxvt*mouseWheelScrollPage:       false
@@ -29,10 +29,10 @@ URxvt*internalBorder: 5
 URxvt*geometry: 70x19
 
 rofi.color-enabled: true
-rofi.color-window: #1E272B, #9D6A47, #9D6A47
-rofi.color-normal: #1E272B, #EAD49B, #1E272B, #1E272B, #78824B
-rofi.color-active: #1E272B, #EAD49B, #1E272B, #1E272B, #78824B
-rofi.color-urgent: #1E272B, #EAD49B, #1E272B, #1E272B, #78824B
+rofi.color-window: #282a2e, #a89984, #bebdbb
+rofi.color-normal: #282a2e, #c5c8c6, #458588, #c5c8c6, #458588
+rofi.color-active: #282a2e, #c5c8c6, #458588, #c5c8c6, #458588
+rofi.color-urgent: #282a2e, #c5c8c6, #458588, #c5c8c6, #458588
 
 rofi.separator-style: solid
 rofi.sidebar-mode: false
