@@ -12,16 +12,7 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
-# git aliases
-alias gs='git status'
-alias gd='git diff'
-alias gb='git branch'
-alias gnb='git checkout -b'
-alias gco='git checkout'
-alias ga='git add'
-alias gc='git commit -m'
-alias gca='git commit -am'
-alias gl='git log --all --graph --decorate --oneline'
+bindkey '^R' history-incremental-search-backward
 
 # use neovim
 alias vim='nvim'
@@ -64,7 +55,14 @@ zinit light-mode for \
 
 ### End of Zinit's installer chunk
 
+# load shell prompt
 zinit light romkatv/powerlevel10k
-
-# zinit snippet https://github.com/sainnhe/dotfiles/raw/master/.zsh-theme-gruvbox-material-dark
 zinit snippet /home/manjaro/.local/share/zshrc/.zsh-theme-gruvbox-material-dark
+
+# load git aliases
+zinit light davidde/git
+
+# load autocompletion
+zinit snippet OMZP::docker/_docker
+zinit snippet OMZP::docker-compose
+zinit snippet OMZP::python
