@@ -9,7 +9,8 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 Plug 'scrooloose/nerdcommenter'
-Plug 'vifm/vifm.vim'
+Plug 'francoiscabrol/ranger.vim'
+Plug 'rbgrouleff/bclose.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'mklabs/split-term.vim'
@@ -62,7 +63,7 @@ nnoremap Q <nop>
 
 map <leader>x <esc>:bd<cr>
 
-map <C-n> :EditVifm .<CR>
+map <C-n> :RangerWorkingDirectoryNewTab<CR>
 
 map <F8> :Git diff<CR>
 map <F9> :Gcommit -a<CR>
