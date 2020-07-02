@@ -6,7 +6,7 @@ fixed-center = true
 bottom = true
 
 background = #282828
-foreground = #EAD49B
+foreground = #ebdbb2
 
 line-size = 3
 line-color =
@@ -26,7 +26,7 @@ font-2 = "Font Awesome 5 Brands:size=10;1"
 
 modules-left = i3
 modules-center = date
-modules-right = network battery powermenu
+modules-right = network vpncheck battery powermenu
 
 ;tray-position = right
 ;tray-padding =
@@ -133,7 +133,6 @@ interval = 3.0
 format-connected = " <label-connected> "
 label-connected = %essid%
 
-
 [module/battery]
 type = internal/battery
 
@@ -148,6 +147,14 @@ format-charging = <label-charging>
 
 label-discharging = %percentage%%
 format-discharging = <label-discharging>
+
+[module/vpncheck]
+type = custom/script
+exec = pgrep openvpn
+interval = 5
+label = vpn
+format-underline = #fe8019
+format-prefix-foreground = #5b
 
 [settings]
 screenchange-reload = true
