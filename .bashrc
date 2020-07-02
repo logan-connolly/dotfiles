@@ -165,9 +165,6 @@ alias la='ls -lah --color=auto'
 alias ls='ls --color=auto'
 alias l.='ls -d .* --color=auto'
 
-# apps with args
-alias gotop='gotop -sb'
-
 # amixer sound issue
 alias am='amixer -c 0 sset "Auto-Mute Mode" Enabled'
 
