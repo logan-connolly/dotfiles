@@ -63,6 +63,7 @@ nnoremap Q <nop>
 
 map <leader>x <esc>:bd<cr>
 
+let g:ranger_map_keys = 0
 map <C-n> :RangerWorkingDirectoryNewTab<CR>
 
 map <F8> :Git diff<CR>
