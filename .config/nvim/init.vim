@@ -18,25 +18,35 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'machakann/vim-highlightedyank'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'vim-scripts/indentpython.vim'
 Plug 'majutsushi/tagbar' "tag (class/function) browser
 Plug 'psf/black', { 'tag': '19.10b0' }
 Plug 'heavenshell/vim-pydocstring', { 'do': 'make install' }
+Plug 'posva/vim-vue'
 
 Plug 'morhetz/gruvbox'
 call plug#end()
 
-"General settings
 syntax on
 colorscheme gruvbox
 
+set clipboard+=unnamedplus
+set noshowmode
 set splitbelow
 set splitright
-set clipboard+=unnamedplus
+set noswapfile
+set nobackup
+set nowritebackup
 set updatetime=250
 set mouse=a
 set number
 set relativenumber
-
+set ignorecase
+set smartcase
+set noerrorbells
+set hidden
+set fileformat=unix
+set expandtab
 set wildignore+=*.git/*
 set wildignore+=*.bak,*~,*.swp,*.lock
 set wildignore+=*.o,*.lo,*.ko,*.so
@@ -45,7 +55,12 @@ set wildignore+=*.pyc,*venv/*,*.egg,*.egg-info
 set wildignore+=*.jpg,*.png,*.gif
 set wildignore+=*.pdf,*.ps,*.aux,*.bbl,*.docx,*.doc,*.ppt,*.pptx,*.rtf
 set wildignore+=*.mp3,*.ogg,*.mpg,*.mp4,*.wav,*.mov
-
+set wildignore+=*.node_modules/*
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+au BufNewFile,BufRead *.py set tabstop=4 softtabstop=4 shiftwidth=4 textwidth=88
+au BufNewFile,BufRead *.js,*.css,*.html set tabstop=2 softtabstop=2 shiftwidth=2
 
 "Key Remapping
 nmap <space> \
@@ -115,22 +130,10 @@ nmap <C-t> :TagbarToggle<CR>
 nmap <Leader>t :TagbarToggle<CR>
 nmap <Leader>T :TagbarOpen fj<CR>
 
-
-"File types
-let python_highlight_all=1
-au BufNewFile,BufRead *.py
-    \ set tabstop=4 |
-    \ set softtabstop=4 |
-    \ set shiftwidth=4 |
-    \ set textwidth=88 |
-    \ set expandtab |
-    \ set autoindent|
-    \ set fileformat=unix
-
-
-" ---------- COC.NVIM ----------
 let g:python_host_prog = '/usr/bin/python2'
 let g:python3_host_prog = '/usr/bin/python3'
+let python_highlight_all=1
+let g:pydocstring_doq_path = '/home/manjaro/.envs/neovim3/bin/doq'
 
 "documentation hover
 nnoremap <silent> K :call <SID>show_documentation()<CR>
@@ -163,10 +166,6 @@ nmap <silent> rn <Plug>(coc-rename)
 " Use `:Format` for format current buffer
 command! -nargs=0 Format :call CocAction('format')
 nmap <leader>F <Plug>(coc-format-selected)
-
-
-"add docstring
-let g:pydocstring_doq_path = '/home/manjaro/.envs/neovim3/bin/doq'
 
 "airline status bar configuration
 let g:airline#extensions#tabline#enabled = 1
