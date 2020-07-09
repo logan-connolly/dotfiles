@@ -12,10 +12,19 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
+# add npm global dir to home
+export PATH=~/.npm-global/bin:$PATH
+
+# get reverse search e-binding
 bindkey '^R' history-incremental-search-backward
+
+# configure files
+alias cv='nvim ~/.config/nvim/init.vim'
+alias cz='nvim ~/.zshrc'
 
 # use neovim
 alias vim='nvim'
+alias vi='nvim'
 alias v='nvim'
 
 # ls aliases
@@ -25,7 +34,7 @@ alias ls='ls --color=auto'
 alias l.='ls -d .* --color=auto'
 
 # ignore files/dirs with tree
-alias tree="tree -I '__pycache__|.git|venv'"
+alias tree="tree -I '__pycache__|.git|venv|node_modules'"
 
 # network aliases
 alias nml="nmcli device wifi list"
