@@ -150,7 +150,7 @@ format-discharging = <label-discharging>
 
 [module/vpncheck]
 type = custom/script
-exec = pgrep openvpn
+exec = nordvpn status | grep Connected
 interval = 5
 label = vpn
 format-underline = #fe8019
