@@ -13,7 +13,6 @@ Plug 'francoiscabrol/ranger.vim'
 Plug 'rbgrouleff/bclose.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'mklabs/split-term.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'machakann/vim-highlightedyank'
 
@@ -79,7 +78,7 @@ nnoremap Q <nop>
 map <leader>x <esc>:bd<cr>
 
 let g:ranger_map_keys = 0
-map <C-n> :RangerWorkingDirectoryNewTab<CR>
+map <C-n> :RangerWorkingDirectory<CR>
 
 map <F8> :Git diff<CR>
 map <F9> :Gcommit -a<CR>
@@ -98,14 +97,6 @@ nmap <leader>5 <Plug>AirlineSelectTab5
 nmap <leader>6 <Plug>AirlineSelectTab6
 nmap <leader>7 <Plug>AirlineSelectTab7
 nmap <leader>8 <Plug>AirlineSelectTab8
-
-nnoremap t :Term<cr>
-nnoremap T :VTerm<cr>
-nnoremap tt :TTerm<cr>
-nnoremap tp :Term ipython<cr>
-nnoremap Tp :Term ipython<cr>
-tnoremap <leader><esc> <C-\><C-n><esc><cr>
-tnoremap <C-o> <C-\><C-n><esc><cr>
 
 nnoremap <leader>f :Files<cr>
 nnoremap <leader>fh :Files ~<cr>

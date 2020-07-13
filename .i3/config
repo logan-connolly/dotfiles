@@ -13,8 +13,8 @@ font xft:URWGothic-Book 11
 
 floating_modifier $mod
 
-bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+Shift+Return exec i3-sensible-terminal -name floating
+bindsym $mod+Return exec alacritty --working-directory $(xcwd)
+bindsym $mod+Shift+Return exec alacritty --working-directory $(xcwd) --class floating-term
 
 # Window kill command
 bindsym $mod+Shift+q kill
@@ -163,6 +163,7 @@ for_window [class="Timeset-gui"] floating enable border normal
 for_window [class="(?i)virtualbox"] floating enable border normal
 for_window [class="Xfburn"] floating enable
 for_window [class="URxvt" instance="floating"] floating enable
+for_window [class="Alacritty" instance="floating"] floating enable
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
