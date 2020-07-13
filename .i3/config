@@ -13,8 +13,10 @@ font xft:URWGothic-Book 11
 
 floating_modifier $mod
 
-bindsym $mod+Return exec alacritty --working-directory $(xcwd)
-bindsym $mod+Shift+Return exec alacritty --working-directory $(xcwd) --class floating-term
+bindsym $mod+Return exec --no-startup-id \
+  alacritty --working-directory $(xcwd)
+bindsym $mod+Shift+Return exec --no-startup-id \
+  alacritty --working-directory $(xcwd) --class floating-term
 
 # Window kill command
 bindsym $mod+Shift+q kill

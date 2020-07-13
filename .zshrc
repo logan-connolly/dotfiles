@@ -66,7 +66,7 @@ zinit light-mode for \
 
 # load shell prompt
 zinit light romkatv/powerlevel10k
-zinit snippet /home/manjaro/.local/share/zshrc/.zsh-theme-gruvbox-material-dark
+source /home/manjaro/.local/share/zshrc/.zsh-theme-gruvbox-material-dark
 
 # load git aliases
 zinit light davidde/git
