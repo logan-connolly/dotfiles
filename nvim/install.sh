@@ -1,2 +1,7 @@
 !#/bin/bash
-sudo pacman -S neovim python-pynvim npm ctags fd 
+sudo pacman -S \
+  neovim \
+  python-pynvim \
+  npm \
+  ctags \
+  fd 
