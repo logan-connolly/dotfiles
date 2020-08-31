@@ -1,7 +1,8 @@
 !#/bin/bash
 sudo pacman -S \
-  neovim \
-  python-pynvim \
-  npm \
   ctags \
-  fd 
+  fd \
+  neovim \
+  nodejs \
+  npm \
+  python-pynvim
