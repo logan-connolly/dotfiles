@@ -12,6 +12,9 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
+# add shell functions to path
+export PATH=~/bin:$PATH
+
 # add npm global dir to home
 export PATH=~/.npm-global/bin:$PATH
 
@@ -19,7 +22,7 @@ export PATH=~/.npm-global/bin:$PATH
 bindkey '^R' history-incremental-search-backward
 
 # configure files
-alias cv='nvim ~/.config/nvim/init.vim'
+alias cv='nvim ~/.config/nvim'
 alias cz='nvim ~/.zshrc'
 
 # use neovim
