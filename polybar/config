@@ -5,7 +5,7 @@ radius = 0
 fixed-center = true
 bottom = true
 
-background = #282828
+background = #aa282828
 foreground = #ebdbb2
 
 line-size = 3
@@ -28,6 +28,8 @@ modules-left = i3
 modules-center = date
 modules-right = network vpncheck battery powermenu
 
+tray-background = ${self.background}
+tray-transparent = true
 ;tray-position = right
 ;tray-padding =
 ;wm-restack = 
@@ -158,6 +160,7 @@ format-prefix-foreground = #5b
 
 [settings]
 screenchange-reload = true
+pseudo-transparency = true
 
 [global/wm]
 margin-top = 0
