@@ -10,6 +10,7 @@ sudo pacman -S \
   neovim \
   nodejs \
   npm \
+  rofi \
   python-pynvim \
   ttf-font-awesome \
   yay \
