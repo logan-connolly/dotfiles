@@ -6,23 +6,25 @@ if empty(glob('~/.config/nvim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.local/share/nvim/plugged')
+  Plug 'alvan/vim-closetag'
+  Plug 'AndrewRadev/tagalong.vim'
+  Plug 'francoiscabrol/ranger.vim'
+  Plug 'heavenshell/vim-pydocstring', { 'do': 'make install' }
+  Plug 'jiangmiao/auto-pairs'
+  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+  Plug 'junegunn/fzf.vim'
+  Plug 'justinmk/vim-sneak'
+  Plug 'machakann/vim-highlightedyank'
+  Plug 'majutsushi/tagbar' "tag (class/function) browser
+  Plug 'morhetz/gruvbox'
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  Plug 'psf/black', { 'tag': '19.10b0' }
+  Plug 'posva/vim-vue'
+  Plug 'rbgrouleff/bclose.vim'
+  Plug 'sheerun/vim-polyglot'
   Plug 'tpope/vim-commentary'
   Plug 'tpope/vim-fugitive'
   Plug 'vim-airline/vim-airline'
-  Plug 'francoiscabrol/ranger.vim'
-  Plug 'rbgrouleff/bclose.vim'
-  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-  Plug 'junegunn/fzf.vim'
-  Plug 'jiangmiao/auto-pairs'
-  Plug 'machakann/vim-highlightedyank'
-  Plug 'neoclide/coc.nvim', {'branch': 'release'}
-  Plug 'vim-scripts/indentpython.vim'
-  Plug 'majutsushi/tagbar' "tag (class/function) browser
-  Plug 'psf/black', { 'tag': '19.10b0' }
-  Plug 'heavenshell/vim-pydocstring', { 'do': 'make install' }
-  Plug 'posva/vim-vue'
-  Plug 'alvan/vim-closetag'
-  Plug 'morhetz/gruvbox'
 call plug#end()
 
 " automatically install missing plugins on startup

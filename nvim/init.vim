@@ -24,6 +24,8 @@ source $HOME/.config/nvim/plug-config/fzf.vim
 source $HOME/.config/nvim/plug-config/ranger.vim
 source $HOME/.config/nvim/plug-config/tagbar.vim
 source $HOME/.config/nvim/plug-config/vim-commentary.vim
+source $HOME/.config/nvim/plug-config/vim-polyglot.vim
+source $HOME/.config/nvim/plug-config/vim-sneak.vim
 
 "Add paths to node and python here
 source $HOME/.config/nvim/paths.vim
