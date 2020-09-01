@@ -2,20 +2,19 @@
 
 sudo pacman -S \
   alacritty \
+  adobe-source-code-pro-fonts \
   base-devel \
   ctags \
   fd \
   neovim \
   nodejs \
   npm \
-  polybar \
   python-pynvim \
-  zsh \
-  # fonts
-  nerd-fonts-source-code-pro \
   ttf-font-awesome \
-  ttf-nerd-fonts-symbols \
-  ttf-nerd-fonts-symbols-mono
+  yay \
+  zsh \
 
-  chsh -s $(which zsh)
-  export TERM=allacrity
+yay -S polybar nerd-fonts-source-code-pro
+
+sudo chsh -s $(which zsh)
+export TERM=allacrity
