@@ -1,22 +1,20 @@
 set $mod Mod4
-
-new_window pixel 1
-new_float normal
-
-hide_edge_borders none
-
-bindsym $mod+u border none
-bindsym $mod+y border pixel 1
-bindsym $mod+n border normal
+set $term --no-startup-id alacritty --working-directory $(xcwd)
 
 font xft:URWGothic-Book 11
 
 floating_modifier $mod
 
-bindsym $mod+Return exec --no-startup-id \
-  alacritty --working-directory $(xcwd)
-bindsym $mod+Shift+Return exec --no-startup-id \
-  alacritty --working-directory $(xcwd) --class floating-term
+# Window border
+new_window pixel 1
+new_float pixel 1
+hide_edge_borders none
+bindsym $mod+y border pixel 1
+bindsym $mod+n border none
+
+# Launch terminal
+bindsym $mod+Return exec $term
+bindsym $mod+Shift+Return exec $term --class floating-term
 
 # Window kill command
 bindsym $mod+Shift+q kill
