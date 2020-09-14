@@ -1,8 +1,13 @@
+nnoremap <leader><leader> :Commands<cr>
 nnoremap <leader>f :Files<cr>
 nnoremap <leader>fh :Files ~<cr>
 nnoremap <leader>b :Buffers<cr>
-nnoremap <leader>bl :BLines<cr>
-nnoremap <leader>L :Lines<cr>
+nnoremap <leader>l :BLines<cr>
+nnoremap <leader>T :Tags<cr>
+nnoremap <leader>t :BTags<cr>
+nnoremap <leader>h :History<cr>
+nnoremap <leader>hs :History/<cr>
+nnoremap <leader>hc :History:<cr>
 
 let $FZF_DEFAULT_COMMAND = 'fd --type f --hidden --follow --exclude .git'
 let g:fzf_action = {

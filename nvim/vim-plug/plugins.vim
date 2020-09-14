@@ -15,7 +15,6 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'junegunn/fzf.vim'
   Plug 'justinmk/vim-sneak'
   Plug 'machakann/vim-highlightedyank'
-  Plug 'majutsushi/tagbar' "tag (class/function) browser
   Plug 'morhetz/gruvbox'
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'psf/black', { 'tag': '19.10b0' }
