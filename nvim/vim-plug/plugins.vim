@@ -24,6 +24,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'sheerun/vim-polyglot'
   Plug 'tpope/vim-commentary'
   Plug 'tpope/vim-fugitive'
+  Plug 'turbio/bracey.vim'
   Plug 'vim-airline/vim-airline'
 call plug#end()
 
