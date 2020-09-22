@@ -1,49 +1,3 @@
-# Lines configured by zsh-newuser-install
-HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
-setopt autocd
-bindkey -v
-# End of lines configured by zsh-newuser-install
-# The following lines were added by compinstall
-zstyle :compinstall filename '~/.zshrc'
-
-autoload -Uz compinit
-compinit
-# End of lines added by compinstall
-
-# add shell functions to path
-export PATH=~/bin:$PATH
-
-# add npm global dir to home
-export PATH=~/.npm-global/bin:$PATH
-
-# get reverse search e-binding
-bindkey '^R' history-incremental-search-backward
-
-# configure files
-alias cv='nvim ~/.config/nvim'
-alias cz='nvim ~/.zshrc'
-
-# use neovim
-alias vim='nvim'
-alias vi='nvim'
-alias v='nvim'
-
-# ls aliases
-alias ll='ls -lh --color=auto'
-alias la='ls -lah --color=auto'
-alias ls='ls --color=auto'
-alias l.='ls -d .* --color=auto'
-
-# ignore files/dirs with tree
-alias tree="tree -I '__pycache__|.git|venv|node_modules'"
-
-# network aliases
-alias nml="nmcli device wifi list"
-alias nm="nmcli connection"
-alias nmc="nmcli --ask device wifi connect"
-
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
     print -P "%F{33}▓▒░ %F{220}Installing %F{33}DHARMA%F{220} Initiative Plugin Manager (%F{33}zdharma/zinit%F{220})…%f"
@@ -69,7 +23,7 @@ zinit light-mode for \
 
 # load shell prompt
 zinit light romkatv/powerlevel10k
-source $HOME/.local/share/zshrc/.zsh-theme-gruvbox-material-dark
+source "${HOME}/zsh/zsh-theme-gruvbox-material-dark"
 
 # load git aliases
 zinit light davidde/git
