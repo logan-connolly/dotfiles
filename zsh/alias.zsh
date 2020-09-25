@@ -1,6 +1,7 @@
 # configure files
 alias cv='nvim ~/.config/nvim'
 alias cz='nvim ~/.zshrc'
+alias ci='nvim ~/.i3/config'
 
 # use neovim
 alias vim='nvim'

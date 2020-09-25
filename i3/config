@@ -94,7 +94,8 @@ bindsym $mod+Ctrl+Left workspace prev
 bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
 bindsym $mod+F2 exec firefox
 bindsym $mod+F3 exec $term --class floating-term -e ranger 
-bindsym $mod+F4 exec pcmanfm
+bindsym $mod+F4 exec $term --class floating-term -e mocp
+bindsym $mod+F5 exec pcmanfm
 
 # workspaces
 set $ws1 1
@@ -166,6 +167,8 @@ for_window [class="Xfburn"] floating enable
 for_window [class="URxvt" instance="floating"] floating enable
 for_window [class="Alacritty" instance="floating"] floating enable, resize set 700px 400px, move position center
 for_window [class="Signal"] floating enable, resize set 900px 400px, move position center
+for_window [class="Easytag"] floating enable, resize set 1200px 600px, move position center
+for_window [class="Pcmanfm"] floating enable, resize set 700px 400px, move position center
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
