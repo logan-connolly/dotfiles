@@ -13,7 +13,7 @@
 
 url_regex='(https?|ftp|file)://[-A-Za-z0-9\+&@#/%?=~_|!:,.;]*[-A-Za-z0-9\+&@#/%=~_|]'
 if [[ $1 =~ $url_regex ]]; then
-  nohup mpv $1&
+  nohup mpv $1 >/dev/null 2>&1 &
 else
-  nohup mpv "https://www.youtube.com/playlist?list=${1}"&
+  nohup mpv "https://www.youtube.com/playlist?list=${1}" >/dev/null 2>&1 &
 fi
