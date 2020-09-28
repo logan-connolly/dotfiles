@@ -6,6 +6,7 @@
 "
 
 "General Settings
+source $HOME/.config/nvim/plug-config/vim-polyglot.vim
 source $HOME/.config/nvim/vim-plug/plugins.vim
 source $HOME/.config/nvim/general/settings.vim
 source $HOME/.config/nvim/general/functions.vim
@@ -24,7 +25,6 @@ source $HOME/.config/nvim/plug-config/fzf.vim
 source $HOME/.config/nvim/plug-config/ranger.vim
 source $HOME/.config/nvim/plug-config/tagbar.vim
 source $HOME/.config/nvim/plug-config/vim-commentary.vim
-source $HOME/.config/nvim/plug-config/vim-polyglot.vim
 source $HOME/.config/nvim/plug-config/vim-sneak.vim
 
 "Add paths to node and python here
