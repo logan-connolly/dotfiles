@@ -27,7 +27,7 @@ function download_album {
   format="%(title)s.%(ext)s"
   base=`youtube-dl --get-filename --restrict-filenames -o  "%(title)s" "$url"`
   youtube-dl -x -o $format --restrict-filenames --audio-quality 0 --audio-format mp3 "$url"
-  mp3splt -s -N -p th=-50,nt=11 ${base}.mp3
+  mp3splt -s -N -p th=-50 ${base}.mp3
   rm ./${base}.mp3
 }
 
