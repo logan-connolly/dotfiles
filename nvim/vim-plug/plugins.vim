@@ -9,7 +9,6 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'alvan/vim-closetag'
   Plug 'AndrewRadev/tagalong.vim'
   Plug 'francoiscabrol/ranger.vim'
-  Plug 'heavenshell/vim-pydocstring', { 'do': 'make install' }
   Plug 'jiangmiao/auto-pairs'
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   Plug 'junegunn/fzf.vim'
@@ -19,7 +18,6 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'psf/black', { 'tag': '19.10b0' }
   Plug 'posva/vim-vue'
-  Plug 'rbgrouleff/bclose.vim'
   Plug 'sheerun/vim-polyglot'
   Plug 'tpope/vim-commentary'
   Plug 'tpope/vim-fugitive'
