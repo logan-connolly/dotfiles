@@ -5,7 +5,6 @@ alias ci='nvim ~/.i3/config'
 
 # use neovim
 alias vim='nvim'
-alias vi='nvim'
 alias v='nvim'
 
 # ls aliases
