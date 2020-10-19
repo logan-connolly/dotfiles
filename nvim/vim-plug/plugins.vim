@@ -1,7 +1,7 @@
 " vim-plug autoconfig if not already installed
 if empty(glob('~/.config/nvim/autoload/plug.vim'))
-  silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
-  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  :let url = "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
+  silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs url
   autocmd VimEnter * PlugInstall
 endif
 
@@ -18,6 +18,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'psf/black', { 'tag': '19.10b0' }
   Plug 'posva/vim-vue'
+  Plug 'rbgrouleff/bclose.vim'
   Plug 'sheerun/vim-polyglot'
   Plug 'tpope/vim-commentary'
   Plug 'tpope/vim-fugitive'
