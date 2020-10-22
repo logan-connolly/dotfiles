@@ -12,6 +12,10 @@ install_pacman() {
     ctags \
     fd \
     firefox \
+    neovim \
+    nodejs \
+    npm \
+    python-pynvim \
     rofi \
     ttf-font-awesome \
     yay \
@@ -23,14 +27,6 @@ install_aur() {
     nerd-fonts-source-code-pro \
     polybar \
     xcwd-git
-}
-
-install_nvim() {
-  sudo pacman -S \ 
-    neovim \
-    nodejs \
-    npm \
-    python-pynvim 
 }
 
 create_venv() {
@@ -62,12 +58,10 @@ change_shell() {
 }
 
 
-echo "Installing pacman pacakges ..."
+echo "Installing pacman packages ..."
 install_pacman
 echo "Installing AUR packages ..."
 install_aur
-echo "Install neovim ..."
-install_nvim
 echo "Install python packages ..."
 create_venv
 install_py_pkgs

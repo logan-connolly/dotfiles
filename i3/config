@@ -1,7 +1,7 @@
 set $mod Mod4
 set $term --no-startup-id alacritty --working-directory $(xcwd)
-set $outer 7
-set $inner 14
+set $outer 5
+set $inner 18
 
 font xft:URWGothic-Book 11
 
@@ -166,7 +166,7 @@ for_window [class="Timeset-gui"] floating enable border normal
 for_window [class="(?i)virtualbox"] floating enable border normal
 for_window [class="Xfburn"] floating enable
 for_window [class="URxvt" instance="floating"] floating enable
-for_window [class="Alacritty" instance="floating"] floating enable, resize set 700px 400px, move position center
+for_window [class="Alacritty" instance="floating"] floating enable, resize set 750px 450px, move position center
 for_window [class="Signal"] floating enable, resize set 900px 400px, move position center
 for_window [class="Easytag"] floating enable, resize set 1200px 600px, move position center
 for_window [class="Pcmanfm"] floating enable, resize set 700px 400px, move position center

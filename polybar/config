@@ -132,8 +132,11 @@ interface = wlp0s20f3
 ; Default: 1
 interval = 3.0
 
-format-connected = " <label-connected> "
-label-connected = %essid%
+label-disconnected = wlan
+label-disconnected-foreground = #5b
+
+label-connected = wlan
+label-connected-underline = #b8bb26
 
 [module/battery]
 type = internal/battery
