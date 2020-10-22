@@ -18,6 +18,7 @@ source $HOME/.config/nvim/themes/gruvbox.vim
 source $HOME/.config/nvim/themes/syntax.vim
 
 "Plugin Configuration
+source $HOME/.config/nvim/plug-config/bracey.vim
 source $HOME/.config/nvim/plug-config/closetags.vim
 source $HOME/.config/nvim/plug-config/coc.vim
 source $HOME/.config/nvim/plug-config/fugitive.vim
