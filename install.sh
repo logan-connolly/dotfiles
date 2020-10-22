@@ -43,8 +43,8 @@ install_nvim() {
       mkdir $HOME/.envs
   fi
 
-  python -m venv $HOME/.envs/neovim \
-    && source $HOME/.envs/neovim/bin/activate \
+  python -m venv $HOME/.envs/neovim3 \
+    && source $HOME/.envs/neovim3/bin/activate \
     && pip install -U pip setuptools wheel \
     && pip install -r ./nvim/requirements.txt \
     && deactivate
@@ -52,7 +52,7 @@ install_nvim() {
 
 install_docker() {
   sudo pacman -S docker docker-compose \
-    && sudo usermod -aG docker manjaro \
+    && sudo usermod -aG docker $USER \
     && sudo systemctl enable docker.service \
     && sudo systemctl start docker.service
 }
