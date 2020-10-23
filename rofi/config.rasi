@@ -1,0 +1,10 @@
+configuration {
+ modi: "window,drun,ssh,combi";
+ theme: "gruvbox-dark";
+ font: "SourceCodePro Nerd Font Mono 10.5";
+ combi-modi: "window,drun,ssh";
+ separator-style: "solid";
+ lines: 5;
+ width: 30;
+ columns: 2;
+}
