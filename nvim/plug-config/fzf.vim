@@ -9,7 +9,7 @@ nnoremap <leader>h :History<cr>
 nnoremap <leader>hs :History/<cr>
 nnoremap <leader>hc :History:<cr>
 
-let $FZF_DEFAULT_COMMAND = 'fd --type f --hidden --follow --exclude .git'
+let $FZF_DEFAULT_COMMAND = 'fd --type f --hidden --follow --exclude .git --exclude node_modules'
 let g:fzf_action = {
       \ 'ctrl-s': 'split',
       \ 'ctrl-v': 'vsplit'
