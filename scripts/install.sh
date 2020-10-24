@@ -19,6 +19,8 @@ install_pacman() {
     rofi \
     ttf-font-awesome \
     yay \
+    zathura \
+    zathura-pdf-poppler \
     zsh
 }
 
@@ -55,6 +57,12 @@ install_docker() {
 change_shell() {
   chsh -s $(which zsh)
   export TERM=alacritty
+}
+
+remove_pkgs() {
+  sudo pacman -R \
+    epdfview \
+    palemoon-bin
 }
 
 
