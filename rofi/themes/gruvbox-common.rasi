@@ -9,7 +9,7 @@
 window {
     background-color: @background;
     border:           2;
-    padding:          2;
+    padding:          15;
 }
 
 mainbox {
@@ -29,16 +29,16 @@ textbox {
 }
 
 listview {
-    border:       2px solid 0 0;
-    padding:      2px 0 0;
+    border:       0px solid 0 0;
+    padding:      2px 0px 0px;
     border-color: @separatorcolor;
-    spacing:      2px;
+    spacing:      3px;
     scrollbar:    @scrollbar;
 }
 
 element {
     border:  0;
-    padding: 2px;
+    padding: 3px;
 }
 
 element.normal.normal {
@@ -94,7 +94,7 @@ scrollbar {
     padding:      0;
 }
 
-sidebar {
+mode-switcher {
     border:       2px 0 0;
     border-color: @separatorcolor;
 }

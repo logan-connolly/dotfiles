@@ -1,10 +1,12 @@
 configuration {
- modi: "window,drun,ssh,combi";
- theme: "gruvbox-dark";
- font: "SourceCodePro Nerd Font Mono 10.5";
- combi-modi: "window,drun,ssh";
- separator-style: "solid";
- lines: 5;
- width: 30;
- columns: 2;
+ theme: "~/.config/rofi/themes/gruvbox-dark-solid-modified.rasi";
+ font: "SourceCodePro Nerd Font 10.5";
+ combi-modi: "drun,window,run";
+ lines: 7;
+ width: 15;
+ columns: 1;
+ bw: 3;
+ sidebar-mode: false;
+ location: 0;
+ separator-style: none;
 }
