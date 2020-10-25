@@ -1,6 +1,6 @@
 set $mod Mod4
 set $term --no-startup-id alacritty --working-directory $(xcwd)
-set $outer 5
+set $outer 0
 set $inner 18
 
 font xft:URWGothic-Book 11

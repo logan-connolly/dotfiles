@@ -1,22 +1,28 @@
+[color]
+bg = #282828
+bga = #da282828
+fg = #bdae93
+rd = #cc241d
+gy = #32302f
+gyl = #515151
+gyd = #1E272B
+or = #fe8019
+gr = #b8bb26
+yl = #fabd2f
+
+
 [bar/i3wmthemer_bar]
 width = 100%
-height = 27
-radius = 0
+height = 23
 fixed-center = true
 bottom = true
 
-background = #aa282828
-foreground = #ebdbb2
+background = ${color.bga}
+foreground = ${color.fg}
 
 line-size = 3
-line-color =
-
-border-size = 0
-border-color =
-
 padding-left = 0
 padding-right = 1
-
 module-margin-left = 1
 module-margin-right = 1
 
@@ -26,17 +32,15 @@ font-2 = "Font Awesome 5 Brands:size=10;1"
 
 modules-left = i3
 modules-center = date
-modules-right = network vpncheck battery powermenu
+modules-right = vpncheck network battery
 
 tray-background = ${self.background}
 tray-transparent = true
-;tray-position = right
-;tray-padding =
-;wm-restack = 
 override-redirect = false 
 
 cursor-click = pointer
 cursor-scroll = ns-resize
+
 
 [module/i3]
 type = internal/i3
@@ -45,126 +49,78 @@ index-sort = true
 wrapping-scroll = false
 
 label-mode-padding = 2
-label-mode-foreground = #1E272B
-label-mode-background = #515151
+label-mode-foreground = ${color.fg}
+label-mode-background = ${color.bga}
 
 label-focused = %index%
-label-focused-background = #a89984
-label-focused-foreground = #1E272B
+label-focused-background = ${color.gy}
+label-focused-foreground = ${color.fg}
 label-focused-padding = 2
 
 label-unfocused = %index%
-label-unfocused-background = #515151
-label-unfocused-foreground = #1E272B
+label-unfocused-background = ${color.bg}
+label-unfocused-foreground = ${color.gyl}
 label-unfocused-padding = 2
 
 label-visible = %index%
-label-visible-background = #515151
-label-visible-foreground = #1E272B
+label-visible-background = ${color.gyl}
+label-visible-foreground = ${color.gyd}
 label-visible-padding = 2
 
 label-urgent = %index%
-label-urgent-background = #BA2922
+label-urgent-background = ${color.rd}
+label-urgent-foreground = ${color.fg}
 label-urgent-padding = 2
 
 
 [module/date]
 type = internal/date
-interval = 5
-
-date =
+label = %date% %time%
+interval = 1
 date-alt = " %Y-%m-%d"
-
 time = %H:%M
 time-alt = %H:%M:%S
 
 format-prefix = 
-format-foreground = #1E272B
-format-background = #a89984
-format-padding = 2
+format-foreground = ${color.fg}
+format-background = ${color.bga}
 
-label = %date% %time%
-
-[module/powermenu]
-type = custom/menu
-
-expand-right = true
-
-format-spacing = 1
-
-label-open = 
-label-open-foreground = #a89984
-label-close =  cancel
-label-close-foreground = #a89984
-label-separator = |
-label-separator-foreground = #a89984
-
-menu-0-0 = reboot
-menu-0-0-exec = menu-open-1
-menu-0-1 = power off
-menu-0-1-exec = menu-open-2
-menu-0-2 = log off
-menu-0-2-exec = menu-open-3
-
-menu-1-0 = cancel
-menu-1-0-exec = menu-open-0
-menu-1-1 = reboot
-menu-1-1-exec = reboot
-
-menu-2-0 = power off
-menu-2-0-exec = poweroff
-menu-2-1 = cancel
-menu-2-1-exec = menu-open-0
-
-menu-3-0 = log off
-menu-3-0-exec = pkill -KILL -u $USER
-menu-3-1 = cancel
-menu-3-1-exec = menu-open-0
-
-[module/network]
-type = internal/network
-; Name of the network interface to display. You can get the names of the
-; interfaces on your machine with `ip link`
-; Wireless interfaces often start with `wl` and ethernet interface with `eno` or `eth`
-interface = wlp0s20f3
-
-; Seconds to sleep between updates
-; Default: 1
-interval = 3.0
-
-label-disconnected = wlan
-label-disconnected-foreground = #5b
-
-label-connected = wlan
-label-connected-underline = #b8bb26
-
-[module/battery]
-type = internal/battery
-
-battery = BAT0
-adapter = AC
-
-label-full = %percentage%%
-format-full = <label-full>
-
-label-charging = %percentage%%
-format-charging = <label-charging>
-
-label-discharging = %percentage%%
-format-discharging = <label-discharging>
 
 [module/vpncheck]
 type = custom/script
 exec = nordvpn status | grep Connected
 interval = 5
 label = vpn
-format-underline = #fe8019
-format-prefix-foreground = #5b
+format-underline = ${color.or}
+format-prefix-foreground = ${color.gyl}
+
+
+[module/network]
+type = internal/network
+interface = wlp0s20f3
+interval = 3.0
+
+label-disconnected = wlan
+label-disconnected-underline = ${color.gyl}
+
+label-connected = wlan
+label-connected-underline = ${color.gr}
+
+
+[module/battery]
+type = internal/battery
+battery = BAT0
+adapter = AC
+
+label-charging = %percentage%%
+format-charging = <label-charging>
+format-charging-underline = ${color.yl}
+
+label-discharging = %percentage%%
+format-discharging = <label-discharging>
+format-discharging-underline = ${color.gyl}
+
 
 [settings]
 screenchange-reload = true
 pseudo-transparency = true
-
-[global/wm]
-margin-top = 0
-margin-bottom = 0

@@ -8,6 +8,7 @@ endif
 call plug#begin('~/.local/share/nvim/plugged')
   Plug 'alvan/vim-closetag'
   Plug 'AndrewRadev/tagalong.vim'
+  Plug 'chrisbra/Colorizer'
   Plug 'francoiscabrol/ranger.vim'
   Plug 'jiangmiao/auto-pairs'
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
