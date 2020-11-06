@@ -1,4 +1,5 @@
-nnoremap <leader>g :Commands<cr>
+nnoremap <leader>g :Rg<cr>
+nnoremap <leader>G :Commands<cr>
 nnoremap <leader>f :Files<cr>
 nnoremap <leader>fh :Files ~<cr>
 nnoremap <leader>b :Buffers<cr>
