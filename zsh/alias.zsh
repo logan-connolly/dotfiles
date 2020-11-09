@@ -1,3 +1,6 @@
+# open with default
+alias o='xdg-open'
+
 # configure files
 alias cv='nvim ~/.config/nvim'
 alias cz='nvim ~/.zshrc'
