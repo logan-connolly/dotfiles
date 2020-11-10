@@ -1,7 +1,6 @@
 black
-doq
 flake8
-jedi
-pyflakes
+isort
+mypy
 pylint
 pynvim

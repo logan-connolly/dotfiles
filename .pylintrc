@@ -139,9 +139,10 @@ disable=print-statement,
         deprecated-sys-function,
         exception-escape,
         comprehension-escape,
-        W1203, #logging with f-strings
-        E0401, #false positives import error
+        W1203, # logging with f-strings
+        E0401, # false positives import error
         C0114, # missing-module-docstring
+        W0621, # redefining outer scope
 
 # Enable the message, report, category or checker with the given id(s). You can
 # either give multiple identifier separated by comma (,) or put this option
@@ -447,7 +448,7 @@ indent-after-paren=4
 indent-string='    '
 
 # Maximum number of characters on a single line.
-max-line-length=100
+max-line-length=89
 
 # Maximum number of lines in a module.
 max-module-lines=1000
