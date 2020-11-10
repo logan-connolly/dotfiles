@@ -2,6 +2,6 @@ black
 doq
 flake8
 jedi
-pycodestyle
 pyflakes
+pylint
 pynvim
