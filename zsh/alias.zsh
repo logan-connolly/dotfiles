@@ -23,3 +23,5 @@ alias tree="tree -I '__pycache__|.git|venv|node_modules'"
 alias nml="nmcli device wifi list"
 alias nm="nmcli connection"
 alias nmc="nmcli --ask device wifi connect"
+
+alias ipython="~/.envs/base/bin/ipython"

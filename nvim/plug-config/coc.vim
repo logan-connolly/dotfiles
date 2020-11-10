@@ -1,26 +1,30 @@
- let g:coc_global_extensions = [
-    \ 'coc-snippets',
-    \ 'coc-actions',
-    \ 'coc-sh',
-    \ 'coc-lists',
-    \ 'coc-emmet',
-    \ 'coc-pairs',
-    \ 'coc-tsserver',
-    \ 'coc-html',
-    \ 'coc-css',
-    \ 'coc-yaml',
-    \ 'coc-python',
-    \ 'coc-svg',
-    \ 'coc-prettier',
-    \ 'coc-vimlsp',
-    \ 'coc-xml',
-    \ 'coc-yank',
-    \ 'coc-json',
-    \ 'coc-marketplace',
-    \ 'coc-tabnine',
-    \ 'coc-highlight',
-    \ 'coc-spell-checker',
-    \ ]
+let g:coc_global_extensions = [
+   \ 'coc-snippets',
+   \ 'coc-actions',
+   \ 'coc-sh',
+   \ 'coc-lists',
+   \ 'coc-emmet',
+   \ 'coc-pairs',
+   \ 'coc-tsserver',
+   \ 'coc-html',
+   \ 'coc-css',
+   \ 'coc-yaml',
+   \ 'coc-python',
+   \ 'coc-svg',
+   \ 'coc-prettier',
+   \ 'coc-vimlsp',
+   \ 'coc-xml',
+   \ 'coc-yank',
+   \ 'coc-json',
+   \ 'coc-marketplace',
+   \ 'coc-tabnine',
+   \ 'coc-highlight',
+   \ 'coc-spell-checker',
+   \ ]
+
+nnoremap <F7> :Format<CR>
+nnoremap <F6> :CocCommand python.sortImports<CR>
+nnoremap <leader>I :CocCommand python.setInterpreter<CR>
 
 " Use tab for trigger completion with characters ahead and navigate.
 inoremap <silent><expr> <TAB>

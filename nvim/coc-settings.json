@@ -1,4 +1,5 @@
 {
+  "suggest.enablePreview": true,
   "coc.preferences.hoverTarget": "float",
   "coc.preferences.enableFloatHighlight": true,
   "coc.preferences.useQuickfixForLocations": true,
@@ -9,14 +10,23 @@
     "json",
     "typescript"
   ],
-  "suggest.enablePreview": true,
+
   "python.jediEnabled": false,
-  "python.linting.enabled": true,
   "python.pythonPath": "~/.envs/base/bin/python",
+  "python.linting.enabled": true,
+  "python.linting.pylintEnabled": true,
+  "python.linting.pylintPath": "~/.envs/neovim3/bin/pylint",
+  "python.linting.pylintArgs": ["--rcfile", "~/.pylintrc", "-d", "C0411"],
+  "python.linting.lintOnSave": true,
+  "python.formatting.provider": "black",
+  "python.formatting.blackPath": "~/.envs/neovim3/bin/black",
+  "python.sortImports.path": "/home/manjaro/.envs/neovim3/bin/isort",
+
   "tsserver.npm": "~/.npm-global/lib/node_modules",
   "tsserver.trace.server": "verbose",
   "tsserver.enable": true,
   "typescript.suggestionActions.enabled": false,
   "javascript.suggestionActions.enabled": false,
+
   "cSpell.enabledLanguageIds": ["markdown", "plaintext", "yml"]
 }
