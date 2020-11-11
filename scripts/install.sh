@@ -39,13 +39,13 @@ link_configs() {
   ln -sf $DOT_DIR/.inputrc ~/.inputrc
   ln -sf $DOT_DIR/.zshrc ~/.zshrc
   ln -sf $DOT_DIR/.Xresources ~/.Xresources
-  ln -sf $DOT_DIR/config/zsh ~/.config/zsh
-  ln -sf $DOT_DIR/config/nvim ~/.config/nvim
-  ln -sf $DOT_DIR/config/i3 ~/.config/i3
-  ln -sf $DOT_DIR/config/rofi ~/.config/rofi
-  ln -sf $DOT_DIR/config/polybar ~/.config/polybar
+  ln -sf $DOT_DIR/config/zsh ~/.config
+  ln -sf $DOT_DIR/config/nvim ~/.config
+  ln -sf $DOT_DIR/config/i3 ~/.config
+  ln -sf $DOT_DIR/config/rofi ~/.config
+  ln -sf $DOT_DIR/config/polybar ~/.config
   ln -sf $DOT_DIR/config/alacritty.yml ~/.config/alacritty.yml
-  ln -sf $DOT_DIR/bin ~/bin
+  ln -sf $DOT_DIR/bin ~/
 }
 
 echo "Installing pacman packages ..."
