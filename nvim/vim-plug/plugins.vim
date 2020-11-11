@@ -8,22 +8,31 @@ endif
 call plug#begin('~/.local/share/nvim/plugged')
   Plug 'alvan/vim-closetag'
   Plug 'AndrewRadev/tagalong.vim'
+  Plug 'autozimu/LanguageClient-neovim', {
+      \ 'branch': 'next',
+      \ 'do': 'bash install.sh',
+      \ }
   Plug 'chrisbra/Colorizer'
   Plug 'francoiscabrol/ranger.vim'
+  Plug 'honza/vim-snippets'
   Plug 'jiangmiao/auto-pairs'
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   Plug 'junegunn/fzf.vim'
   Plug 'justinmk/vim-sneak'
   Plug 'machakann/vim-highlightedyank'
   Plug 'morhetz/gruvbox'
-  Plug 'neoclide/coc.nvim', {'branch': 'release'}
-  Plug 'posva/vim-vue'
+  Plug 'ncm2/ncm2'
+  Plug 'ncm2/ncm2-bufword'
+  Plug 'ncm2/ncm2-path'
+  Plug 'ncm2/ncm2-ultisnips'
   Plug 'rbgrouleff/bclose.vim'
+  Plug 'roxma/nvim-yarp'
   Plug 'sheerun/vim-polyglot'
+  Plug 'SirVer/ultisnips'
   Plug 'tpope/vim-commentary'
   Plug 'tpope/vim-fugitive'
-  Plug 'turbio/bracey.vim'
   Plug 'vim-airline/vim-airline'
+  Plug 'w0rp/ale'
 call plug#end()
 
 " automatically install missing plugins on startup

@@ -6,30 +6,32 @@
 "
 
 "General Settings
-source $HOME/.config/nvim/plug-config/vim-polyglot.vim
-source $HOME/.config/nvim/vim-plug/plugins.vim
-source $HOME/.config/nvim/general/settings.vim
-source $HOME/.config/nvim/general/functions.vim
-source $HOME/.config/nvim/keys/mappings.vim
+source ~/.config/nvim/plug-config/vim-polyglot.vim
+source ~/.config/nvim/vim-plug/plugins.vim
+source ~/.config/nvim/general/settings.vim
+source ~/.config/nvim/general/functions.vim
+source ~/.config/nvim/keys/mappings.vim
 
 "Themes
-source $HOME/.config/nvim/themes/airline.vim
-source $HOME/.config/nvim/themes/gruvbox.vim
-source $HOME/.config/nvim/themes/syntax.vim
+source ~/.config/nvim/themes/airline.vim
+source ~/.config/nvim/themes/gruvbox.vim
+source ~/.config/nvim/themes/syntax.vim
 
 "Plugin Configuration
-source $HOME/.config/nvim/plug-config/bracey.vim
-source $HOME/.config/nvim/plug-config/closetags.vim
-source $HOME/.config/nvim/plug-config/coc.vim
-source $HOME/.config/nvim/plug-config/fugitive.vim
-source $HOME/.config/nvim/plug-config/fzf.vim
-source $HOME/.config/nvim/plug-config/ranger.vim
-source $HOME/.config/nvim/plug-config/tagbar.vim
-source $HOME/.config/nvim/plug-config/vim-commentary.vim
-source $HOME/.config/nvim/plug-config/vim-sneak.vim
+source ~/.config/nvim/plug-config/ale.vim
+source ~/.config/nvim/plug-config/closetags.vim
+source ~/.config/nvim/plug-config/fugitive.vim
+source ~/.config/nvim/plug-config/fzf.vim
+source ~/.config/nvim/plug-config/languageClient.vim
+source ~/.config/nvim/plug-config/ncm2.vim
+source ~/.config/nvim/plug-config/ranger.vim
+source ~/.config/nvim/plug-config/tagbar.vim
+source ~/.config/nvim/plug-config/ultisnips.vim
+source ~/.config/nvim/plug-config/vim-commentary.vim
+source ~/.config/nvim/plug-config/vim-sneak.vim
 
 "Add paths to node and python here
-source $HOME/.config/nvim/paths.vim
+source ~/.config/nvim/paths.vim
 
 " Better nav for omnicomplete TODO figure out why this is being overridden
 inoremap <expr> <c-j> ("\<C-n>")
