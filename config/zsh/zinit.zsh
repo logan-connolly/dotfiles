@@ -23,7 +23,7 @@ zinit light-mode for \
 
 # load shell prompt
 zinit light romkatv/powerlevel10k
-source "${HOME}/zsh/zsh-theme-gruvbox-material-dark"
+source "${HOME}/.config/zsh/zsh-theme-gruvbox-material-dark"
 
 # load git aliases
 zinit light davidde/git

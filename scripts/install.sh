@@ -3,78 +3,58 @@
 set -o nounset    # error when referencing undefined variable
 set -o errexit    # exit when command fails
 
+DOT_DIR=$HOME/github/dotfiles
 
 install_pacman() {
-  sudo pacman -S \
-    alacritty \
-    adobe-source-code-pro-fonts \
-    base-devel \
-    ctags \
-    fd \
-    firefox \
-    neovim \
-    nodejs \
-    npm \
-    python-pynvim \
-    rofi \
-    ttf-font-awesome \
-    yay \
-    zathura \
-    zathura-pdf-poppler \
-    zsh
+  sudo pacman -S --needed - < pkglist.txt
 }
 
 install_aur() {
-  yay -S \
+  if [ pacman -Qi yay ]; then
+      mkdir -p ~/github && cd "$_" && git clone https://aur.archlinux.org/yay.git
+      makepkg -si
+  fi
+  yay -S --needed \
     nerd-fonts-source-code-pro \
+    nordvpn-bin \
     polybar \
     xcwd-git
 }
 
-create_venv() {
-  if [ 1 -d "$HOME/.envs" ]
-    then
-      echo "Creating .envs directory under home."
-      mkdir $HOME/.envs
-  fi
+install_npm_packages() {
+  mkdir -p ~/.npm-global \
+    && npm config set prefix '~/.npm-global' \
+    && export PATH=~/.npm-global/bin:$PATH \
+    && npm install -g neovim
 }
 
-install_py_pkgs() {
-  python -m venv $HOME/.envs/neovim3 \
-    && source $HOME/.envs/neovim3/bin/activate \
-    && pip install -U pip setuptools wheel \
-    && pip install -r ./nvim/requirements.txt \
-    && deactivate
-}
-
-install_docker() {
-  sudo pacman -S docker docker-compose \
-    && sudo usermod -aG docker $USER \
+config_docker() {
+  sudo usermod -aG docker $USER \
     && sudo systemctl enable docker.service \
     && sudo systemctl start docker.service
 }
 
-change_shell() {
-  chsh -s $(which zsh)
-  export TERM=alacritty
+link_configs() {
+  ln -sf $DOT_DIR/.gitconfig ~/.gitconfig
+  ln -sf $DOT_DIR/.inputrc ~/.inputrc
+  ln -sf $DOT_DIR/.zshrc ~/.zshrc
+  ln -sf $DOT_DIR/.Xresources ~/.Xresources
+  ln -sf $DOT_DIR/config/zsh ~/.config/zsh
+  ln -sf $DOT_DIR/config/nvim ~/.config/nvim
+  ln -sf $DOT_DIR/config/i3 ~/.config/i3
+  ln -sf $DOT_DIR/config/rofi ~/.config/rofi
+  ln -sf $DOT_DIR/config/polybar ~/.config/polybar
+  ln -sf $DOT_DIR/config/alacritty.yml ~/.config/alacritty.yml
+  ln -sf $DOT_DIR/bin ~/bin
 }
-
-remove_pkgs() {
-  sudo pacman -R \
-    epdfview \
-    palemoon-bin
-}
-
 
 echo "Installing pacman packages ..."
 install_pacman
 echo "Installing AUR packages ..."
 install_aur
-echo "Install python packages ..."
-create_venv
-install_py_pkgs
+echo "Installing npm neovim globally ..."
+install_npm_packages
 echo "Installing docker ..."
-install_docker
-echo "Changing shell and terminal ..."
-change_shell
-echo "Finished."
+config_docker
+echo "Link configurations ..."
+link_configs
