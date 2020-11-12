@@ -3,19 +3,19 @@ font:
   # The normal (roman) font face to use.
   # Style can be specified to pick a specific face.
   normal:
-    family: "SauceCodePro Nerd Font"
+    family: "SauceCodePro Nerd Font Mono"
     # family: "Fira Code"
     style: Regular
   bold:
-    family: "SauceCodePro Nerd Font"
+    family: "SauceCodePro Nerd Font Mono"
     style: Bold
   italic:
-    family: "SauceCodePro Nerd Font"
+    family: "SauceCodePro Nerd Font Mono"
     style: Italic
   bold_italic:
-    family: "SauceCodePro Nerd Font"
+    family: "SauceCodePro Nerd Mono"
     style: Bold Italic
-  size: 11
+  size: 10.5
 
 # Colors (Gruvbox dark)
 colors:

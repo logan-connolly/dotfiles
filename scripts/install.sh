@@ -15,6 +15,7 @@ install_aur() {
       makepkg -si
   fi
   yay -S --needed \
+    nerd-fonts-complete \
     nerd-fonts-source-code-pro \
     nordvpn-bin \
     polybar \
@@ -55,6 +56,7 @@ link_configs() {
 }
 
 enable_services() {
+  sudo systemctl enable --now bluetooth.service
   sudo systemctl enable --now nordvpnd.service
   sudo ufw enable
 }
