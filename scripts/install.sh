@@ -35,16 +35,22 @@ config_docker() {
 }
 
 link_configs() {
+  # symlink of entire config files
   ln -sf $DOT_DIR/.gitconfig ~/.gitconfig
   ln -sf $DOT_DIR/.inputrc ~/.inputrc
   ln -sf $DOT_DIR/.zshrc ~/.zshrc
   ln -sf $DOT_DIR/.Xresources ~/.Xresources
-  ln -sf $DOT_DIR/config/zsh ~/.config
-  ln -sf $DOT_DIR/config/nvim ~/.config
+
+  # symlink of entire config directories
+  ln -sf $DOT_DIR/config/feh ~/.config
   ln -sf $DOT_DIR/config/i3 ~/.config
+  ln -sf $DOT_DIR/config/nvim ~/.config
   ln -sf $DOT_DIR/config/rofi ~/.config
   ln -sf $DOT_DIR/config/polybar ~/.config
+  ln -sf $DOT_DIR/config/zsh ~/.config
   ln -sf $DOT_DIR/config/alacritty.yml ~/.config/alacritty.yml
+
+  # symlink misc directories and files
   ln -sf $DOT_DIR/bin ~/
 }
 
