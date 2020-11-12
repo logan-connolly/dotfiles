@@ -54,6 +54,11 @@ link_configs() {
   ln -sf $DOT_DIR/bin ~/
 }
 
+enable_services() {
+  sudo systemctl enable --now nordvpnd.service
+  sudo ufw enable
+}
+
 echo "Installing pacman packages ..."
 install_pacman
 echo "Installing AUR packages ..."
@@ -64,3 +69,5 @@ echo "Installing docker ..."
 config_docker
 echo "Link configurations ..."
 link_configs
+echo "Enable services"
+enable_services
