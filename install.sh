@@ -40,6 +40,8 @@ link_configs() {
   ln -sf $DOT_DIR/.gitconfig ~/.gitconfig
   ln -sf $DOT_DIR/.inputrc ~/.inputrc
   ln -sf $DOT_DIR/.zshrc ~/.zshrc
+  ln -sf $DOT_DIR/.zprofile ~/.zsprofile
+  ln -sf $DOT_DIR/.xinitrc ~/.xinitrc
   ln -sf $DOT_DIR/.Xresources ~/.Xresources
 
   # symlink of entire config directories
