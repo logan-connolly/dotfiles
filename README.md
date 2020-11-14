@@ -1,6 +1,6 @@
 # Dotfiles
 
-**Warning:** Use at your own risk. I currently am using [manjaro-i3](https://manjaro.org/downloads/community/i3/) distro. So the files are made to work with arch based systems. Many of the configurations like `alacritty.yml` or `.Xresources` should work regardless of your distribution.
+**Warning:** Use at your own risk. This repository is adapted to work with arch + i3 WM.
 
 ## Install
 
