@@ -1,24 +1,52 @@
-[color]
-bg = #282828
-bga = #da282828
-fg = #bdae93
-rd = #cc241d
-gy = #32302f
-gyl = #515151
-gyd = #1E272B
-or = #fe8019
-gr = #b8bb26
-yl = #fabd2f
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+;;
+;;	    ____        __      __              
+;;	   / __ \____  / /_  __/ /_  ____ ______
+;;	  / /_/ / __ \/ / / / / __ \/ __ `/ ___/
+;;	 / ____/ /_/ / / /_/ / /_/ / /_/ / /    
+;;	/_/    \____/_/\__, /_.___/\__,_/_/     
+;;	              /____/                    
+;;
+;; Created By Aditya Shakya @adi1090x
+;;
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
+[vars]
+battery=BAT0
+wifi-interface=wlp2s0
+eth-interface=enp3s0
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[settings]
+screenchange-reload = true
+pseudo-transparency = true
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[color]
+background = #282828
+background-alpha = #da282828
+foreground = #bdae93
+grey = #32302f
+red = #fb4934
+blue = #83a598
+orange = #fe8019
+green = #b8bb26
+purple = #d3869b
+teal = #8ec07c
+yellow = #fabd2f
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
 [bar/i3wmthemer_bar]
 width = 100%
-height = 23
+height = 19
 fixed-center = true
-bottom = true
+bottom = false
 
-background = ${color.bga}
-foreground = ${color.fg}
+background = ${color.background-alpha}
+foreground = ${color.foreground}
 
 line-size = 3
 padding-left = 0
@@ -26,13 +54,13 @@ padding-right = 1
 module-margin-left = 1
 module-margin-right = 1
 
-font-0 = "Source Code Pro Semibold:size=10;1"
-font-1 = "Font Awesome 5 Free:style=Solid:size=10;1"
-font-2 = "Font Awesome 5 Brands:size=10;1"
+font-0 = "Misc Termsyn:size=8.5;2"
+font-1 = "Wuncon Siji:size=8.5;2"
+font-2 = "xos4 Terminus:size=8.5;2"
 
 modules-left = i3
 modules-center = date
-modules-right = vpncheck network battery
+modules-right = cpu_i cpu mem_i mem audio_i audio battery net_i net vpn bluetooth 
 
 tray-background = ${self.background}
 tray-transparent = true
@@ -41,6 +69,7 @@ override-redirect = false
 cursor-click = pointer
 cursor-scroll = ns-resize
 
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
 [module/i3]
 type = internal/i3
@@ -49,29 +78,30 @@ index-sort = true
 wrapping-scroll = false
 
 label-mode-padding = 2
-label-mode-foreground = ${color.fg}
-label-mode-background = ${color.bga}
+label-mode-foreground = ${color.foreground}
+label-mode-background = ${color.background-alpha}
 
 label-focused = %index%
-label-focused-background = ${color.gy}
-label-focused-foreground = ${color.fg}
-label-focused-padding = 2
+label-focused-background = ${color.foreground}
+label-focused-foreground = ${color.background}
+label-focused-padding = 4
 
 label-unfocused = %index%
-label-unfocused-background = ${color.bg}
-label-unfocused-foreground = ${color.gyl}
-label-unfocused-padding = 2
+label-unfocused-background = ${color.background}
+label-unfocused-foreground = ${color.foreground}
+label-unfocused-padding = 4
 
 label-visible = %index%
-label-visible-background = ${color.gyl}
-label-visible-foreground = ${color.gyd}
-label-visible-padding = 2
+label-visible-background = ${color.foreground}
+label-visible-foreground = ${color.background}
+label-visible-padding = 4
 
 label-urgent = %index%
-label-urgent-background = ${color.rd}
-label-urgent-foreground = ${color.fg}
-label-urgent-padding = 2
+label-urgent-background = ${color.red}
+label-urgent-foreground = ${color.foreground}
+label-urgent-padding = 4
 
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
 [module/date]
 type = internal/date
@@ -81,46 +111,221 @@ date-alt = " %Y-%m-%d"
 time = %H:%M
 time-alt = %H:%M:%S
 
-format-prefix = 
-format-foreground = ${color.fg}
-format-background = ${color.bga}
+format-prefix = 
+format-foreground = ${color.foreground}
+format-background = ${color.background-alpha}
 
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
-[module/vpncheck]
-type = custom/script
-exec = nordvpn status | grep Connected
+[module/cpu]
+type = internal/cpu
+interval = 0.5
+format = <label>
+format-background = ${color.background}
+format-foreground = ${color.foreground}
+format-padding = 1
+label = "%percentage%%"
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[module/cpu_i]
+type = internal/cpu
+interval = 0.5
+format = 
+format-background = ${color.yellow}
+format-foreground = ${color.background}
+format-padding = 1
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[module/mem]
+type = internal/memory
+interval = 3
+format = <label>
+format-background = ${color.background} 
+format-foreground = ${color.foreground}
+format-padding = 1
+label = "%gb_used%"
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[module/mem_i]
+type = internal/memory
+interval = 3
+format = 
+format-background = ${color.orange} 
+format-foreground = ${color.background}
+format-padding = 1
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[module/audio]
+type = internal/pulseaudio
+sink = alsa_output.pci-0000_12_00.3.analog-stereo
+use-ui-max = true
 interval = 5
-label = vpn
-format-underline = ${color.or}
-format-prefix-foreground = ${color.gyl}
+format-volume = <label-volume>
+format-volume-background = ${color.background}
+format-volume-foreground = ${color.foreground}
+format-volume-padding = 1
 
+label-muted = Muted
+format-muted-background = ${color.background}
+format-muted-foreground = ${color.foreground}
+format-muted-padding = 1
 
-[module/network]
-type = internal/network
-interface = wlp0s20f3
-interval = 3.0
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
-label-disconnected = wlan
-label-disconnected-underline = ${color.gyl}
+[module/audio_i]
+type = internal/alsa
+click-left = exec pavucontrol
+format-volume = <ramp-volume>
+format-volume-background = ${color.teal}
+format-volume-foreground = ${color.background}
+format-volume-padding = 1
 
-label-connected = wlan
-label-connected-underline = ${color.gr}
+format-muted-background = ${color.teal}
+format-muted-foreground = ${color.background}
+format-muted-padding = 1
 
+label-muted = ""
+label-muted-foreground = ${color.background}
+
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+ramp-volume-3 = 
+ramp-volume-4 = 
+ramp-headphones-0 = 
+ramp-headphones-1 = 
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
 [module/battery]
 type = internal/battery
-battery = BAT0
-adapter = AC
+full-at = 99
+battery = ${vars.battery}
+adapter = ACAD
+poll-interval = 2
+time-format = %H:%M
+
+format-charging = <label-charging>
+format-charging-background = ${color.mf}
+format-charging-foreground = ${color.fg}
+format-charging-padding = 1
+
+format-discharging = <label-discharging>
+format-discharging-background = ${color.mf}
+format-discharging-foreground = ${color.fg}
+format-discharging-padding = 1
 
 label-charging = %percentage%%
-format-charging = <label-charging>
-format-charging-underline = ${color.yl}
-
 label-discharging = %percentage%%
-format-discharging = <label-discharging>
-format-discharging-underline = ${color.gyl}
 
+label-full = Fully Charged
+label-full-foreground = ${color.foreground}
+label-full-background = ${color.background}
+label-full-padding = 1
 
-[settings]
-screenchange-reload = true
-pseudo-transparency = true
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[module/battery_i]
+type = internal/battery
+full-at = 99
+battery = ${vars.battery}
+adapter = ACAD
+poll-interval = 2
+time-format = %H:%M
+
+format-charging = <animation-charging>
+format-charging-background = ${color.green}
+format-charging-foreground = ${color.foreground}
+format-charging-padding = 1
+
+format-discharging = <ramp-capacity>
+format-discharging-background = ${color.red}
+format-discharging-foreground = ${color.foreground}
+format-discharging-padding = 1
+
+label-charging = %percentage%%
+label-discharging = %percentage%%
+
+label-full = 
+label-full-background = ${color.green}
+label-full-foreground = ${color.foreground}
+label-full-padding = 1
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+animation-charging-5 = 
+animation-charging-framerate = 750
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[module/bluetooth]
+type = custom/script
+exec = echo ""
+click-left = exec blueman-manager
+format-padding = 1
+format-foreground = ${color.background}
+format-background = ${color.blue}
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[module/net]
+type = internal/network
+interface = ${vars.eth-interface}
+interval = 1.0
+accumulate-stats = true
+unknown-as-up = true
+
+format-connected = <label-connected>
+format-connected-background = ${color.background}
+format-connected-foreground = ${color.foreground}
+format-connected-padding = 1
+ 
+format-disconnected = <label-disconnected>
+format-disconnected-background = ${color.background}
+format-disconnected-foreground = ${color.foreground}
+format-disconnected-padding = 1
+
+label-connected = 
+label-disconnected = 
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[module/net_i]
+type = internal/network
+interface = ${vars.eth-interface}
+interval = 1.0
+accumulate-stats = true
+unknown-as-up = true
+
+format-connected = <label-connected>
+format-connected-background = ${color.green}
+format-connected-foreground = ${color.background}
+format-connected-padding = 1
+ 
+format-disconnected = <label-disconnected>
+format-disconnected-background = ${color.red}
+format-disconnected-foreground = ${color.foreground}
+format-disconnected-padding = 1
+
+label-disconnected = 
+label-connected = 
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[module/vpn]
+type = custom/script
+exec = ~/.config/polybar/scripts/nordvpn-status.sh
+interval = 5
