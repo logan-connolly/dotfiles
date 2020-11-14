@@ -33,6 +33,6 @@ source ~/.config/nvim/plug-config/vim-sneak.vim
 "Add paths to node and python here
 source ~/.config/nvim/paths.vim
 
-" Better nav for omnicomplete TODO figure out why this is being overridden
+"Better nav for omnicomplete TODO figure out why this is being overridden
 inoremap <expr> <c-j> ("\<C-n>")
 inoremap <expr> <c-k> ("\<C-p>")

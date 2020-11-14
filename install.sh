@@ -27,7 +27,11 @@ install_npm_packages() {
   mkdir -p ~/.npm-global \
     && npm config set prefix '~/.npm-global' \
     && export PATH=~/.npm-global/bin:$PATH \
-    && npm install -g neovim typescript-language-server
+    && npm install -g \
+      neovim \
+      typescript-language-server \
+      eslint \
+      prettier
 }
 
 config_docker() {

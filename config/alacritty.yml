@@ -13,7 +13,7 @@ font:
     family: "SauceCodePro Nerd Font Mono"
     style: Italic
   bold_italic:
-    family: "SauceCodePro Nerd Mono"
+    family: "SauceCodePro Nerd Font Mono"
     style: Bold Italic
   size: 10.5
 
