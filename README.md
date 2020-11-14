@@ -2,7 +2,18 @@
 
 **Warning:** Use at your own risk. This repository is adapted to work with arch + i3 WM.
 
+![](static/screenshot.png)
+
 ## Install
+
+### Prerequisite
+
+Fresh install of Arch. Average Linux User has a nice guide:
+
+- Video: https://www.youtube.com/watch?v=UiYS8xWFXLY
+- Article: https://averagelinuxuser.com/a-step-by-step-arch-linux-installation-guide/
+
+### Configuration
 
 Install packages and create symlinks for configurations using the ./install.sh script
 

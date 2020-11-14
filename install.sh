@@ -19,6 +19,7 @@ install_aur() {
     nerd-fonts-source-code-pro \
     nordvpn-bin \
     polybar \
+    siji-git \
     xcwd-git
 }
 
