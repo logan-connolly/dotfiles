@@ -60,7 +60,7 @@ font-2 = "xos4 Terminus:size=8.5;2"
 
 modules-left = i3
 modules-center = date
-modules-right = cpu_i cpu mem_i mem audio_i audio battery net_i net vpn bluetooth 
+modules-right = mem_i mem audio_i audio battery net_i net vpn bluetooth
 
 tray-background = ${self.background}
 tray-transparent = true
@@ -153,7 +153,7 @@ label = "%gb_used%"
 type = internal/memory
 interval = 3
 format = 
-format-background = ${color.orange} 
+format-background = ${color.yellow} 
 format-foreground = ${color.background}
 format-padding = 1
 
@@ -178,7 +178,6 @@ format-muted-padding = 1
 
 [module/audio_i]
 type = internal/alsa
-click-left = exec pavucontrol
 format-volume = <ramp-volume>
 format-volume-background = ${color.teal}
 format-volume-foreground = ${color.background}

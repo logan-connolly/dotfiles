@@ -15,7 +15,7 @@ Fresh install of Arch. Average Linux User has a nice guide:
 
 ### Configuration
 
-Install packages and create symlinks for configurations using the ./install.sh script
+Install packages and create symlinks for configurations using the `./install.sh` script
 
 ## Post Install
 
@@ -101,6 +101,12 @@ Remove unused packages and configurations (orphans):
 
 ```bash
 $ sudo pacman -Rns $(pacman -Qtdq)
+```
+
+Export installed packages in system:
+
+```bash
+$ sudo pacman -Qqen > pkglist.txt
 ```
 
 Setup system service to consistently get fastest package mirrors:

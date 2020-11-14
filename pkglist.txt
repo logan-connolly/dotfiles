@@ -68,9 +68,11 @@ sudo
 texinfo
 tree
 ttf-font-awesome
+typescript
 udiskie
 udisks2
 ufw
+unzip
 vim-fugitive
 w3m
 which
