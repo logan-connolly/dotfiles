@@ -65,10 +65,7 @@ Encrypt drive partition with luks via [Average Linux User](https://www.youtube.c
 # Find out which drive you want to encrypt with (for this example let's say sdb1)
 $ sudo fdisk -l
 
-# CAUTION: wipe drive that you want to encrypt (ALL DATA WILL BE REMOVED) 
-#$ cat /dev/zero > /dev/sdb1
-
-# Set up encrypted drive with password
+# Set up encrypted drive with password [CAUTION: Drive will be wiped]
 $ sudo cryptsetup --verbose --verify-passphrase luksFormat /dev/sdb1
 
 # Unlock encrypted device using given password

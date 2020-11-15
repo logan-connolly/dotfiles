@@ -98,22 +98,19 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
-# Set shut down, restart and locking features
-bindsym $mod+0 mode "$mode_system"
-set $mode_system (l)ock, (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
+# Set shutdown, restart and locking
+set $Locker $HOME/bin/lock && sleep 1
+set $mode_system System (l) lock, (s) suspend, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
-    bindsym l exec --no-startup-id i3exit lock, mode "default"
-    bindsym s exec --no-startup-id i3exit suspend, mode "default"
-    bindsym u exec --no-startup-id i3exit switch_user, mode "default"
-    bindsym e exec --no-startup-id i3exit logout, mode "default"
-    bindsym h exec --no-startup-id i3exit hibernate, mode "default"
-    bindsym r exec --no-startup-id i3exit reboot, mode "default"
-    bindsym Shift+s exec --no-startup-id i3exit shutdown, mode "default"
-
-    # exit system mode: "Enter" or "Escape"
+    bindsym l exec --no-startup-id $Locker, mode "default"
+    bindsym s exec --no-startup-id $Locker && systemctl suspend, mode "default"
+    bindsym r exec --no-startup-id systemctl reboot, mode "default"
+    bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"
+    # back to normal: Enter or Escape
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
+bindsym $mod+0 mode "$mode_system"
 
 # Resize window (you can also use the mouse for that)
 bindsym $mod+r mode "resize"
@@ -145,7 +142,7 @@ bindsym $mod+f fullscreen toggle
 
 # Quickstart Applications
 bindsym $mod+F2 exec firefox
-bindsym $mod+F3 exec $term --class floating-term -e ranger 
+bindsym $mod+F3 exec $term --class floating-term -e ranger
 bindsym $mod+F4 exec $term --class floating-term -e mocp
 bindsym $mod+F5 exec pcmanfm
 bindsym $mod+Ctrl+m exec pavucontrol
@@ -157,3 +154,18 @@ exec --no-startup-id $HOME/.config/polybar/i3wmthemer_bar_launch.sh
 exec --no-startup-id udiskie
 exec --no-startup-id start-pulseaudio-x11
 exec --no-startup-id setxkbmap -layout us,de -option 'grp:alt_shift_toggle'
+
+# Pulse Audio controls
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
+
+# Sreen brightness controls
+bindsym XF86MonBrightnessUp exec xbacklight -inc 20
+bindsym XF86MonBrightnessDown exec xbacklight -dec 20
+
+# Media player controls
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioPause exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous

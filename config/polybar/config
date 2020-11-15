@@ -1,11 +1,11 @@
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 ;;
-;;	    ____        __      __              
+;;	    ____        __      __
 ;;	   / __ \____  / /_  __/ /_  ____ ______
 ;;	  / /_/ / __ \/ / / / / __ \/ __ `/ ___/
-;;	 / ____/ /_/ / / /_/ / /_/ / /_/ / /    
-;;	/_/    \____/_/\__, /_.___/\__,_/_/     
-;;	              /____/                    
+;;	 / ____/ /_/ / / /_/ / /_/ / /_/ / /
+;;	/_/    \____/_/\__, /_.___/\__,_/_/
+;;	              /____/
 ;;
 ;; Created By Aditya Shakya @adi1090x
 ;;
@@ -13,8 +13,7 @@
 
 [vars]
 battery=BAT0
-wifi-interface=wlp2s0
-eth-interface=enp3s0
+interface=enp3s0
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
@@ -60,11 +59,11 @@ font-2 = "xos4 Terminus:size=8.5;2"
 
 modules-left = i3
 modules-center = date
-modules-right = mem_i mem audio_i audio battery net_i net vpn bluetooth
+modules-right = mem_i mem audio_i audio battery network vpn bluetooth
 
 tray-background = ${self.background}
 tray-transparent = true
-override-redirect = false 
+override-redirect = false
 
 cursor-click = pointer
 cursor-scroll = ns-resize
@@ -142,7 +141,7 @@ format-padding = 1
 type = internal/memory
 interval = 3
 format = <label>
-format-background = ${color.background} 
+format-background = ${color.background}
 format-foreground = ${color.foreground}
 format-padding = 1
 label = "%gb_used%"
@@ -153,7 +152,7 @@ label = "%gb_used%"
 type = internal/memory
 interval = 3
 format = 
-format-background = ${color.yellow} 
+format-background = ${color.yellow}
 format-foreground = ${color.background}
 format-padding = 1
 
@@ -161,7 +160,6 @@ format-padding = 1
 
 [module/audio]
 type = internal/pulseaudio
-sink = alsa_output.pci-0000_12_00.3.analog-stereo
 use-ui-max = true
 interval = 5
 format-volume = <label-volume>
@@ -280,31 +278,9 @@ format-background = ${color.blue}
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
-[module/net]
+[module/network]
 type = internal/network
-interface = ${vars.eth-interface}
-interval = 1.0
-accumulate-stats = true
-unknown-as-up = true
-
-format-connected = <label-connected>
-format-connected-background = ${color.background}
-format-connected-foreground = ${color.foreground}
-format-connected-padding = 1
- 
-format-disconnected = <label-disconnected>
-format-disconnected-background = ${color.background}
-format-disconnected-foreground = ${color.foreground}
-format-disconnected-padding = 1
-
-label-connected = 
-label-disconnected = 
-
-;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
-
-[module/net_i]
-type = internal/network
-interface = ${vars.eth-interface}
+interface = ${vars.interface}
 interval = 1.0
 accumulate-stats = true
 unknown-as-up = true
@@ -313,10 +289,10 @@ format-connected = <label-connected>
 format-connected-background = ${color.green}
 format-connected-foreground = ${color.background}
 format-connected-padding = 1
- 
+
 format-disconnected = <label-disconnected>
 format-disconnected-background = ${color.red}
-format-disconnected-foreground = ${color.foreground}
+format-disconnected-foreground = ${color.background}
 format-disconnected-padding = 1
 
 label-disconnected = 
