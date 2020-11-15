@@ -1,0 +1,306 @@
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+;;
+;;	    ____        __      __
+;;	   / __ \____  / /_  __/ /_  ____ ______
+;;	  / /_/ / __ \/ / / / / __ \/ __ `/ ___/
+;;	 / ____/ /_/ / / /_/ / /_/ / /_/ / /
+;;	/_/    \____/_/\__, /_.___/\__,_/_/
+;;	              /____/
+;;
+;; Created By Aditya Shakya @adi1090x
+;;
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[vars]
+battery=BAT0
+interface=enp3s0
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[settings]
+screenchange-reload = true
+pseudo-transparency = true
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[color]
+background = #282828
+background-alpha = #da282828
+foreground = #bdae93
+grey = #32302f
+red = #fb4934
+blue = #83a598
+orange = #fe8019
+green = #b8bb26
+purple = #d3869b
+teal = #8ec07c
+yellow = #fabd2f
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[bar/i3wmthemer_bar]
+width = 100%
+height = 19
+fixed-center = true
+bottom = false
+
+background = ${color.background-alpha}
+foreground = ${color.foreground}
+
+line-size = 3
+padding-left = 0
+padding-right = 1
+module-margin-left = 1
+module-margin-right = 1
+
+font-0 = "Misc Termsyn:size=8.5;2"
+font-1 = "Wuncon Siji:size=8.5;2"
+font-2 = "xos4 Terminus:size=8.5;2"
+
+modules-left = i3
+modules-center = date
+modules-right = mem_i mem audio_i audio battery network vpn bluetooth
+
+tray-background = ${self.background}
+tray-transparent = true
+override-redirect = false
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[module/i3]
+type = internal/i3
+format = <label-state> <label-mode>
+index-sort = true
+wrapping-scroll = false
+
+label-mode-padding = 2
+label-mode-foreground = ${color.foreground}
+label-mode-background = ${color.background-alpha}
+
+label-focused = %index%
+label-focused-background = ${color.foreground}
+label-focused-foreground = ${color.background}
+label-focused-padding = 4
+
+label-unfocused = %index%
+label-unfocused-background = ${color.background}
+label-unfocused-foreground = ${color.foreground}
+label-unfocused-padding = 4
+
+label-visible = %index%
+label-visible-background = ${color.foreground}
+label-visible-foreground = ${color.background}
+label-visible-padding = 4
+
+label-urgent = %index%
+label-urgent-background = ${color.red}
+label-urgent-foreground = ${color.foreground}
+label-urgent-padding = 4
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[module/date]
+type = internal/date
+label = %date% %time%
+interval = 1
+date-alt = " %Y-%m-%d"
+time = %H:%M
+time-alt = %H:%M:%S
+
+format-prefix = 
+format-foreground = ${color.foreground}
+format-background = ${color.background-alpha}
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[module/cpu]
+type = internal/cpu
+interval = 0.5
+format = <label>
+format-background = ${color.background}
+format-foreground = ${color.foreground}
+format-padding = 1
+label = "%percentage%%"
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[module/cpu_i]
+type = internal/cpu
+interval = 0.5
+format = 
+format-background = ${color.yellow}
+format-foreground = ${color.background}
+format-padding = 1
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[module/mem]
+type = internal/memory
+interval = 3
+format = <label>
+format-background = ${color.background}
+format-foreground = ${color.foreground}
+format-padding = 1
+label = "%gb_used%"
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[module/mem_i]
+type = internal/memory
+interval = 3
+format = 
+format-background = ${color.yellow}
+format-foreground = ${color.background}
+format-padding = 1
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[module/audio]
+type = internal/pulseaudio
+use-ui-max = true
+interval = 5
+format-volume = <label-volume>
+format-volume-background = ${color.background}
+format-volume-foreground = ${color.foreground}
+format-volume-padding = 1
+
+label-muted = Muted
+format-muted-background = ${color.background}
+format-muted-foreground = ${color.foreground}
+format-muted-padding = 1
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[module/audio_i]
+type = internal/alsa
+format-volume = <ramp-volume>
+format-volume-background = ${color.teal}
+format-volume-foreground = ${color.background}
+format-volume-padding = 1
+
+format-muted-background = ${color.teal}
+format-muted-foreground = ${color.background}
+format-muted-padding = 1
+
+label-muted = ""
+label-muted-foreground = ${color.background}
+
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+ramp-volume-3 = 
+ramp-volume-4 = 
+ramp-headphones-0 = 
+ramp-headphones-1 = 
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[module/battery]
+type = internal/battery
+full-at = 99
+battery = ${vars.battery}
+adapter = ACAD
+poll-interval = 2
+time-format = %H:%M
+
+format-charging = <label-charging>
+format-charging-background = ${color.mf}
+format-charging-foreground = ${color.fg}
+format-charging-padding = 1
+
+format-discharging = <label-discharging>
+format-discharging-background = ${color.mf}
+format-discharging-foreground = ${color.fg}
+format-discharging-padding = 1
+
+label-charging = %percentage%%
+label-discharging = %percentage%%
+
+label-full = Fully Charged
+label-full-foreground = ${color.foreground}
+label-full-background = ${color.background}
+label-full-padding = 1
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[module/battery_i]
+type = internal/battery
+full-at = 99
+battery = ${vars.battery}
+adapter = ACAD
+poll-interval = 2
+time-format = %H:%M
+
+format-charging = <animation-charging>
+format-charging-background = ${color.green}
+format-charging-foreground = ${color.foreground}
+format-charging-padding = 1
+
+format-discharging = <ramp-capacity>
+format-discharging-background = ${color.red}
+format-discharging-foreground = ${color.foreground}
+format-discharging-padding = 1
+
+label-charging = %percentage%%
+label-discharging = %percentage%%
+
+label-full = 
+label-full-background = ${color.green}
+label-full-foreground = ${color.foreground}
+label-full-padding = 1
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+animation-charging-5 = 
+animation-charging-framerate = 750
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[module/bluetooth]
+type = custom/script
+exec = echo ""
+click-left = exec blueman-manager
+format-padding = 1
+format-foreground = ${color.background}
+format-background = ${color.blue}
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[module/network]
+type = internal/network
+interface = ${vars.interface}
+interval = 1.0
+accumulate-stats = true
+unknown-as-up = true
+
+format-connected = <label-connected>
+format-connected-background = ${color.green}
+format-connected-foreground = ${color.background}
+format-connected-padding = 1
+
+format-disconnected = <label-disconnected>
+format-disconnected-background = ${color.red}
+format-disconnected-foreground = ${color.background}
+format-disconnected-padding = 1
+
+label-disconnected = 
+label-connected = 
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[module/vpn]
+type = custom/script
+exec = ~/.config/polybar/scripts/nordvpn-status.sh
+interval = 5

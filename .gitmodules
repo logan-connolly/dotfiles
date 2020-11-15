@@ -1,0 +1,6 @@
+[submodule ".themes/gruvbox-gtk"]
+	path = .themes/gruvbox-gtk
+	url = git://github.com/3ximus/gruvbox-gtk
+[submodule "config/ranger/plugins/ranger_devicons"]
+	path = config/ranger/plugins/ranger_devicons
+	url = git://github.com/alexanderjeurissen/ranger_devicons

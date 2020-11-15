@@ -9,7 +9,7 @@ autoload -Uz compinit
 compinit
 
 # End of lines added by compinstall
-source "${HOME}/zsh/environment.zsh"
-source "${HOME}/zsh/history.zsh"
-source "${HOME}/zsh/alias.zsh"
-source "${HOME}/zsh/zinit.zsh"
+source "${HOME}/.config/zsh/environment.zsh"
+source "${HOME}/.config/zsh/history.zsh"
+source "${HOME}/.config/zsh/alias.zsh"
+source "${HOME}/.config/zsh/zinit.zsh"

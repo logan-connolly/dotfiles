@@ -1,0 +1,4 @@
+#! /bin/sh
+
+ln -sf $1 $HOME/.config/feh/wallpaper
+$HOME/.config/feh/fehbg
