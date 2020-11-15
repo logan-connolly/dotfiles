@@ -7,6 +7,7 @@ binutils
 bison
 blueman
 bluez-utils
+chromium
 ctags
 docker
 docker-compose
@@ -28,16 +29,19 @@ i3blocks
 i3lock
 i3status
 imagemagick
+libmicrodns
 libreoffice-still
 linux
 linux-firmware
 lxappearance
 m4
 make
+mpv
 mypy
 neofetch
 neovim
 networkmanager
+nfs-utils
 nodejs
 noto-fonts
 noto-fonts-cjk
@@ -49,6 +53,8 @@ patch
 pavucontrol
 pcmanfm
 pkgconf
+playerctl
+protobuf
 pulseaudio
 pulseaudio-alsa
 pulseaudio-bluetooth
@@ -74,6 +80,7 @@ udisks2
 ufw
 unzip
 vim-fugitive
+vlc
 w3m
 which
 xbindkeys
@@ -129,6 +136,7 @@ xorg-xwininfo
 xorg-xwud
 xsel
 xterm
+youtube-dl
 zathura
 zathura-pdf-poppler
 zsh
