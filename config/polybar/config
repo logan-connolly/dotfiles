@@ -13,7 +13,7 @@
 
 [vars]
 battery=BAT0
-interface=enp3s0
+interface=wlp0s20f3
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
@@ -59,7 +59,7 @@ font-2 = "xos4 Terminus:size=8.5;2"
 
 modules-left = i3
 modules-center = date
-modules-right = mem_i mem audio_i audio battery network vpn bluetooth
+modules-right = mem_i mem audio_i audio battery_i battery network vpn bluetooth
 
 tray-background = ${self.background}
 tray-transparent = true
@@ -152,7 +152,7 @@ label = "%gb_used%"
 type = internal/memory
 interval = 3
 format = 
-format-background = ${color.yellow}
+format-background = ${color.purple}
 format-foreground = ${color.background}
 format-padding = 1
 
@@ -207,13 +207,13 @@ poll-interval = 2
 time-format = %H:%M
 
 format-charging = <label-charging>
-format-charging-background = ${color.mf}
-format-charging-foreground = ${color.fg}
+format-charging-background = ${color.background}
+format-charging-foreground = ${color.foreground}
 format-charging-padding = 1
 
 format-discharging = <label-discharging>
-format-discharging-background = ${color.mf}
-format-discharging-foreground = ${color.fg}
+format-discharging-background = ${color.background}
+format-discharging-foreground = ${color.foreground}
 format-discharging-padding = 1
 
 label-charging = %percentage%%
@@ -235,13 +235,13 @@ poll-interval = 2
 time-format = %H:%M
 
 format-charging = <animation-charging>
-format-charging-background = ${color.green}
-format-charging-foreground = ${color.foreground}
+format-charging-background = ${color.yellow}
+format-charging-foreground = ${color.background}
 format-charging-padding = 1
 
 format-discharging = <ramp-capacity>
-format-discharging-background = ${color.red}
-format-discharging-foreground = ${color.foreground}
+format-discharging-background = ${color.foreground}
+format-discharging-foreground = ${color.background}
 format-discharging-padding = 1
 
 label-charging = %percentage%%
@@ -249,7 +249,7 @@ label-discharging = %percentage%%
 
 label-full = 
 label-full-background = ${color.green}
-label-full-foreground = ${color.foreground}
+label-full-foreground = ${color.background}
 label-full-padding = 1
 
 ramp-capacity-0 = 

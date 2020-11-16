@@ -10,10 +10,6 @@ install_pacman() {
 }
 
 install_aur() {
-  if [ pacman -Qi yay ]; then
-      mkdir -p ~/github && cd "$_" && git clone https://aur.archlinux.org/yay.git
-      makepkg -si
-  fi
   yay -S --needed \
     nerd-fonts-complete \
     nerd-fonts-source-code-pro \
@@ -45,7 +41,7 @@ link_configs() {
   ln -sf $DOT_DIR/.gitconfig ~/.gitconfig
   ln -sf $DOT_DIR/.inputrc ~/.inputrc
   ln -sf $DOT_DIR/.zshrc ~/.zshrc
-  ln -sf $DOT_DIR/.zprofile ~/.zsprofile
+  ln -sf $DOT_DIR/.zprofile ~/.zprofile
   ln -sf $DOT_DIR/.xinitrc ~/.xinitrc
   ln -sf $DOT_DIR/.Xresources ~/.Xresources
 
@@ -53,6 +49,7 @@ link_configs() {
   ln -sf $DOT_DIR/config/feh ~/.config
   ln -sf $DOT_DIR/config/i3 ~/.config
   ln -sf $DOT_DIR/config/nvim ~/.config
+  ln -sf $DOT_DIR/config/ranger ~/.config
   ln -sf $DOT_DIR/config/rofi ~/.config
   ln -sf $DOT_DIR/config/polybar ~/.config
   ln -sf $DOT_DIR/config/zsh ~/.config
@@ -60,6 +57,7 @@ link_configs() {
 
   # symlink misc directories and files
   ln -sf $DOT_DIR/bin ~/
+  ln -sf $DOT_DIR/.themes ~/.themes
 }
 
 enable_services() {
