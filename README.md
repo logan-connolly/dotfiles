@@ -8,10 +8,28 @@
 
 ### Prerequisite
 
-Fresh install of Arch. Average Linux User has a nice guide:
+Fresh install of Arch and i3. Average Linux User has a nice guide:
 
 - Video: https://www.youtube.com/watch?v=UiYS8xWFXLY
 - Article: https://averagelinuxuser.com/a-step-by-step-arch-linux-installation-guide/
+
+Clone repository and submodules:
+
+```shell
+$ git clone https://github.com/logan-connolly/dotfiles.git
+$ cd dotfiles
+$ git submodule init
+$ git pull --recurse-submodules
+```
+
+Install yay for downloading AUR:
+
+```shell
+$ mkdir -p ~/github && cd "$_" && git clone https://aur.archlinux.org/yay.git
+$ makepkg -si
+```
+
+Install siji via https://github.com/stark/siji in order to get icons in polybar.
 
 ### Configuration
 
@@ -119,3 +137,10 @@ Setup system service to consistently get fastest package mirrors:
 ```
 
 To enable, run: `$ sudo systemctl enable --now reflector.service`
+
+Add color to pacman by editing `/etc/pacman.conf`:
+
+```shell
+# /etc/pacman.conf
+COLOR
+```
