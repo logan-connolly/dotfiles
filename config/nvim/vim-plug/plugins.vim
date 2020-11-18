@@ -19,6 +19,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   Plug 'junegunn/fzf.vim'
   Plug 'justinmk/vim-sneak'
+  Plug 'lifepillar/vim-gruvbox8'
   Plug 'machakann/vim-highlightedyank'
   Plug 'morhetz/gruvbox'
   Plug 'ncm2/ncm2'

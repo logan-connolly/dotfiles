@@ -23,5 +23,5 @@ let g:airline#extensions#tabline#formatter = 'default'
 let g:airline#extensions#tabline#buffer_nr_show = 0
 let g:airline#extensions#tabline#buffer_idx_mode = 1
 let g:airline_powerline_fonts = 1
-let g:airline_theme = 'gruvbox' 
+let g:airline_theme = 'gruvbox'
 let g:airline#extensions#ale#enabled = 1
