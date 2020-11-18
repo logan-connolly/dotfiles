@@ -40,10 +40,11 @@ link_configs() {
   # symlink of entire config files
   ln -sf $DOT_DIR/.gitconfig ~/.gitconfig
   ln -sf $DOT_DIR/.inputrc ~/.inputrc
-  ln -sf $DOT_DIR/.zshrc ~/.zshrc
-  ln -sf $DOT_DIR/.zprofile ~/.zprofile
+  ln -sf $DOT_DIR/.pylintrc ~/.pylintrc
   ln -sf $DOT_DIR/.xinitrc ~/.xinitrc
   ln -sf $DOT_DIR/.Xresources ~/.Xresources
+  ln -sf $DOT_DIR/.zshrc ~/.zshrc
+  ln -sf $DOT_DIR/.zprofile ~/.zprofile
 
   # symlink of entire config directories
   ln -sf $DOT_DIR/config/feh ~/.config
