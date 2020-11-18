@@ -25,11 +25,18 @@ $ git pull --recurse-submodules
 Install yay for downloading AUR:
 
 ```shell
-$ mkdir -p ~/github && cd "$_" && git clone https://aur.archlinux.org/yay.git
-$ makepkg -si
+$ git clone https://aur.archlinux.org/yay.git
+$ cd yay && makepkg -si
 ```
 
-Install siji via https://github.com/stark/siji in order to get icons in polybar.
+Install siji via https://github.com/stark/siji in order to get icons in polybar:
+
+```shell
+$ mkdir ~/.local/share/fonts
+$ git clone https://github.com/stark/siji.git ~/.local/share/fonts
+$ cd ~/.local/share/fonts/siji
+$ ./install.sh
+```
 
 ### Configuration
 
