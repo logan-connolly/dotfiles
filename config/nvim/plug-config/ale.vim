@@ -3,16 +3,22 @@ nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
 let g:ale_linters = {
+      \   'javascript': ['eslint', 'prettier'],
+      \   'markdown': [ 'alex', 'textlint', 'proselint', 'write-good' ],
       \   'python': ['flake8', 'pylint', 'mypy'],
-      \    'javascript': ['eslint', 'prettier'],
-      \    'typescript': ['eslint', 'tsserver', 'prettier'],
+      \   'typescript': ['eslint', 'tsserver', 'prettier'],
       \}
 
 let g:ale_fixers = {
       \    '*': ['remove_trailing_lines', 'trim_whitespace'],
+      \    'css': ['prettier'],
+      \    'html': ['prettier'],
+      \    'javascript': ['prettier'],
+      \    'json': ['prettier'],
+      \    'markdown': [ 'alex', 'textlint', 'proselint', 'write-good' ],
       \    'python': ['isort', 'black'],
-      \    'javascript': ['eslint', 'prettier'],
-      \    'typescript': ['eslint', 'prettier'],
+      \    'sh': ['shfmt'],
+      \    'typescript': ['prettier'],
       \}
 
 let g:ale_fix_on_save = 1
@@ -22,3 +28,7 @@ let g:ale_completion_enabled = 0
 let g:ale_python_pylint_change_directory = 0
 let g:ale_python_mypy_options = '--ignore-missing-imports .'
 let g:ale_python_isort_options = '-p app -p tests'
+
+let g:ale_sign_error = '✖'
+let g:ale_sign_warning = '⚠'
+let g:ale_sign_info = '.'
