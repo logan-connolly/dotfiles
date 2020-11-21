@@ -1,0 +1,4 @@
+#!/bin/sh
+
+youtube-dl -x -i -o "%(playlist_index)s-%(title)s.%(ext)s" \
+  --restrict-filenames --audio-quality 0 --audio-format mp3 "${1}"
