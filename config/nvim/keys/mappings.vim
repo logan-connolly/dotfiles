@@ -18,3 +18,7 @@ map <leader>;; :vsplit term://zsh<CR>i
 tnoremap <Esc> <C-\><C-n>
 tnoremap <M-[> <Esc>
 tnoremap <C-v><Esc> <Esc>
+
+"Better nav for omnicomplete TODO figure out why this is being overridden
+inoremap <expr> <c-j> ("\<C-n>")
+inoremap <expr> <c-k> ("\<C-p>")

@@ -5,6 +5,7 @@ let g:LanguageClient_serverCommands = {
     \ 'python': ['pyls'],
     \ 'javascript': ['typescript-language-server', '--stdio'],
     \ 'typescript': ['typescript-language-server', '--stdio'],
+    \ 'vue': ['vls']
     \ }
 
 let g:LanguageClient_settingsPath = '~/.config/nvim/ls-settings.json'
@@ -13,4 +14,5 @@ let g:LanguageClient_settingsPath = '~/.config/nvim/ls-settings.json'
 nmap <F5> <Plug>(lcn-menu)
 nmap <silent>K <Plug>(lcn-hover)
 nmap <silent> gd <Plug>(lcn-definition)
+nmap <silent> gr <Plug>(lcn-references)
 nmap <silent> rn <Plug>(lcn-rename)

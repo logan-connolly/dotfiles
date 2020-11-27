@@ -1,4 +1,4 @@
-au BufNewFile,BufRead *.py set tabstop=4 softtabstop=4 shiftwidth=4 textwidth=88
+au BufNewFile,BufRead *.py set tabstop=4 softtabstop=4 shiftwidth=4
 au BufNewFile,BufRead *.js,*.css,*.html set tabstop=2 softtabstop=2 shiftwidth=2
 
 " Turn spellcheck on for markdown files

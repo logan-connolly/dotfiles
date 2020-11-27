@@ -9,6 +9,7 @@ set nowritebackup
 set updatetime=250
 set mouse=a
 set number
+set nohlsearch
 set relativenumber
 set ignorecase
 set smartcase
