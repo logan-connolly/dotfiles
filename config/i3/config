@@ -14,6 +14,7 @@ client.unfocused        #504945 #282828 #c5c8c6 #550494 #504945
 client.urgent           #504945 #282828 #c5c8c6 #550494 #504945
 client.placeholder      #504945 #282828 #c5c8c6 #550494 #504945
 client.background       #282828
+font "SauceCodePro Nerd Font Mono"
 
 # Window border
 new_window pixel 1
@@ -24,15 +25,15 @@ hide_edge_borders none
 bindsym $mod+Ctrl+Right workspace next
 bindsym $mod+Ctrl+Left workspace prev
 
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 
 # Workspace back and forth (with/without active container)
 workspace_auto_back_and_forth yes
@@ -40,7 +41,6 @@ bindsym $mod+b workspace back_and_forth
 bindsym $mod+Shift+b move container to workspace back_and_forth; workspace back_and_forth
 
 # Split orientation
-bindsym $mod+h split h;exec notify-send 'tile horizontally'
 bindsym $mod+v split v;exec notify-send 'tile vertically'
 bindsym $mod+q split toggle
 bindsym $mod+e layout toggle split
