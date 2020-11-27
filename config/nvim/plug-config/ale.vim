@@ -1,3 +1,6 @@
+autocmd FileType vue syntax sync fromstart
+autocmd BufRead,BufNewFile *.vue setlocal filetype=vue
+
 nmap <F7> :ALEFix<CR>
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
@@ -7,6 +10,7 @@ let g:ale_linters = {
       \   'markdown': [ 'alex', 'textlint', 'proselint', 'write-good' ],
       \   'python': ['flake8', 'pylint', 'mypy'],
       \   'typescript': ['eslint', 'tsserver', 'prettier'],
+      \   'vue': ['eslint', 'prettier'],
       \}
 
 let g:ale_fixers = {
@@ -19,6 +23,7 @@ let g:ale_fixers = {
       \    'python': ['isort', 'black'],
       \    'sh': ['shfmt'],
       \    'typescript': ['prettier'],
+      \    'vue': ['prettier'],
       \}
 
 let g:ale_fix_on_save = 1
