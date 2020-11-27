@@ -66,11 +66,11 @@ $ sudo grub-mkconfig -o /boot/grub/grub.cfg
 Set restricted permissions for files and directories:
 
 ```bash
-# Find all directories in home directory and set 755 permission
-$ find $HOME -type d -exec chmod 755 {} +
+# Find all directories in desired path and set 755 permission
+$ find <path> -type d -exec chmod 755 {} +
 
-# Find all files in home directory and grant only file creator write privs
-$ find $HOME -type f -exec chmod 644 {} +
+# Find all files in desired path and grant only file creator write privs
+$ find <path> -type f -exec chmod 644 {} +
 ```
 
 ### Syncing
