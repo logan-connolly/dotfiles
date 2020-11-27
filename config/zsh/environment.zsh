@@ -8,6 +8,7 @@ export READER="zathura"
 # edit PATH
 export PATH=~/bin:$PATH
 export PATH=~/.npm-global/bin:$PATH
+export PATH="$HOME/.poetry/bin:$PATH"
 
 # fzf autocompletion
 [ -f /usr/share/fzf/key-bindings.zsh ] && source /usr/share/fzf/key-bindings.zsh

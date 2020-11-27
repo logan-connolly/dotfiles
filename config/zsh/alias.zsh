@@ -24,4 +24,8 @@ alias nml="nmcli device wifi list"
 alias nm="nmcli connection"
 alias nmc="nmcli --ask device wifi connect"
 
+# renaming files
+alias rename="perl-rename"
+
+# Use ipython of base environment
 alias ipython="~/.envs/base/bin/ipython"
