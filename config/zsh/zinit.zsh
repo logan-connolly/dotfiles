@@ -27,6 +27,7 @@ source "${HOME}/.config/zsh/zsh-theme-gruvbox-material-dark"
 
 # load git aliases
 zinit light davidde/git
+zinit light wfxr/forgit
 
 # load autocompletion
 zinit snippet OMZP::docker/_docker
