@@ -25,7 +25,6 @@ export FZF_DEFAULT_OPTS="
 --prompt='∼ ' --pointer='▶' --marker='✓'
 --bind '?:toggle-preview'
 --bind 'ctrl-a:select-all'
---bind 'ctrl-y:execute-silent(echo {+} | pbcopy)'
---bind 'ctrl-e:execute(echo {+} | xargs -o vim)'
---bind 'ctrl-v:execute(code {+})'
+--bind 'ctrl-y:execute-silent(echo {+} | xsel -ib)'
+--bind 'ctrl-v:execute(echo {+} | xargs -o nvim)'
 "
