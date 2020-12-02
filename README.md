@@ -119,16 +119,16 @@ sudo umount /dev/mapper/sdb1 && sudo cryptsetup luksClose sdb1
 
 ### Packages
 
-Remove unused packages and configurations (orphans):
+Remove unused packages and configurations (orphans) with yay: 
 
 ```bash
-$ sudo pacman -Rns $(pacman -Qtdq)
+$ yay --clean
 ```
 
 Export installed packages in system:
 
 ```bash
-$ sudo pacman -Qqen > pkglist.txt
+$ yay -Qqen > pkglist.txt
 ```
 
 Setup system service to consistently get fastest package mirrors:
