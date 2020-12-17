@@ -18,9 +18,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   Plug 'junegunn/fzf.vim'
   Plug 'justinmk/vim-sneak'
-  Plug 'lifepillar/vim-gruvbox8'
   Plug 'machakann/vim-highlightedyank'
-  Plug 'morhetz/gruvbox'
   Plug 'ncm2/ncm2'
   Plug 'ncm2/ncm2-bufword'
   Plug 'ncm2/ncm2-path'
@@ -31,6 +29,11 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'tpope/vim-fugitive'
   Plug 'vim-airline/vim-airline'
   Plug 'w0rp/ale'
+
+  " Themes
+  Plug 'lifepillar/vim-gruvbox8'
+  Plug 'morhetz/gruvbox'
+
 call plug#end()
 
 " automatically install missing plugins on startup

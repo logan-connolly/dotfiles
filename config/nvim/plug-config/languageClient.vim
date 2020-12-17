@@ -5,7 +5,6 @@ let g:LanguageClient_serverCommands = {
     \ 'python': ['pyls'],
     \ 'javascript': ['typescript-language-server', '--stdio'],
     \ 'typescript': ['typescript-language-server', '--stdio'],
-    \ 'vue': ['vls']
     \ }
 
 let g:LanguageClient_settingsPath = '~/.config/nvim/ls-settings.json'
