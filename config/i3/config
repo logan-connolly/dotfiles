@@ -1,5 +1,6 @@
 # Modifier settings
 set $mod Mod4
+set $alt Mod1
 floating_modifier $mod
 
 # I3 gaps
@@ -136,6 +137,7 @@ mode "resize" {
 set $term --no-startup-id alacritty --working-directory $(xcwd)
 bindsym $mod+Return exec $term
 bindsym $mod+Shift+Return exec $term --class floating-term
+bindsym $alt+Return exec code
 bindsym $mod+Shift+q kill
 bindsym $mod+d exec --no-startup-id rofi -show run
 bindsym $mod+f fullscreen toggle
