@@ -18,6 +18,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'nvim-lua/completion-nvim'
   Plug 'rbgrouleff/bclose.vim'
   Plug 'sheerun/vim-polyglot'
+  Plug 'stsewd/fzf-checkout.vim'
   Plug 'tpope/vim-commentary'
   Plug 'tpope/vim-fugitive'
   Plug 'vim-airline/vim-airline'

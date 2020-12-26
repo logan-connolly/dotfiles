@@ -25,3 +25,6 @@ inoremap <expr> <c-k> ("\<C-p>")
 
 "File tree
 nnoremap <C-n> :wincmd v<bar> :Ex <bar> :vertical resize 30<CR>
+
+"Source configuration
+map <leader>` :so ~/.config/nvim/init.vim<CR>

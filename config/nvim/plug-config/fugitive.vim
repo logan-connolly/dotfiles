@@ -1,3 +1,5 @@
-map <F8> :G<CR>
-map <F9> :Gcommit -a<CR>
-map <F10> :Gpush<CR>
+nnoremap <leader>gc :GBranches<CR>
+nmap <leader>gf :diffget //2<CR>
+nmap <leader>gj :diffget //3<CR>
+nmap <leader>gs :G<CR>
+map <leader>gp :Gpush<CR>
