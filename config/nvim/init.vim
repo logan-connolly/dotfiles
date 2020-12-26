@@ -21,8 +21,6 @@ if !exists('g:vscode')
   source ~/.config/nvim/plug-config/closetags.vim
   source ~/.config/nvim/plug-config/fugitive.vim
   source ~/.config/nvim/plug-config/fzf.vim
-  source ~/.config/nvim/plug-config/languageClient.vim
-  source ~/.config/nvim/plug-config/ncm2.vim
   source ~/.config/nvim/plug-config/ranger.vim
   source ~/.config/nvim/plug-config/vim-commentary.vim
   source ~/.config/nvim/plug-config/vim-sneak.vim

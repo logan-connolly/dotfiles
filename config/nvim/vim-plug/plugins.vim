@@ -8,10 +8,6 @@ endif
 call plug#begin('~/.local/share/nvim/plugged')
   Plug 'alvan/vim-closetag'
   Plug 'AndrewRadev/tagalong.vim'
-  Plug 'autozimu/LanguageClient-neovim', {
-      \ 'branch': 'next',
-      \ 'do': 'bash install.sh',
-      \ }
   Plug 'chrisbra/Colorizer'
   Plug 'francoiscabrol/ranger.vim'
   Plug 'honza/vim-snippets'
@@ -19,11 +15,8 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'junegunn/fzf.vim'
   Plug 'justinmk/vim-sneak'
   Plug 'machakann/vim-highlightedyank'
-  Plug 'ncm2/ncm2'
-  Plug 'ncm2/ncm2-bufword'
-  Plug 'ncm2/ncm2-path'
+  Plug 'neovim/nvim-lspconfig'
   Plug 'rbgrouleff/bclose.vim'
-  Plug 'roxma/nvim-yarp'
   Plug 'sheerun/vim-polyglot'
   Plug 'tpope/vim-commentary'
   Plug 'tpope/vim-fugitive'
