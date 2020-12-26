@@ -7,7 +7,7 @@
 if !exists('g:vscode')
   "General Settings
   source ~/.config/nvim/plug-config/vim-polyglot.vim
-  source ~/.config/nvim/vim-plug/plugins.vim
+  source ~/.config/nvim/plugins.vim
   source ~/.config/nvim/general/settings.vim
   source ~/.config/nvim/general/functions.vim
 
@@ -21,7 +21,7 @@ if !exists('g:vscode')
   source ~/.config/nvim/plug-config/closetags.vim
   source ~/.config/nvim/plug-config/fugitive.vim
   source ~/.config/nvim/plug-config/fzf.vim
-  source ~/.config/nvim/plug-config/ranger.vim
+  source ~/.config/nvim/plug-config/lsp-config.vim
   source ~/.config/nvim/plug-config/vim-commentary.vim
   source ~/.config/nvim/plug-config/vim-sneak.vim
 

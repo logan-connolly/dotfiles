@@ -13,7 +13,7 @@ nnoremap Q <nop>
 map <leader>x <esc>:bd<cr>
 
 map <leader>; :split term://zsh<CR>i
-map <leader>;; :vsplit term://zsh<CR>i
+map <leader>' :vsplit term://zsh<CR>i
 
 tnoremap <Esc> <C-\><C-n>
 tnoremap <M-[> <Esc>
@@ -22,3 +22,6 @@ tnoremap <C-v><Esc> <Esc>
 "Better nav for omnicomplete TODO figure out why this is being overridden
 inoremap <expr> <c-j> ("\<C-n>")
 inoremap <expr> <c-k> ("\<C-p>")
+
+"File tree
+nnoremap <C-n> :wincmd v<bar> :Ex <bar> :vertical resize 30<CR>

@@ -9,23 +9,23 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'alvan/vim-closetag'
   Plug 'AndrewRadev/tagalong.vim'
   Plug 'chrisbra/Colorizer'
-  Plug 'francoiscabrol/ranger.vim'
   Plug 'honza/vim-snippets'
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   Plug 'junegunn/fzf.vim'
   Plug 'justinmk/vim-sneak'
   Plug 'machakann/vim-highlightedyank'
   Plug 'neovim/nvim-lspconfig'
+  Plug 'nvim-lua/completion-nvim'
   Plug 'rbgrouleff/bclose.vim'
   Plug 'sheerun/vim-polyglot'
   Plug 'tpope/vim-commentary'
   Plug 'tpope/vim-fugitive'
   Plug 'vim-airline/vim-airline'
+  Plug 'vim-airline/vim-airline-themes'
   Plug 'w0rp/ale'
 
   " Themes
   Plug 'lifepillar/vim-gruvbox8'
-  Plug 'morhetz/gruvbox'
 
 call plug#end()
 

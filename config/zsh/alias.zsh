@@ -2,6 +2,7 @@
 alias o='xdg-open'
 
 # configure files
+alias nvim='~/.local/nvim/bin/nvim'
 alias cv='nvim ~/.config/nvim'
 alias cz='nvim ~/.zshrc'
 alias ci='nvim ~/.config/i3/config'
