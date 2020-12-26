@@ -26,9 +26,6 @@ if !exists('g:vscode')
   source ~/.config/nvim/plug-config/vim-commentary.vim
   source ~/.config/nvim/plug-config/vim-sneak.vim
 
-  "Add paths to node and python here
-  source ~/.config/nvim/paths.vim
-
   " Make sure these main mappings are not overwritten
   source ~/.config/nvim/keys/mappings.vim
 endif
