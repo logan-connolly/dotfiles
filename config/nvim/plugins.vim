@@ -6,30 +6,34 @@ if empty(glob('~/.config/nvim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.local/share/nvim/plugged')
-  Plug 'alvan/vim-closetag'
-  Plug 'AndrewRadev/tagalong.vim'
+
+  "General
   Plug 'chrisbra/Colorizer'
-  Plug 'honza/vim-snippets'
+  Plug 'justinmk/vim-sneak'
+  Plug 'machakann/vim-highlightedyank'
+  Plug 'mattn/emmet-vim'
+  Plug 'rbgrouleff/bclose.vim'
+  Plug 'tpope/vim-commentary'
+  Plug 'tpope/vim-fugitive'
+
+  "Fuzzy Search
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   Plug 'junegunn/fzf.vim'
-  Plug 'justinmk/vim-sneak'
-  Plug 'kyazdani42/nvim-web-devicons'
-  Plug 'machakann/vim-highlightedyank'
-  Plug 'neovim/nvim-lspconfig'
-  Plug 'nvim-lua/completion-nvim'
   Plug 'nvim-lua/popup.nvim'
   Plug 'nvim-lua/plenary.nvim'
   Plug 'nvim-telescope/telescope.nvim'
-  Plug 'rbgrouleff/bclose.vim'
+
+  "Language Specific
+  Plug 'neovim/nvim-lspconfig'
+  Plug 'nvim-lua/completion-nvim'
   Plug 'sheerun/vim-polyglot'
-  Plug 'tpope/vim-commentary'
-  Plug 'tpope/vim-fugitive'
-  Plug 'vim-airline/vim-airline'
-  Plug 'vim-airline/vim-airline-themes'
   Plug 'w0rp/ale'
 
-  " Themes
+  "Theming
+  Plug 'kyazdani42/nvim-web-devicons'
   Plug 'lifepillar/vim-gruvbox8'
+  Plug 'vim-airline/vim-airline'
+  Plug 'vim-airline/vim-airline-themes'
 
 call plug#end()
 

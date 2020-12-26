@@ -18,6 +18,7 @@ if !exists('g:vscode')
 
   "Plugin Configuration
   source ~/.config/nvim/plug-config/ale.vim
+  source ~/.config/nvim/plug-config/emmet.vim
   source ~/.config/nvim/plug-config/closetags.vim
   source ~/.config/nvim/plug-config/fugitive.vim
   source ~/.config/nvim/plug-config/fzf.vim
