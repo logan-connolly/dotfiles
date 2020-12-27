@@ -35,7 +35,7 @@ require('telescope').setup{
     layout_defaults = {
       -- TODO add builtin options.
     },
-    file_sorter =  require'telescope.sorters'.get_fzy_sorter,
+    file_sorter =  require'telescope.sorters'.get_generic_fuzzy_sorter,
     file_ignore_patterns = {},
     generic_sorter =  require'telescope.sorters'.get_generic_fuzzy_sorter,
     shorten_path = true,

@@ -5,6 +5,7 @@
 "/___/_/ /_/_/\__(_)___/_/_/ /_/ /_/
 "
 if !exists('g:vscode')
+
   "General Settings
   source ~/.config/nvim/plug-config/vim-polyglot.vim
   source ~/.config/nvim/plugins.vim
@@ -29,6 +30,7 @@ if !exists('g:vscode')
 
   " Make sure these main mappings are not overwritten
   source ~/.config/nvim/keys/mappings.vim
+
 endif
 
 if exists('g:vscode')
