@@ -1,3 +1,5 @@
-map <F8> :Git diff<CR>
-map <F9> :Gcommit -a<CR>
-map <F10> :Gpush<CR>
+nmap <leader>gs :G<CR>
+nmap <leader>gf :diffget //2<CR>
+nmap <leader>gj :diffget //3<CR>
+map <leader>g[ :Gpull<CR>
+map <leader>g] :Gpush<CR>

@@ -1,16 +1,9 @@
-nnoremap <leader>g :Rg<cr>
-nnoremap <leader>G :Commands<cr>
-nnoremap <leader>f :Files<cr>
-nnoremap <leader>fh :Files ~<cr>
-nnoremap <leader>b :Buffers<cr>
-nnoremap <leader>l :BLines<cr>
-nnoremap <leader>T :Tags<cr>
+nnoremap <C-p> :Files ~<cr>
 nnoremap <leader>t :BTags<cr>
-nnoremap <leader>h :History<cr>
-nnoremap <leader>hs :History/<cr>
-nnoremap <leader>hc :History:<cr>
 
+let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 } }
 let $FZF_DEFAULT_COMMAND = 'fd --type f --hidden --follow --exclude .git --exclude node_modules'
+let $FZF_DEFAULT_OPTS='--reverse'
 let g:fzf_action = {
       \ 'ctrl-s': 'split',
       \ 'ctrl-v': 'vsplit'

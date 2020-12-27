@@ -6,33 +6,35 @@ if empty(glob('~/.config/nvim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.local/share/nvim/plugged')
-  Plug 'alvan/vim-closetag'
-  Plug 'AndrewRadev/tagalong.vim'
-  Plug 'autozimu/LanguageClient-neovim', {
-      \ 'branch': 'next',
-      \ 'do': 'bash install.sh',
-      \ }
+
+  "General
   Plug 'chrisbra/Colorizer'
-  Plug 'francoiscabrol/ranger.vim'
-  Plug 'honza/vim-snippets'
-  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-  Plug 'junegunn/fzf.vim'
   Plug 'justinmk/vim-sneak'
   Plug 'machakann/vim-highlightedyank'
-  Plug 'ncm2/ncm2'
-  Plug 'ncm2/ncm2-bufword'
-  Plug 'ncm2/ncm2-path'
+  Plug 'mattn/emmet-vim'
   Plug 'rbgrouleff/bclose.vim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'sheerun/vim-polyglot'
   Plug 'tpope/vim-commentary'
   Plug 'tpope/vim-fugitive'
-  Plug 'vim-airline/vim-airline'
+  Plug 'mhinz/vim-startify'
+
+  "Fuzzy Search
+  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+  Plug 'junegunn/fzf.vim'
+  Plug 'nvim-lua/popup.nvim'
+  Plug 'nvim-lua/plenary.nvim'
+  Plug 'nvim-telescope/telescope.nvim'
+
+  "Language Specific
+  Plug 'neovim/nvim-lspconfig'
+  Plug 'nvim-lua/completion-nvim'
+  Plug 'sheerun/vim-polyglot'
   Plug 'w0rp/ale'
 
-  " Themes
+  "Theming
+  Plug 'kyazdani42/nvim-web-devicons'
   Plug 'lifepillar/vim-gruvbox8'
-  Plug 'morhetz/gruvbox'
+  Plug 'vim-airline/vim-airline'
+  Plug 'vim-airline/vim-airline-themes'
 
 call plug#end()
 
