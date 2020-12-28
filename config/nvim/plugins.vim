@@ -8,9 +8,9 @@ endif
 call plug#begin('~/.local/share/nvim/plugged')
 
   "General
+  Plug 'AndrewRadev/tagalong.vim', {'for': 'html'}
   Plug 'chrisbra/Colorizer'
   Plug 'justinmk/vim-sneak'
-  Plug 'machakann/vim-highlightedyank'
   Plug 'mattn/emmet-vim'
   Plug 'rbgrouleff/bclose.vim'
   Plug 'tpope/vim-commentary'

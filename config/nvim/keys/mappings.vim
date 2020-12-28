@@ -33,3 +33,7 @@ nnoremap <Leader>rp :resize 100<CR>
 
 "Source init.vim
 nnoremap <leader>` :so ~/.config/nvim/init.vim<cr>
+
+"Omnifunc completion
+inoremap <C-Space> <C-x><C-o>
+inoremap <C-@> <C-Space>
