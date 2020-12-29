@@ -6,17 +6,11 @@ set -o errexit    # exit when command fails
 DOT_DIR=$HOME/github/dotfiles
 
 install_pacman() {
-  sudo pacman -S --needed - < pkglist.txt
+  yay -S --needed - < pkglist.txt
 }
 
 install_aur() {
-  yay -S --needed \
-    nerd-fonts-complete \
-    nerd-fonts-source-code-pro \
-    nordvpn-bin \
-    polybar \
-    siji-git \
-    xcwd-git
+  yay -S --needed - < pkglist-aur.txt
 }
 
 install_npm_packages() {
@@ -27,7 +21,8 @@ install_npm_packages() {
       neovim \
       typescript-language-server \
       eslint \
-      prettier
+      prettier \
+      vue-language-server
 }
 
 config_docker() {
