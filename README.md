@@ -4,16 +4,17 @@
 
 ![](static/screenshot.png)
 
-## Install
+## Installation
 
-### Prerequisite
+Fresh install of [arch](https://archlinux.org/) and [i3](https://i3wm.org/).
 
-Fresh install of Arch and i3. Average Linux User has a nice guide:
+Official Guide and Average Linux User article and video:
 
-- Video: https://www.youtube.com/watch?v=UiYS8xWFXLY
-- Article: https://averagelinuxuser.com/a-step-by-step-arch-linux-installation-guide/
+- Guide: https://wiki.archlinux.org/index.php/installation_guide
+- ALU Video: https://www.youtube.com/watch?v=UiYS8xWFXLY
+- ALU Article: https://averagelinuxuser.com/a-step-by-step-arch-linux-installation-guide/
 
-Arch Installation (EFI):
+Arch Installation from Arch ISO USB:
 
 ```shell
 # Format drive (3 partitions)
@@ -99,7 +100,7 @@ echo "exec i3" > ~/.xinitrc
 startx
 ```
 
-Clone repository and submodules:
+Clone [dotfiles](https://github.com/logan-connolly/dotfiles) repository and submodules:
 
 ```shell
 $ git clone https://github.com/logan-connolly/dotfiles.git
@@ -108,14 +109,14 @@ $ git submodule init
 $ git pull --recurse-submodules
 ```
 
-Install yay for downloading AUR:
+Install [yay](https://github.com/Jguer/yay) for downloading AUR packages:
 
 ```shell
 $ git clone https://aur.archlinux.org/yay.git
 $ cd yay && makepkg -si
 ```
 
-Install siji via https://github.com/stark/siji in order to get icons in polybar:
+Install [siji](https://github.com/stark/siji) order to get icons in polybar:
 
 ```shell
 $ mkdir ~/.local/share/fonts
@@ -126,20 +127,27 @@ $ ./install.sh
 
 ### Configuration
 
-Install packages and create symlinks for configurations using the `./install.sh` script
+Install packages and create symbolic links to config files:
 
+```shell
+$ ./install.sh
+```
 
 ## Gists
 
-### System service fails
+### System Debugging
 
-Check if any of the system services failed to start with `$ sudo systemctl --failed`
+Check if any of the system services failed to start:
 
-### Permissions
+```shell
+$ sudo systemctl --failed
+```
+
+### File Permissions
 
 Set restricted permissions for files and directories:
 
-```bash
+```shell
 # Find all directories in desired path and set 755 permission
 $ find <path> -type d -exec chmod 755 {} +
 
@@ -147,16 +155,16 @@ $ find <path> -type d -exec chmod 755 {} +
 $ find <path> -type f -exec chmod 644 {} +
 ```
 
-### Syncing
+### Syncing Data
 
 Sync two directories locally:
 
-```bash
+```shell
 # Backup home directory to mounted external drive
 rsync -avzh --delete /path/to/directory /mnt/backup/
 ```
 
-### Encrypt Drive
+### Drive Encryption
 
 Encrypt drive partition with luks via [Average Linux User](https://www.youtube.com/watch?v=ch-wzDyo-wU):
 
@@ -191,39 +199,19 @@ $ touch test.txt /mnt/encrypted
 sudo umount /dev/mapper/sdb1 && sudo cryptsetup luksClose sdb1
 ```
 
-### Packages
+### Package Management
 
 Remove unused packages and configurations (orphans) with yay: 
 
-```bash
+```shell
 $ yay --clean
 ```
-
 Export installed packages in system:
 
-```bash
+```shell
 $ yay -Qqen > pkglist.txt
-```
-
-Export installed AUR packages in system:
-
-```bash
 $ yay -Qqem > pkglist-aur.txt
 ```
-
-Setup system service to consistently get fastest package mirrors:
-
-```
-# /etc/xdg/reflector/reflector.conf
-
---save /etc/pacman.d/mirrorlist
---country Germany
---protocol https
---latest 5
---sort age
-```
-
-To enable, run: `$ sudo systemctl enable --now reflector.service`
 
 Add color to pacman by editing `/etc/pacman.conf`:
 
