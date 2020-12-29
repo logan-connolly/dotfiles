@@ -1,0 +1,9 @@
+castnow-git
+nerd-fonts-complete
+nerd-fonts-source-code-pro
+nordvpn-bin
+polybar
+teams
+visual-studio-code-bin
+xcwd-git
+yay
