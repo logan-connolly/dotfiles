@@ -128,13 +128,12 @@ $ ./install.sh
 
 Install packages and create symlinks for configurations using the `./install.sh` script
 
-## Post Install
+
+## Gists
 
 ### System service fails
 
 Check if any of the system services failed to start with `$ sudo systemctl --failed`
-
-## Gists
 
 ### Permissions
 
