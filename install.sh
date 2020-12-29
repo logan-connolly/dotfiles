@@ -22,7 +22,7 @@ install_npm_packages() {
       typescript-language-server \
       eslint \
       prettier \
-      vue-language-server
+      vls
 }
 
 config_docker() {

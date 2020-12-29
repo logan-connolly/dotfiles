@@ -1,4 +1,5 @@
 castnow-git
+neovim-nightly
 nerd-fonts-complete
 nerd-fonts-source-code-pro
 nordvpn-bin
