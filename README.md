@@ -13,6 +13,92 @@ Fresh install of Arch and i3. Average Linux User has a nice guide:
 - Video: https://www.youtube.com/watch?v=UiYS8xWFXLY
 - Article: https://averagelinuxuser.com/a-step-by-step-arch-linux-installation-guide/
 
+Arch Installation (EFI):
+
+```shell
+# Format drive (3 partitions)
+cfdisk /dev/sdX
+
+# Attach filesystems
+mkfs.fat -F32 /dev/sdX1
+mkfs.ext4 /dev/sdX2
+mkfs.ext4 /dev/sdX3
+
+# Mount partitions
+mount /dev/sdX2 /mnt
+mkdir /mnt/home
+mount /dev/sdX3 /mnt/home
+
+# Install system
+pacstrap -i /mnt base linux linux-firmware sudo vim zsh
+
+# Generate fstab file for attaching devices at startup
+genfstab -U -p /mnt >> /mnt/etc/fstab
+
+# Change to system as root
+arch-chroot /mnt /usr/bin/zsh
+
+# Configure Locale (en_US.UTF-8)
+vim /etc/locale.gen
+locale-gen
+echo "LANG=en_US.UTF-8" > /etc/locale.conf
+ln -sf /usr/share/zoneinfo/Europe/Berlin /etc/localtime
+hwclock --systohc --utc
+
+# Configure hostname
+echo archPC > /etc/hostname
+echo "127.0.1.1 localhost.localdomain archPC" >> /etc/hosts 
+
+# Install essential packages
+pacman -S base-devel networkmanager alacritty noto-fonts
+
+# Set root password
+passwd
+
+# Install grub to make system bootable
+pacman -S grub efibootmgr
+mkdir /boot/efi
+mount /dev/sdX1 /boot/efi
+grub-install --target=x86_64-efi --bootloader-id=GRUB --efi-directory=/boot/efi --removable
+grub-mkconfig -o /boot/grub/grub.cfg
+
+# Reboot into system
+exit
+umount -R /mnt
+reboot
+
+# Create swap file
+fallocate -l 4G /swapfile
+chmod 600 /swapfile
+mkswap /swapfile
+swapon /swapfile
+echo "/swapfile none swap sw 0 0" >> /etc/fstab
+
+# Add user
+useradd -m -g users -G wheel -s /usr/bin/zsh archie
+passwd archie
+
+# Enable user to be able to use sudo
+# Uncomment: %wheel ALL=(ALL) ALL
+EDITOR=vim visudo
+
+# Log out of root and login to created user 'archie'
+exit
+
+# Install X window system and audio
+pacman -S pulseaudio pulseaudio-alsa xorg xorg-xinit xorg-server
+
+# Install virtual box guest utils (optional)
+pacman -S virtualbox-guest-utils
+
+# Install desktop environment
+pacman -S i3
+echo "exec i3" > ~/.xinitrc
+
+# Test desktop environment
+startx
+```
+
 Clone repository and submodules:
 
 ```shell
@@ -48,17 +134,6 @@ Install packages and create symlinks for configurations using the `./install.sh`
 
 Check if any of the system services failed to start with `$ sudo systemctl --failed`
 
-### Disable GRUB delay
-
-Edit `/etc/default/grub` adding to `GRUB_FORCE_HIDDEN_MENU="true"` to file. Then create file `/etc/grub.d/31_hold_shift` with the contents from this [gist](https://gist.githubusercontent.com/anonymous/8eb2019db2e278ba99be/raw/257f15100fd46aeeb8e33a7629b209d0a14b9975/gistfile1.sh) in order to get grub menu by holding shift during startup.
-
-To activate it, you need to make the file executable and regenerate the grub configuration:
-
-```shell
-$ sudo chmod a+x /etc/grub.d/31_hold_shift
-$ sudo grub-mkconfig -o /boot/grub/grub.cfg
-```
-
 ## Gists
 
 ### Permissions
@@ -79,7 +154,7 @@ Sync two directories locally:
 
 ```bash
 # Backup home directory to mounted external drive
-rsync -avzh --delete $HOME /mnt/backup/
+rsync -avzh --delete /path/to/directory /mnt/backup/
 ```
 
 ### Encrypt Drive
@@ -129,6 +204,12 @@ Export installed packages in system:
 
 ```bash
 $ yay -Qqen > pkglist.txt
+```
+
+Export installed AUR packages in system:
+
+```bash
+$ yay -Qqem > pkglist-aur.txt
 ```
 
 Setup system service to consistently get fastest package mirrors:
