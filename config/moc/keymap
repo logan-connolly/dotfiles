@@ -65,7 +65,7 @@ quit_client           = q
 quit                  = Q
 
 # Menu and interface control keys:
-go                    = ENTER
+go                    += l
 menu_down             = j
 menu_up               = k
 menu_page_down        = ^d
@@ -129,7 +129,7 @@ go_to_fast_dir8       =
 go_to_fast_dir9       =
 go_to_fast_dir10      =
 go_to_playing_file    = #
-go_up                 =
+go_up                 = h
 
 # Playlist specific keys:
 add_file              = a
