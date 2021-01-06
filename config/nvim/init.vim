@@ -13,7 +13,7 @@ if !exists('g:vscode')
   source ~/.config/nvim/general/functions.vim
 
   "Themes
-  source ~/.config/nvim/themes/airline.vim
+  source ~/.config/nvim/themes/lualine.vim
   source ~/.config/nvim/themes/gruvbox.vim
   source ~/.config/nvim/themes/syntax.vim
 

@@ -33,10 +33,10 @@ call plug#begin('~/.local/share/nvim/plugged')
   "Theming
   Plug 'kyazdani42/nvim-web-devicons'
   Plug 'lifepillar/vim-gruvbox8'
-  Plug 'vim-airline/vim-airline'
-  Plug 'vim-airline/vim-airline-themes'
+  Plug 'hoob3rt/lualine.nvim'
 
 call plug#end()
+
 
 " automatically install missing plugins on startup
 autocmd VimEnter *
