@@ -59,6 +59,7 @@ link_configs() {
 enable_services() {
   sudo systemctl enable --now bluetooth.service
   sudo systemctl enable --now nordvpnd.service
+  sudo systemctl enable --now reflector.service
   sudo ufw enable
 }
 
