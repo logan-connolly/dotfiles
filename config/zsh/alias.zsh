@@ -25,3 +25,6 @@ alias nmc="nmcli --ask device wifi connect"
 
 # renaming files
 alias rename="perl-rename"
+
+# generate virtual environment
+alias venv="python -m venv venv && source venv/bin/activate && pip install -U pip setuptools wheel &> /dev/null"
