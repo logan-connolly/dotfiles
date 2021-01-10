@@ -18,10 +18,11 @@ install_npm_packages() {
     && npm config set prefix '~/.npm-global' \
     && export PATH=~/.npm-global/bin:$PATH \
     && npm install -g \
-      neovim \
-      typescript-language-server \
       eslint \
+      live-server \
+      neovim \
       prettier \
+      typescript-language-server \
       vls
 }
 
@@ -54,6 +55,9 @@ link_configs() {
   # symlink misc directories and files
   ln -sf $DOT_DIR/bin ~/
   ln -sf $DOT_DIR/.themes ~/.themes
+  ln -sf $DOT_DIR/config/moc/keymap ~/.moc
+  ln -sf $DOT_DIR/config/moc/config ~/.moc
+  ln -sf $DOT_DIR/config/moc/themes ~/.moc
 }
 
 enable_services() {

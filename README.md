@@ -51,7 +51,10 @@ echo archPC > /etc/hostname
 echo "127.0.1.1 localhost.localdomain archPC" >> /etc/hosts 
 
 # Install essential packages
-pacman -S base-devel networkmanager alacritty noto-fonts
+pacman -S base-devel networkmanager alacritty noto-fonts git openssh
+
+# Enable network manager service
+systemctl enable NetworkManger.service
 
 # Set root password
 passwd

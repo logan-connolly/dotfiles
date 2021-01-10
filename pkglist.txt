@@ -47,6 +47,7 @@ lxappearance
 lxinput
 m4
 make
+moc
 mpv
 mypy
 ncdu
