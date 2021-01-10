@@ -222,3 +222,12 @@ Add color to pacman by editing `/etc/pacman.conf`:
 # /etc/pacman.conf
 COLOR
 ```
+
+Build and install `neovim` from source:
+
+```shell
+git clone https://github.com/neovim/neovim
+cd neovim
+make CMAKE_BUILD_TYPE=RelWithDebInfo
+sudo make install
+```
