@@ -9,13 +9,8 @@ if !exists('g:vscode')
   "General Settings
   source ~/.config/nvim/plug-config/vim-polyglot.vim
   source ~/.config/nvim/plugins.vim
-  source ~/.config/nvim/general/settings.vim
-  source ~/.config/nvim/general/functions.vim
-
-  "Themes
-  source ~/.config/nvim/themes/lualine.vim
-  source ~/.config/nvim/themes/gruvbox.vim
-  source ~/.config/nvim/themes/syntax.vim
+  source ~/.config/nvim/settings.vim
+  source ~/.config/nvim/theme.vim
 
   "Plugin Configuration
   source ~/.config/nvim/plug-config/ale.vim
@@ -29,8 +24,9 @@ if !exists('g:vscode')
   source ~/.config/nvim/plug-config/vim-commentary.vim
   source ~/.config/nvim/plug-config/vim-sneak.vim
 
-  " Make sure these main mappings are not overwritten
-  source ~/.config/nvim/keys/mappings.vim
+  " Key mappings and auto commands should be sourced last
+  source ~/.config/nvim/key-mappings.vim
+  source ~/.config/nvim/commands.vim
 
 endif
 
