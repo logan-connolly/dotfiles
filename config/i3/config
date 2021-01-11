@@ -93,6 +93,7 @@ for_window [class="Signal"] floating enable, resize set 900px 400px, move positi
 for_window [class="Easytag"] floating enable, resize set 1200px 600px, move position center
 for_window [class="Pcmanfm"] floating enable, resize set 700px 400px, move position center
 for_window [class="Blueman-manager"] floating enable, resize set 700px 400px, move position center
+for_window [class="Transmission"] floating enable, resize set 900px 400px, move position center
 
 # Reload, restart, or exit i3
 bindsym $mod+Shift+c reload

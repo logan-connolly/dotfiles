@@ -15,7 +15,6 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'rbgrouleff/bclose.vim'
   Plug 'tpope/vim-commentary'
   Plug 'tpope/vim-fugitive'
-  Plug 'mhinz/vim-startify'
 
   "Fuzzy Search
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
