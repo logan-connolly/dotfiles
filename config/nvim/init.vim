@@ -7,7 +7,6 @@
 if !exists('g:vscode')
 
   "General Settings
-  source ~/.config/nvim/plug-config/vim-polyglot.vim
   source ~/.config/nvim/plugins.vim
   source ~/.config/nvim/settings.vim
   source ~/.config/nvim/theme.vim
@@ -22,6 +21,7 @@ if !exists('g:vscode')
   source ~/.config/nvim/plug-config/tagalong.vim
   source ~/.config/nvim/plug-config/telescope.vim
   source ~/.config/nvim/plug-config/vim-commentary.vim
+  source ~/.config/nvim/plug-config/vim-polyglot.vim
   source ~/.config/nvim/plug-config/vim-sneak.vim
 
   " Key mappings and auto commands should be sourced last
