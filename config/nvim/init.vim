@@ -4,14 +4,13 @@
 " _/ // / / / / /__| |/ / / / / / / /
 "/___/_/ /_/_/\__(_)___/_/_/ /_/ /_/
 "
-if !exists('g:vscode')
 
+if !exists('g:vscode')
   "General Settings
   source ~/.config/nvim/plugins.vim
   source ~/.config/nvim/settings.vim
   source ~/.config/nvim/theme.vim
-
-  "Plugin Configuration
+  "Plugin Configurations
   source ~/.config/nvim/plug-config/ale.vim
   source ~/.config/nvim/plug-config/emmet.vim
   source ~/.config/nvim/plug-config/closetags.vim
@@ -23,11 +22,9 @@ if !exists('g:vscode')
   source ~/.config/nvim/plug-config/vim-commentary.vim
   source ~/.config/nvim/plug-config/vim-polyglot.vim
   source ~/.config/nvim/plug-config/vim-sneak.vim
-
-  " Key mappings and auto commands should be sourced last
+  "Key mappings and auto commands
   source ~/.config/nvim/key-mappings.vim
   source ~/.config/nvim/commands.vim
-
 endif
 
 if exists('g:vscode')
