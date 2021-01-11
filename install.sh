@@ -6,11 +6,11 @@ set -o errexit    # exit when command fails
 DOT_DIR=$HOME/github/dotfiles
 
 install_pacman() {
-  yay -S --needed - < pkglist.txt
+  yay -S --needed - < pacman/pkglist.txt
 }
 
 install_aur() {
-  yay -S --needed - < pkglist-aur.txt
+  yay -S --needed - < pacman/pkglist-aur.txt
 }
 
 install_npm_packages() {
@@ -34,13 +34,13 @@ config_docker() {
 
 link_configs() {
   # symlink of entire config files
-  ln -sf $DOT_DIR/.gitconfig ~/.gitconfig
-  ln -sf $DOT_DIR/.inputrc ~/.inputrc
-  ln -sf $DOT_DIR/.pylintrc ~/.pylintrc
-  ln -sf $DOT_DIR/.xinitrc ~/.xinitrc
-  ln -sf $DOT_DIR/.Xresources ~/.Xresources
-  ln -sf $DOT_DIR/.zshrc ~/.zshrc
-  ln -sf $DOT_DIR/.zprofile ~/.zprofile
+  ln -sf $DOT_DIR/config/.gitconfig ~/.gitconfig
+  ln -sf $DOT_DIR/config/.inputrc ~/.inputrc
+  ln -sf $DOT_DIR/config/.pylintrc ~/.pylintrc
+  ln -sf $DOT_DIR/config/.xinitrc ~/.xinitrc
+  ln -sf $DOT_DIR/config/.Xresources ~/.Xresources
+  ln -sf $DOT_DIR/config/.zshrc ~/.zshrc
+  ln -sf $DOT_DIR/config/.zprofile ~/.zprofile
 
   # symlink of entire config directories
   ln -sf $DOT_DIR/config/feh ~/.config
@@ -54,7 +54,7 @@ link_configs() {
 
   # symlink misc directories and files
   ln -sf $DOT_DIR/bin ~/
-  ln -sf $DOT_DIR/.themes ~/.themes
+  ln -sf $DOT_DIR/themes ~/.themes
   ln -sf $DOT_DIR/config/moc/keymap ~/.moc
   ln -sf $DOT_DIR/config/moc/config ~/.moc
   ln -sf $DOT_DIR/config/moc/themes ~/.moc
