@@ -19,7 +19,7 @@ let g:ale_fixers = {
       \   'javascript': ['prettier'],
       \   'json': ['prettier'],
       \   'markdown': ['textlint'],
-      \   'python': ['isort', 'black'],
+      \   'python': ['black'],
       \   'sh': ['shfmt'],
       \   'typescript': ['prettier'],
       \   'vue': ['prettier'],
