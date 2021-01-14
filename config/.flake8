@@ -1,0 +1,4 @@
+[flake8]
+filename = *.py
+exclude = .git
+max-line-length = 89

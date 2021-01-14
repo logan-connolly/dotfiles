@@ -34,6 +34,7 @@ config_docker() {
 
 link_configs() {
   # symlink of entire config files
+  ln -sf $DOT_DIR/config/.flake8 ~/.flake8
   ln -sf $DOT_DIR/config/.gitconfig ~/.gitconfig
   ln -sf $DOT_DIR/config/.inputrc ~/.inputrc
   ln -sf $DOT_DIR/config/.pylintrc ~/.pylintrc
