@@ -1,5 +1,5 @@
 nnoremap <leader>ft :lua require'telescope.builtin'.lsp_document_symbols()<cr>
-nnoremap <leader>ff :lua require('telescope.builtin').find_files()<cr>
+nnoremap <leader>ff :lua require('telescope.builtin').find_files({hidden = true})<cr>
 nnoremap <leader>fg :lua require('telescope.builtin').live_grep()<cr>
 nnoremap <leader>fb :lua require('telescope.builtin').buffers()<cr>
 nnoremap <leader>fh :lua require('telescope.builtin').help_tags()<cr>
@@ -36,7 +36,7 @@ require('telescope').setup{
       -- TODO add builtin options.
     },
     file_sorter =  require'telescope.sorters'.get_generic_fuzzy_sorter,
-    file_ignore_patterns = {},
+    file_ignore_patterns = { ".git/*", "venv/*", "node_modules/*", "__pycache__/*" },
     generic_sorter =  require'telescope.sorters'.get_generic_fuzzy_sorter,
     shorten_path = true,
     winblend = 0,
