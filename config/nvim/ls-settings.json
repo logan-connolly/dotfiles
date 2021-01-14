@@ -1,4 +1,0 @@
-{
-  "pyls.plugins.pycodestyle.enabled": false,
-  "pyls.plugins.pyflakes.enabled": false
-}
