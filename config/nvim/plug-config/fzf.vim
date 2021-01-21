@@ -1,14 +1,18 @@
-nnoremap <C-p> :Files ~<cr>
-nnoremap <leader>t :BTags<cr>
+nnoremap <C-p> :Files<cr>
+nnoremap <leader>ff :Files<cr>
+nnoremap <leader>fh :History<cr>
+nnoremap <leader>fg :Rg<cr>
+nnoremap <leader>fb :Buffers<cr>
+nnoremap <leader>ft :Tags<cr>
 
-let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 } }
+let g:fzf_layout = { 'window': { 'width': 1.0, 'height': 1.0 } }
 let $FZF_DEFAULT_COMMAND = 'fd --type f --hidden --follow --exclude .git --exclude node_modules'
 let $FZF_DEFAULT_OPTS='--reverse'
 let g:fzf_action = {
       \ 'ctrl-s': 'split',
       \ 'ctrl-v': 'vsplit'
       \ }
-let g:fzf_preview_window = 'right:60%'
+let g:fzf_preview_window = ['right:70%', 'ctrl-/']
 
 augroup fzf
   autocmd!

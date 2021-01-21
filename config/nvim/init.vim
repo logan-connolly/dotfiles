@@ -18,7 +18,6 @@ if !exists('g:vscode')
   source ~/.config/nvim/plug-config/fzf.vim
   source ~/.config/nvim/plug-config/lsp-config.vim
   source ~/.config/nvim/plug-config/tagalong.vim
-  source ~/.config/nvim/plug-config/telescope.vim
   source ~/.config/nvim/plug-config/vim-commentary.vim
   source ~/.config/nvim/plug-config/vim-polyglot.vim
   source ~/.config/nvim/plug-config/vim-sneak.vim

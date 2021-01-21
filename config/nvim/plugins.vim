@@ -10,18 +10,13 @@ call plug#begin('~/.local/share/nvim/plugged')
   "General
   Plug 'AndrewRadev/tagalong.vim', {'for': 'html'}
   Plug 'chrisbra/Colorizer'
+  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+  Plug 'junegunn/fzf.vim'
   Plug 'justinmk/vim-sneak'
   Plug 'mattn/emmet-vim'
   Plug 'rbgrouleff/bclose.vim'
   Plug 'tpope/vim-commentary'
   Plug 'tpope/vim-fugitive'
-
-  "Fuzzy Search
-  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-  Plug 'junegunn/fzf.vim'
-  Plug 'nvim-lua/popup.nvim'
-  Plug 'nvim-lua/plenary.nvim'
-  Plug 'nvim-telescope/telescope.nvim'
 
   "Language Specific
   Plug 'neovim/nvim-lspconfig'
