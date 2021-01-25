@@ -44,14 +44,15 @@ link_configs() {
   ln -sf $DOT_DIR/config/.zprofile ~/.zprofile
 
   # symlink of entire config directories
+  ln -sf $DOT_DIR/config/alacritty.yml ~/.config
   ln -sf $DOT_DIR/config/feh ~/.config
   ln -sf $DOT_DIR/config/i3 ~/.config
   ln -sf $DOT_DIR/config/nvim ~/.config
   ln -sf $DOT_DIR/config/ranger ~/.config
   ln -sf $DOT_DIR/config/rofi ~/.config
+  ln -sf $DOT_DIR/config/picom ~/.config
   ln -sf $DOT_DIR/config/polybar ~/.config
   ln -sf $DOT_DIR/config/zsh ~/.config
-  ln -sf $DOT_DIR/config/alacritty.yml ~/.config/alacritty.yml
 
   # symlink misc directories and files
   ln -sf $DOT_DIR/bin ~/
