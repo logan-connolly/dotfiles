@@ -13,3 +13,6 @@ source "${HOME}/.config/zsh/environment.zsh"
 source "${HOME}/.config/zsh/history.zsh"
 source "${HOME}/.config/zsh/alias.zsh"
 source "${HOME}/.config/zsh/zinit.zsh"
+
+export PATH="$HOME/.poetry/bin:$PATH"
+export LIBGL_DRI3_DISABLE=1

@@ -1,7 +1,6 @@
 [user]
   name = Logan Connolly
-  email = logan-victor.connolly@capgemini.com
-  username = loconnol
+  email = logan.connolly@protonmail.com
 [core]
   editor = nvim
 [mergetool "fugitive"]
