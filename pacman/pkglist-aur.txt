@@ -1,9 +1,10 @@
 castnow-git
-neovim-nightly
+i3-swallow
 nerd-fonts-complete
 nerd-fonts-source-code-pro
 nordvpn-bin
 polybar
+postman-bin
 teams
 visual-studio-code-bin
 xcwd-git

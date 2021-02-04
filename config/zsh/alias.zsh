@@ -28,3 +28,7 @@ alias rename="perl-rename"
 
 # generate virtual environment
 alias venv="python -m venv venv && source venv/bin/activate && pip install -U pip setuptools wheel &> /dev/null"
+
+# swallow terminal apps
+alias mpv="i3-swallow mpv"
+alias feh="i3-swallow feh"
