@@ -7,7 +7,7 @@ endif
 
 call plug#begin('~/.local/share/nvim/plugged')
 
-  "General
+  " General
   Plug 'AndrewRadev/tagalong.vim', {'for': 'html'}
   Plug 'chrisbra/Colorizer'
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -18,13 +18,17 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'tpope/vim-commentary'
   Plug 'tpope/vim-fugitive'
 
-  "Language Specific
+  " Debugger Plugins
+  Plug 'puremourning/vimspector'
+  Plug 'szw/vim-maximizer'
+
+  " Language Specific
   Plug 'neovim/nvim-lspconfig'
   Plug 'nvim-lua/completion-nvim'
   Plug 'sheerun/vim-polyglot'
   Plug 'w0rp/ale'
 
-  "Theming
+  " Theming
   Plug 'kyazdani42/nvim-web-devicons'
   Plug 'lifepillar/vim-gruvbox8'
   Plug 'hoob3rt/lualine.nvim'

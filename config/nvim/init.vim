@@ -6,11 +6,13 @@
 "
 
 if !exists('g:vscode')
-  "General Settings
+
+  " General Settings
   source ~/.config/nvim/plugins.vim
   source ~/.config/nvim/settings.vim
   source ~/.config/nvim/theme.vim
-  "Plugin Configurations
+
+  " Plugin Configurations
   source ~/.config/nvim/plug-config/ale.vim
   source ~/.config/nvim/plug-config/emmet.vim
   source ~/.config/nvim/plug-config/closetags.vim
@@ -21,9 +23,12 @@ if !exists('g:vscode')
   source ~/.config/nvim/plug-config/vim-commentary.vim
   source ~/.config/nvim/plug-config/vim-polyglot.vim
   source ~/.config/nvim/plug-config/vim-sneak.vim
-  "Key mappings and auto commands
+  source ~/.config/nvim/plug-config/vimspector.vim
+
+  " Key mappings and auto commands
   source ~/.config/nvim/key-mappings.vim
   source ~/.config/nvim/commands.vim
+
 endif
 
 if exists('g:vscode')
