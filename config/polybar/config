@@ -59,7 +59,7 @@ font-2 = "xos4 Terminus:size=8.5;2"
 
 modules-left = i3
 modules-center = date
-modules-right = mem_i mem audio_i audio battery_i battery network vpn bluetooth
+modules-right = mem_i mem audio_i audio battery_i battery network
 
 tray-background = ${self.background}
 tray-transparent = true
@@ -268,16 +268,6 @@ animation-charging-framerate = 750
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
-[module/bluetooth]
-type = custom/script
-exec = echo ""
-click-left = exec blueman-manager
-format-padding = 1
-format-foreground = ${color.background}
-format-background = ${color.foreground}
-
-;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
-
 [module/network]
 type = internal/network
 interface = ${vars.interface}
@@ -297,10 +287,3 @@ format-disconnected-padding = 1
 
 label-disconnected = 
 label-connected = 
-
-;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
-
-[module/vpn]
-type = custom/script
-exec = ~/.config/polybar/scripts/nordvpn-status.sh
-interval = 5
