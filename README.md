@@ -48,7 +48,7 @@ hwclock --systohc --utc
 
 # Configure hostname
 echo archPC > /etc/hostname
-echo "127.0.1.1 localhost.localdomain archPC" >> /etc/hosts 
+echo "127.0.1.1 localhost.localdomain archPC" >> /etc/hosts
 
 # Install essential packages
 pacman -S base-devel networkmanager alacritty noto-fonts git openssh
@@ -167,6 +167,12 @@ Sync two directories locally:
 rsync -avzh --delete /path/to/directory /mnt/backup/
 ```
 
+### Search and Replace
+
+```shell
+find . -type f -exec sed -i 's/OLD/NEW/g' {} +
+```
+
 ### Drive Encryption
 
 Encrypt drive partition with luks via [Average Linux User](https://www.youtube.com/watch?v=ch-wzDyo-wU):
@@ -204,7 +210,7 @@ sudo umount /dev/mapper/sdb1 && sudo cryptsetup luksClose sdb1
 
 ### Package Management
 
-Remove unused packages and configurations (orphans) with yay: 
+Remove unused packages and configurations (orphans) with yay:
 
 ```shell
 $ yay --clean
