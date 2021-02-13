@@ -3,17 +3,20 @@ font:
   # The normal (roman) font face to use.
   # Style can be specified to pick a specific face.
   normal:
-    family: "SauceCodePro Nerd Font Mono"
-    # family: "Fira Code"
+    # family: "SauceCodePro Nerd Font Mono"
+    family: "mononoki Nerd Font Mono"
     style: Regular
   bold:
-    family: "SauceCodePro Nerd Font Mono"
+    # family: "SauceCodePro Nerd Font Mono"
+    family: "mononoki Nerd Font Mono"
     style: Bold
   italic:
-    family: "SauceCodePro Nerd Font Mono"
+    # family: "SauceCodePro Nerd Font Mono"
+    family: "mononoki Nerd Font Mono"
     style: Italic
   bold_italic:
-    family: "SauceCodePro Nerd Font Mono"
+    # family: "SauceCodePro Nerd Font Mono"
+    family: "mononoki Nerd Font Mono"
     style: Bold Italic
   size: 12.5
 
