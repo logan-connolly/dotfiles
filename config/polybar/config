@@ -24,8 +24,9 @@ pseudo-transparency = true
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
 [color]
-background = #282828
-background-alpha = #da282828
+default = #282828
+background = #00282828
+background-alpha = #00282828
 foreground = #928374
 grey = #32302f
 red = #cc241d
@@ -82,7 +83,7 @@ label-mode-background = ${color.background-alpha}
 
 label-focused = %index%
 label-focused-background = ${color.foreground}
-label-focused-foreground = ${color.background}
+label-focused-foreground = ${color.default}
 label-focused-padding = 4
 
 label-unfocused = %index%
@@ -132,7 +133,7 @@ type = internal/cpu
 interval = 0.5
 format = 
 format-background = ${color.foreground}
-format-foreground = ${color.background}
+format-foreground = ${color.default}
 format-padding = 1
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
@@ -153,7 +154,7 @@ type = internal/memory
 interval = 3
 format = 
 format-background = ${color.foreground}
-format-foreground = ${color.background}
+format-foreground = ${color.default}
 format-padding = 1
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
@@ -178,15 +179,15 @@ format-muted-padding = 1
 type = internal/alsa
 format-volume = <ramp-volume>
 format-volume-background = ${color.foreground}
-format-volume-foreground = ${color.background}
+format-volume-foreground = ${color.default}
 format-volume-padding = 1
 
 format-muted-background = ${color.foreground}
-format-muted-foreground = ${color.background}
+format-muted-foreground = ${color.default}
 format-muted-padding = 1
 
 label-muted = ""
-label-muted-foreground = ${color.background}
+label-muted-foreground = ${color.default}
 
 ramp-volume-0 = 
 ramp-volume-1 = 
@@ -236,12 +237,12 @@ time-format = %H:%M
 
 format-charging = <animation-charging>
 format-charging-background = ${color.foreground}
-format-charging-foreground = ${color.background}
+format-charging-foreground = ${color.default}
 format-charging-padding = 1
 
 format-discharging = <ramp-capacity>
 format-discharging-background = ${color.foreground}
-format-discharging-foreground = ${color.background}
+format-discharging-foreground = ${color.default}
 format-discharging-padding = 1
 
 label-charging = %percentage%%
@@ -249,7 +250,7 @@ label-discharging = %percentage%%
 
 label-full = 
 label-full-background = ${color.foreground}
-label-full-foreground = ${color.background}
+label-full-foreground = ${color.default}
 label-full-padding = 1
 
 ramp-capacity-0 = 
@@ -277,12 +278,12 @@ unknown-as-up = true
 
 format-connected = <label-connected>
 format-connected-background = ${color.foreground}
-format-connected-foreground = ${color.background}
+format-connected-foreground = ${color.default}
 format-connected-padding = 1
 
 format-disconnected = <label-disconnected>
 format-disconnected-background = ${color.red}
-format-disconnected-foreground = ${color.background}
+format-disconnected-foreground = ${color.default}
 format-disconnected-padding = 1
 
 label-disconnected = 
