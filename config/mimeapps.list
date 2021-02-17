@@ -1,0 +1,14 @@
+[Default Applications]
+application/xml=firefox.desktop
+application/json=firefox.desktop
+application/pdf=firefox.desktop
+application/xhtml+xml=firefox.desktop
+application/x-xpinstall=firefox.desktop
+inode/directory=pcmanfm.desktop
+text/html=firefox.desktop
+text/xml=firefox.desktop
+x-scheme-handler/http=firefox.desktop;
+x-scheme-handler/https=firefox.desktop;
+x-scheme-handler/lbry=lbry.desktop
+x-scheme-handler/msteams=teams.desktop
+x-scheme-handler/postman=Postman.desktop

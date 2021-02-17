@@ -45,6 +45,7 @@ link_configs() {
 
   # symlink of entire config directories
   ln -sf $DOT_DIR/config/alacritty.yml ~/.config
+  ln -sf $DOT_DIR/config/.mimeapps.list ~/.config
   ln -sf $DOT_DIR/config/feh ~/.config
   ln -sf $DOT_DIR/config/i3 ~/.config
   ln -sf $DOT_DIR/config/nvim ~/.config
