@@ -61,6 +61,7 @@ noto-fonts-emoji
 noto-fonts-extra
 npm
 openssh
+qutebrowser
 patch
 pavucontrol
 pcmanfm
@@ -84,6 +85,7 @@ rxvt-unicode
 scrot
 signal-desktop
 sof-firmware
+sshfs
 stylelint
 sudo
 texinfo
