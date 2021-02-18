@@ -2,15 +2,12 @@
 
 set -o nounset    # error when referencing undefined variable
 set -o errexit    # exit when command fails
-
 DOT_DIR=$HOME/github/dotfiles
 
-install_pacman() {
+install_pacman_packages() {
+  yay -S base-devel
   yay -S --needed - < pacman/pkglist.txt
-}
-
-install_aur() {
-  yay -S --needed - < pacman/pkglist-aur.txt
+  yay -S --needed - < pacman/aur.txt
 }
 
 install_npm_packages() {
@@ -24,12 +21,6 @@ install_npm_packages() {
       prettier \
       typescript-language-server \
       vls
-}
-
-config_docker() {
-  sudo usermod -aG docker $USER \
-    && sudo systemctl enable docker.service \
-    && sudo systemctl start docker.service
 }
 
 link_configs() {
@@ -49,6 +40,7 @@ link_configs() {
   ln -sf $DOT_DIR/config/feh ~/.config
   ln -sf $DOT_DIR/config/i3 ~/.config
   ln -sf $DOT_DIR/config/nvim ~/.config
+  ln -sf $DOT_DIR/config/qutebrowser ~/.config
   ln -sf $DOT_DIR/config/ranger ~/.config
   ln -sf $DOT_DIR/config/rofi ~/.config
   ln -sf $DOT_DIR/config/picom ~/.config
@@ -58,26 +50,20 @@ link_configs() {
   # symlink misc directories and files
   ln -sf $DOT_DIR/bin ~/
   ln -sf $DOT_DIR/themes ~/.themes
-  ln -sf $DOT_DIR/config/moc/keymap ~/.moc
-  ln -sf $DOT_DIR/config/moc/config ~/.moc
-  ln -sf $DOT_DIR/config/moc/themes ~/.moc
 }
 
 enable_services() {
+  sudo usermod -aG docker $USER
+  sudo systemctl enable --now docker.service
   sudo systemctl enable --now bluetooth.service
-  sudo systemctl enable --now nordvpnd.service
   sudo systemctl enable --now reflector.service
   sudo ufw enable
 }
 
 echo "Installing pacman packages ..."
-install_pacman
-echo "Installing AUR packages ..."
-install_aur
+install_pacman_packages
 echo "Installing npm neovim globally ..."
 install_npm_packages
-echo "Installing docker ..."
-config_docker
 echo "Link configurations ..."
 link_configs
 echo "Enable services"

@@ -1,0 +1,4 @@
+i3-swallow
+nerd-fonts-mononoki
+polybar
+xcwd-git
