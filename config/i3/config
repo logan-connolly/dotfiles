@@ -143,9 +143,8 @@ bindsym $mod+f fullscreen toggle
 
 # Quickstart Applications
 bindsym $mod+F2 exec qutebrowser
-bindsym $mod+F3 exec $term --class floating-term -e ranger
-bindsym $mod+F4 exec $term --class floating-term -e mocp
-bindsym $mod+F5 exec pcmanfm
+bindsym $mod+F3 exec pcmanfm
+bindsym $mod+F4 exec $term --class floating-term -e cmus
 bindsym $mod+Ctrl+m exec pavucontrol
 bindsym $mod+Ctrl+n exec blueman-manager
 
