@@ -3,7 +3,7 @@ nnoremap <leader>ff :Files<cr>
 nnoremap <leader>fh :History<cr>
 nnoremap <leader>fg :Rg<cr>
 nnoremap <leader>fb :Buffers<cr>
-nnoremap <leader>ft :Tags<cr>
+nnoremap <leader>ft :BTags<cr>
 
 let g:fzf_layout = { 'window': { 'width': 1.0, 'height': 1.0 } }
 let $FZF_DEFAULT_COMMAND = 'fd --type f --hidden --follow --exclude .git --exclude node_modules'
