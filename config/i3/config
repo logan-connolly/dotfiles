@@ -142,7 +142,7 @@ bindsym $mod+d exec --no-startup-id rofi -show drun
 bindsym $mod+f fullscreen toggle
 
 # Quickstart Applications
-bindsym $mod+F2 exec qutebrowser
+bindsym $mod+F2 exec firefox
 bindsym $mod+F3 exec pcmanfm
 bindsym $mod+F4 exec $term --class floating-term -e cmus
 bindsym $mod+Ctrl+m exec pavucontrol
