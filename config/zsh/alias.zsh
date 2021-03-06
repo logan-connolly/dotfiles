@@ -31,5 +31,4 @@ alias venv="python -m venv venv && source venv/bin/activate && pip install -U pi
 
 # swallow terminal apps
 alias mpv="i3-swallow mpv"
-alias feh="i3-swallow feh"
 alias zathura="i3-swallow zathura"
