@@ -1,0 +1,1 @@
+require("nvimlua.telescope")

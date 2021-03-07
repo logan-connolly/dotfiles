@@ -15,14 +15,10 @@ if !exists('g:vscode')
   " Plugin Configurations
   source ~/.config/nvim/plug-config/ale.vim
   source ~/.config/nvim/plug-config/emmet.vim
-  source ~/.config/nvim/plug-config/closetags.vim
   source ~/.config/nvim/plug-config/fugitive.vim
-  source ~/.config/nvim/plug-config/fzf.vim
   source ~/.config/nvim/plug-config/lsp-config.vim
-  source ~/.config/nvim/plug-config/tagalong.vim
-  source ~/.config/nvim/plug-config/vim-commentary.vim
-  source ~/.config/nvim/plug-config/vim-polyglot.vim
-  source ~/.config/nvim/plug-config/vim-sneak.vim
+  source ~/.config/nvim/plug-config/telescope.vim
+  source ~/.config/nvim/plug-config/sneak.vim
   source ~/.config/nvim/plug-config/vimspector.vim
 
   " Key mappings and auto commands
