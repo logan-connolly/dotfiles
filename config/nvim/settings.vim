@@ -22,6 +22,8 @@ set completeopt=menuone,noinsert,noselect
 set fileformat=unix
 set mouse=a
 set scrolloff=8
+set sidescroll=1
+set sidescrolloff=8
 set shortmess+=c
 set tabstop=2 softtabstop=2 shiftwidth=2
 set updatetime=50
