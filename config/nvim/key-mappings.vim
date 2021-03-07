@@ -32,15 +32,9 @@ tnoremap <C-v><Esc> <Esc>
 inoremap <expr> <c-j> ("\<C-n>")
 inoremap <expr> <c-k> ("\<C-p>")
 
-"File tree
-nnoremap <C-n> :wincmd v<bar> :Ex <bar> :vertical resize 30<CR>
-
-"Resize buffer
-nnoremap <Leader>rp :resize 100<CR>
-
-"Source init.vim
-nnoremap <leader>` :so ~/.config/nvim/init.vim<cr>
-
 "Omnifunc completion
 inoremap <C-Space> <C-x><C-o>
 inoremap <C-@> <C-Space>
+
+"Source init.vim
+nnoremap <leader>` :so ~/.config/nvim/init.vim<cr>

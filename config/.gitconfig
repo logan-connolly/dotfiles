@@ -9,3 +9,5 @@
   tool = fugitive
 [pull]
   rebase = false
+[init]
+  defaultBranch = main

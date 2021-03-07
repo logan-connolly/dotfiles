@@ -31,3 +31,4 @@ set updatetime=50
 let g:netrw_localrmdir='rm -r'
 let g:netrw_banner = 0
 let g:python3_host_prog = "/usr/bin/python"
+let g:python_highlight_all=1
