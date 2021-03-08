@@ -36,5 +36,7 @@ inoremap <expr> <c-k> ("\<C-p>")
 inoremap <C-Space> <C-x><C-o>
 inoremap <C-@> <C-Space>
 
+nmap <C-n> :TagbarToggle<CR>
+
 "Source init.vim
 nnoremap <leader>` :so ~/.config/nvim/init.vim<cr>

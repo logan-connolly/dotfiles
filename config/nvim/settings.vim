@@ -21,6 +21,7 @@ set colorcolumn=90
 set completeopt=menuone,noinsert,noselect
 set fileformat=unix
 set mouse=a
+set re=0
 set scrolloff=8
 set sidescroll=1
 set sidescrolloff=8

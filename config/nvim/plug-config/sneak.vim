@@ -14,4 +14,4 @@ let g:sneak#use_ic_scs = 1
 
 
 " Cool prompt
-let g:sneak#prompt = '🔎 '
+let g:sneak#prompt = 'sneak> '

@@ -8,16 +8,20 @@ endif
 call plug#begin('~/.local/share/nvim/plugged')
 
   " General
-  Plug 'AndrewRadev/tagalong.vim', {'for': 'html'}
   Plug 'chrisbra/Colorizer'
-  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-  Plug 'junegunn/fzf.vim'
   Plug 'justinmk/vim-sneak'
   Plug 'mattn/emmet-vim'
   Plug 'rbgrouleff/bclose.vim'
+  Plug 'preservim/tagbar'
   Plug 'tpope/vim-commentary'
   Plug 'tpope/vim-fugitive'
   Plug 'tpope/vim-vinegar'
+
+  " Fuzzy finders
+  Plug 'nvim-lua/popup.nvim'
+  Plug 'nvim-lua/plenary.nvim'
+  Plug 'nvim-telescope/telescope.nvim'
+  Plug 'nvim-telescope/telescope-fzy-native.nvim'
 
   " Debugger Plugins
   Plug 'puremourning/vimspector'
