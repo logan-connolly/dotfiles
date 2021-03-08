@@ -1,11 +1,8 @@
 local actions = require('telescope.actions')
 require('telescope').setup {
     defaults = {
-        prompt_prefix = ' >',
-        layout_strategy = 'flex',
-        color_devicons = true,
-        width = 0.9,
-
+        color_devicons   = true,
+        results_width    = 0.5,
         file_sorter      = require('telescope.sorters').get_fzy_sorter,
         file_previewer   = require('telescope.previewers').vim_buffer_cat.new,
         grep_previewer   = require('telescope.previewers').vim_buffer_vimgrep.new,
@@ -28,6 +25,7 @@ require('telescope').setup {
 require('telescope').load_extension('fzy_native')
 
 local M = {}
+
 M.search_dotfiles = function()
     require("telescope.builtin").find_files({
         prompt_title = "< Dotfiles >",
