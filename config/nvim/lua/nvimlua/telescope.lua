@@ -8,6 +8,13 @@ require('telescope').setup {
         grep_previewer   = require('telescope.previewers').vim_buffer_vimgrep.new,
         qflist_previewer = require('telescope.previewers').vim_buffer_qflist.new,
 
+        file_ignore_patterns = {
+            ".git",
+            "__pycache__",
+            "venv",
+            "node_modules",
+        },
+
         mappings = {
             i = {
                 ["<C-q>"] = actions.send_to_qflist,
