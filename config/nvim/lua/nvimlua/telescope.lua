@@ -2,7 +2,6 @@ local actions = require('telescope.actions')
 require('telescope').setup {
     defaults = {
         color_devicons   = true,
-        results_width    = 0.5,
         file_sorter      = require('telescope.sorters').get_fzy_sorter,
         file_previewer   = require('telescope.previewers').vim_buffer_cat.new,
         grep_previewer   = require('telescope.previewers').vim_buffer_vimgrep.new,
