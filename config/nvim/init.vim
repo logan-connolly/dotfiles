@@ -12,15 +12,6 @@ if !exists('g:vscode')
   source ~/.config/nvim/settings.vim
   source ~/.config/nvim/theme.vim
 
-  " Plugin Configurations
-  source ~/.config/nvim/plug-config/ale.vim
-  source ~/.config/nvim/plug-config/emmet.vim
-  source ~/.config/nvim/plug-config/fugitive.vim
-  source ~/.config/nvim/plug-config/lsp-config.vim
-  source ~/.config/nvim/plug-config/telescope.vim
-  source ~/.config/nvim/plug-config/sneak.vim
-  source ~/.config/nvim/plug-config/vimspector.vim
-
   " Key mappings and auto commands
   source ~/.config/nvim/key-mappings.vim
   source ~/.config/nvim/commands.vim
