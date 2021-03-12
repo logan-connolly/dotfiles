@@ -1,19 +1,16 @@
 local actions = require('telescope.actions')
 require('telescope').setup {
     defaults = {
-        color_devicons   = true,
         file_sorter      = require('telescope.sorters').get_fzy_sorter,
         file_previewer   = require('telescope.previewers').vim_buffer_cat.new,
         grep_previewer   = require('telescope.previewers').vim_buffer_vimgrep.new,
         qflist_previewer = require('telescope.previewers').vim_buffer_qflist.new,
-
         file_ignore_patterns = {
             ".git/",
             "__pycache__/",
             "venv/",
             "node_modules/",
         },
-
         mappings = {
             i = {
                 ["<C-q>"] = actions.send_to_qflist,
@@ -36,6 +33,13 @@ M.search_dotfiles = function()
     require("telescope.builtin").find_files({
         prompt_title = "< Dotfiles >",
         cwd = "$HOME/github/dotfiles",
+    })
+end
+
+M.search_notes = function()
+    require("telescope.builtin").find_files({
+        prompt_title = "< Notes >",
+        cwd = "$HOME/notes",
     })
 end
 
