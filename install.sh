@@ -5,10 +5,10 @@ set -o errexit    # exit when command fails
 
 # Paremeters and Helper Commands
 DOTDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
-MKDIR=mkdir -p
-LN=ln -vsf
-LNDIR=ln -vs
-PKGINSTALL=yay --noconfirm -S --needed
+MKDIR="mkdir -p"
+LN="ln -vsf"
+LNDIR="ln -vs"
+PKGINSTALL="yay --noconfirm -S --needed"
 
 install_pacman_packages() {
   $PKGINSTALL base-devel
@@ -52,11 +52,13 @@ symlink_dirs() {
 
 clone_repos() {
   gruvbox_gtk_repo=https://github.com/jmattheis/gruvbox-dark-gtk.git
-  ranager_devicon_repo=https://github.com/alexanderjeurissen/ranger_devicons.git
-  $MKDIR ~/.themes
-  $MKDIR ~/.config/ranger/plugins
-  git clone $gruvbox_gtk_repo --single-branch ~/.themes
-  git clone $rnager_devicon_repo --single-branch ~/.config/ranger/plugins
+  gruvbox_gtk_path="$HOME/.themes/gruvbox-dark-gtk"
+  ranger_devicon_repo=https://github.com/alexanderjeurissen/ranger_devicons.git
+  ranger_devicon_path="$HOME/.config/ranger/plugins/ranger_devicons"
+  rm -rf $gruvbox_gtk_path && $MKDIR $gruvbox_gtk_path
+  rm -rf $ranger_devicon_path && $MKDIR $ranger_devicon_path
+  git clone $gruvbox_gtk_repo --single-branch $gruvbox_gtk_path
+  git clone $ranger_devicon_repo --single-branch $ranger_devicon_path
 }
 
 enable_services() {
