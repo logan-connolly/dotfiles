@@ -3,7 +3,6 @@
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 DOTDIR="$( dirname "$DIR" )"
 LN="ln -vsf"
-LNDIR="ln -vs"
 
 symlink_files() {
   $LN $DOTDIR/config/alacritty.yml ~/.config/alacritty.yml
@@ -18,15 +17,21 @@ symlink_files() {
   $LN $DOTDIR/config/.zprofile ~/.zprofile
 }
 
+symlink_dir() {
+  dot_config_dir=$1
+  output_config_dir=$2
+  rm -rf $output_config_dir
+  ln -vs $dot_config_dir $output_config_dir
+}
+
 symlink_dirs() {
-  $LNDIR $DOTDIR/bin ~/
-  $LNDIR $DOTDIR/config/feh ~/.config
-  $LNDIR $DOTDIR/config/i3 ~/.config
-  $LNDIR $DOTDIR/config/nvim ~/.config
-  $LNDIR $DOTDIR/config/qutebrowser ~/.config
-  $LNDIR $DOTDIR/config/ranger ~/.config
-  $LNDIR $DOTDIR/config/rofi ~/.config
-  $LNDIR $DOTDIR/config/picom ~/.config
-  $LNDIR $DOTDIR/config/polybar ~/.config
-  $LNDIR $DOTDIR/config/zsh ~/.config
+  symlink_dir $DOTDIR/config/feh ~/.config/feh
+  symlink_dir $DOTDIR/config/i3 ~/.config/i3
+  symlink_dir $DOTDIR/config/nvim ~/.config/nvim
+  symlink_dir $DOTDIR/config/qutebrowser ~/.config/qutebrowser
+  symlink_dir $DOTDIR/config/ranger ~/.config/ranger
+  symlink_dir $DOTDIR/config/rofi ~/.config/rofi
+  symlink_dir $DOTDIR/config/picom ~/.config/picom
+  symlink_dir $DOTDIR/config/polybar ~/.config/polybar
+  symlink_dir $DOTDIR/config/zsh ~/.config/zsh
 }

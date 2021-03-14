@@ -10,7 +10,7 @@ clone_repo() {
 clone_gruvbox_gtk() {
   gruvbox_gtk_repo=https://github.com/jmattheis/gruvbox-dark-gtk.git
   gruvbox_gtk_path="$HOME/.themes/gruvbox-dark-gtk"
-  clone_path $gruvbox_gtk_repo $gruvbox_gtk_path
+  clone_repo $gruvbox_gtk_repo $gruvbox_gtk_path
 }
 
 clone_ranger_devicons() {

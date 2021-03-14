@@ -1,12 +1,13 @@
 #!/bin/bash
 
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+DOTDIR="$( dirname "$DIR" )"
 MKDIR="mkdir -p"
 PKGINSTALL="yay --noconfirm -S --needed"
 
 install_pacman_packages() {
-  $PKGINSTALL base-devel
-  $PKGINSTALL - < pacman/pkglist.txt
-  $PKGINSTALL - < pacman/aur.txt
+  $PKGINSTALL - < $DOTDIR/pacman/pkglist.txt
+  $PKGINSTALL - < $DOTDIR/pacman/aur.txt
 }
 
 install_npm_packages() {
