@@ -25,6 +25,7 @@ symlink_dir() {
 }
 
 symlink_dirs() {
+  symlink_dir $DOTDIR/config/dunst ~/.config/dunst
   symlink_dir $DOTDIR/config/feh ~/.config/feh
   symlink_dir $DOTDIR/config/i3 ~/.config/i3
   symlink_dir $DOTDIR/config/nvim ~/.config/nvim
