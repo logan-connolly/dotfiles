@@ -1,7 +1,27 @@
 configuration {
- theme: "~/.config/rofi/themes/gruvbox-dark-solid-modified.rasi";
- lines: 5;
- width: 20;
- sidebar-mode: true;
+ modi: "window,ssh,run,drun";
+ theme: "themes/gruvbox-dark-solid-modified.rasi";
  show-icons: true;
+ sidebar-mode: true;
+ font: "mononoki Nerd Font 13";
+}
+
+#mainbox {
+  padding: 20;
+}
+
+#listview {
+  columns: 3;
+  lines: 5;
+  margin: 20px 0;
+}
+
+element {
+    margin: 4px;
+    padding: 22px 10px 22px 10px;
+}
+
+element-icon {
+  size: 40px;
+  margin: 0 10px 0 0;
 }
