@@ -23,8 +23,8 @@ c.content.mouse_lock = False
 
 # content
 c.content.notifications = False
-c.url.default_page = "about:blank"
-c.url.start_pages = "about:blank"
+c.url.default_page = "~/github/dotfiles/config/qutebrowser/startpage/index.html"
+c.url.start_pages = "~/github/dotfiles/config/qutebrowser/startpage/index.html"
 c.url.searchengines = {"DEFAULT": "https://duckduckgo.com/?q={}"}
 
 # Bindings for normal mode
