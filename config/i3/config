@@ -15,7 +15,6 @@ client.unfocused        #504945 #282828 #c5c8c6 #550494 #504945
 client.urgent           #504945 #282828 #c5c8c6 #550494 #504945
 client.placeholder      #504945 #282828 #c5c8c6 #550494 #504945
 client.background       #282828
-font "mononoki Nerd Font Mono"
 
 # Window border
 new_window pixel 1
@@ -41,11 +40,16 @@ workspace_auto_back_and_forth yes
 bindsym $mod+b workspace back_and_forth
 bindsym $mod+Shift+b move container to workspace back_and_forth; workspace back_and_forth
 
-# Split orientation
-bindsym $mod+v split v;exec notify-send 'tile vertically'
-bindsym $mod+q split toggle
+# Change container layout
+bindsym $mod+s layout stacking; exec notify-send 'layout stacking'
+bindsym $mod+w layout tabbed; exec notify-send 'layout tabbed'
 bindsym $mod+e layout toggle split
 bindsym $mod+Shift+space floating toggle
+
+# Split orientation
+bindsym $mod+x split v; exec notify-send 'tile horizontally'
+bindsym $mod+v split h; exec notify-send 'tile vertically'
+bindsym $mod+q split toggle
 
 # Switch to workspace
 bindsym $mod+1 workspace 1
@@ -97,6 +101,7 @@ for_window [class="Transmission"] floating enable, resize set 900px 400px, move 
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
 
 # Set shutdown, restart and locking
 set $Locker $HOME/.config/i3/lock && sleep 1
@@ -136,7 +141,6 @@ mode "resize" {
 set $term --no-startup-id alacritty --working-directory $(xcwd)
 bindsym $mod+Return exec $term
 bindsym $mod+Shift+Return exec $term --class floating-term
-bindsym $alt+Return exec code
 bindsym $mod+Shift+q kill
 bindsym $mod+d exec --no-startup-id rofi -show drun
 bindsym $mod+f fullscreen toggle
