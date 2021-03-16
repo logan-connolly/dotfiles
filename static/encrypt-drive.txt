@@ -1,0 +1,28 @@
+# Find out which drive you want to encrypt with (for this example let's say sdb1)
+sudo fdisk -l
+
+# Set up encrypted drive with password [CAUTION: Drive will be wiped]
+sudo cryptsetup --verbose --verify-passphrase luksFormat /dev/sdb1
+
+# Unlock encrypted device using given password
+sudo cryptsetup luksOpen /dev/sdb1 sdb1
+
+# Check that you see device mapped to /dev/mapper/sdb1
+sudo fdisk -l
+
+# Create filesystem for storing data and remove overhead files
+sudo mkfs.ext4 /dev/mapper/sdb1
+sudo tune2fs -m 0 /dev/mapper/sdb1
+
+# Make directory where you want to mount and mount to it
+sudo mkdir /mnt/encrypted
+sudo mount /dev/mapper/sdb1 /mnt/encrypted
+
+# Optional: change file permissions to current user
+sudo chown -R `whoami`:users /mnt/encrypted
+
+# Optional: create test file
+touch test.txt /mnt/encrypted
+
+# Unmount device and close connection
+sudo umount /dev/mapper/sdb1 && sudo cryptsetup luksClose sdb1
