@@ -1,21 +1,8 @@
 function updateClock() {
-  var now = new Date();
-  hours = now.getHours();
-  minutes = now.getMinutes();
-  if (hours > 12) {
-    hours -= 12;
-  } else if (hours === 0) {
-    hours = 12;
-  }
-  if (minutes < 10) {
-    time = hours + ":" + "0" + minutes;
-  } else {
-    time = hours + ":" + minutes;
-  }
-  if (hours < 10) {
-    // time = "0" + time;
-    time = "" + time;
-  }
+  const now = new Date();
+  hours = now.getHours().toString().padStart(2, "0");
+  minutes = now.getMinutes().toString().padStart(2, "0");
+  time = hours + ":" + minutes;
   document.getElementById("time").innerHTML = time;
   setTimeout(updateClock, 1000);
 }
