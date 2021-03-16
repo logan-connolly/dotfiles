@@ -16,14 +16,14 @@ Fresh install of [arch](https://archlinux.org/) and [i3](https://i3wm.org/). Off
 Clone [dotfiles](https://github.com/logan-connolly/dotfiles) repository and submodules:
 
 ```shell
-$ git clone https://github.com/logan-connolly/dotfiles.git
+git clone https://github.com/logan-connolly/dotfiles.git
 ```
 
 Install [yay](https://github.com/Jguer/yay) for downloading AUR packages:
 
 ```shell
-$ git clone https://aur.archlinux.org/yay.git
-$ cd yay && makepkg -si
+git clone https://aur.archlinux.org/yay.git
+cd yay && makepkg -si
 ```
 
 Build and install `neovim` from source:
@@ -38,16 +38,16 @@ sudo make install
 Install [siji](https://github.com/stark/siji) order to get icons in polybar:
 
 ```shell
-$ mkdir ~/.local/share/fonts
-$ git clone https://github.com/stark/siji.git ~/.local/share/fonts
-$ cd ~/.local/share/fonts/siji
-$ ./install.sh
+mkdir ~/.local/share/fonts
+git clone https://github.com/stark/siji.git ~/.local/share/fonts
+cd ~/.local/share/fonts/siji
+./install.sh
 ```
 
 Install packages and create symbolic links to config files:
 
 ```shell
-$ ./install.sh
+./install.sh
 ```
 
 ## Gists
@@ -68,7 +68,7 @@ $ ./install.sh
 Check if any of the system services failed to start:
 
 ```shell
-$ sudo systemctl --failed
+sudo systemctl --failed
 ```
 
 ### File Permissions
@@ -77,10 +77,10 @@ Set restricted permissions for files and directories:
 
 ```shell
 # Find all directories in desired path and set 755 permission
-$ find <path> -type d -exec chmod 755 {} +
+find <path> -type d -exec chmod 755 {} +
 
 # Find all files in desired path and grant only file creator write privs
-$ find <path> -type f -exec chmod 644 {} +
+find <path> -type f -exec chmod 644 {} +
 ```
 
 ### Syncing Data
@@ -108,13 +108,13 @@ Encrypt drive partition with luks via [Average Linux User](https://www.youtube.c
 Remove unused packages and configurations (orphans) with yay:
 
 ```shell
-$ yay --clean
+yay --clean
 ```
 Export installed packages in system:
 
 ```shell
-$ yay -Qqen > pkglist.txt
-$ yay -Qqem > pkglist-aur.txt
+yay -Qqen > pkglist.txt
+yay -Qqem > pkglist-aur.txt
 ```
 
 Add color to pacman by editing `/etc/pacman.conf`:
