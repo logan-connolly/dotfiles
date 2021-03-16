@@ -1,19 +1,17 @@
 # Dotfiles
 
-**Warning:** Use at your own risk. This repository is adapted to work with arch + i3 WM.
-
 ![](static/screenshot.png)
 
 ## Prerequisites
 
-Fresh install of [arch](https://archlinux.org/) and [i3](https://i3wm.org/).
+Fresh install of [arch](https://archlinux.org/) and [i3](https://i3wm.org/). Official Guide and Average Linux User article and video:
 
-Official Guide and Average Linux User article and video:
-
-- Guide: https://wiki.archlinux.org/index.php/installation_guide
-- ALU Article: https://averagelinuxuser.com/a-step-by-step-arch-linux-installation-guide/
+- https://wiki.archlinux.org/index.php/installation_guide
+- https://averagelinuxuser.com/a-step-by-step-arch-linux-installation-guide/
 
 ## Installation
+
+**Warning:** use at your own risk.
 
 Clone [dotfiles](https://github.com/logan-connolly/dotfiles) repository and submodules:
 
