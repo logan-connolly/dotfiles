@@ -1,4 +1,4 @@
-local lualine = require('lualine')
-lualine.theme = 'gruvbox'
-lualine.extensions = { 'fzf' }
-lualine.status()
+require('lualine').setup{
+  options = { theme = 'gruvbox' },
+  extensions = { 'fzf' },
+}
