@@ -3,11 +3,11 @@
   email = logan.connolly@protonmail.com
 [core]
   editor = nvim
-[mergetool "fugitive"]
-  cmd = nvim -f -c \"Gvdiffsplit!\" \"$MERGED\"
-[merge]
-  tool = fugitive
 [pull]
   rebase = false
-[init]
-  defaultBranch = main
+[mergetool "fugitive"]
+	cmd = nvim -f -c \"Gvdiffsplit!\" \"$MERGED\"
+[merge]
+	tool = fugitive
+[mergetool]
+  prompt = false
