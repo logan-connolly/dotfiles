@@ -34,5 +34,6 @@ symlink_dirs() {
   symlink_dir $DOTDIR/config/rofi ~/.config/rofi
   symlink_dir $DOTDIR/config/picom ~/.config/picom
   symlink_dir $DOTDIR/config/polybar ~/.config/polybar
+  symlink_dir $DOTDIR/config/zathura ~/.config/zathura
   symlink_dir $DOTDIR/config/zsh ~/.config/zsh
 }
