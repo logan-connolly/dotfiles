@@ -1,6 +1,7 @@
 # open with default
 alias o='xdg-open'
 alias cat='bat --theme="base16"'
+alias yank='xsel --clipboard'
 
 # configure files
 alias cv='nvim ~/.config/nvim'
