@@ -24,9 +24,9 @@ call plug#begin('~/.local/share/nvim/plugged')
 
   " General
   Plug 'chrisbra/Colorizer'
-  Plug 'justinmk/vim-sneak'
   Plug 'mattn/emmet-vim'
   Plug 'rbgrouleff/bclose.vim'
+  Plug 'phaazon/hop.nvim'
   Plug 'preservim/tagbar'
   Plug 'tpope/vim-commentary'
   Plug 'tpope/vim-fugitive'
