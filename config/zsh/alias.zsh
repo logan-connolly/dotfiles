@@ -1,6 +1,6 @@
 # open with default
 alias o='xdg-open'
-alias cat='bat --theme="base16"'
+alias cat='bat --theme="gruvbox-dark"'
 alias yank='xsel --clipboard'
 
 # configure files
