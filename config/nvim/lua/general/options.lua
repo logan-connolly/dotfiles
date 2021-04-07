@@ -3,11 +3,11 @@ vim.cmd 'colorscheme gruvbox8'
 
 -- Globals
 Option.g({
-  -- general
+	-- general
 	syntax = "on",
 	encoding = "UTF-8",
 	exrc = true,
-  number = true,
+	number = true,
 	incsearch = true,
 	showmode = false,
 	cmdheight = 2,
@@ -18,15 +18,15 @@ Option.g({
 	shiftwidth = 2,
 	splitright = true,
 	splitbelow = true,
-  -- editor
+	-- editor
 	mouse = 'a',
 	hlsearch = false,
-  updatetime = 50,
+	updatetime = 50,
 	shortmess = vim.o.shortmess .. 'c',
 	writebackup = false,
 	backup = false,
 	termguicolors = true,
-  -- editing
+	-- editing
 	completeopt = 'menuone,noinsert,noselect',
 	hidden = true,
 	smartcase = true,
