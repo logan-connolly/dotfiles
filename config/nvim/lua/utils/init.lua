@@ -1,5 +1,5 @@
 -- Option = require('utils.option')
--- Variable = require('utils.variable')
+Variable = require('utils.variable')
 Keybind = require('utils.keybind')
 -- Command = require('utils.command')
 -- Augroup = require('utils.augroup')
@@ -8,7 +8,7 @@ Keybind = require('utils.keybind')
 
 Vim = {
   -- Option = Option,
-  -- Variable = Variable,
+  Variable = Variable,
   Keybind = Keybind,
   -- Command = Command,
   -- Augroup = Augroup,
