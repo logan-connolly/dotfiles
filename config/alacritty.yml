@@ -12,7 +12,7 @@ font:
   bold_italic:
     family: "mononoki Nerd Font Mono"
     style: Bold Italic
-  size: 12.5
+  size: 18.5
 
 # Gruvbox dark
 colors:
