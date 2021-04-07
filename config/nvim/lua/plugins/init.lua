@@ -1,3 +1,4 @@
+require('plugins.ale')
 require('plugins.fugitive')
 require('plugins.hop')
 require('plugins.lsp')
