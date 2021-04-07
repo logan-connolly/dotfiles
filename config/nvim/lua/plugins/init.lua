@@ -1,0 +1,5 @@
+require('plugins.fugitive')
+require('plugins.hop')
+require('plugins.lsp')
+require('plugins.lualine')
+require('plugins.telescope')

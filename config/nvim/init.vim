@@ -55,7 +55,8 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 call plug#end()
 
-lua require('nvimlua')
+lua require('utils')
+lua require('plugins')
 
 " automatically install missing plugins on startup
 autocmd VimEnter *
