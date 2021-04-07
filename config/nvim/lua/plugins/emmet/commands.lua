@@ -1,3 +1,1 @@
-Command.cmd({
-    'autocmd FileType html,css,vue EmmetInstall',
-})
+vim.cmd 'autocmd FileType html,css,vue EmmetInstall'
