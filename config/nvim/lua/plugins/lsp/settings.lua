@@ -1,13 +1,37 @@
+local lspconfig = require('lspconfig')
+local lsp_status = require('lsp-status')
+local lspkind = require('lspkind')
+local saga = require('lspsaga')
 local on_attach = require'completion'.on_attach
-local python_settings = {
-  pyls = {
-    plugins = {
-      pycodestyle = { enabled = false };
-      pyflakes = { enabled = false };
-    }
-  }
+
+saga.init_lsp_saga()
+lspkind.init()
+
+vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+	vim.lsp.diagnostic.on_publish_diagnostics, {
+		virtual_text = false,
+		underline = false,
+		signs = { severity_limit = "Error" }
+	}
+)
+
+local servers = {
+	cssls = {
+    filetypes = { "css", "scss", "less", "sass" },
+    root_dir = lspconfig.util.root_pattern("package.json", ".git")
+  },
+  pyright = {},
+  tsserver = {},
+  vuels = {},
 }
 
-require('lspconfig').tsserver.setup{ on_attach = on_attach }
-require('lspconfig').vuels.setup{ on_attach = on_attach }
-require('lspconfig').pyls.setup{ on_attach = on_attach, settings = python_settings }
+local snippet_capabilities = {
+  textDocument = {completion = {completionItem = {snippetSupport = true}}}
+}
+
+for server, config in pairs(servers) do
+  config.on_attach = on_attach
+  config.capabilities = vim.tbl_deep_extend('keep', config.capabilities or {},
+                                            lsp_status.capabilities, snippet_capabilities)
+  lspconfig[server].setup(config)
+end
