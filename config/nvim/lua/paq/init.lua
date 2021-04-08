@@ -7,6 +7,9 @@ end
 -- paq alias
 vim.cmd 'packadd paq-nvim'
 local paq = require('paq-nvim').paq
+paq { 'savq/paq-nvim', opt = true }
+
+-- hooks
 local submodule = 'git submodule update --init --recursive'
 local update_treesitter = function() vim.cmd(":TSUpdate") end
 
