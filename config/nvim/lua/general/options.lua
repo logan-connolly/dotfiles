@@ -16,6 +16,7 @@ Option.g({
 	splitright = true,
 	splitbelow = true,
 	-- editor
+	background = 'dark',
 	mouse = 'a',
 	hlsearch = false,
 	updatetime = 50,

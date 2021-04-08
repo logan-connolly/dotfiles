@@ -1,15 +1,15 @@
 require('nvim-treesitter.configs').setup{
   ensure_installed = "maintained",
   highlight = {
-    enable = false,
+    enable = true,
   },
   incremental_selection = {
     enable = true,
     keymaps = {
-      init_selection = "tv",
-      node_incremental = "tj",
-      node_decremental = "tk",
-      scope_incremental = "tu",
+      init_selection = "fj",
+      node_incremental = "fl",
+      node_decremental = "fh",
+      scope_incremental = "fk",
     },
   },
   indent = {
