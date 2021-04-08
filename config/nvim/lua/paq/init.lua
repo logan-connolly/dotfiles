@@ -1,3 +1,10 @@
+ -- paq.nvim automatic install
+local install_path = vim.fn.stdpath("data") .. "/site/pack/paq/opt/paq-nvim"
+if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
+		vim.cmd("!git clone https://github.com/savq/paq-nvim " .. install_path)
+end
+
+-- paq alias
 vim.cmd 'packadd paq-nvim'
 local paq = require('paq-nvim').paq
 
@@ -34,3 +41,9 @@ paq { 'w0rp/ale' }
 paq { 'kyazdani42/nvim-web-devicons' }
 paq { 'lifepillar/vim-gruvbox8' }
 paq { 'hoob3rt/lualine.nvim' }
+
+-- PaqInstall if do not exist
+local plugin_path = vim.fn.stdpath("data") .. "/site/pack/paqs"
+if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
+		vim.cmd[[ PaqInstall ]]
+end

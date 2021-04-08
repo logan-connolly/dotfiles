@@ -25,6 +25,7 @@ Option.g({
 	shortmess = vim.o.shortmess .. 'c',
 	writebackup = false,
 	backup = false,
+	cmdheight = 1,
 	termguicolors = true,
 	-- editing
 	completeopt = 'menuone,noinsert,noselect',
