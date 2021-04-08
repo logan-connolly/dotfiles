@@ -1,6 +1,3 @@
--- Theme
-vim.cmd 'colorscheme gruvbox8'
-
 -- Globals
 Option.g({
 	-- general

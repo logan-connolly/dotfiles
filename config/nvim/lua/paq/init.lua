@@ -7,10 +7,12 @@ end
 -- paq alias
 vim.cmd 'packadd paq-nvim'
 local paq = require('paq-nvim').paq
+local submodule = 'git submodule update --init --recursive'
+local update_ts = function() vim.cmd(":TSUpdate") end
 
 -- general plugins
 paq { 'savq/paq-nvim', opt = true }
-paq { 'nvim-treesitter/nvim-treesitter' }
+paq { 'nvim-treesitter/nvim-treesitter', run = update_ts }
 paq { 'neovim/nvim-lspconfig' }
 paq { 'chrisbra/Colorizer' }
 paq { 'mattn/emmet-vim' }
@@ -25,7 +27,7 @@ paq { 'tpope/vim-vinegar' }
 paq { 'nvim-lua/popup.nvim' }
 paq { 'nvim-lua/plenary.nvim' }
 paq { 'nvim-telescope/telescope.nvim' }
-paq { 'nvim-telescope/telescope-fzy-native.nvim' }
+paq { 'nvim-telescope/telescope-fzy-native.nvim', run = submodule }
 
 -- debugger plugins
 paq { 'puremourning/vimspector' }
@@ -47,3 +49,6 @@ local plugin_path = vim.fn.stdpath("data") .. "/site/pack/paqs"
 if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
 		vim.cmd[[ PaqInstall ]]
 end
+
+-- Theme
+vim.cmd 'colorscheme gruvbox8'
