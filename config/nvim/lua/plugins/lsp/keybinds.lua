@@ -3,7 +3,6 @@ local defaults = { noremap = true, silent = true }
 Keybind.g({
 	-- builtin
 	{ 'n', 'gd', [[<Cmd>lua vim.lsp.buf.definition()<CR>]], defaults },
-	{ 'n', 'gr', [[<Cmd>lua vim.lsp.buf.references()<CR>]], defaults },
 	{ 'i', '<Tab>', [[<Plug>(completion_smart_tab)]], { noremap = false, silent = true } },
 	{ 'i', '<S-Tab>', [[<Plug>(completion_smart_s_tab)]], { noremap = false, silent = true } },
 	-- lspsaga
@@ -16,7 +15,4 @@ Keybind.g({
 	{ 'n', '<Leader>l', [[<Cmd>lua require("lspsaga.diagnostic").show_line_diagnostics()<CR>]], defaults },
 	{ 'n', '<Leader>j', [[<Cmd>lua require("lspsaga.diagnostic").lsp_jump_diagnostic_next()<CR>]], defaults },
 	{ 'n', '<Leader>k', [[<Cmd>lua require("lspsaga.diagnostic").lsp_jump_diagnostic_prev()<CR>]], defaults },
-	-- terminal
-	-- { 'n', '<A-d>', [[<Cmd>lua require("lspsaga.floaterm").open_float_terminal()<CR>]], defaults },
-	-- { 't', '<A-d>', [[<C-\><C-n>lua require("lspsaga.diagnostic").close_float_terminal()<CR>]], defaults },
 })
