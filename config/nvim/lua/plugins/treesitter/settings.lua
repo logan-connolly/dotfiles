@@ -18,4 +18,12 @@ require('nvim-treesitter.configs').setup{
   autotag = {
     enable = true,
   },
+	refactor = {
+		smart_rename = {
+			enable = true,
+			keymaps = {
+				smart_rename = "gr"
+			},
+		},
+	},
 }
