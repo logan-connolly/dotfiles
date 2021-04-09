@@ -14,6 +14,6 @@ install_npm_packages() {
   $MKDIR $HOME/.npm-global
   npm config set prefix '~/.npm-global'
   export PATH=$HOME/.npm-global/bin:$PATH
-  pkgs="eslint live-server neovim prettier typescript-language-server vls"
+  pkgs="eslint live-server neovim prettier typescript-language-server vls pyright"
   npm install -g $pkgs
 }

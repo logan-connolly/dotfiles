@@ -4,14 +4,20 @@ local lspkind = require('lspkind')
 local saga = require('lspsaga')
 local on_attach = require'completion'.on_attach
 
-saga.init_lsp_saga()
 lspkind.init()
+saga.init_lsp_saga {
+	use_saga_diagnostic_sign = false,
+	finder_action_keys = {
+		vsplit = "v",
+		split = "s",
+		quit = { "q", "ESC" },
+	}
+}
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
 	vim.lsp.diagnostic.on_publish_diagnostics, {
 		virtual_text = false,
 		underline = false,
-		signs = { severity_limit = "Error" }
 	}
 )
 

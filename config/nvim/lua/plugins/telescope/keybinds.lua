@@ -10,7 +10,7 @@ Keybind.g({
 	-- buffer list window
 	{ 'n', '<Leader>fb', [[<Cmd>lua require('telescope.builtin').buffers()<CR>]], defaults },
 	-- search by filename in all project files
-	{ 'n', '<Leader>ff', [[<Cmd>lua require('telescope.builtin').find_files({ hidden = true })<CR>]], defaults },
+	{ 'n', '<Leader>ff', [[<Cmd>lua require('telescope.builtin').find_files()<CR>]], defaults },
 	-- git branches
 	{ 'n', '<Leader>fB', [[<Cmd>lua require('telescope.builtin').git_branches()<CR>]], defaults },
 	-- telescope through dotfiles
