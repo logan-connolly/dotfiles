@@ -10,8 +10,8 @@ export PATH=~/bin:$PATH
 export PATH=~/.npm-global/bin:$PATH
 export PATH="$HOME/.poetry/bin:$PATH"
 
-# lua PATH
-export LUA_PATH="$HOME/github/dotfiles/config/nvim/lua:$LUA_PATH"
+# dotfiles PATH
+export DOTFILES="$HOME/github/dotfiles"
 
 # fzf autocompletion
 [ -f /usr/share/fzf/key-bindings.zsh ] && source /usr/share/fzf/key-bindings.zsh

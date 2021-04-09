@@ -13,8 +13,9 @@ Keybind.g({
 	{ 'n', '<Leader>ff', [[<Cmd>lua require('telescope.builtin').find_files()<CR>]], defaults },
 	-- git branches
 	{ 'n', '<Leader>fB', [[<Cmd>lua require('telescope.builtin').git_branches()<CR>]], defaults },
-	-- telescope through dotfiles
+	-- telescope custom dirs
 	{ 'n', '<Leader>fd', [[<Cmd>lua require('plugins.telescope.settings').search_dotfiles()<CR>]], defaults },
-	-- telescope through notes
 	{ 'n', '<Leader>fn', [[<Cmd>lua require('plugins.telescope.settings').search_notes()<CR>]], defaults },
+	{ 'n', '<Leader>fP', [[<Cmd>lua require('plugins.telescope.settings').search_plugins()<CR>]], defaults },
+	{ 'n', '<Leader>fp', [[<Cmd>lua require('plugins.telescope.settings').search_projects()<CR>]], defaults },
 })

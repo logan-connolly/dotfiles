@@ -5,10 +5,16 @@ require('telescope').setup {
 		file_previewer   = require('telescope.previewers').vim_buffer_cat.new,
 		grep_previewer   = require('telescope.previewers').vim_buffer_vimgrep.new,
 		qflist_previewer = require('telescope.previewers').vim_buffer_qflist.new,
+		layout_strategy = "flex",
 
 		layout_defaults = {
 			horizontal = {
 				preview_width = 0.6,
+			},
+			vertical = {
+				preview_height = 0.5,
+				height_padding = 1,
+        width_padding = 0.05,
 			}
 		},
 
@@ -35,30 +41,18 @@ require('telescope').setup {
 
 require('telescope').load_extension('fzy_native')
 
+search_dir = function(name, path_from_home)
+	require("telescope.builtin").find_files({
+		prompt_title = "< " .. name .. " >",
+		cwd = "$HOME/" .. path_from_home
+	})
+end
+
 local M = {}
 
-M.search_dotfiles = function()
-    require("telescope.builtin").find_files({
-        prompt_title = "< Dotfiles >",
-        cwd = "$HOME/github/dotfiles",
-    })
-end
-
-M.search_notes = function()
-    require("telescope.builtin").find_files({
-        prompt_title = "< Notes >",
-        cwd = "$HOME/notes",
-    })
-end
-
-M.git_branches = function()
-    require("telescope.builtin").git_branches({
-        attach_mappings = function(prompt_bufnr, map)
-            map('i', '<c-d>', actions.git_delete_branch)
-            map('n', '<c-d>', actions.git_delete_branch)
-            return true
-        end
-    })
-end
+M.search_dotfiles = function() search_dir("dotfiles", "dotfiles") end
+M.search_notes = function() search_dir("notes", "notes") end
+M.search_plugins = function() search_dir("plugins", ".local/share/nvim/site/pack/paqs/start") end
+M.search_projects = function() search_dir("projects", "projects") end
 
 return M
