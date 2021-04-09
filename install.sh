@@ -9,13 +9,20 @@ source ./scripts/clone-repos.sh
 
 echo "Installing pacman packages ..."
 install_pacman_packages
+
 echo "Installing npm global dependencies ..."
+setup_npm_global
 install_npm_packages
+
 echo "Symlinking configuration files ..."
 symlink_files
+
 echo "Symlinking configuration directories ..."
 symlink_dirs
+
 echo "Cloning third party repos ..."
 clone_gruvbox_gtk
 clone_ranger_devicons
+clone_siji
+
 echo "FINISHED: recommend rebooting system"

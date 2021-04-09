@@ -1,20 +1,20 @@
 #!/bin/bash
 
-DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
-DOTDIR="$( dirname "$DIR" )"
-LN="ln -vsf"
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+PARENT_DIR="$( dirname "$SCRIPT_DIR" )"
+CONFIG_DIR=$PARENT_DIR/config
 
 symlink_files() {
-  $LN $DOTDIR/config/alacritty.yml ~/.config/alacritty.yml
-  $LN $DOTDIR/config/.flake8 ~/.flake8
-  $LN $DOTDIR/config/.gitconfig ~/.gitconfig
-  $LN $DOTDIR/config/.inputrc ~/.inputrc
-  $LN $DOTDIR/config/.mimeapps.list ~/.config/.mimeapps.list
-  $LN $DOTDIR/config/.pylintrc ~/.pylintrc
-  $LN $DOTDIR/config/.xinitrc ~/.xinitrc
-  $LN $DOTDIR/config/.Xresources ~/.Xresources
-  $LN $DOTDIR/config/.zshrc ~/.zshrc
-  $LN $DOTDIR/config/.zprofile ~/.zprofile
+  ln -vsf $CONFIG_DIR/alacritty.yml ~/.config/alacritty.yml
+  ln -vsf $CONFIG_DIR/.flake8 ~/.flake8
+  ln -vsf $CONFIG_DIR/.gitconfig ~/.gitconfig
+  ln -vsf $CONFIG_DIR/.inputrc ~/.inputrc
+  ln -vsf $CONFIG_DIR/.mimeapps.list ~/.config/.mimeapps.list
+  ln -vsf $CONFIG_DIR/.pylintrc ~/.pylintrc
+  ln -vsf $CONFIG_DIR/.xinitrc ~/.xinitrc
+  ln -vsf $CONFIG_DIR/.Xresources ~/.Xresources
+  ln -vsf $CONFIG_DIR/.zshrc ~/.zshrc
+  ln -vsf $CONFIG_DIR/.zprofile ~/.zprofile
 }
 
 symlink_dir() {
@@ -25,15 +25,14 @@ symlink_dir() {
 }
 
 symlink_dirs() {
-  symlink_dir $DOTDIR/config/dunst ~/.config/dunst
-  symlink_dir $DOTDIR/config/feh ~/.config/feh
-  symlink_dir $DOTDIR/config/i3 ~/.config/i3
-  symlink_dir $DOTDIR/config/nvim ~/.config/nvim
-  symlink_dir $DOTDIR/config/qutebrowser ~/.config/qutebrowser
-  symlink_dir $DOTDIR/config/ranger ~/.config/ranger
-  symlink_dir $DOTDIR/config/rofi ~/.config/rofi
-  symlink_dir $DOTDIR/config/picom ~/.config/picom
-  symlink_dir $DOTDIR/config/polybar ~/.config/polybar
-  symlink_dir $DOTDIR/config/zathura ~/.config/zathura
-  symlink_dir $DOTDIR/config/zsh ~/.config/zsh
+  symlink_dir $CONFIG_DIR/dunst ~/.config/dunst
+  symlink_dir $CONFIG_DIR/feh ~/.config/feh
+  symlink_dir $CONFIG_DIR/i3 ~/.config/i3
+  symlink_dir $CONFIG_DIR/nvim ~/.config/nvim
+  symlink_dir $CONFIG_DIR/ranger ~/.config/ranger
+  symlink_dir $CONFIG_DIR/rofi ~/.config/rofi
+  symlink_dir $CONFIG_DIR/picom ~/.config/picom
+  symlink_dir $CONFIG_DIR/polybar ~/.config/polybar
+  symlink_dir $CONFIG_DIR/zathura ~/.config/zathura
+  symlink_dir $CONFIG_DIR/zsh ~/.config/zsh
 }
