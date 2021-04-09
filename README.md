@@ -29,10 +29,7 @@ cd yay && makepkg -si
 Build and install `neovim` from source:
 
 ```shell
-git clone https://github.com/neovim/neovim
-cd neovim
-make CMAKE_BUILD_TYPE=RelWithDebInfo
-sudo make install
+./scripts/install-neovim.sh
 ```
 
 Install [siji](https://github.com/stark/siji) order to get icons in polybar:
