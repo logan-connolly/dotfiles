@@ -13,11 +13,13 @@ Fresh install of [arch](https://archlinux.org/) and [i3](https://i3wm.org/). Off
 
 **Warning:** use at your own risk.
 
-Install git (if not yet installed) and [yay](https://github.com/Jguer/yay) for downloading AUR packages:
+Install [paru](https://github.com/Morganamilo/paru) for downloading AUR packages:
 
 ```shell
-git clone https://aur.archlinux.org/yay.git
-cd yay && makepkg -si
+sudo pacman -S --needed base-devel
+git clone https://aur.archlinux.org/paru.git
+cd paru
+makepkg -si
 ```
 
 Clone [dotfiles](https://github.com/logan-connolly/dotfiles) repository:
