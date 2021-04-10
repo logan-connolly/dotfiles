@@ -60,7 +60,7 @@ font-2 = "xos4 Terminus:size=8.5;2"
 
 modules-left = i3
 modules-center = date
-modules-right = mem_i mem audio_i audio battery_i battery network
+modules-right = mem_i mem audio_i audio network battery battery_i 
 
 tray-background = ${self.background}
 tray-transparent = true
@@ -238,12 +238,12 @@ time-format = %H:%M
 format-charging = <animation-charging>
 format-charging-background = ${color.foreground}
 format-charging-foreground = ${color.default}
-format-charging-padding = 1
+format-charging-padding = 0
 
 format-discharging = <ramp-capacity>
 format-discharging-background = ${color.foreground}
 format-discharging-foreground = ${color.default}
-format-discharging-padding = 1
+format-discharging-padding = 0
 
 label-charging = %percentage%%
 label-discharging = %percentage%%
@@ -253,7 +253,7 @@ label-full-background = ${color.foreground}
 label-full-foreground = ${color.default}
 label-full-padding = 1
 
-ramp-capacity-0 = 
+ramp-capacity-0 = %{B#cc241d}
 ramp-capacity-1 = 
 ramp-capacity-2 = 
 ramp-capacity-3 = 
