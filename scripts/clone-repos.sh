@@ -23,5 +23,5 @@ clone_siji() {
 	siji_repo=https://github.com/stark/siji.git 
 	siji_path=$HOME/.local/share/fonts/siji
 	clone_repo $siji_repo $siji_path
-	./${siji_path}/install.sh
+	cd $siji_path && ./install.sh
 }
