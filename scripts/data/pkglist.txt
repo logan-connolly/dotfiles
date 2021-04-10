@@ -83,7 +83,6 @@ python-numpy
 python-pre-commit
 python-pylint
 python-pynvim
-qutebrowser
 ranger
 reflector
 ripgrep
