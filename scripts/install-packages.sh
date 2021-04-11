@@ -1,7 +1,7 @@
 #!/bin/bash
 
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
-PKGINSTALL="yay --noconfirm -S --needed"
+PKGINSTALL="paru --noconfirm -S --needed"
 
 install_pacman_packages() {
   $PKGINSTALL - < $SCRIPT_DIR/data/pkglist.txt
