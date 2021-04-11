@@ -9,15 +9,15 @@ xidlehook \
   --not-when-fullscreen \
   `# Don't lock when there's audio playing` \
   --not-when-audio \
-  `# Dim the screen after 60 seconds, undim if user becomes active` \
-  --timer 90 \
+  `# Dim the screen after 120 seconds, undim if user becomes active` \
+  --timer 120 \
     'xrandr --output "$PRIMARY_DISPLAY" --brightness .1' \
     'xrandr --output "$PRIMARY_DISPLAY" --brightness 1' \
   `# Undim & lock after 10 more seconds` \
   --timer 10 \
     'xrandr --output "$PRIMARY_DISPLAY" --brightness 1; $HOME/.config/i3/lock' \
     '' \
-  `# Finally, suspend an hour after it locks` \
-  --timer 3 \
+  `# Finally, suspend 10 mins after it locks` \
+  --timer 600 \
     'systemctl suspend' \
     ''
