@@ -1,4 +1,5 @@
 require('plugins.emmet')
+require('plugins.format')
 require('plugins.fugitive')
 require('plugins.hop')
 require('plugins.lsp')

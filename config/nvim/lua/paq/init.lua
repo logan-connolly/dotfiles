@@ -21,6 +21,7 @@ paq { 'nvim-lua/completion-nvim' }
 paq { 'nvim-lua/lsp-status.nvim' } 
 paq { 'onsails/lspkind-nvim' }
 paq { 'glepnir/lspsaga.nvim' }
+paq { 'lukas-reineke/format.nvim' }
 
 -- general plugins
 paq { 'mattn/emmet-vim' }
