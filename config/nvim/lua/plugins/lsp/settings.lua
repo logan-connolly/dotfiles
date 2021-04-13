@@ -22,11 +22,12 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
 )
 
 local servers = {
-	cssls = {
+  cssls = {
     filetypes = { "css", "scss", "less", "sass" },
     root_dir = lspconfig.util.root_pattern("package.json", ".git")
   },
   pyright = {},
+  r_language_server = {},
   tsserver = {},
   vuels = {},
 }
