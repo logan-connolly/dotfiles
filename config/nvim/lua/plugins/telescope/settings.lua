@@ -44,7 +44,8 @@ require('telescope').load_extension('fzy_native')
 search_dir = function(name, path_from_home)
 	require("telescope.builtin").find_files({
 		prompt_title = "< " .. name .. " >",
-		cwd = "$HOME/" .. path_from_home
+		cwd = "$HOME/" .. path_from_home,
+		hidden = true,
 	})
 end
 
