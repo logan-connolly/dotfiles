@@ -7,6 +7,7 @@ zstyle :compinstall filename '~/.zshrc'
 
 autoload -Uz compinit
 compinit
+kitty + complete setup zsh | source /dev/stdin
 
 # End of lines added by compinstall
 source "${HOME}/.config/zsh/environment.zsh"

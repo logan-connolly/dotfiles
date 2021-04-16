@@ -138,7 +138,7 @@ mode "resize" {
 }
 
 # Common commands
-set $term --no-startup-id alacritty --working-directory $(xcwd)
+set $term --no-startup-id kitty --directory $(xcwd)
 bindsym $mod+Return exec $term
 bindsym $mod+Shift+Return exec $term --class floating-term
 bindsym $mod+Shift+q kill

@@ -2,6 +2,8 @@
 alias o='xdg-open'
 alias cat='bat --theme="gruvbox-dark"'
 alias yank='xsel --clipboard'
+alias ssh='kitty +kitten ssh'
+alias icat='kitty +kitten icat'
 
 # configure files
 alias cv='nvim ~/.config/nvim'
