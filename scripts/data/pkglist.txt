@@ -1,4 +1,3 @@
-alacritty
 alsa-utils
 arandr
 autoconf
@@ -41,6 +40,7 @@ i3lock
 i3status
 imagemagick
 ipython
+kitty
 libmicrodns
 libreoffice-still
 libtool
