@@ -90,7 +90,7 @@ for_window [class="Lxappearance"] floating enable sticky enable border normal
 for_window [class="Pavucontrol"] floating enable
 for_window [class="(?i)virtualbox"] floating enable border normal
 for_window [class="URxvt" instance="floating"] floating enable
-for_window [class="Alacritty" instance="floating"] floating enable, resize set 750px 450px, move position center
+for_window [class="kitty-floating"] floating enable, resize set 750px 450px, move position center
 for_window [class="Signal"] floating enable, resize set 900px 400px, move position center
 for_window [class="Easytag"] floating enable, resize set 1200px 600px, move position center
 for_window [class="Pcmanfm"] floating enable, resize set 700px 400px, move position center
@@ -140,7 +140,7 @@ mode "resize" {
 # Common commands
 set $term --no-startup-id kitty --directory $(xcwd)
 bindsym $mod+Return exec $term
-bindsym $mod+Shift+Return exec $term --class floating-term
+bindsym $mod+Shift+Return exec $term --class kitty-floating
 bindsym $mod+Shift+q kill
 bindsym $mod+d exec --no-startup-id rofi -show drun
 bindsym $mod+f fullscreen toggle
