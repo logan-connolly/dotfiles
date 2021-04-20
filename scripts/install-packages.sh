@@ -14,6 +14,7 @@ setup_npm_global() {
 }
 
 install_npm_packages() {
+	setup_npm_global
 	general="eslint live-server neovim prettier"
 	lsp="typescript-language-server vls pyright vscode-css-languageserver-bin"
 	npm install -g $general $lsp

@@ -6,23 +6,19 @@ set -o errexit    # exit when command fails
 source ./scripts/install-packages.sh
 source ./scripts/symlink-configs.sh
 source ./scripts/clone-repos.sh
+source ./scripts/util.sh
 
-echo "Installing pacman packages ..."
+pprint "Installing dependencies ..."
 install_pacman_packages
-
-echo "Installing npm global dependencies ..."
-setup_npm_global
 install_npm_packages
 
-echo "Symlinking configuration files ..."
+pprint "Symlinking configurations ..."
 symlink_files
-
-echo "Symlinking configuration directories ..."
 symlink_dirs
 
-echo "Cloning third party repos ..."
+pprint "Cloning third party repos ..."
 clone_gruvbox_gtk
 clone_ranger_devicons
 clone_siji
 
-echo "FINISHED: recommend rebooting system"
+pprint "FINISHED: recommend rebooting system"
