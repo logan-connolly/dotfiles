@@ -22,7 +22,6 @@ paq { 'nvim-lua/lsp-status.nvim' }
 paq { 'onsails/lspkind-nvim' }
 paq { 'glepnir/lspsaga.nvim' }
 paq { 'lukas-reineke/format.nvim' }
-paq { 'sheerun/vim-polyglot' }
 
 -- general plugins
 paq { 'mattn/emmet-vim' }
