@@ -1,3 +1,6 @@
+# Default layout default|stacking|tabbed
+workspace_layout stacking
+
 # Modifier settings
 set $mod Mod4
 set $alt Mod1
@@ -41,9 +44,8 @@ bindsym $mod+b workspace back_and_forth
 bindsym $mod+Shift+b move container to workspace back_and_forth; workspace back_and_forth
 
 # Change container layout
-bindsym $mod+s layout stacking; exec notify-send 'layout stacking'
-bindsym $mod+w layout tabbed; exec notify-send 'layout tabbed'
-bindsym $mod+e layout toggle split
+bindsym $mod+s layout stacking
+bindsym $mod+w layout toggle split
 bindsym $mod+Shift+space floating toggle
 
 # Split orientation
@@ -56,46 +58,30 @@ bindsym $mod+1 workspace 1
 bindsym $mod+2 workspace 2
 bindsym $mod+3 workspace 3
 bindsym $mod+4 workspace 4
-bindsym $mod+5 workspace 5
-bindsym $mod+6 workspace 6
-bindsym $mod+7 workspace 7
-bindsym $mod+8 workspace 8
 
 # Move focused container to workspace
 bindsym $mod+Ctrl+1 move container to workspace 1
 bindsym $mod+Ctrl+2 move container to workspace 2
 bindsym $mod+Ctrl+3 move container to workspace 3
 bindsym $mod+Ctrl+4 move container to workspace 4
-bindsym $mod+Ctrl+5 move container to workspace 5
-bindsym $mod+Ctrl+6 move container to workspace 6
-bindsym $mod+Ctrl+7 move container to workspace 7
-bindsym $mod+Ctrl+8 move container to workspace 8
 
 # Move to workspace with focused container
 bindsym $mod+Shift+1 move container to workspace 1; workspace 1
 bindsym $mod+Shift+2 move container to workspace 2; workspace 2
 bindsym $mod+Shift+3 move container to workspace 3; workspace 3
 bindsym $mod+Shift+4 move container to workspace 4; workspace 4
-bindsym $mod+Shift+5 move container to workspace 5; workspace 5
-bindsym $mod+Shift+6 move container to workspace 6; workspace 6
-bindsym $mod+Shift+7 move container to workspace 7; workspace 7
-bindsym $mod+Shift+8 move container to workspace 8; workspace 8
 
 # Open specific applications in floating mode
 for_window [urgent=latest] focus
-for_window [title="alsamixer"] floating enable border pixel 1
-for_window [class="GParted"] floating enable border normal
-for_window [title="i3_help"] floating enable sticky enable border normal
 for_window [class="Lxappearance"] floating enable sticky enable border normal
 for_window [class="Pavucontrol"] floating enable
 for_window [class="(?i)virtualbox"] floating enable border normal
 for_window [class="URxvt" instance="floating"] floating enable
-for_window [class="kitty-floating"] floating enable, resize set 750px 450px, move position center
-for_window [class="Signal"] floating enable, resize set 900px 400px, move position center
-for_window [class="Easytag"] floating enable, resize set 1200px 600px, move position center
-for_window [class="Pcmanfm"] floating enable, resize set 700px 400px, move position center
-for_window [class="Blueman-manager"] floating enable, resize set 700px 400px, move position center
+for_window [class="kitty-floating"] floating enable, resize set 950px 550px, move position center
+for_window [class="Pcmanfm"] floating enable, resize set 800px 500px, move position center
+for_window [class="Blueman-manager"] floating enable, resize set 800px 500px, move position center
 for_window [class="Transmission"] floating enable, resize set 900px 400px, move position center
+for_window [class="Signal"] floating enable, resize set 900px 400px, move position center
 
 # Reload, restart, or exit i3
 bindsym $mod+Shift+c reload
@@ -147,8 +133,8 @@ bindsym $mod+f fullscreen toggle
 
 # Quickstart Applications
 bindsym $mod+F2 exec firefox
-bindsym $mod+F3 exec pcmanfm
-bindsym $mod+F4 exec $term --class floating-term -e cmus
+bindsym $mod+F3 exec $term --class kitty-floating -e cmus
+bindsym $mod+F4 exec pcmanfm
 bindsym $mod+Ctrl+m exec pavucontrol
 bindsym $mod+Ctrl+n exec blueman-manager
 
