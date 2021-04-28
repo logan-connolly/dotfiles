@@ -16,12 +16,13 @@ local update_treesitter = function() vim.cmd(":TSUpdate") end
 -- language support
 paq { 'nvim-treesitter/nvim-treesitter', run = update_treesitter }
 paq { 'nvim-treesitter/nvim-treesitter-refactor' }
+paq { 'sheerun/vim-polyglot' }
 paq { 'neovim/nvim-lspconfig' }
 paq { 'nvim-lua/completion-nvim' }
 paq { 'nvim-lua/lsp-status.nvim' }
 paq { 'onsails/lspkind-nvim' }
 paq { 'glepnir/lspsaga.nvim' }
-paq { 'lukas-reineke/format.nvim' }
+paq { 'dense-analysis/ale' }
 
 -- general plugins
 paq { 'mattn/emmet-vim' }
