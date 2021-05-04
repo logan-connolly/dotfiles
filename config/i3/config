@@ -44,8 +44,8 @@ bindsym $mod+b workspace back_and_forth
 bindsym $mod+Shift+b move container to workspace back_and_forth; workspace back_and_forth
 
 # Change container layout
-bindsym $mod+s layout stacking
-bindsym $mod+w layout toggle split
+bindsym $mod+s layout stacking; exec notify-send 'enable stacking'
+bindsym $mod+w layout toggle split; exec notify-send 'toggle split'
 bindsym $mod+Shift+space floating toggle
 
 # Split orientation
@@ -124,7 +124,7 @@ mode "resize" {
 }
 
 # Common commands
-set $term --no-startup-id kitty --directory $(xcwd)
+set $term --no-startup-id kitty
 bindsym $mod+Return exec $term
 bindsym $mod+Shift+Return exec $term --class kitty-floating
 bindsym $mod+Shift+q kill
