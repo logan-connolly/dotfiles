@@ -10,9 +10,9 @@ Keybind.g({
 	{ 'n', '<Leader>da', [[<Cmd>call vimspector#ClearBreakpoints()<CR>]], defaults },
 	-- inside debugger
 	{ 'n', '<Leader>dl', [[<Plug>VimspectorStepInto]], { noremap = false, silent = true } },
-	{ 'n', '<Leader>dl', [[<Plug>VimspectorStepOver]], { noremap = false, silent = true } },
-	{ 'n', '<Leader>dl', [[<Plug>VimspectorStepOut]], { noremap = false, silent = true } },
-	{ 'n', '<Leader>dl', [[<Plug>VimspectorRestart]], { noremap = false, silent = true } },
-	{ 'n', '<Leader>dl', [[<Plug>VimspectorToggleBreakpoint]], { noremap = false, silent = true } },
-	{ 'n', '<Leader>dl', [[<Plug>VimspectorToggleConditionalBreakpoint]], { noremap = false, silent = true } },
+	{ 'n', '<Leader>dj', [[<Plug>VimspectorStepOver]], { noremap = false, silent = true } },
+	{ 'n', '<Leader>dk', [[<Plug>VimspectorStepOut]], { noremap = false, silent = true } },
+	{ 'n', '<Leader>d_', [[<Plug>VimspectorRestart]], { noremap = false, silent = true } },
+	{ 'n', '<Leader>db', [[<Plug>VimspectorToggleBreakpoint]], { noremap = false, silent = true } },
+	{ 'n', '<Leader>dp', [[<Plug>VimspectorToggleConditionalBreakpoint]], { noremap = false, silent = true } },
 })
