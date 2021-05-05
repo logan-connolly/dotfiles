@@ -71,3 +71,9 @@ Add color to pacman by editing `/etc/pacman.conf`:
 # /etc/pacman.conf
 COLOR
 ```
+
+Update global NPM packages:
+
+```shell
+npx npm-check-updates -g
+```
