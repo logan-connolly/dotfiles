@@ -1,4 +1,5 @@
 i3-swallow
 nerd-fonts-mononoki
 polybar
+siji
 xidlehook

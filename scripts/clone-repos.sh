@@ -18,10 +18,3 @@ clone_ranger_devicons() {
   ranger_devicon_path="$HOME/.config/ranger/plugins/ranger_devicons"
   clone_repo $ranger_devicon_repo $ranger_devicon_path
 }
-
-clone_siji() {
-	siji_repo=https://github.com/stark/siji.git 
-	siji_path=$HOME/.local/share/fonts/siji
-	clone_repo $siji_repo $siji_path
-	cd $siji_path && ./install.sh
-}

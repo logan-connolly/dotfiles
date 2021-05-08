@@ -19,6 +19,5 @@ symlink_dirs
 pprint "Cloning third party repos ..."
 clone_gruvbox_gtk
 clone_ranger_devicons
-clone_siji
 
 pprint "FINISHED: recommend rebooting system"
