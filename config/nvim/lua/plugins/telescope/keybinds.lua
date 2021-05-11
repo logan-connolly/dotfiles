@@ -17,5 +17,5 @@ Keybind.g({
 	{ 'n', '<Leader>fd', [[<Cmd>lua require('plugins.telescope.settings').search_dotfiles()<CR>]], defaults },
 	{ 'n', '<Leader>fn', [[<Cmd>lua require('plugins.telescope.settings').search_notes()<CR>]], defaults },
 	{ 'n', '<Leader>fP', [[<Cmd>lua require('plugins.telescope.settings').search_plugins()<CR>]], defaults },
-	{ 'n', '<Leader>fp', [[<Cmd>lua require('plugins.telescope.settings').search_projects()<CR>]], defaults },
+	{ 'n', '<Leader>fp', [[<Cmd>lua require'telescope'.extensions.project.project{}<CR>]], defaults },
 })

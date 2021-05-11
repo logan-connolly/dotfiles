@@ -39,6 +39,7 @@ paq { 'nvim-lua/popup.nvim' }
 paq { 'nvim-lua/plenary.nvim' }
 paq { 'nvim-telescope/telescope.nvim' }
 paq { 'nvim-telescope/telescope-fzy-native.nvim', run = submodule }
+paq { 'nvim-telescope/telescope-project.nvim' }
 
 -- debugger plugins
 paq { 'puremourning/vimspector' }

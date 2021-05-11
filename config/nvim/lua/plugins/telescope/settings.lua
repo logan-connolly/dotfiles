@@ -1,4 +1,5 @@
 local actions = require('telescope.actions')
+
 require('telescope').setup {
 	defaults = {
 		file_sorter      = require('telescope.sorters').get_fzy_sorter,
@@ -39,8 +40,11 @@ require('telescope').setup {
 	}
 }
 
+-- Load extensions
 require('telescope').load_extension('fzy_native')
+require('telescope').load_extension('project')
 
+-- Custom functions
 search_dir = function(name, path_from_home)
 	require("telescope.builtin").find_files({
 		prompt_title = "< " .. name .. " >",
@@ -54,6 +58,5 @@ local M = {}
 M.search_dotfiles = function() search_dir("dotfiles", "dotfiles") end
 M.search_notes = function() search_dir("notes", "notes") end
 M.search_plugins = function() search_dir("plugins", ".local/share/nvim/site/pack/paqs/start") end
-M.search_projects = function() search_dir("projects", "projects") end
 
 return M
