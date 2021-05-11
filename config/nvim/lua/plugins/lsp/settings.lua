@@ -27,7 +27,6 @@ local servers = {
     root_dir = lspconfig.util.root_pattern("package.json", ".git")
   },
   pyright = {},
-  r_language_server = {},
   tsserver = {},
   vuels = {},
 }
