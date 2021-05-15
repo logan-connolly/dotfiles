@@ -14,10 +14,9 @@ alias ci='nvim ~/.config/i3/config'
 alias v='nvim'
 
 # ls aliases
-alias ll='ls -lh --color=auto'
-alias la='ls -lah --color=auto'
-alias ls='ls --color=auto'
-alias l.='ls -d .* --color=auto'
+alias nnn='nnn_cd'
+alias ls='nnn -dc'
+alias ll='nnn -dc'
 
 # ignore files/dirs with tree
 alias tree="tree -I '__pycache__|.git|venv|node_modules'"

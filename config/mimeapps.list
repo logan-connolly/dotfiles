@@ -1,7 +1,7 @@
 [Default Applications]
 application/xml=firefox.desktop
 application/json=firefox.desktop
-application/pdf=firefox.desktop
+application/pdf=org.pwmt.zathura.desktop
 application/xhtml+xml=firefox.desktop
 application/x-xpinstall=firefox.desktop
 inode/directory=pcmanfm.desktop

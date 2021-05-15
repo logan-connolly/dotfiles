@@ -1,19 +1,20 @@
+# general settings
+export LIBGL_DRI3_DISABLE=1
+export NNN_BMS='p:~/projects;c:~/.config;d:~/dotfiles'
+
 # default programs
 export EDITOR="nvim"
 export VISUAL="nvim"
-export TERMINAL="alacritty"
+export TERMINAL="kitty"
 export BROWSER="firefox"
 export READER="zathura"
 
 # edit PATH
-export PATH=~/.local/bin:$PATH
-export PATH=~/.npm-global/bin:$PATH
+export PATH="$HOME/local/bin:$PATH"
+export PATH="$HOME/.npm-global/bin:$PATH"
 export PATH="$HOME/.poetry/bin:$PATH"
 
 # fzf autocompletion
-[ -f /usr/share/fzf/key-bindings.zsh ] && source /usr/share/fzf/key-bindings.zsh
-[ -f /usr/share/fzf/completion.zsh ] && source /usr/share/fzf/completion.zsh
-
 export FZF_DEFAULT_OPTS="
 --layout=reverse
 --info=inline

@@ -58,6 +58,7 @@ ncdu
 neofetch
 networkmanager
 nfs-utils
+nnn
 nodejs
 noto-fonts
 noto-fonts-cjk
@@ -83,6 +84,7 @@ python-numpy
 python-pre-commit
 python-pylint
 python-pynvim
+qbittorrent
 ranger
 reflector
 ripgrep
@@ -99,7 +101,6 @@ texinfo
 throttled
 tlp
 tmux
-transmission-gtk
 tree
 ttf-font-awesome
 typescript
