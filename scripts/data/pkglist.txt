@@ -97,6 +97,7 @@ sof-firmware
 sshfs
 stylelint
 sudo
+sxiv
 texinfo
 throttled
 tlp
