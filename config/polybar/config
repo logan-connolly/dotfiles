@@ -26,6 +26,7 @@ default = #282828
 background = #00282828
 background-alpha = #00282828
 foreground = #928374
+white = #d5c4a1
 grey = #32302f
 red = #cc241d
 blue = #458588
@@ -105,7 +106,7 @@ time = %H:%M
 time-alt = %H:%M:%S
 
 format-prefix = 
-format-prefix-foreground = ${color.orange}
+format-prefix-foreground = ${color.white}
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
@@ -198,15 +199,19 @@ format-discharging-padding = 1
 label-charging = %percentage%%
 label-discharging = %percentage%%
 label-full = 
-label-full-background = ${color.green}
+label-full-foreground = ${color.green}
 label-full-padding = 1
 
 ramp-capacity-0 = 
 ramp-capacity-0-foreground = ${color.red}
 ramp-capacity-1 = 
+ramp-capacity-1-foreground = ${color.yellow}
 ramp-capacity-2 = 
+ramp-capacity-2-foreground = ${color.yellow}
 ramp-capacity-3 = 
+ramp-capacity-3-foreground = ${color.green}
 ramp-capacity-4 = 
+ramp-capacity-4-foreground = ${color.green}
 
 animation-charging-0 = 
 animation-charging-1 = 
