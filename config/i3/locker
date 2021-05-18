@@ -9,8 +9,8 @@ xidlehook \
   --not-when-fullscreen \
   `# Don't lock when there's audio playing` \
   --not-when-audio \
-  `# Dim the screen after 5 mins, undim if user becomes active` \
-  --timer 300 \
+  `# Dim the screen after 10 mins, undim if user becomes active` \
+  --timer 600 \
     'xrandr --output "$PRIMARY_DISPLAY" --brightness .1' \
     'xrandr --output "$PRIMARY_DISPLAY" --brightness 1' \
   `# Undim & lock after 10 more seconds` \
