@@ -1,6 +1,8 @@
 # Dotfiles
 
-![](help/screenshot.png)
+![](docs/screenshots/screenshot-1.png)
+![](docs/screenshots/screenshot-2.png)
+![](docs/screenshots/screenshot-3.png)
 
 ## Prerequisites
 
