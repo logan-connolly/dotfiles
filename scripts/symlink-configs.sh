@@ -37,7 +37,5 @@ symlink_dirs() {
   symlink_dir $CONFIG_DIR/zsh ~/.config/zsh
 }
 
-symlink_configs() {
-  symlink_files
-  symlink_dirs
-}
+symlink_files
+symlink_dirs

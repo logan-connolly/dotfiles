@@ -13,6 +13,4 @@ clone_gruvbox_gtk() {
   clone_repo $gruvbox_gtk_repo $gruvbox_gtk_path
 }
 
-clone_repos() {
-  clone_gruvbox_gtk
-}
+clone_gruvbox_gtk

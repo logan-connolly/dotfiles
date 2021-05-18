@@ -1,7 +1,7 @@
 #!/bin/bash
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd)"
-PKGINSTALL="sudo pacman --noconfirm -S --needed"
+PKGINSTALL="paru --noconfirm -S --needed"
 
 install_pacman_packages() {
 	$PKGINSTALL - <$SCRIPT_DIR/data/pkglist.txt
@@ -20,7 +20,5 @@ install_npm_packages() {
 	npm install -g $general $lsp
 }
 
-install_packages() {
-	install_pacman_packages
-	install_npm_packages
-}
+install_pacman_packages
+install_npm_packages
