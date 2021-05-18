@@ -85,13 +85,13 @@ python-pre-commit
 python-pylint
 python-pynvim
 qbittorrent
-ranger
 reflector
 ripgrep
 rofi
 rsync
 rxvt-unicode
 scrot
+shfmt
 signal-desktop
 sof-firmware
 sshfs
