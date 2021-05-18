@@ -1,16 +1,5 @@
 ## Gists
 
-### Paru package manager
-
-Install [paru](https://github.com/Morganamilo/paru) for downloading AUR packages:
-
-```shell
-sudo pacman -S --needed base-devel
-git clone https://aur.archlinux.org/paru.git
-cd paru
-makepkg -si
-```
-
 ### Conventional Commits
 
 - *feat:* (new feature for the user, not a new feature for build script)
