@@ -1,7 +1,7 @@
 #!/bin/bash
 
-SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
-PARENT_DIR="$( dirname "$SCRIPT_DIR" )"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd)"
+PARENT_DIR="$(dirname "$SCRIPT_DIR")"
 CONFIG_DIR=$PARENT_DIR/config
 
 symlink_files() {
@@ -35,4 +35,9 @@ symlink_dirs() {
   symlink_dir $CONFIG_DIR/polybar ~/.config/polybar
   symlink_dir $CONFIG_DIR/zathura ~/.config/zathura
   symlink_dir $CONFIG_DIR/zsh ~/.config/zsh
+}
+
+symlink_configs() {
+  symlink_files
+  symlink_dirs
 }

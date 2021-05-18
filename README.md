@@ -13,15 +13,6 @@ Fresh install of [arch](https://archlinux.org/) and [i3](https://i3wm.org/). Off
 
 **Warning:** use at your own risk.
 
-Install [paru](https://github.com/Morganamilo/paru) for downloading AUR packages:
-
-```shell
-sudo pacman -S --needed base-devel
-git clone https://aur.archlinux.org/paru.git
-cd paru
-makepkg -si
-```
-
 Clone [dotfiles](https://github.com/logan-connolly/dotfiles) repository:
 
 ```shell

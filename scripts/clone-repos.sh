@@ -13,8 +13,6 @@ clone_gruvbox_gtk() {
   clone_repo $gruvbox_gtk_repo $gruvbox_gtk_path
 }
 
-clone_ranger_devicons() {
-  ranger_devicon_repo=https://github.com/alexanderjeurissen/ranger_devicons.git
-  ranger_devicon_path="$HOME/.config/ranger/plugins/ranger_devicons"
-  clone_repo $ranger_devicon_repo $ranger_devicon_path
+clone_repos() {
+  clone_gruvbox_gtk
 }
