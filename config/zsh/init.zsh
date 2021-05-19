@@ -7,3 +7,5 @@ bindkey -v
 zstyle :compinstall filename '~/.zshrc'
 autoload -Uz compinit
 compinit
+
+kitty + complete setup zsh | source /dev/stdin

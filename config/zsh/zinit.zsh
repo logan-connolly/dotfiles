@@ -41,6 +41,7 @@ zinit snippet OMZP::terraform
 # vim style navigation
 zinit ice depth=1
 zinit light jeffreytse/zsh-vi-mode
+ZVM_CURSOR_STYLE_ENABLED=false
 
 # k - pretty printing ls
 zinit light supercrabtree/k
