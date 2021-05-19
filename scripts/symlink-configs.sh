@@ -8,12 +8,12 @@ symlink_files() {
   ln -vsf $CONFIG_DIR/.flake8 ~/.flake8
   ln -vsf $CONFIG_DIR/.gitconfig ~/.gitconfig
   ln -vsf $CONFIG_DIR/.inputrc ~/.inputrc
-  ln -vsf $CONFIG_DIR/.mimeapps.list ~/.config/.mimeapps.list
   ln -vsf $CONFIG_DIR/.pylintrc ~/.pylintrc
   ln -vsf $CONFIG_DIR/.xinitrc ~/.xinitrc
   ln -vsf $CONFIG_DIR/.Xresources ~/.Xresources
   ln -vsf $CONFIG_DIR/.zshrc ~/.zshrc
   ln -vsf $CONFIG_DIR/.zprofile ~/.zprofile
+  ln -vsf $CONFIG_DIR/mimeapps.list ~/.config/.mimeapps.list
 }
 
 symlink_dir() {
@@ -29,7 +29,6 @@ symlink_dirs() {
   symlink_dir $CONFIG_DIR/i3 ~/.config/i3
   symlink_dir $CONFIG_DIR/kitty ~/.config/kitty
   symlink_dir $CONFIG_DIR/nvim ~/.config/nvim
-  symlink_dir $CONFIG_DIR/ranger ~/.config/ranger
   symlink_dir $CONFIG_DIR/rofi ~/.config/rofi
   symlink_dir $CONFIG_DIR/picom ~/.config/picom
   symlink_dir $CONFIG_DIR/polybar ~/.config/polybar

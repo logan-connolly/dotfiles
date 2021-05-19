@@ -8,6 +8,10 @@ install_pacman_packages() {
 	$PKGINSTALL - <$SCRIPT_DIR/data/aur.txt
 }
 
+install_nnn_plugins() {
+	curl -Ls https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs | sh
+}
+
 setup_npm_global() {
 	mkdir -p $HOME/.npm-global
 	npm config set prefix '~/.npm-global'
@@ -21,4 +25,5 @@ install_npm_packages() {
 }
 
 install_pacman_packages
+install_nnn_plugins
 install_npm_packages
