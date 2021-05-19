@@ -1,6 +1,5 @@
 # general settings
 export LIBGL_DRI3_DISABLE=1
-export NNN_BMS='p:~/projects;c:~/.config;d:~/dotfiles'
 
 # default programs
 export EDITOR="nvim"
@@ -13,6 +12,10 @@ export READER="zathura"
 export PATH="$HOME/local/bin:$PATH"
 export PATH="$HOME/.npm-global/bin:$PATH"
 export PATH="$HOME/.poetry/bin:$PATH"
+
+# nnn settings
+export NNN_BMS='p:~/projects;c:~/.config;d:~/dotfiles'
+export NNN_PLUG=
 
 # fzf autocompletion
 export FZF_DEFAULT_OPTS="

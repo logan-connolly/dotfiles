@@ -17,6 +17,10 @@ alias v='nvim'
 alias nnn='nnn_cd'
 alias ls='nnn -dc'
 alias ll='nnn -dc'
+alias la='nnn -dc'
+
+# k alias
+alias k='k -h --no-vcs'
 
 # ignore files/dirs with tree
 alias tree="tree -I '__pycache__|.git|venv|node_modules'"

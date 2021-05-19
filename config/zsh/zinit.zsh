@@ -23,13 +23,28 @@ zinit light-mode for \
 
 # load shell prompt
 zinit light romkatv/powerlevel10k
-source "${HOME}/.config/zsh/zsh-theme-gruvbox-material-dark"
 
 # load git aliases
 zinit light davidde/git
-zinit light wfxr/forgit
 
 # load autocompletion
 zinit snippet OMZP::docker/_docker
 zinit snippet OMZP::docker-compose
+zinit snippet OMZP::git
+zinit snippet OMZP::httpie
+zinit snippet OMZP::npm
+zinit snippet OMZP::pip
 zinit snippet OMZP::python
+zinit snippet OMZP::rsync
+zinit snippet OMZP::terraform
+
+# vim style navigation
+zinit ice depth=1
+zinit light jeffreytse/zsh-vi-mode
+
+# k - pretty printing ls
+zinit light supercrabtree/k
+
+# For postponing loading `fzf`
+zinit ice lucid wait
+zinit snippet OMZP::fzf
