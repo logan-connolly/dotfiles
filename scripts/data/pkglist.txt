@@ -28,7 +28,6 @@ gcc
 git
 gnome-keyring
 gparted
-gpodder
 groff
 grub
 htmlhint
