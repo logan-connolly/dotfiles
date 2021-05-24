@@ -135,7 +135,7 @@ mode "resize" {
 # Common commands
 set $term --no-startup-id kitty
 bindsym $mod+Return exec $term
-bindsym $mod+Shift+Return exec $term --class kitty-floating
+bindsym $mod+Shift+Return exec pcmanfm
 bindsym $mod+Shift+q kill
 bindsym $mod+d exec --no-startup-id rofi -show drun
 bindsym $mod+f fullscreen toggle
@@ -143,7 +143,7 @@ bindsym $mod+f fullscreen toggle
 # Quickstart Applications
 bindsym $mod+F2 exec firefox
 bindsym $mod+F3 exec $term --class cmus-instance -e cmus
-bindsym $mod+F4 exec pcmanfm
+bindsym $mod+F4 exec exec signal-desktop; exec discord
 bindsym $mod+Ctrl+m exec pavucontrol
 bindsym $mod+Ctrl+n exec blueman-manager
 
