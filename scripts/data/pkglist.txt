@@ -11,6 +11,7 @@ bluez-utils
 chromium
 cmus
 ctags
+ctop
 discord
 docker
 docker-compose
