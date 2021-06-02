@@ -5,7 +5,7 @@ require('utils')
 require('general')
 
 -- install plugins
-require('paq')
+require('install')
 
 -- configure plugins
 require('plugins')
