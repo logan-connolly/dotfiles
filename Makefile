@@ -1,15 +1,17 @@
 .PHONY: install neovim symlink clone setup
 
+current_dir := $(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
+
 install:
-	bash ./scripts/install-packages.sh
+	bash $(current_dir)/scripts/install-packages.sh
 
 neovim:
-	bash ./scripts/install-neovim.sh
+	bash $(current_dir)/scripts/install-neovim.sh
 
 symlink:
-	bash ./scripts/symlink-configs.sh
+	bash $(current_dir)/scripts/symlink-configs.sh
 
 clone:
-	bash ./scripts/clone-repos.sh
+	bash $(current_dir)/scripts/clone-repos.sh
 
 setup: install neovim symlink clone
