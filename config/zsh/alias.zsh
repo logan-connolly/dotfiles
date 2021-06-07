@@ -2,6 +2,7 @@
 alias o='xdg-open'
 alias cat='bat --theme="gruvbox-dark"'
 alias yank='xsel --clipboard'
+alias cpwd='pwd | yank'
 alias ssh='kitty +kitten ssh'
 alias icat='kitty +kitten icat'
 
@@ -34,7 +35,7 @@ alias nmc="nmcli --ask device wifi connect"
 alias rename="perl-rename"
 
 # generate virtual environment
-alias venv="python -m venv venv && source venv/bin/activate && pip install -U pip setuptools wheel &> /dev/null"
+alias venv="python -m venv .venv && source venv/bin/activate && pip install -U pip setuptools wheel &> /dev/null"
 
 # swallow terminal apps
 alias mpv="i3-swallow mpv"
