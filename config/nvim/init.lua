@@ -9,3 +9,6 @@ require('install')
 
 -- configure plugins
 require('plugins')
+
+-- set theme
+require('theme')
