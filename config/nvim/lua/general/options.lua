@@ -48,5 +48,6 @@ Option.w({
 Option.b({
 	expandtab = true,
 	smartindent = true,
+	autoindent = true,
 	swapfile = false,
 })
