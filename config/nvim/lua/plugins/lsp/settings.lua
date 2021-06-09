@@ -4,7 +4,10 @@ local lspkind = require('lspkind')
 local saga = require('lspsaga')
 local on_attach = require'completion'.on_attach
 
+-- Adds VSCode like pictograms
 lspkind.init()
+
+-- setup saga which improves LSP hover window
 saga.init_lsp_saga {
 	use_saga_diagnostic_sign = false,
 	finder_action_keys = {
@@ -14,6 +17,7 @@ saga.init_lsp_saga {
 	}
 }
 
+-- Configure linting diagnostics
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
 	vim.lsp.diagnostic.on_publish_diagnostics, {
 		virtual_text = false,
@@ -21,23 +25,18 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
 	}
 )
 
+-- LSP servers to support with optional arguments
 local servers = {
-  cssls = {
-    filetypes = { "css", "scss", "less", "sass" },
-    root_dir = lspconfig.util.root_pattern("package.json", ".git")
-  },
   pyright = {},
   tsserver = {},
   vuels = {},
 }
 
-local snippet_capabilities = {
-  textDocument = {completion = {completionItem = {snippetSupport = true}}}
-}
-
+-- Configure each LSP by attaching completion and status capbilities
 for server, config in pairs(servers) do
   config.on_attach = on_attach
-  config.capabilities = vim.tbl_deep_extend('keep', config.capabilities or {},
-                                            lsp_status.capabilities, snippet_capabilities)
+  config.capabilities = vim.tbl_deep_extend(
+	  'keep', config.capabilities or {}, lsp_status.capabilities
+	)
   lspconfig[server].setup(config)
 end
