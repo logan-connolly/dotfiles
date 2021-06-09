@@ -1,20 +1,34 @@
+local builtin_module = [['telescope.builtin'.]]
+local custom_module = [['plugins.telescope.settings'.]]
+local project_module = [['telescope'.extensions.project.]]
 local defaults = { noremap = true, silent = true }
 
+function telescope_cmd(module, fn)
+	return '<Cmd>lua require' .. module .. fn .. ' <CR>'
+end
+
 Keybind.g({
-	-- search entered word within project
-	{ 'n', '<Leader>fg', [[<Cmd>lua require('telescope.builtin').grep_string({ search = vim.fn.input("Grep For > ")})<CR>]], defaults },
-	-- search by filename in git files
-	{ 'n', '<C-p>', [[<Cmd>lua require('telescope.builtin').git_files({ hidden = true })<CR>]], defaults },
-	-- buffer list window
-	{ 'n', '<Leader>fb', [[<Cmd>lua require('telescope.builtin').buffers()<CR>]], defaults },
-	-- search by filename in all project files
-	{ 'n', '<Leader>ff', [[<Cmd>lua require('telescope.builtin').find_files()<CR>]], defaults },
-	-- git branches
-	{ 'n', '<Leader>fB', [[<Cmd>lua require('telescope.builtin').git_branches()<CR>]], defaults },
-	-- telescope custom dirs
-	{ 'n', '<Leader>fd', [[<Cmd>lua require('plugins.telescope.settings').search_dotfiles()<CR>]], defaults },
-	{ 'n', '<Leader>fn', [[<Cmd>lua require('plugins.telescope.settings').search_notes()<CR>]], defaults },
-	{ 'n', '<Leader>fP', [[<Cmd>lua require('plugins.telescope.settings').search_plugins()<CR>]], defaults },
-	-- go to projects
-	{ 'n', '<Leader>fp', [[<Cmd>lua require'telescope'.extensions.project.project{}<CR>]], defaults },
+	-- search files
+	{ 'n', '<Leader>ff', telescope_cmd(builtin_module, 'find_files()'), defaults },
+	{ 'n', '<C-p>', telescope_cmd(builtin_module, 'git_files({ hidden = true })'), defaults },
+
+	-- search word
+	{ 'n', '<Leader>fg', telescope_cmd(builtin_module, 'grep_string()'), defaults },
+
+	-- tpope/vim-vinegar replacement
+	{ 'n', '-', telescope_cmd(builtin_module, 'file_browser({ relative = true })'), defaults },
+
+	-- search buffers
+	{ 'n', '<Leader>fb', telescope_cmd(builtin_module, 'buffers()'), defaults },
+
+	-- search help pages
+	{ 'n', '<Leader>fh', telescope_cmd(builtin_module, 'help_tags()'), defaults },
+
+	-- search projects
+	{ 'n', '<Leader>fp', telescope_cmd(project_module, 'project{}'), defaults },
+
+	-- custom searches
+	{ 'n', '<Leader>fd', telescope_cmd(custom_module, 'search_dotfiles()'), defaults },
+	{ 'n', '<Leader>fn', telescope_cmd(custom_module, 'search_notes()'), defaults },
+	{ 'n', '<Leader>fP', telescope_cmd(custom_module, 'search_plugins()'), defaults },
 })
