@@ -13,6 +13,7 @@ alias ci='nvim ~/.config/i3/config'
 
 # use neovim
 alias v='nvim'
+alias vim='nvim -u "NORC"'
 
 # ls aliases
 alias nnn='nnn_cd'
