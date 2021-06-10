@@ -7,7 +7,6 @@ Option.g({
 	number = true,
 	incsearch = true,
 	showmode = false,
-	cmdheight = 2,
 	compatible = false,
 	errorbells = false,
 	tabstop = 2,

@@ -45,18 +45,18 @@ require('telescope').load_extension('fzy_native')
 require('telescope').load_extension('project')
 
 -- Custom functions
-search_dir = function(name, path_from_home)
+search_dir = function(name, path)
 	require("telescope.builtin").find_files({
 		prompt_title = "< " .. name .. " >",
-		cwd = "$HOME/" .. path_from_home,
+		cwd = path,
 		hidden = true,
 	})
 end
 
 local M = {}
 
-M.search_dotfiles = function() search_dir("dotfiles", "dotfiles") end
-M.search_notes = function() search_dir("notes", "notes") end
-M.search_plugins = function() search_dir("plugins", ".local/share/nvim/site/pack/paqs/start") end
+M.search_dotfiles = function() search_dir("dotfiles", "~/dotfiles") end
+M.search_notes = function() search_dir("notes", "~/notes") end
+M.search_plugins = function() search_dir("plugins", "~/.local/share/nvim/site/pack/paqs/start") end
 
 return M
