@@ -4,24 +4,29 @@ alias cat='bat --theme="gruvbox-dark"'
 alias yank='xsel --clipboard'
 alias cpwd='pwd | yank'
 alias ssh='kitty +kitten ssh'
-alias icat='kitty +kitten icat'
 
 # configure files
 alias cv='nvim ~/.config/nvim'
 alias cz='nvim ~/.zshrc'
 alias ci='nvim ~/.config/i3/config'
 
-# use neovim
+# neovim
 alias v='nvim'
 alias vim='nvim -u "NORC"'
 
-# ls aliases
+# docker
+alias dc='docker-compose'
+alias dcu='docker-compose up -d'
+alias dcd='docker-compose down'
+
+# git
+alias gcm='git commit -m'
+
+# nnn
 alias nnn='nnn_cd'
 alias ls='nnn -dc'
 alias ll='nnn -dc'
 alias la='nnn -dc'
-
-# k alias
 alias k='k -h --no-vcs'
 
 # ignore files/dirs with tree
