@@ -1,4 +1,5 @@
 i3-swallow
+lua-language-server
 nerd-fonts-mononoki
 polybar
 siji
