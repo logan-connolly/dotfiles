@@ -1,6 +1,5 @@
  -- paq.nvim automatic install
 local install_path = vim.fn.stdpath("data") .. "/site/pack/paqs/opt/paq-nvim"
-
 if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
 		vim.cmd("!git clone https://github.com/savq/paq-nvim " .. install_path)
 end
@@ -39,7 +38,8 @@ paq { 'nvim-lua/plenary.nvim' }
 -- paq { 'nvim-telescope/telescope.nvim' }
 paq { 'logan-connolly/telescope.nvim', branch = "feat/builtin_file_browser_vinegar" }
 paq { 'nvim-telescope/telescope-fzy-native.nvim', run = submodule }
-paq { 'nvim-telescope/telescope-project.nvim' }
+--paq { 'nvim-telescope/telescope-project.nvim' }
+paq { 'logan-connolly/telescope-project.nvim', branch = "feat/restructure_module" }
 
 -- debugger plugins
 paq { 'puremourning/vimspector' }

@@ -34,9 +34,12 @@ require('telescope').setup {
   },
 	extensions = {
 		fzy_native = {
-		override_generic_sorter = false,
-		override_file_sorter = true,
-		}
+      override_generic_sorter = false,
+      override_file_sorter = true,
+		},
+    project = {
+      base_dir = '~/projects'
+    }
 	}
 }
 
@@ -45,7 +48,7 @@ require('telescope').load_extension('fzy_native')
 require('telescope').load_extension('project')
 
 -- Custom functions
-search_dir = function(name, path)
+local search_dir = function(name, path)
 	require("telescope.builtin").find_files({
 		prompt_title = "< " .. name .. " >",
 		cwd = path,
