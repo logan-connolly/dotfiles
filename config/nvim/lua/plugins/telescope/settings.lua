@@ -38,7 +38,8 @@ require('telescope').setup {
       override_file_sorter = true,
 		},
     project = {
-      base_dir = '~/projects'
+      base_dir = '~/projects',
+      max_depth = 2
     }
 	}
 }
@@ -59,7 +60,13 @@ end
 local M = {}
 
 M.search_dotfiles = function() search_dir("dotfiles", "~/dotfiles") end
-M.search_notes = function() search_dir("notes", "~/notes") end
 M.search_plugins = function() search_dir("plugins", "~/.local/share/nvim/site/pack/paqs/start") end
+
+M.browse_dir = function(path)
+  require("telescope.builtin").file_browser({
+    cwd = path,
+    hidden = true,
+	})
+end
 
 return M

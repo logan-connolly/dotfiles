@@ -29,6 +29,8 @@ Keybind.g({
 
 	-- custom searches
 	{ 'n', '<Leader>fd', telescope_cmd(custom_module, 'search_dotfiles()'), defaults },
-	{ 'n', '<Leader>fn', telescope_cmd(custom_module, 'search_notes()'), defaults },
 	{ 'n', '<Leader>fP', telescope_cmd(custom_module, 'search_plugins()'), defaults },
+
+  -- browse directory
+	{ 'n', '<Leader>fn', telescope_cmd(custom_module, 'browse_dir("~/notes")'), defaults },
 })
