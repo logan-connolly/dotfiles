@@ -3,20 +3,20 @@ local custom_module = [['plugins.telescope.settings'.]]
 local extension_module = [['telescope'.extensions.]]
 local defaults = { noremap = true, silent = true }
 
-function telescope_cmd(module, fn)
+local function telescope_cmd(module, fn)
 	return '<Cmd>lua require' .. module .. fn .. ' <CR>'
 end
 
 Keybind.g({
 	-- search files
-	{ 'n', '<Leader>ff', telescope_cmd(builtin_module, 'find_files()'), defaults },
+	{ 'n', '<Leader>ff', telescope_cmd(builtin_module, "find_files({ hidden = true })"), defaults },
 	{ 'n', '<C-p>', telescope_cmd(builtin_module, 'git_files({ hidden = true })'), defaults },
 
 	-- search word
-	{ 'n', '<Leader>fg', telescope_cmd(builtin_module, 'grep_string({ search = vim.fn.input("> ") })'), defaults },
+	{ 'n', '<Leader>fg', telescope_cmd(builtin_module, "grep_string({ search = vim.fn.input('> ') })"), defaults },
 
 	-- tpope/vim-vinegar replacement
-	{ 'n', '-', telescope_cmd(builtin_module, [[file_browser({ cwd = require'telescope.utils'.get_current_buffer_dir() })]]), defaults },
+	{ 'n', '-', telescope_cmd(builtin_module, "file_browser({ cwd = require'telescope.utils'.buffer_dir() })"), defaults },
 
 	-- search buffers
 	{ 'n', '<Leader>fb', telescope_cmd(builtin_module, 'buffers()'), defaults },

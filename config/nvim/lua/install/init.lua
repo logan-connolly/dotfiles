@@ -35,11 +35,9 @@ paq { 'norcalli/nvim-colorizer.lua' }
 -- fuzzy finders
 paq { 'nvim-lua/popup.nvim' }
 paq { 'nvim-lua/plenary.nvim' }
--- paq { 'nvim-telescope/telescope.nvim' }
-paq { 'logan-connolly/telescope.nvim', branch = "feat/builtin_file_browser_vinegar" }
 paq { 'nvim-telescope/telescope-fzy-native.nvim', run = submodule }
---paq { 'nvim-telescope/telescope-project.nvim' }
-paq { 'logan-connolly/telescope-project.nvim', branch = "feat/restructure_module" }
+paq { 'logan-connolly/telescope.nvim', branch = "refactor/only_use_util" }
+paq { 'logan-connolly/telescope-project.nvim', branch = "feat/cleanup_missing_projects" }
 
 -- debugger plugins
 paq { 'puremourning/vimspector' }
