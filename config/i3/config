@@ -138,6 +138,7 @@ bindsym $mod+Return exec $term
 bindsym $mod+Shift+Return exec pcmanfm
 bindsym $mod+Shift+q kill
 bindsym $mod+d exec --no-startup-id rofi -show drun
+bindsym $mod+e exec --no-startup-id rofi -show emoji -modi emoji
 bindsym $mod+f fullscreen toggle
 
 # Quickstart Applications
