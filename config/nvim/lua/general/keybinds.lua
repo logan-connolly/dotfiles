@@ -31,7 +31,4 @@ Keybind.g({
   { 'v', '<Leader>d', '"_d', { noremap = true } },
   -- yank all the content of file to global register
   { 'n', '<Leader>Y', 'gg"+yG', { noremap = true } },
-  -- ominfunc completion
-  { 'i', '<C-Space>', '<C-x><C-o>', { noremap = true } },
-  { 'i', '<C-@>', '<C-Space>', { noremap = true } },
 })

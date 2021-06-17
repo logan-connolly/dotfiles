@@ -16,7 +16,7 @@ Keybind.g({
 	{ 'n', '<Leader>fg', telescope_cmd(builtin_module, "grep_string({ search = vim.fn.input('> ') })"), defaults },
 
 	-- tpope/vim-vinegar replacement
-	{ 'n', '-', telescope_cmd(builtin_module, "file_browser({ cwd = require'telescope.utils'.buffer_dir() })"), defaults },
+	{ 'n', '-', telescope_cmd(builtin_module, "file_browser({ cwd = vim.fn.expand('%:p:h') })"), defaults },
 
 	-- search buffers
 	{ 'n', '<Leader>fb', telescope_cmd(builtin_module, 'buffers()'), defaults },

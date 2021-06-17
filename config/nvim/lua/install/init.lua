@@ -17,7 +17,7 @@ local update_treesitter = function() vim.cmd(":TSUpdate") end
 paq { 'nvim-treesitter/nvim-treesitter', run = update_treesitter }
 paq { 'nvim-treesitter/nvim-treesitter-refactor' }
 paq { 'neovim/nvim-lspconfig' }
-paq { 'nvim-lua/completion-nvim' }
+paq { 'hrsh7th/nvim-compe' }
 paq { 'nvim-lua/lsp-status.nvim' }
 paq { 'onsails/lspkind-nvim' }
 paq { 'glepnir/lspsaga.nvim' }
@@ -36,8 +36,8 @@ paq { 'norcalli/nvim-colorizer.lua' }
 paq { 'nvim-lua/popup.nvim' }
 paq { 'nvim-lua/plenary.nvim' }
 paq { 'nvim-telescope/telescope-fzy-native.nvim', run = submodule }
-paq { 'logan-connolly/telescope.nvim', branch = "refactor/only_use_util" }
-paq { 'logan-connolly/telescope-project.nvim', branch = "feat/cleanup_missing_projects" }
+paq { 'nvim-telescope/telescope.nvim' }
+paq { 'logan-connolly/telescope-project.nvim', branch = "feat/filter_missing_project_paths" }
 
 -- debugger plugins
 paq { 'puremourning/vimspector' }

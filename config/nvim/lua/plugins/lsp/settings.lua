@@ -2,7 +2,6 @@ local lspconfig = require('lspconfig')
 local lsp_status = require('lsp-status')
 local lspkind = require('lspkind')
 local saga = require('lspsaga')
-local on_attach = require'completion'.on_attach
 
 -- Adds VSCode like pictograms
 lspkind.init()
@@ -24,6 +23,33 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
 		underline = false,
 	}
 )
+
+-- setup compe for completion
+require'compe'.setup {
+  enabled = true;
+  autocomplete = true;
+  debug = false;
+  min_length = 1;
+  preselect = 'enable';
+  throttle_time = 80;
+  source_timeout = 200;
+  resolve_timeout = 800;
+  incomplete_delay = 400;
+  max_abbr_width = 100;
+  max_kind_width = 100;
+  max_menu_width = 100;
+  documentation = true;
+
+  source = {
+    path = true;
+    buffer = true;
+    calc = true;
+    nvim_lsp = true;
+    nvim_lua = true;
+    vsnip = false;
+    ultisnips = false;
+  };
+}
 
 -- Configure lua language server
 local sumneko_root_path = '~/.local/opt/lua-language-server'
@@ -63,7 +89,6 @@ local servers = {
 
 -- Configure each LSP by attaching completion and status capbilities
 for server, config in pairs(servers) do
-  config.on_attach = on_attach
   config.capabilities = vim.tbl_deep_extend(
 	  'keep', config.capabilities or {}, lsp_status.capabilities
 	)
