@@ -8,10 +8,11 @@ export TERMINAL="kitty"
 export BROWSER="firefox"
 export READER="zathura"
 
-# edit PATH
-export PATH="$HOME/local/bin:$PATH"
-export PATH="$HOME/.npm-global/bin:$PATH"
-export PATH="$HOME/.poetry/bin:$PATH"
+# prepend paths to $PATH
+typeset -U path
+path=(~/local/bin "$path[@]")
+path=(~/.npm-global/bin "$path[@]")
+path=(~/.poetry/bin "$path[@]")
 
 # nnn settings
 export NNN_BMS='p:~/projects;c:~/.config;d:~/dotfiles'
