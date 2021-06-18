@@ -21,15 +21,15 @@ pseudo-transparency = true
 default = #282828
 background = #00282828
 background-alpha = #00282828
-foreground = #928374
+foreground = #a89984
 white = #fbf1c7
 grey = #32302f
 red = #cc241d
-blue = #458588
-orange = #d65d0e
-green = #98971a
-purple = #b16286
-teal = #689d6a
+blue = #83a598
+orange = #fe8019
+green = #b8bb26
+purple = #d3869b
+teal = #8ec07c
 yellow = #d79921
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
