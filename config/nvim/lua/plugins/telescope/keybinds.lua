@@ -33,4 +33,7 @@ Keybind.g({
 
   -- browse directory
 	{ 'n', '<Leader>fn', telescope_cmd(custom_module, 'browse_dir("~/notes")'), defaults },
+
+  -- todo search
+  { 'n', '<Leader>ft', '<cmd>TodoTelescope<CR>', defaults }
 })
