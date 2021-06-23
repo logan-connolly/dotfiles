@@ -41,7 +41,9 @@ alias nmc="nmcli --ask device wifi connect"
 alias rename="perl-rename"
 
 # generate virtual environment
-alias venv="python -m venv .venv && source venv/bin/activate && pip install -U pip setuptools wheel &> /dev/null"
+alias venv="python -m venv .venv && source .venv/bin/activate && pip install -U pip setuptools wheel &> /dev/null"
+alias sa="source .venv/bin/activate"
+alias sd="deactivate"
 
 # swallow terminal apps
 alias mpv="i3-swallow mpv"
