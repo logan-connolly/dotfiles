@@ -1,23 +1,45 @@
-*background: #282828
-*foreground: #c5c8c6
-*cursorColor: #c5c8c6
+/* tokyonight */
+*foreground: #a9b1d6
+*background: #1a1b26
+*cursorColor: #a9b1d6
+*borderColor: #1a1b26
+*color0: #1a1b26
+*color8: #4e5173
+*color1: #F7768E
+*color9: #F7768E
+*color2: #9ECE6A
+*color10: #9ECE6A
+*color3: #E0AF68
+*color11: #E0AF68
+*color4: #7AA2F7
+*color12: #7AA2F7
+*color5: #9a7ecc
+*color13: #9a7ecc
+*color6: #4abaaf
+*color14: #4abaaf
+*color7: #acb0d0
+*color15: #acb0d0
 
-*color0: #282828
-*color8: #928374
-*color1: #cc241d
-*color9: #fb4934
-*color2: #98971a
-*color10: #b8bb26
-*color3: #d79921
-*color11: #fabd2f
-*color4: #458588
-*color12: #83a598
-*color5: #b16286
-*color13: #d3869b
-*color6: #689d6a
-*color14: #8ec07c
-*color7: #a89984
-*color15: #ebdbb2
+/* gruvbox */
+/* *background: #282828 */
+/* *foreground: #c5c8c6 */
+/* *cursorColor: #c5c8c6 */
+/* *color0: #282828 */
+/* *color8: #928374 */
+/* *color1: #cc241d */
+/* *color9: #fb4934 */
+/* *color2: #98971a */
+/* *color10: #b8bb26 */
+/* *color3: #d79921 */
+/* *color11: #fabd2f */
+/* *color4: #458588 */
+/* *color12: #83a598 */
+/* *color5: #b16286 */
+/* *color13: #d3869b */
+/* *color6: #689d6a */
+/* *color14: #8ec07c */
+/* *color7: #a89984 */
+/* *color15: #ebdbb2 */
 
 URxvt.font: xft:mononoki Nerd Font Mono:size=11.5
 URxvt.depth:                      32

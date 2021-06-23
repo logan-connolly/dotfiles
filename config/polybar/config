@@ -17,20 +17,34 @@ interface=wlp0s20f3
 screenchange-reload = true
 pseudo-transparency = true
 
+;;gruvbox
+;;default = #282828
+;;background = #00282828
+;;background-alpha = #00282828
+;;foreground = #a89984
+;;white = #fbf1c7
+;;grey = #32302f
+;;red = #cc241d
+;;blue = #83a598
+;;orange = #fe8019
+;;green = #b8bb26
+;;purple = #d3869b
+;;teal = #8ec07c
+;;yellow = #d79921
+
 [color]
-default = #282828
-background = #00282828
-background-alpha = #00282828
-foreground = #a89984
-white = #fbf1c7
-grey = #32302f
-red = #cc241d
-blue = #83a598
-orange = #fe8019
-green = #b8bb26
-purple = #d3869b
-teal = #8ec07c
-yellow = #d79921
+default = #1a1b26
+background = #001a1b26
+background-alpha = #001a1b26
+foreground = #a9b1d6
+white = #a9b1d6
+grey = #4e5173
+red = #f7768e
+blue = #7aa2f7
+green = #9ece6a
+purple = #9a7ecc
+teal = #4abaaf
+yellow = #e0af68
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
@@ -77,7 +91,7 @@ label-focused-foreground = ${color.white}
 label-focused-padding = 4
 
 label-unfocused = %index%
-label-unfocused-foreground = ${color.foreground}
+label-unfocused-foreground = ${color.grey}
 label-unfocused-padding = 4
 
 label-urgent = %index%

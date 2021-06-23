@@ -38,7 +38,7 @@ paq { 'nvim-lua/popup.nvim' }
 paq { 'nvim-lua/plenary.nvim' }
 paq { 'nvim-telescope/telescope-fzy-native.nvim', run = submodule }
 paq { 'nvim-telescope/telescope.nvim' }
-paq { 'logan-connolly/telescope-project.nvim', branch = "feat/filter_missing_project_paths" }
+paq { 'nvim-telescope/telescope-project.nvim' }
 
 -- debugger plugins
 paq { 'puremourning/vimspector' }
@@ -49,6 +49,7 @@ paq { 'kyazdani42/nvim-web-devicons' }
 paq { 'rktjmp/lush.nvim' }
 paq { 'npxbr/gruvbox.nvim' }
 paq { 'hoob3rt/lualine.nvim' }
+paq { 'tiagovla/tokyodark.nvim' }
 
 -- PaqInstall if do not exist
 local plugin_path = vim.fn.stdpath("data") .. "/site/pack/paqs/start"

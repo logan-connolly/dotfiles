@@ -1,0 +1,53 @@
+/* ==========================================================================
+   Rofi color theme
+   ========================================================================== */
+
+* {
+    /* Theme settings */
+    highlight: bold underline;
+    scrollbar: false;
+
+    tokyonight-dark-bg0:          #1a1b26;
+    tokyonight-dark-bg0-soft:     #1a1b26;
+    tokyonight-dark-bg3:          #1a1b26;
+    tokyonight-dark-fg0:          #a9b1d6;
+    tokyonight-dark-fg1:          #4e5173;
+    tokyonight-dark-red-dark:     #F7768E;
+    tokyonight-dark-red-light:    #F7768E;
+    tokyonight-dark-yellow-dark:  #e0af68;
+    tokyonight-dark-yellow-light: #e0af68;
+    tokyonight-dark-gray:         #4e5173;
+    tokyonight-dark-bc:           #4e5173;
+
+
+    /* Theme colors */
+    background:                  @tokyonight-dark-bg0;
+    background-color:            @background;
+    foreground:                  @tokyonight-dark-fg1;
+    border-color:                @tokyonight-dark-bc;
+    separatorcolor:              @background;
+    scrollbar-handle:            @tokyonight-dark-bc;
+
+    normal-background:           @background;
+    normal-foreground:           @foreground;
+    alternate-normal-background: @tokyonight-dark-bg0-soft;
+    alternate-normal-foreground: @foreground;
+    selected-normal-background:  @tokyonight-dark-bg3;
+    selected-normal-foreground:  @tokyonight-dark-fg0;
+
+    active-background:           @tokyonight-dark-yellow-dark;
+    active-foreground:           @background;
+    alternate-active-background: @active-background;
+    alternate-active-foreground: @active-foreground;
+    selected-active-background:  @tokyonight-dark-yellow-light;
+    selected-active-foreground:  @active-foreground;
+
+    urgent-background:           @tokyonight-dark-red-dark;
+    urgent-foreground:           @background;
+    alternate-urgent-background: @urgent-background;
+    alternate-urgent-foreground: @urgent-foreground;
+    selected-urgent-background:  @tokyonight-dark-red-light;
+    selected-urgent-foreground:  @urgent-foreground;
+}
+
+@import "~/.config/rofi/themes/common.rasi"

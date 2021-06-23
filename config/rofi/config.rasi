@@ -1,6 +1,6 @@
 configuration {
  modi: "window,ssh,run,drun";
- theme: "themes/gruvbox-dark-solid-modified.rasi";
+ theme: "themes/tokyonight.rasi";
  show-icons: true;
  sidebar-mode: true;
  font: "mononoki Nerd Font 13";

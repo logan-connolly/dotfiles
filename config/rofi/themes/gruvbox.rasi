@@ -3,7 +3,7 @@
 
    Based on the Gruvbox color scheme for Vim by morhetz
    https://github.com/morhetz/gruvbox
-   
+
    ========================================================================== */
 
 * {
@@ -55,4 +55,4 @@
     selected-urgent-foreground:  @urgent-foreground;
 }
 
-@import "~/.config/rofi/themes/gruvbox-common.rasi"
+@import "~/.config/rofi/themes/common.rasi"
