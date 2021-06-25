@@ -20,6 +20,7 @@ alias dcu='docker-compose up -d'
 alias dcd='docker-compose down'
 
 # git
+alias gi='git init --quiet'
 alias gcm='git commit -m'
 
 # nnn
