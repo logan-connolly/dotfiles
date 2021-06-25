@@ -55,7 +55,6 @@ make
 mpv
 mypy
 ncdu
-neofetch
 networkmanager
 nfs-utils
 nnn
