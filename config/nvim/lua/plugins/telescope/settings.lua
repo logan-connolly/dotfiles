@@ -8,7 +8,7 @@ require('telescope').setup {
 		qflist_previewer = require('telescope.previewers').vim_buffer_qflist.new,
 		layout_strategy = "flex",
 
-		layout_defaults = {
+		layout_config = {
 			horizontal = {
 				preview_width = 0.6,
 			},
@@ -38,8 +38,7 @@ require('telescope').setup {
       override_file_sorter = true,
 		},
     project = {
-      base_dir = '~/projects',
-      max_depth = 2
+      base_dirs = { '~/projects' },
     }
 	}
 }
