@@ -14,8 +14,6 @@ require('telescope').setup {
 			},
 			vertical = {
 				preview_height = 0.5,
-				height_padding = 1,
-        width_padding = 0.05,
 			}
 		},
 
