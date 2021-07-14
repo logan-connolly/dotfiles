@@ -1,4 +1,4 @@
 require('lualine').setup{
-  options = { theme = 'palenight' },
+  options = { theme = 'tokyodark' },
   extensions = { 'fzf' },
 }
