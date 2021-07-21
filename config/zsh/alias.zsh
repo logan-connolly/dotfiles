@@ -26,9 +26,9 @@ alias gcm='git commit -m'
 # nnn
 alias nnn='nnn_cd'
 alias ls='nnn -dc'
-alias ll='nnn -dc'
-alias la='nnn -dc'
 alias k='k -h --no-vcs'
+alias ll='k'
+alias la='k -a'
 
 # ignore files/dirs with tree
 alias tree="tree -I '__pycache__|.git|venv|node_modules'"
