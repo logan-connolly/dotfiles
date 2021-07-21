@@ -4,4 +4,5 @@ nerd-fonts-mononoki
 rofi-emoji
 pfetch
 polybar
+siji-git
 xidlehook
