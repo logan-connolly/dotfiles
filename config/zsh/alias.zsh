@@ -1,6 +1,6 @@
 # open with default
 alias o='xdg-open'
-alias cat='bat --theme="gruvbox-dark"'
+alias cat='bat --theme="base16-256"'
 alias yank='xsel --clipboard'
 alias cpwd='pwd | yank'
 alias ssh='kitty +kitten ssh'
