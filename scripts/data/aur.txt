@@ -1,4 +1,3 @@
-i3-swallow
 lua-language-server
 nerd-fonts-mononoki
 rofi-emoji

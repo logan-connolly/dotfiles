@@ -45,7 +45,3 @@ alias rename="perl-rename"
 alias venv="python -m venv .venv && source .venv/bin/activate && pip install -U pip setuptools wheel &> /dev/null"
 alias sa="source .venv/bin/activate"
 alias sd="deactivate"
-
-# swallow terminal apps
-alias mpv="i3-swallow mpv"
-alias zathura="i3-swallow zathura"
