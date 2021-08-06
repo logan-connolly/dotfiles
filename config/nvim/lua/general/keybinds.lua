@@ -6,14 +6,11 @@ Keybind.g({
   { 'n', '<C-k>', '<C-w>k', { noremap = true } },
   { 'n', '<C-h>', '<C-w>h', { noremap = true } },
   { 'n', '<C-l>', '<C-w>l', { noremap = true } },
-  -- move selected line to up/down
-  { 'v', 'J', "<Cmd>m \'>+1<CR>gv=gv", { noremap = true } },
-  { 'v', 'K', "<Cmd>m \'<-2<CR>gv=gv", { noremap = true } },
   -- disable Q keymap
   { 'n', 'Q', '<nop>', { noremap = true } },
   -- close buffer
   { 'n', '<Leader>x', '<Esc>:bd<CR>', { noremap = true } },
-  -- terminal
+  -- terminal keymaps
   { 'n', '<Leader>;', '<Cmd>split term://zsh<CR>i', { noremap = true } },
   { 'n', "<Leader>'", '<Cmd>vsplit term://zsh<CR>i', { noremap = true } },
   { 't', '<Esc>', '<C-\\><C-n>', { noremap = true } },
@@ -21,14 +18,22 @@ Keybind.g({
   { 't', '<C-v><Esc>', '<Esc>', { noremap = true } },
   -- delete without registering word
   { 'v', 'X', '"_d', { noremap = true } },
-  -- delete&local-paste without registering
-  { 'v', '<Leader>p', '"_dP', { noremap = true } },
-  -- yank to global register
-  { 'n', '<Leader>y', '"+y', { noremap = true } },
-  { 'v', '<Leader>y', '"+y', { noremap = true } },
-  -- ????????
-  { 'n', '<Leader>d', '"_d', { noremap = true } },
-  { 'v', '<Leader>d', '"_d', { noremap = true } },
   -- yank all the content of file to global register
   { 'n', '<Leader>Y', 'gg"+yG', { noremap = true } },
+  -- yank to end of line
+  { 'n', 'Y', 'y$', { noremap = true } },
+  -- undo break points
+  { 'i', ',', ',<c-g>u', { noremap = true } },
+  { 'i', '.', '.<c-g>u', { noremap = true } },
+  { 'i', '!', '!<c-g>u', { noremap = true } },
+  { 'i', '?', '?<c-g>u', { noremap = true } },
+  -- navigate while staying centered
+  { 'n', 'n', 'nzzzv', { noremap = true } },
+  { 'n', 'N', 'Nzzzv', { noremap = true } },
+  { 'n', 'J', 'mzJ`z', { noremap = true } },
+  -- move text
+  { 'i', '<C-j>', "<Cmd>m .+1<CR>==", { noremap = true } },
+  { 'i', '<C-k>', "<Cmd>m .-2<CR>==", { noremap = true } },
+  { 'n', '<C-j>', "<Cmd>m .+1<CR>==", { noremap = true } },
+  { 'n', '<C-k>', "<Cmd>m .-2<CR>==", { noremap = true } },
 })
