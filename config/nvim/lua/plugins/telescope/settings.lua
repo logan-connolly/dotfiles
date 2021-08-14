@@ -37,6 +37,7 @@ require('telescope').setup {
 		},
     project = {
       base_dirs = { '~/projects' },
+      hidden_files = true
     }
 	}
 }
