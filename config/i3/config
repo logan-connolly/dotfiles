@@ -152,7 +152,7 @@ bindsym $mod+f fullscreen toggle
 # Quickstart Applications
 bindsym $mod+F2 exec firefox
 bindsym $mod+F3 exec $term --class cmus-instance -e cmus
-bindsym $mod+F4 exec exec signal-desktop
+bindsym $mod+F4 exec signal-desktop
 bindsym $mod+Ctrl+m exec pavucontrol
 bindsym $mod+Ctrl+n exec blueman-manager
 
