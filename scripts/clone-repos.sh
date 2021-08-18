@@ -19,12 +19,5 @@ clone_lua_language_server() {
 	clone_repo $repo $path
 }
 
-clone_siji_icons() {
-	repo=https://github.com/stark/siji.git
-	path="$HOME/.local/opt/siji"
-	clone_repo $repo $path
-}
-
 clone_gruvbox_gtk
 clone_lua_language_server
-clone_siji_icons
