@@ -17,21 +17,6 @@ interface=wlp0s20f3
 screenchange-reload = true
 pseudo-transparency = true
 
-;;gruvbox
-;;default = #282828
-;;background = #00282828
-;;background-alpha = #00282828
-;;foreground = #a89984
-;;white = #fbf1c7
-;;grey = #32302f
-;;red = #cc241d
-;;blue = #83a598
-;;orange = #fe8019
-;;green = #b8bb26
-;;purple = #d3869b
-;;teal = #8ec07c
-;;yellow = #d79921
-
 [color]
 default = #1a1b26
 background = #001a1b26
@@ -60,20 +45,19 @@ foreground = ${color.foreground}
 line-size = 3
 padding-left = 0
 padding-right = 1
-module-margin-left = 1
-module-margin-right = 1
+module-margin-left = 0
+module-margin-right = 0
 
 font-0 = "Misc Termsyn:size=8.5;2"
 font-1 = "Siji:size=8.5;2"
-font-2 = "xos4 Terminus:size=8.5;2"
 
 modules-left = i3
-modules-center = cmus
-modules-right = mem_i mem audio_i audio battery_i battery network vpn bluetooth date
+modules-center = date cmus
+modules-right = mem_i mem audio_i audio battery_i battery network vpn bluetooth fs
 
 tray-background = ${self.background}
-tray-transparent = true
 override-redirect = false
+tray-transparent = true
 
 cursor-click = pointer
 cursor-scroll = ns-resize
@@ -88,15 +72,25 @@ wrapping-scroll = false
 
 label-focused = %index%
 label-focused-foreground = ${color.white}
-label-focused-padding = 4
+label-focused-padding = 2
 
 label-unfocused = %index%
 label-unfocused-foreground = ${color.grey}
-label-unfocused-padding = 4
+label-unfocused-padding = 2
 
 label-urgent = %index%
 label-urgent-foreground = ${color.red}
-label-urgent-padding = 4
+label-urgent-padding = 2
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[module/fs]
+type = internal/fs
+interval = 25
+
+mount-0 = /home
+
+label-mounted = "%used% / %total% "
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
@@ -104,8 +98,8 @@ label-urgent-padding = 4
 type = internal/date
 label = %date% %time%
 interval = 5
-date = "%a %d"
-time = "%H:%M   "
+date = "%a, %b %d"
+time = "%H:%M"
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
@@ -267,5 +261,5 @@ scroll-down = cmus-remote --volume -5%
 label-font = 2
 label-foreground = ${color.foreground}
 format = <label>
-label = "  %output%"
-label-maxlen = 80
+label = "   -     %output%"
+label-maxlen = 150

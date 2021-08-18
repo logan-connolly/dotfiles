@@ -4,4 +4,5 @@ rofi-emoji
 pfetch
 polybar
 siji-ng
+termsyn-font
 xidlehook
