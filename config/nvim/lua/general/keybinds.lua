@@ -31,9 +31,4 @@ Keybind.g({
   { 'n', 'n', 'nzzzv', { noremap = true } },
   { 'n', 'N', 'Nzzzv', { noremap = true } },
   { 'n', 'J', 'mzJ`z', { noremap = true } },
-  -- move text
-  { 'i', '<C-j>', "<Cmd>m .+1<CR>==", { noremap = true } },
-  { 'i', '<C-k>', "<Cmd>m .-2<CR>==", { noremap = true } },
-  { 'n', '<C-j>', "<Cmd>m .+1<CR>==", { noremap = true } },
-  { 'n', '<C-k>', "<Cmd>m .-2<CR>==", { noremap = true } },
 })
