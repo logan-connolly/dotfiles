@@ -22,7 +22,6 @@ fd
 feh
 firefox
 flake8
-flameshot
 flex
 fzf
 gcc
@@ -65,6 +64,7 @@ noto-fonts-emoji
 noto-fonts-extra
 npm
 openssh
+papirus-icon-theme
 patch
 pavucontrol
 pcmanfm
