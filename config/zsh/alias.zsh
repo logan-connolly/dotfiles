@@ -27,7 +27,7 @@ alias gcm='git commit -m'
 alias nnn='nnn_cd'
 alias ls='nnn -dc'
 alias k='k -h --no-vcs'
-alias ll='k'
+alias ll='k -a'
 alias la='k -a'
 
 # ignore files/dirs with tree
