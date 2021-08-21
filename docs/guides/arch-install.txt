@@ -1,15 +1,12 @@
-# Format drive (3 partitions)
+# Format drive (2 partitions)
 cfdisk /dev/sdX
 
 # Attach filesystems
 mkfs.fat -F32 /dev/sdX1
 mkfs.ext4 /dev/sdX2
-mkfs.ext4 /dev/sdX3
 
 # Mount partitions
 mount /dev/sdX2 /mnt
-mkdir /mnt/home
-mount /dev/sdX3 /mnt/home
 
 # Install system
 pacstrap -i /mnt base linux linux-firmware sudo vim zsh
@@ -31,14 +28,12 @@ hwclock --systohc --utc
 echo archPC > /etc/hostname
 echo "127.0.1.1 localhost.localdomain archPC" >> /etc/hosts
 
-# Install essential packages
-pacman -S base-devel networkmanager alacritty noto-fonts git openssh
-
-# Enable network manager service
-systemctl enable NetworkManger.service
-
 # Set root password
 passwd
+
+# Enable network manager service
+pacman -S base-devel networkmanager
+systemctl enable NetworkManger.service
 
 # Install grub to make system bootable
 pacman -S grub efibootmgr
@@ -70,8 +65,18 @@ EDITOR=vim visudo
 # Log out of root and login to created user 'archie'
 exit
 
-# Install X window system and audio
-pacman -S pulseaudio pulseaudio-alsa xorg xorg-xinit xorg-server
+# Clone dotfiles base packages
+pacman -S git openssh
+# setup ssh, clone, and run Makefile setup
+
+# Install audio dependencies
+pacman -S pulseaudio pulseaudio-alsa
+
+# Install X window system of desktop environment
+pacman -S xorg xorg-xinit xorg-server
+
+# Install package for graphics (example if intel)
+pacman -S xf86-video-intel
 
 # Install virtual box guest utils (optional)
 pacman -S virtualbox-guest-utils

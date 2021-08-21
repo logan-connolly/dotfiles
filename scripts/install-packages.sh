@@ -4,6 +4,7 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd)"
 PKGINSTALL="paru --noconfirm -S --needed"
 
 install_pacman_packages() {
+	$PKGINSTALL base-devel
 	$PKGINSTALL - <$SCRIPT_DIR/data/pkglist.txt
 	$PKGINSTALL - <$SCRIPT_DIR/data/aur.txt
 }
