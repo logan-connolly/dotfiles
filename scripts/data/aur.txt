@@ -6,3 +6,4 @@ polybar
 siji-ng
 termsyn-font
 xidlehook
+ytfzf

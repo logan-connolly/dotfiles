@@ -80,6 +80,7 @@ tree
 typescript
 udiskie
 udisks2
+ueberzug
 ufw
 unzip
 vim
