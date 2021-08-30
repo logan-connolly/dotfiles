@@ -26,6 +26,21 @@ listview {
     border-color: @separatorcolor;
     spacing:      3px;
     scrollbar:    @scrollbar;
+		columns:      3;
+		lines:				6;
+}
+
+element-text {
+		font: "mononoki Nerd Font Mono 14";
+}
+
+element-icon {
+		size: 3em;
+}
+
+element-text, element-icon {
+		background-color: inherit;
+		text-color: inherit;
 }
 
 element {
