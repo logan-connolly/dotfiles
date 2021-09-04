@@ -11,14 +11,6 @@ smart_gaps on
 gaps inner 18
 gaps outer 0
 
-# Gruvbox               border  backgr. text    indicat child_b
-# client.focused          #504945 #282828 #fe8019 #928374 #928374
-# client.focused_inactive #504945 #282828 #c5c8c6 #928374 #504945
-# client.unfocused        #504945 #282828 #c5c8c6 #928374 #504945
-# client.urgent           #504945 #282828 #c5c8c6 #928374 #504945
-# client.placeholder      #504945 #282828 #c5c8c6 #928374 #504945
-# client.background       #282828
-
 # Tokyonight            border  backgr. text    indicat child_b
 client.focused          #4e5173 #1a1b26 #9ece6a #4e5173 #acb0d0
 client.focused_inactive #4e5173 #1a1b26 #c5c8c6 #4e5173 #4e5173
