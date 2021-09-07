@@ -31,4 +31,8 @@ Keybind.g({
   { 'n', 'n', 'nzzzv', { noremap = true } },
   { 'n', 'N', 'Nzzzv', { noremap = true } },
   { 'n', 'J', 'mzJ`z', { noremap = true } },
+  -- open quickfixlist
+  { 'n', 'ql', '<Cmd>copen<CR>', { noremap = true } },
+  { 'n', 'qj', '<Cmd>cnext<CR>', { noremap = true } },
+  { 'n', 'qk', '<Cmd>cprev<CR>', { noremap = true } },
 })
