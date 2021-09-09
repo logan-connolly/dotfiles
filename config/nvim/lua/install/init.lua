@@ -1,7 +1,7 @@
- -- paq.nvim automatic install
+-- paq.nvim automatic install
 local install_path = vim.fn.stdpath("data") .. "/site/pack/paqs/opt/paq-nvim"
 if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
-		vim.cmd("!git clone https://github.com/savq/paq-nvim " .. install_path)
+  vim.cmd("!git clone https://github.com/savq/paq-nvim " .. install_path)
 end
 
 -- paq alias
@@ -54,5 +54,5 @@ paq { 'tiagovla/tokyodark.nvim' }
 -- PaqInstall if do not exist
 local plugin_path = vim.fn.stdpath("data") .. "/site/pack/paqs/start"
 if vim.fn.empty(vim.fn.glob(plugin_path)) > 0 then
-	vim.cmd 'PaqInstall'
+  vim.cmd 'PaqInstall'
 end

@@ -12,20 +12,20 @@ lspkind.init()
 
 -- setup saga which improves LSP hover window
 saga.init_lsp_saga {
-	use_saga_diagnostic_sign = false,
-	finder_action_keys = {
-		vsplit = "v",
-		split = "s",
-		quit = { "q", "ESC" },
-	}
+  use_saga_diagnostic_sign = false,
+  finder_action_keys = {
+    vsplit = "v",
+    split = "s",
+    quit = { "q", "ESC" },
+  }
 }
 
 -- Configure linting diagnostics
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
-	vim.lsp.diagnostic.on_publish_diagnostics, {
-		virtual_text = false,
-		underline = false,
-	}
+vim.lsp.diagnostic.on_publish_diagnostics, {
+  virtual_text = false,
+  underline = false,
+}
 )
 
 -- setup compe for completion
@@ -66,7 +66,7 @@ local servers = {
 -- Configure each LSP by attaching completion and status capbilities
 for server, config in pairs(servers) do
   config.capabilities = vim.tbl_deep_extend(
-	  'keep', config.capabilities or {}, lsp_status.capabilities
-	)
+  'keep', config.capabilities or {}, lsp_status.capabilities
+  )
   lspconfig[server].setup(config)
 end
