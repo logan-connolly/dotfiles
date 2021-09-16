@@ -1,5 +1,6 @@
 lua-language-server
 nerd-fonts-mononoki
+notion-app
 rofi-emoji
 pfetch
 polybar

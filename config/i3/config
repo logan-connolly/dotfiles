@@ -77,7 +77,8 @@ bindsym $mod+Shift+2 move container to workspace $ws2; workspace $ws2
 bindsym $mod+Shift+3 move container to workspace $ws3; workspace $ws3
 bindsym $mod+Shift+4 move container to workspace $ws4; workspace $ws4
 
-# Assign specific applications to specific workspaces
+# Assign specific applications to specific workspaces (xprop)
+assign [class="notion-app"] $ws2
 assign [class="cmus-instance"] $ws3
 assign [class="discord"] $ws4
 assign [class="Signal"] $ws4
@@ -155,7 +156,7 @@ exec --no-startup-id start-pulseaudio-x11
 exec --no-startup-id setxkbmap -layout us,de -option 'grp:alt_shift_toggle'
 exec --no-startup-id picom -b
 exec --no-startup-id $HOME/.config/i3/locker
-exec --no-startup-id fc-cache && $HOME/.config/polybar/i3wmthemer_bar_launch.sh
+exec --no-startup-id $HOME/.config/polybar/i3wmthemer_bar_launch.sh
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
