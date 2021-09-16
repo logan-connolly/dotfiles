@@ -74,6 +74,7 @@ sshfs
 stylelint
 sxiv
 throttled
+tldr
 tlp
 tmux
 tree
