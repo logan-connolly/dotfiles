@@ -53,16 +53,16 @@ Encrypt drive partition with luks via [Average Linux User](https://www.youtube.c
 
 ### Package Management
 
-Remove unused packages and configurations (orphans) with yay:
+Remove unused packages and configurations (orphans) with paru:
 
 ```shell
-yay --clean
+paru --clean
 ```
 Export installed packages in system:
 
 ```shell
-yay -Qqen > pkglist.txt
-yay -Qqem > pkglist-aur.txt
+paru -Qqen > pkglist.txt
+paru -Qqem > pkglist-aur.txt
 ```
 
 Add color to pacman by editing `/etc/pacman.conf`:
