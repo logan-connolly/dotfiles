@@ -19,6 +19,7 @@ alias tm='tmux_sessionizer'
 alias tma='tmux attach'
 alias tml='tmux ls'
 alias tmk='tmux kill-session -t'
+alias tmka='tmux ls | cut -d: -f1 | xargs -I {} sh -c "tmux kill-session -t {}"'
 
 # docker
 alias dc='docker-compose'
