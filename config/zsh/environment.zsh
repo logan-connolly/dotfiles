@@ -10,7 +10,7 @@ export READER="zathura"
 
 # prepend paths to $PATH
 typeset -U path
-path=(~/local/bin "$path[@]")
+path=(~/.local/bin "$path[@]")
 path=(~/.npm-global/bin "$path[@]")
 path=(~/.poetry/bin "$path[@]")
 

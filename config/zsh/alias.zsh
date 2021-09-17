@@ -14,6 +14,12 @@ alias ci='nvim ~/.config/i3/config'
 alias v='nvim'
 alias vim='nvim -u "NORC"'
 
+# tmux
+alias tm='tmux_sessionizer'
+alias tma='tmux attach'
+alias tml='tmux ls'
+alias tmk='tmux kill-session -t'
+
 # docker
 alias dc='docker-compose'
 alias dcu='docker-compose up -d'
