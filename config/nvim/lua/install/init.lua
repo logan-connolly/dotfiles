@@ -17,11 +17,18 @@ local update_treesitter = function() vim.cmd(":TSUpdate") end
 paq { 'nvim-treesitter/nvim-treesitter', run = update_treesitter }
 paq { 'nvim-treesitter/nvim-treesitter-refactor' }
 paq { 'neovim/nvim-lspconfig' }
-paq { 'hrsh7th/nvim-compe' }
 paq { 'nvim-lua/lsp-status.nvim' }
 paq { 'onsails/lspkind-nvim' }
-paq { 'glepnir/lspsaga.nvim' }
 paq { 'dense-analysis/ale' }
+
+-- completion
+paq { 'hrsh7th/cmp-nvim-lsp' }
+paq { 'hrsh7th/cmp-buffer' }
+paq { 'hrsh7th/nvim-cmp' }
+
+-- snippets
+paq { 'hrsh7th/cmp-vsnip' }
+paq { 'hrsh7th/vim-vsnip' }
 
 -- general plugins
 paq { 'mattn/emmet-vim' }
