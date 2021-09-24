@@ -143,7 +143,7 @@ bindsym $mod+e exec --no-startup-id rofi -show emoji -modi emoji
 bindsym $mod+f fullscreen toggle
 
 # Quickstart Applications
-bindsym $mod+F2 exec firefox
+bindsym $mod+F2 exec firefox-developer-edition
 bindsym $mod+F3 exec $term --class cmus-instance -e cmus
 bindsym $mod+F4 exec signal-desktop
 bindsym $mod+Ctrl+m exec pavucontrol
