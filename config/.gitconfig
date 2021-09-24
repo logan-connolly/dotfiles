@@ -11,3 +11,5 @@
 	tool = fugitive
 [mergetool]
   prompt = false
+[init]
+  defaultBranch = master
