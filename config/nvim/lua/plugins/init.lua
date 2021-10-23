@@ -1,5 +1,6 @@
 require('plugins.ale')
 require('plugins.colorizer')
+require('plugins.dap')
 require('plugins.emmet')
 require('plugins.fugitive')
 require('plugins.hop')
