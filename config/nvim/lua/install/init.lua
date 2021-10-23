@@ -47,8 +47,6 @@ paq { 'nvim-telescope/telescope-fzy-native.nvim', run = submodule }
 paq { 'nvim-telescope/telescope.nvim' }
 
 -- debugger plugins
-paq { 'puremourning/vimspector' }
-paq { 'szw/vim-maximizer' }
 
 -- theme plugins
 paq { 'kyazdani42/nvim-web-devicons' }
