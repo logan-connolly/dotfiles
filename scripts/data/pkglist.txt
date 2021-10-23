@@ -20,6 +20,7 @@ fzf
 git
 gnome-keyring
 grub
+gulp
 htmlhint
 htop
 httpie

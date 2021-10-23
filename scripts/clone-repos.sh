@@ -19,5 +19,15 @@ clone_lua_language_server() {
   clone_repo $repo $path
 }
 
+clone_node_debug() {
+  repo=https://github.com/microsoft/vscode-node-debug2.git
+  path="$HOME/.local/opt/vscode-node-debug2"
+  clone_repo $repo $path
+  cd $path
+  npm install
+  gulp build
+}
+
 clone_tokyonight_gtk
 clone_lua_language_server
+clone_node_debug
