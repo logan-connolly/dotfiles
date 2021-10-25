@@ -15,7 +15,7 @@ vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {b
 
 -- Setup lsp complete with nvim-cmp
 local cmp = require'cmp'
-require'cmp'.setup({
+cmp.setup({
   snippet = {
     expand = function(args)
       vim.fn["vsnip#anonymous"](args.body)
@@ -33,16 +33,13 @@ require'cmp'.setup({
   }
 })
 
--- local lsp settings
-local python = require('plugins.lsp.settings.python')
-local sumneko = require('plugins.lsp.settings.sumneko')
-
 -- LSP servers to support with optional arguments
+local completion = require('plugins.lsp.completion')
 local servers = {
   tsserver = {},
   vuels = {},
-  pyright = python.settings,
-  sumneko_lua = sumneko.settings
+  pyright = completion.python,
+  sumneko_lua = completion.sumneko
 }
 
 -- Configure each LSP by attaching completion and status capbilities
