@@ -48,6 +48,7 @@ paq { 'nvim-telescope/telescope.nvim' }
 
 -- debugger plugins
 paq { 'mfussenegger/nvim-dap' }
+paq { 'mfussenegger/nvim-dap-python' }
 
 -- theme plugins
 paq { 'kyazdani42/nvim-web-devicons' }
