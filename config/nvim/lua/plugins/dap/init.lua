@@ -1,2 +1,2 @@
-require('plugins.dap.settings')
+require('plugins.dap.setup')
 require('plugins.dap.keybinds')

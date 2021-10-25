@@ -1,1 +1,1 @@
-require('plugins.colorizer.settings')
+require('plugins.colorizer.setup')

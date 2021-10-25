@@ -1,5 +1,5 @@
 local B = [['telescope.builtin'.]]
-local S = [['plugins.telescope.settings'.]]
+local S = [['plugins.telescope.setup'.]]
 local E = [['telescope'.extensions.]]
 local defaults = { noremap = true, silent = true }
 

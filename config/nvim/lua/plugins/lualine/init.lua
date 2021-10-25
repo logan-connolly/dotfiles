@@ -1,1 +1,1 @@
-require('plugins.lualine.settings')
+require('plugins.lualine.setup')
