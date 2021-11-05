@@ -1,42 +1,34 @@
-set notification-error-bg       "#282828" # bg
-set notification-error-fg       "#fb4934" # bright:red
-set notification-warning-bg     "#282828" # bg
-set notification-warning-fg     "#fabd2f" # bright:yellow
-set notification-bg             "#282828" # bg
-set notification-fg             "#b8bb26" # bright:green
+set default-bg                  "#1a1b26"
+set default-fg                  "#a9b1d6"
 
-set completion-bg               "#504945" # bg2
-set completion-fg               "#ebdbb2" # fg
-set completion-group-bg         "#3c3836" # bg1
-set completion-group-fg         "#928374" # gray
-set completion-highlight-bg     "#83a598" # bright:blue
-set completion-highlight-fg     "#504945" # bg2
+set statusbar-fg                "#a9b1d6"
+set statusbar-bg                "#1a1b26"
 
-# Define the color in index mode
-set index-bg                    "#504945" # bg2
-set index-fg                    "#ebdbb2" # fg
-set index-active-bg             "#83a598" # bright:blue
-set index-active-fg             "#504945" # bg2
+set inputbar-fg                 "#a9b1d6"
+set inputbar-bg                 "#1a1b26"
 
-set inputbar-bg                 "#fabd2f" # bg
-set inputbar-fg                 "#000000" # fg
+set notification-fg             "#a9b1d6"
+set notification-bg             "#1a1b26"
 
-set statusbar-bg                "#282828" # bg2
-set statusbar-fg                "#ebdbb2" # fg
+set notification-error-bg       "#2E3440"
+set notification-error-fg       "#88C0D0"
 
-set highlight-color             "#fabd2f" # bright:yellow
-set highlight-active-color      "#fe8019" # bright:orange
+set notification-warning-bg     "#2E3440"
+set notification-warning-fg     "#88C0D0"
 
-set default-bg                  "#000000" # bg
-set default-fg                  "#B4B9B9" # fg
-set render-loading              true
-set render-loading-bg           "#000000" # bg
-set render-loading-fg           "#B4B9B9" # fg
+set highlight-color             "#24283b"
+set highlight-active-color      "#EBCB8B"
 
-# Recolor book content's color
-#set recolor                     true
-#set recolor-lightcolor          "#282828" # bg
-#set recolor-darkcolor           "#ebdbb2" # fg
+set completion-bg               "#1a1b26"
+set completion-fg               "#a9b1d6"
+
+set completion-highlight-fg     "#1a1b26"
+set completion-highlight-bg     "#7aa2f7"
+
+set recolor-lightcolor          "#1a1b26"
+set recolor-darkcolor           "#c0caf5"
+
+set recolor-keephue             "true"
 
 # Hides statusbar
 set guioptions none
