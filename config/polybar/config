@@ -52,8 +52,8 @@ font-0 = "Misc Termsyn:size=13.5:file=/usr/share/fonts/termsyn/termsyn7x14r.pcf;
 font-1 = "Siji:size=13.5;2"
 
 modules-left = i3
-modules-center = date cmus
-modules-right = mem_i mem audio_i audio battery_i battery network vpn bluetooth fs
+modules-center = cmus
+modules-right = mem_i mem audio_i audio battery_i battery network vpn bluetooth date
 
 tray-background = ${self.background}
 override-redirect = false
@@ -98,8 +98,8 @@ label-mounted = " %used% / %total% "
 type = internal/date
 label = %date% %time%
 interval = 5
-date = "%a, %b %d"
-time = "%H:%M"
+date = " %b %d"
+time = "%H:%M "
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
@@ -261,5 +261,5 @@ scroll-down = cmus-remote --volume -5%
 label-font = 2
 label-foreground = ${color.foreground}
 format = <label>
-label = "   -     %output%"
+label =   %output%
 label-maxlen = 150
