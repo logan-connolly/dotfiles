@@ -1,10 +1,9 @@
-lua-language-server
-nerd-fonts-mononoki
+jmtpfs
+nordvpn-bin
 notion-app
-rofi-emoji
 pfetch
 polybar
-siji-ng
-termsyn-font
 xidlehook
-ytfzf
+nerd-fonts-mononoki
+termsyn-font
+siji-ng
