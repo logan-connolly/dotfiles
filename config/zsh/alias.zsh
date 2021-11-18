@@ -6,11 +6,6 @@ alias ywd='pwd | yank'
 alias ssh='kitty +kitten ssh'
 alias firefox='firefox-developer-edition'
 
-# configure files
-alias cv='nvim ~/.config/nvim'
-alias cz='nvim ~/.zshrc'
-alias ci='nvim ~/.config/i3/config'
-
 # neovim
 alias v='nvim'
 alias vim='nvim -u "NORC"'
