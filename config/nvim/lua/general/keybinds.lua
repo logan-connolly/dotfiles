@@ -35,4 +35,6 @@ Keybind.g({
   { 'n', 'ql', '<Cmd>copen<CR>', { noremap = true } },
   { 'n', 'qj', '<Cmd>cnext<CR>', { noremap = true } },
   { 'n', 'qk', '<Cmd>cprev<CR>', { noremap = true } },
+  -- select tmux session
+  { 'n', '<C-f>', '<Cmd>silent !tmux neww tmux-sessionizer<CR>', { noremap = true, silent = true} },
 })

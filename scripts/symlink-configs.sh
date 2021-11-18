@@ -3,6 +3,7 @@
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd)"
 PARENT_DIR="$(dirname "$SCRIPT_DIR")"
 CONFIG_DIR=$PARENT_DIR/config
+BIN_DIR=$PARENT_DIR/bin
 
 symlink_files() {
   ln -vsf $CONFIG_DIR/.flake8 ~/.flake8
@@ -35,6 +36,7 @@ symlink_dirs() {
   symlink_dir $CONFIG_DIR/tmux ~/.config/tmux
   symlink_dir $CONFIG_DIR/zathura ~/.config/zathura
   symlink_dir $CONFIG_DIR/zsh ~/.config/zsh
+  symlink_dir $BIN_DIR ~/.local/bin
 }
 
 symlink_files

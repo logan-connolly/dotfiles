@@ -16,7 +16,7 @@ alias v='nvim'
 alias vim='nvim -u "NORC"'
 
 # tmux
-alias tm='tmux_sessionizer'
+alias tm='tmux-sessionizer'
 alias tma='tmux attach'
 alias tml='tmux ls'
 alias tmk='tmux kill-session -t'
