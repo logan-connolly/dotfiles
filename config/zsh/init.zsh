@@ -8,4 +8,8 @@ zstyle :compinstall filename '~/.zshrc'
 autoload -Uz compinit
 compinit
 
+# Quick access to sessionizer
+bindkey -s ^f "tmux-sessionizer\n"
+
+# Setup kitty complete
 kitty + complete setup zsh | source /dev/stdin
