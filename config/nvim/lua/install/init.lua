@@ -36,9 +36,12 @@ paq { 'rbgrouleff/bclose.vim' }
 paq { 'phaazon/hop.nvim' }
 paq { 'preservim/tagbar' }
 paq { 'tpope/vim-commentary' }
-paq { 'tpope/vim-fugitive' }
 paq { 'norcalli/nvim-colorizer.lua' }
 paq { 'folke/todo-comments.nvim' }
+
+-- git
+paq { 'tpope/vim-fugitive' }
+paq { 'lewis6991/gitsigns.nvim' }
 
 -- fuzzy finders
 paq { 'nvim-lua/popup.nvim' }
