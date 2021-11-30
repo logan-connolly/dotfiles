@@ -4,6 +4,5 @@ notion-app
 pfetch
 polybar
 xidlehook
-nerd-fonts-mononoki
 termsyn-font
 siji-ng
