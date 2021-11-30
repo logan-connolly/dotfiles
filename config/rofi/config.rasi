@@ -2,6 +2,6 @@ configuration {
  modi: "window,ssh,run,drun";
  show-icons: true;
  sidebar-mode: true;
- font: "mononoki Nerd Font 12";
+ font: "Jetbrains Mono 12";
 }
 @theme "themes/custom.rasi"

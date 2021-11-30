@@ -36,7 +36,7 @@ set guioptions none
 set statusbar-v-padding  15
 set statusbar-h-padding  75
 set selection-clipboard clipboard
-set font "mononoki Nerd Font 11"
+set font "Jetbrains Mono 11"
 set pages-per-row 1
 set statusbar-basename          true
 set page-padding 1

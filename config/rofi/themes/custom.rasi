@@ -66,8 +66,8 @@ listview {
 
 element {
     border:  0;
-    padding:      10px;
-    font:         "mononoki Nerd Font Mono 12";
+    padding: 10px;
+    font: "Jetbrains Mono 12";
     orientation: vertical;
 }
 element-icon {
