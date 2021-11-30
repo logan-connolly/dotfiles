@@ -1,7 +1,7 @@
 configuration {
  modi: "window,ssh,run,drun";
- theme: "themes/custom.rasi";
  show-icons: true;
  sidebar-mode: true;
  font: "mononoki Nerd Font 12";
 }
+@theme "themes/custom.rasi"
