@@ -1,5 +1,4 @@
 local defaults = { noremap = true, silent = true }
-local popup_opts = '{ popup_opts = { border = "single" }}'
 
 Keybind.g({
   -- builtin
@@ -10,7 +9,8 @@ Keybind.g({
   { 'n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', defaults },
   { 'n', 'gs', '<Cmd>lua vim.lsp.buf.signature_help()<CR>', defaults },
   -- diagnostics
-  { 'n', '<Leader>k', '<Cmd>lua vim.lsp.diagnostic.goto_prev(' .. popup_opts .. ')<CR>', defaults },
-  { 'n', '<Leader>j', '<Cmd>lua vim.lsp.diagnostic.goto_next(' .. popup_opts .. ')<CR>', defaults },
-  { 'n', '<Leader>l', '<Cmd>lua vim.lsp.diagnostic.show_line_diagnostics(); vim.lsp.diagnostic.show_line_diagnostics()<CR>', defaults },
+  { 'n', '<Leader>k', '<Cmd>lua vim.diagnostic.goto_prev()<CR>', defaults },
+  { 'n', '<Leader>j', '<Cmd>lua vim.diagnostic.goto_next()<CR>', defaults },
+  { 'n', '<Leader>l', '<Cmd>lua vim.diagnostic.open_float()<CR>', defaults },
+  { 'n', '<Leader>L', '<Cmd>lua vim.diagnostic.setqflist()<CR>', defaults },
 })
