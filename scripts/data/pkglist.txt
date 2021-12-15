@@ -6,6 +6,7 @@ bat
 blueman
 bluez-utils
 chromium
+cmake
 cmus
 ctop
 discord
@@ -28,6 +29,7 @@ imagemagick
 kitty
 lxappearance
 lua
+lua-language-server
 luarocks
 mpv
 ncdu
