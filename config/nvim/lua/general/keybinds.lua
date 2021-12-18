@@ -10,6 +10,7 @@ Keybind.g({
   { 'n', 'Q', '<nop>', { noremap = true } },
   -- close buffer
   { 'n', '<Leader>x', '<Esc>:bd<CR>', { noremap = true } },
+  { 'n', '<Leader>Q', '<Cmd>bufdo bdelete<CR>', { noremap = true } },
   -- terminal keymaps
   { 'n', '<Leader>;', '<Cmd>split term://zsh<CR>i', { noremap = true } },
   { 'n', "<Leader>'", '<Cmd>vsplit term://zsh<CR>i', { noremap = true } },
@@ -37,4 +38,9 @@ Keybind.g({
   { 'n', 'qk', '<Cmd>cprev<CR>', { noremap = true } },
   -- select tmux session
   { 'n', '<C-f>', '<Cmd>silent !tmux neww tmux-sessionizer<CR>', { noremap = true, silent = true} },
+  -- reselect after indent
+  { 'v', '<', '<gv', { noremap = true } },
+  { 'v', '>', '>gv', { noremap = true } },
+  -- open file according to mimetype
+  { 'n', '<Leader>o', '<Cmd>!xdg-open %<CR><CR>', { noremap = true } },
 })

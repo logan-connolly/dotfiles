@@ -28,7 +28,6 @@ Option.g({
   completeopt = 'menuone,noinsert,noselect',
   hidden = true,
   smartcase = true,
-  -- clipboard= vim.o.unamedplus .. 'unnamedplus',
   clipboard = 'unnamedplus',
 })
 
