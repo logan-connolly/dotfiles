@@ -1,14 +1,14 @@
 -- paq.nvim automatic install
-local install_path = vim.fn.stdpath("data") .. "/site/pack/paqs/start/paq-nvim"
+local install_path = vim.fn.stdpath('data') .. '/site/pack/paqs/start/paq-nvim'
 if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
-  vim.cmd("!git clone https://github.com/savq/paq-nvim " .. install_path)
+  vim.cmd('!git clone https://github.com/savq/paq-nvim ' .. install_path)
 end
 
 -- hooks
 local submodule = 'git submodule update --init --recursive'
-local update_treesitter = function() vim.cmd(":TSUpdate") end
+local update_treesitter = function() vim.cmd(':TSUpdate') end
 
-require "paq" {
+require 'paq' {
   'savq/paq-nvim';
 
   -- language support
@@ -32,7 +32,6 @@ require "paq" {
   'mattn/emmet-vim';
   'rbgrouleff/bclose.vim';
   'phaazon/hop.nvim';
-  'preservim/tagbar';
   'tpope/vim-commentary';
   'norcalli/nvim-colorizer.lua';
   'folke/todo-comments.nvim';

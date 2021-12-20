@@ -5,50 +5,50 @@ local lspkind = require('lspkind')
 lspkind.init {
   with_text = true,
   symbol_map = {
-    Text = "",
-    Method = "ƒ",
-    Function = "ﬦ",
-    Constructor = "",
-    Variable = "",
-    Class = "",
-    Interface = "ﰮ",
-    Module = "",
-    Property = "",
-    Unit = "",
-    Value = "",
-    Enum = "了",
-    Keyword = "",
-    Snippet = "﬌",
-    Color = "",
-    File = "",
-    Folder = "",
-    EnumMember = "",
-    Constant = "",
-    Struct = "",
+    Text = '',
+    Method = 'ƒ',
+    Function = 'ﬦ',
+    Constructor = '',
+    Variable = '',
+    Class = '',
+    Interface = 'ﰮ',
+    Module = '',
+    Property = '',
+    Unit = '',
+    Value = '',
+    Enum = '了',
+    Keyword = '',
+    Snippet = '﬌',
+    Color = '',
+    File = '',
+    Folder = '',
+    EnumMember = '',
+    Constant = '',
+    Struct = '',
   },
 }
 
 -- Configure LSP handlers
-vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(
   vim.lsp.diagnostic.on_publish_diagnostics, {
     virtual_text = false,
     underline = false,
   }
 )
-vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {border = "single"})
+vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, {border = 'single'})
 
 -- Setup lsp complete with nvim-cmp
 local cmp = require'cmp'
 cmp.setup({
   snippet = {
     expand = function(args)
-      vim.fn["vsnip#anonymous"](args.body)
+      vim.fn['vsnip#anonymous'](args.body)
     end
   },
   mapping = {
-    ['<C-Space>'] = cmp.mapping.complete(),
-    ['<C-e>'] = cmp.mapping.close(),
-    ['<CR>'] = cmp.mapping.confirm({ select = true }),
+    ['<c-Space>'] = cmp.mapping.complete(),
+    ['<c-e>'] = cmp.mapping.close(),
+    ['<cr>'] = cmp.mapping.confirm({ select = true }),
   },
   sources = {
     { name = 'nvim_lsp' },
@@ -57,16 +57,16 @@ cmp.setup({
   },
   formatting = {
     format = function(entry, vim_item)
-      vim_item.kind = string.format("%s %s", lspkind.presets.default[vim_item.kind], vim_item.kind)
+      vim_item.kind = string.format('%s %s', lspkind.presets.default[vim_item.kind], vim_item.kind)
       vim_item.menu = ({
-        nvim_lsp = "ﲳ",
-        nvim_lua = "",
-        treesitter = "",
-        path = "ﱮ",
-        buffer = "﬘",
-        zsh = "",
-        vsnip = "",
-        spell = "暈",
+        nvim_lsp = 'ﲳ',
+        nvim_lua = '',
+        treesitter = '',
+        path = 'ﱮ',
+        buffer = '﬘',
+        zsh = '',
+        vsnip = '',
+        spell = '暈',
       })[entry.source.name]
       return vim_item
     end,

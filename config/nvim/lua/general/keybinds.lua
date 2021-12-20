@@ -1,46 +1,59 @@
-Keybind.g({
-  -- escape with crtl+c
-  { 'i', '<C-c>', '<Esc>', { noremap = true } },
-  -- navigate splits
-  { 'n', '<C-j>', '<C-w>j', { noremap = true } },
-  { 'n', '<C-k>', '<C-w>k', { noremap = true } },
-  { 'n', '<C-h>', '<C-w>h', { noremap = true } },
-  { 'n', '<C-l>', '<C-w>l', { noremap = true } },
-  -- disable Q keymap
-  { 'n', 'Q', '<nop>', { noremap = true } },
-  -- close buffer
-  { 'n', '<Leader>x', '<Esc>:bd<CR>', { noremap = true } },
-  { 'n', '<Leader>Q', '<Cmd>bufdo bdelete<CR>', { noremap = true } },
-  -- terminal keymaps
-  { 'n', '<Leader>;', '<Cmd>split term://zsh<CR>i', { noremap = true } },
-  { 'n', "<Leader>'", '<Cmd>vsplit term://zsh<CR>i', { noremap = true } },
-  { 't', '<Esc>', '<C-\\><C-n>', { noremap = true } },
-  { 't', '<M-[>', '<Esc>', { noremap = true } },
-  { 't', '<C-v><Esc>', '<Esc>', { noremap = true } },
-  -- delete without registering word
-  { 'v', 'X', '"_d', { noremap = true } },
-  -- yank all the content of file to global register
-  { 'n', '<Leader>Y', 'gg"+yG', { noremap = true } },
-  -- yank to end of line
-  { 'n', 'Y', 'y$', { noremap = true } },
-  -- undo break points
-  { 'i', ',', ',<c-g>u', { noremap = true } },
-  { 'i', '.', '.<c-g>u', { noremap = true } },
-  { 'i', '!', '!<c-g>u', { noremap = true } },
-  { 'i', '?', '?<c-g>u', { noremap = true } },
-  -- navigate while staying centered
-  { 'n', 'n', 'nzzzv', { noremap = true } },
-  { 'n', 'N', 'Nzzzv', { noremap = true } },
-  { 'n', 'J', 'mzJ`z', { noremap = true } },
-  -- open quickfixlist
-  { 'n', 'ql', '<Cmd>copen<CR>', { noremap = true } },
-  { 'n', 'qj', '<Cmd>cnext<CR>', { noremap = true } },
-  { 'n', 'qk', '<Cmd>cprev<CR>', { noremap = true } },
-  -- select tmux session
-  { 'n', '<C-f>', '<Cmd>silent !tmux neww tmux-sessionizer<CR>', { noremap = true, silent = true} },
-  -- reselect after indent
-  { 'v', '<', '<gv', { noremap = true } },
-  { 'v', '>', '>gv', { noremap = true } },
-  -- open file according to mimetype
-  { 'n', '<Leader>o', '<Cmd>!xdg-open %<CR><CR>', { noremap = true } },
-})
+local map = vim.api.nvim_set_keymap
+
+-- escape with crtl+c
+map('i', '<c-c>', '<esc>', { noremap = true })
+
+-- navigate splits
+map('n', '<c-j>', '<c-w>j', { noremap = true })
+map('n', '<c-k>', '<c-w>k', { noremap = true })
+map('n', '<c-h>', '<c-w>h', { noremap = true })
+map('n', '<c-l>', '<c-w>l', { noremap = true })
+
+-- disable Q keymap
+map('n', 'Q', '<nop>', { noremap = true })
+
+-- close buffer
+map('n', '<leader>x', '<esc>:bd<cr>', { noremap = true })
+map('n', '<leader>Q', '<Cmd>bufdo bdelete<cr>', { noremap = true })
+
+-- terminal keymaps
+map('n', '<leader>;', '<cmd>split term://zsh<cr>i', { noremap = true })
+map('n', "<leader>'", '<cmd>vsplit term://zsh<cr>i', { noremap = true })
+map('t', '<esc>', '<c-\\><c-n>', { noremap = true })
+map('t', '<M-[>', '<esc>', { noremap = true })
+map('t', '<c-v><esc>', '<esc>', { noremap = true })
+
+-- delete without registering word
+map('v', 'X', '"_d', { noremap = true })
+
+-- yank all the content of file to global register
+map('n', '<leader>Y', 'gg"+yG', { noremap = true })
+
+-- yank to end of line
+map('n', 'Y', 'y$', { noremap = true })
+
+-- undo break points
+map('i', ',', ',<c-g>u', { noremap = true })
+map('i', '.', '.<c-g>u', { noremap = true })
+map('i', '!', '!<c-g>u', { noremap = true })
+map('i', '?', '?<c-g>u', { noremap = true })
+
+-- navigate while staying centered
+map('n', 'n', 'nzzzv', { noremap = true })
+map('n', 'N', 'Nzzzv', { noremap = true })
+map('n', 'J', 'mzJ`z', { noremap = true })
+
+-- open quickfixlist
+map('n', 'ql', '<cmd>copen<cr>', { noremap = true })
+map('n', 'qj', '<cmd>cnext<cr>', { noremap = true })
+map('n', 'qk', '<cmd>cprev<cr>', { noremap = true })
+
+-- select tmux session
+map('n', '<c-f>', '<cmd>silent !tmux neww tmux-sessionizer<cr>', { noremap = true, silent = true})
+
+-- reselect after indent
+map('v', '<', '<gv', { noremap = true })
+map('v', '>', '>gv', { noremap = true })
+
+-- open file according to mimetype
+map('n', '<leader>o', '<cmd>!xdg-open %<cr><cr>', { noremap = true })

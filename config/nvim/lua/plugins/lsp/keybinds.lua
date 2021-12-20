@@ -1,15 +1,12 @@
-local defaults = { noremap = true, silent = true }
+local map = vim.api.nvim_set_keymap
+local opts = { noremap = true, silent = true }
 
-Keybind.g({
-  -- builtin
-  { 'n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', defaults },
-  { 'n', 'rn', '<Cmd>lua vim.lsp.buf.rename()<CR>', defaults },
-  { 'n', 'gh', '<Cmd>lua vim.lsp.buf.references()<CR>', defaults },
-  { 'n', 'ga', '<Cmd>lua vim.lsp.buf.code_action()<CR>', defaults },
-  { 'n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', defaults },
-  { 'n', 'gs', '<Cmd>lua vim.lsp.buf.signature_help()<CR>', defaults },
-  -- diagnostics
-  { 'n', '<Leader>k', '<Cmd>lua vim.diagnostic.goto_prev()<CR>', defaults },
-  { 'n', '<Leader>j', '<Cmd>lua vim.diagnostic.goto_next()<CR>', defaults },
-  { 'n', '<Leader>L', '<Cmd>lua vim.diagnostic.setqflist()<CR>', defaults },
-})
+map('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>', opts)
+map('n', 'rn', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
+map('n', 'gh', '<cmd>lua vim.lsp.buf.references()<cr>', opts)
+map('n', 'ga', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
+map('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>', opts)
+map('n', 'gs', '<cmd>lua vim.lsp.buf.signature_help()<cr>', opts)
+map('n', '<leader>k', '<cmd>lua vim.diagnostic.goto_prev()<cr>', opts)
+map('n', '<leader>j', '<cmd>lua vim.diagnostic.goto_next()<cr>', opts)
+map('n', '<leader>L', '<cmd>lua vim.diagnostic.setqflist()<cr>', opts)

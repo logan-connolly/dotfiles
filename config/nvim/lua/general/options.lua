@@ -1,51 +1,46 @@
--- Globals
-Option.g({
-  -- general
-  syntax = "on",
-  encoding = "UTF-8",
-  exrc = true,
-  number = true,
-  incsearch = true,
-  showmode = false,
-  compatible = false,
-  errorbells = false,
-  tabstop = 2,
-  softtabstop = 2,
-  shiftwidth = 2,
-  splitright = true,
-  splitbelow = true,
-  -- editor
-  background = 'dark',
-  mouse = 'a',
-  hlsearch = false,
-  updatetime = 50,
-  shortmess = vim.o.shortmess .. 'c',
-  writebackup = false,
-  backup = false,
-  cmdheight = 1,
-  termguicolors = true,
-  -- editing
-  completeopt = 'menuone,noinsert,noselect',
-  hidden = true,
-  smartcase = true,
-  clipboard = 'unnamedplus',
-})
+-- general
+vim.o.syntax = 'on'
+vim.o.encoding = 'UTF-8'
+vim.o.exrc = true
+vim.o.number = true
+vim.o.incsearch = true
+vim.o.showmode = false
+vim.o.compatible = false
+vim.o.errorbells = false
+vim.o.tabstop = 2
+vim.o.softtabstop = 2
+vim.o.shiftwidth = 2
+vim.o.splitright = true
+vim.o.splitbelow = true
 
--- Window
-Option.w({
-  number = true,
-  relativenumber = true,
-  signcolumn = 'yes',
-  scrolloff = 8,
-  sidescrolloff = 8,
-  wrap = false,
-  colorcolumn = "90",
-})
+-- editor
+vim.o.background = 'dark'
+vim.o.mouse = 'a'
+vim.o.hlsearch = false
+vim.o.updatetime = 50
+vim.o.shortmess = vim.o.shortmess .. 'c'
+vim.o.writebackup = false
+vim.o.backup = false
+vim.o.cmdheight = 1
+vim.o.termguicolors = true
 
--- Buffer
-Option.b({
-  expandtab = true,
-  smartindent = true,
-  autoindent = true,
-  swapfile = false,
-})
+-- editing
+vim.o.completeopt = 'menuone,noinsert,noselect'
+vim.o.hidden = true
+vim.o.smartcase = true
+vim.o.clipboard = 'unnamedplus'
+
+-- window scoped
+vim.wo.number = true
+vim.wo.relativenumber = true
+vim.wo.signcolumn = 'yes'
+vim.wo.scrolloff = 8
+vim.wo.sidescrolloff = 8
+vim.wo.wrap = false
+vim.wo.colorcolumn = '90'
+
+-- buffer scoped
+vim.bo.expandtab = true
+vim.bo.smartindent = true
+vim.bo.autoindent = true
+vim.bo.swapfile = false
