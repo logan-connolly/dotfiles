@@ -12,6 +12,7 @@ ctop
 discord
 docker
 docker-compose
+duf
 dunst
 easytag
 fd
