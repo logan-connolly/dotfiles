@@ -11,6 +11,5 @@ Keybind.g({
   -- diagnostics
   { 'n', '<Leader>k', '<Cmd>lua vim.diagnostic.goto_prev()<CR>', defaults },
   { 'n', '<Leader>j', '<Cmd>lua vim.diagnostic.goto_next()<CR>', defaults },
-  { 'n', '<Leader>l', '<Cmd>lua vim.diagnostic.open_float()<CR>', defaults },
   { 'n', '<Leader>L', '<Cmd>lua vim.diagnostic.setqflist()<CR>', defaults },
 })

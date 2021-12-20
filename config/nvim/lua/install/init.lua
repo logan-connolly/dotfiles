@@ -48,6 +48,7 @@ require "paq" {
   'nvim-telescope/telescope.nvim';
 
   -- debugger plugins
+  'vim-test/vim-test';
   'mfussenegger/nvim-dap';
   'mfussenegger/nvim-dap-python';
 
