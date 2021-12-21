@@ -14,7 +14,7 @@ map('n', 'Q', '<nop>', { noremap = true })
 
 -- close buffer
 map('n', '<leader>x', '<esc>:bd<cr>', { noremap = true })
-map('n', '<leader>Q', '<Cmd>bufdo bdelete<cr>', { noremap = true })
+map('n', '<leader>Q', '<cmd>bufdo bdelete<cr>', { noremap = true })
 
 -- terminal keymaps
 map('n', '<leader>;', '<cmd>split term://zsh<cr>i', { noremap = true })
