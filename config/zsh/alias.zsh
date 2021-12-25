@@ -12,6 +12,7 @@ alias vim='nvim -u "NORC"'
 
 # tmux
 alias tm='tmux-sessionizer'
+alias tml='tmux list-sessions'
 alias tmka='tmux ls | cut -d: -f1 | xargs -I {} sh -c "tmux kill-session -t {}"'
 
 # docker
