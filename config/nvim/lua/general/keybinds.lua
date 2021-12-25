@@ -48,9 +48,6 @@ map('n', 'ql', '<cmd>copen<cr>', { noremap = true })
 map('n', 'qj', '<cmd>cnext<cr>', { noremap = true })
 map('n', 'qk', '<cmd>cprev<cr>', { noremap = true })
 
--- select tmux session
-map('n', '<c-f>', '<cmd>silent !tmux neww tmux-sessionizer<cr>', { noremap = true, silent = true})
-
 -- reselect after indent
 map('v', '<', '<gv', { noremap = true })
 map('v', '>', '>gv', { noremap = true })
