@@ -12,9 +12,6 @@ alias vim='nvim -u "NORC"'
 
 # tmux
 alias tm='tmux-sessionizer'
-alias tma='tmux attach'
-alias tml='tmux ls'
-alias tmk='tmux kill-session -t'
 alias tmka='tmux ls | cut -d: -f1 | xargs -I {} sh -c "tmux kill-session -t {}"'
 
 # docker
@@ -40,9 +37,6 @@ alias tree="tree -I '__pycache__|.git|venv|node_modules'"
 alias nml="nmcli device wifi list"
 alias nm="nmcli connection"
 alias nmc="nmcli --ask device wifi connect"
-
-# renaming files
-alias rename="perl-rename"
 
 # generate virtual environment
 alias venv="python -m venv .venv && source .venv/bin/activate && pip install -U pip setuptools wheel &> /dev/null"
