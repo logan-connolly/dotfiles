@@ -13,7 +13,7 @@ require 'paq' {
 require('plugins.ale')
 require('plugins.bclose')
 require('plugins.colorizer')
-require('plugins.dap')
+require('plugins.nvim-dap')
 require('plugins.emmet')
 require('plugins.fugitive')
 require('plugins.gitsigns')
