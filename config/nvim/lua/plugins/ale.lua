@@ -1,3 +1,7 @@
+require 'paq' {
+  'dense-analysis/ale';
+}
+
 local fixers = {
   ['*'] = {'remove_trailing_lines', 'trim_whitespace'},
   css = {'prettier'},

@@ -1,4 +1,9 @@
-require'hop'.setup{}
+require 'paq' {
+  'phaazon/hop.nvim';
+  'rktjmp/lush.nvim';
+}
+
+require 'hop'.setup{}
 
 local map = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }

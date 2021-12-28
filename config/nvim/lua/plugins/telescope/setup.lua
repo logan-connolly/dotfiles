@@ -1,3 +1,10 @@
+require 'paq' {
+  'nvim-lua/popup.nvim';
+  'nvim-lua/plenary.nvim';
+  {'nvim-telescope/telescope-fzy-native.nvim', run = 'git submodule update --init --recursive'};
+  'nvim-telescope/telescope.nvim';
+}
+
 local actions = require('telescope.actions')
 
 require('telescope').setup {

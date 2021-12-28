@@ -1,3 +1,8 @@
+require 'paq' {
+  'mfussenegger/nvim-dap';
+  'mfussenegger/nvim-dap-python';
+}
+
 local dap = require('dap')
 local opt = os.getenv('HOME') .. '/.local/opt'
 

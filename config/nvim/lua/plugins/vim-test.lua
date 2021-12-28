@@ -1,3 +1,7 @@
+require 'paq' {
+  'vim-test/vim-test';
+}
+
 local map = vim.api.nvim_set_keymap
 
 map('n', '<leader>t', '<cmd>TestNearest<cr>', {})

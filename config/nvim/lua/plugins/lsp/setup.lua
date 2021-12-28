@@ -1,3 +1,14 @@
+require 'paq' {
+  'neovim/nvim-lspconfig';
+  'nvim-lua/lsp-status.nvim';
+  'onsails/lspkind-nvim';
+  'hrsh7th/cmp-nvim-lsp';
+  'hrsh7th/cmp-buffer';
+  'hrsh7th/nvim-cmp';
+  'hrsh7th/cmp-vsnip';
+  'hrsh7th/vim-vsnip';
+}
+
 local lspconfig = require('lspconfig')
 local lspkind = require('lspkind')
 

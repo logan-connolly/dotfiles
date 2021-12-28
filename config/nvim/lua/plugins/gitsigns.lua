@@ -1,3 +1,7 @@
+require 'paq' {
+  'lewis6991/gitsigns.nvim';
+}
+
 require('gitsigns').setup {
   signs = {
     add          = {hl = 'GitSignsAdd'   , text = '│', numhl='GitSignsAddNr'   , linehl='GitSignsAddLn'},

@@ -1,3 +1,7 @@
+require 'paq' {
+  'mattn/emmet-vim';
+}
+
 vim.cmd 'autocmd FileType html,css,vue,javascript,javascript.jsx EmmetInstall'
 
 vim.g.user_emmet_install_global = 0

@@ -1,4 +1,8 @@
-require('lualine').setup {
+require 'paq' {
+  'hoob3rt/lualine.nvim';
+}
+
+require 'lualine'.setup {
   options = {
     icons_enabled = true,
     theme = 'tokyodark',
