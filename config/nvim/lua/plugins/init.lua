@@ -9,6 +9,9 @@ require 'paq' {
   'savq/paq-nvim';
 }
 
+-- improve plugin loadtime performance
+require('plugins.impatient')
+
 -- load plugin configurations
 require('plugins.ale')
 require('plugins.bclose')
