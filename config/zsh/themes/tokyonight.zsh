@@ -1,3 +1,4 @@
+# This theme is gruvbox material version of purepower(powerlevel10k)
 # Based on: https://gist.github.com/sainnhe/f92372e14c59750b6ac8dc927ba9f7fe
 
 () {
