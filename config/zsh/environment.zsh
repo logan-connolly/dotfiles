@@ -7,6 +7,7 @@ export VISUAL="nvim"
 export TERMINAL="kitty"
 export BROWSER="firefox"
 export READER="zathura"
+export TERM="screen-256color"
 
 # prepend paths to $PATH
 typeset -U path
