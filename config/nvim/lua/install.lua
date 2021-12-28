@@ -23,8 +23,6 @@ require 'paq' {
   'hrsh7th/cmp-nvim-lsp';
   'hrsh7th/cmp-buffer';
   'hrsh7th/nvim-cmp';
-
-  -- snippets
   'hrsh7th/cmp-vsnip';
   'hrsh7th/vim-vsnip';
 
@@ -50,11 +48,11 @@ require 'paq' {
   'vim-test/vim-test';
   'mfussenegger/nvim-dap';
   'mfussenegger/nvim-dap-python';
+  'dstein64/vim-startuptime';
 
   -- theme plugins
   'kyazdani42/nvim-web-devicons';
   'rktjmp/lush.nvim';
-  'npxbr/gruvbox.nvim';
   'hoob3rt/lualine.nvim';
   'tiagovla/tokyodark.nvim';
 }
