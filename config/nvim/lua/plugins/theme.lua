@@ -1,5 +1,5 @@
-vim.g.tokyodark_transparent_background = true
-vim.g.tokyodark_enable_italic_comment = true
-vim.g.tokyodark_enable_italic = true
-vim.g.tokyodark_color_gamma = '1.5'
-vim.cmd('colorscheme tokyodark')
+vim.g.tokyonight_terminal_colors = true
+vim.g.tokyonight_transparent = true
+vim.g.tokyonight_colors = { hint = "#e0af68", error = "#f7768e" }
+
+vim.cmd[[colorscheme tokyonight]]

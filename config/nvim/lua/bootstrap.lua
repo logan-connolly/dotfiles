@@ -54,5 +54,5 @@ require 'paq' {
   -- theme
   'kyazdani42/nvim-web-devicons';
   'hoob3rt/lualine.nvim';
-  'tiagovla/tokyodark.nvim';
+  'folke/tokyonight.nvim';
 }
