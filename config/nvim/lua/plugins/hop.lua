@@ -1,8 +1,3 @@
-require 'paq' {
-  'phaazon/hop.nvim';
-  'rktjmp/lush.nvim';
-}
-
 require 'hop'.setup{}
 
 local map = vim.api.nvim_set_keymap

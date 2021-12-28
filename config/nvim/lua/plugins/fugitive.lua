@@ -1,7 +1,3 @@
-require 'paq' {
-  'tpope/vim-fugitive';
-}
-
 local map = vim.api.nvim_set_keymap
 
 map('n', '<leader>gs', [[<cmd>G<cr>]], { noremap = false, silent = true })
