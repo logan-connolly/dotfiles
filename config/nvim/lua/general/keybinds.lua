@@ -13,7 +13,6 @@ map('n', '<c-l>', '<c-w>l', { noremap = true })
 map('n', 'Q', '<nop>', { noremap = true })
 
 -- close buffer
-map('n', '<leader>x', '<esc>:bd<cr>', { noremap = true })
 map('n', '<leader>Q', '<cmd>bufdo bdelete<cr>', { noremap = true })
 
 -- terminal keymaps

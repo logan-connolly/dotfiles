@@ -8,6 +8,9 @@ install:
 neovim:
 	bash $(current_dir)/scripts/install-neovim.sh
 
+paq:
+	nvim --headless -u NONE -c 'lua require("bootstrap").bootstrap_paq()'
+
 symlink:
 	bash $(current_dir)/scripts/symlink-configs.sh
 

@@ -2,6 +2,8 @@
 require('impatient')
 
 -- load plugin configurations
+require('plugins.bufdelete')
+require('plugins.comment')
 require('plugins.colorizer')
 require('plugins.nvim-dap')
 require('plugins.emmet')
