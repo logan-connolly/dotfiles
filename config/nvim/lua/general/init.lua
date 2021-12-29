@@ -1,4 +1,3 @@
-require('general.options')
-require('general.variables')
-require('general.keybinds')
+require('general.settings')
 require('general.commands')
+require('general.keybinds')
