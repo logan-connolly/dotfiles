@@ -1,4 +1,3 @@
--- paq.nvim automatic install
 local install_path = vim.fn.stdpath('data') .. '/site/pack/paqs/start/paq-nvim'
 if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
   vim.cmd('!git clone https://github.com/savq/paq-nvim ' .. install_path)
@@ -10,15 +9,14 @@ require 'paq' {
 
   -- language support
   'neovim/nvim-lspconfig';
-  'nvim-lua/lsp-status.nvim';
   'onsails/lspkind-nvim';
   'dense-analysis/ale';
 
   -- completion
-  'hrsh7th/cmp-nvim-lsp';
   'hrsh7th/cmp-buffer';
-  'hrsh7th/nvim-cmp';
+  'hrsh7th/cmp-nvim-lsp';
   'hrsh7th/cmp-vsnip';
+  'hrsh7th/nvim-cmp';
   'hrsh7th/vim-vsnip';
 
   -- telescope
@@ -48,7 +46,7 @@ require 'paq' {
   'mfussenegger/nvim-dap-python';
 
   -- performance
-  'dstein/vim-startuptime';
+  'dstein64/vim-startuptime';
   'lewis6991/impatient.nvim';
 
   -- theme
