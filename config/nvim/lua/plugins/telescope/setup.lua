@@ -34,12 +34,13 @@ require('telescope').setup {
     fzy_native = {
       override_generic_sorter = false,
       override_file_sorter = true,
-    },
+    }
   }
 }
 
 -- Load extensions
 require('telescope').load_extension('fzy_native')
+require("telescope").load_extension('file_browser')
 
 -- Custom functions
 local search_dir = function(name, path)
@@ -54,12 +55,5 @@ local M = {}
 
 M.search_dotfiles = function() search_dir('dotfiles', '~/projects/dotfiles') end
 M.search_plugins = function() search_dir('plugins', '~/.local/share/nvim/site/pack/paqs/start') end
-
-M.browse_dir = function(path)
-  require('telescope.builtin').file_browser({
-    cwd = path,
-    hidden = true,
-  })
-end
 
 return M

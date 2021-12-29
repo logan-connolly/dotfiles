@@ -22,6 +22,7 @@ require 'paq' {
   -- telescope
   'nvim-telescope/telescope.nvim';
   {'nvim-telescope/telescope-fzy-native.nvim', run = 'git submodule update --init --recursive'};
+  'nvim-telescope/telescope-file-browser.nvim';
   'nvim-lua/plenary.nvim';
 
   -- treesitter
