@@ -26,6 +26,9 @@ local autocmds = {
     ftplugin_settings = {
       { 'Filetype', 'dockerfile,lua,sh,zsh', [[setlocal tabstop=2 shiftwidth=2 expandtab shiftwidth=2]] },
       { 'Filetype', 'markdown', [[setlocal wrap linebreak]] }
+    },
+    autoformat_buffer = {
+      { 'BufWritePost', '*.html,*.css,*.vue,*.js*,*.ts*,*.py,*.yaml,*.yml', [[FormatWrite]] }
     }
 }
 

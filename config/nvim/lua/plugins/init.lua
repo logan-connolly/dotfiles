@@ -2,10 +2,10 @@
 require('impatient')
 
 -- load plugin configurations
-require('plugins.ale')
 require('plugins.colorizer')
 require('plugins.nvim-dap')
 require('plugins.emmet')
+require('plugins.formatter')
 require('plugins.fugitive')
 require('plugins.gitsigns')
 require('plugins.hop')

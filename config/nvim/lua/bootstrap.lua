@@ -10,7 +10,7 @@ require 'paq' {
   -- language support
   'neovim/nvim-lspconfig';
   'onsails/lspkind-nvim';
-  'dense-analysis/ale';
+  'mhartington/formatter.nvim';
 
   -- completion
   'hrsh7th/cmp-buffer';
