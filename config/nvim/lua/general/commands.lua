@@ -1,6 +1,6 @@
 local cmd = vim.api.nvim_command
 
-function nvim_create_augroups(definitions)
+local function nvim_create_augroups(definitions)
     for group_name, definition in pairs(definitions) do
         cmd('augroup '..group_name)
         cmd('autocmd!')
@@ -19,11 +19,13 @@ local autocmds = {
     transparent_bg = {
       { 'ColorScheme', '*', [[hi Normal ctermbg=none guibg=none]]}
     };
-    git_add_recolor = {
-      { 'VimEnter', '*', [[hi diffAdded guifg=#9ece6a]]}
-    };
-    git_remove_recolor = {
+    fugitive_diff_colors = {
+      { 'VimEnter', '*', [[hi diffAdded guifg=#9ece6a]]},
       { 'VimEnter', '*', [[hi diffRemoved guifg=#f7768e]]}
+    };
+    ftplugin_settings = {
+      { 'Filetype', 'dockerfile,lua,sh,zsh', [[setlocal tabstop=2 shiftwidth=2 expandtab shiftwidth=2]] },
+      { 'Filetype', 'markdown', [[setlocal wrap linebreak]] }
     }
 }
 
