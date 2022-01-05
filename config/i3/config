@@ -134,11 +134,10 @@ mode "resize" {
 }
 
 # Set terminal
-set $tmux --no-startup-id kitty tmux
 set $term --no-startup-id kitty
 
 # Custom bindings
-bindsym $mod+Return exec $tmux
+bindsym $mod+Return exec $term
 bindsym $mod+Shift+Return exec pcmanfm
 bindsym $mod+Shift+q kill
 bindsym $mod+d exec --no-startup-id rofi -show drun
