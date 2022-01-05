@@ -3,7 +3,7 @@
 if [[ $# -eq 1 ]]; then
 	selected=$1
 else
-	selected=$(find $HOME/projects -mindepth 1 -maxdepth 1 -type d | fzf --header 'Select project:')
+	selected=$(find $HOME/projects -mindepth 1 -maxdepth 1 -type d | sort | fzf --reverse --header 'Select project:')
 fi
 
 if [[ -z $selected ]]; then
