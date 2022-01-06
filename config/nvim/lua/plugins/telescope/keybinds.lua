@@ -12,4 +12,5 @@ map('n', '<leader>fg', [[<cmd>lua require'telescope.builtin'.git_status()<cr>]],
 map('n', '<leader>fl', [[<cmd>lua require'telescope.builtin'.git_commits()<cr>]], opts)
 map('n', '<leader>fB', [[<cmd>lua require'telescope.builtin'.git_branches()<cr>]], opts)
 map('n', '<leader>fk', [[<cmd>lua require'telescope.builtin'.keymaps()<cr>]], opts)
+map('n', '<leader>fn', [[<cmd>lua require'telescope.builtin'.treesitter()<cr>]], opts)
 map('n', '-', "<cmd>lua require 'telescope'.extensions.file_browser.file_browser({cwd = require'telescope.utils'.buffer_dir()})<cr>", opts)
