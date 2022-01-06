@@ -81,16 +81,18 @@ cmp.setup({
 })
 
 -- LSP servers to support with optional arguments
-local completion = require('plugins.lsp.completion')
-local servers = {
+local custom_configs = require('plugins.lsp.configs')
+local server_configs = {
   tsserver = {},
   vuels = {},
-  pyright = completion.python,
-  sumneko_lua = completion.sumneko
+  pyright = custom_configs.python,
+  sumneko_lua = custom_configs.sumneko
 }
 
--- Configure each LSP by attaching completion and status capbilities
-for server, config in pairs(servers) do
-  config.capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+-- Configure each LSP by attaching completion and capabilities
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+for server, config in pairs(server_configs) do
+  config.capabilities = capabilities
   lspconfig[server].setup(config)
 end
