@@ -143,6 +143,7 @@ bindsym $mod+Shift+q kill
 bindsym $mod+d exec --no-startup-id rofi -show drun
 bindsym $mod+e exec --no-startup-id rofi -show emoji -modi emoji
 bindsym $mod+f fullscreen toggle
+bindsym $mod+o exec zathura
 bindsym $mod+F2 exec firefox-developer-edition
 bindsym $mod+F3 exec $term --class cmus-instance -e cmus
 bindsym $mod+F4 exec signal-desktop
