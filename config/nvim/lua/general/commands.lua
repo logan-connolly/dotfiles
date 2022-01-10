@@ -24,8 +24,8 @@ local autocmds = {
       { 'VimEnter', '*', [[hi diffRemoved guifg=#f7768e]]}
     };
     ftplugin_settings = {
-      { 'Filetype', 'dockerfile,lua,sh,zsh', [[setlocal tabstop=2 shiftwidth=2 expandtab shiftwidth=2]] },
-      { 'Filetype', 'markdown', [[setlocal wrap linebreak]] }
+      { 'Filetype', 'dockerfile,lua,sh,zsh', [[setlocal tabstop=2 shiftwidth=2 expandtab]] },
+      { 'Filetype', 'markdown', [[setlocal tabstop=2 shiftwidth=2 expandtab wrap linebreak]] }
     },
     autoformat_buffer = {
       { 'BufWritePost', '*.html,*.css,*.vue,*.js*,*.ts*,*.py,*.yaml,*.yml', [[FormatWrite]] }
