@@ -28,7 +28,7 @@ local autocmds = {
       { 'Filetype', 'markdown', [[setlocal tabstop=2 shiftwidth=2 expandtab wrap linebreak]] }
     },
     autoformat_buffer = {
-      { 'BufWritePost', '*.html,*.css,*.vue,*.js*,*.ts*,*.py,*.yaml,*.yml', [[FormatWrite]] }
+      { 'BufWritePost', '*.html,*.css,*.vue,*.js,*.ts,*.py,*.yaml,*.yml', [[FormatWrite]] }
     }
 }
 
