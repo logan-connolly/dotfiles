@@ -30,6 +30,7 @@ local packages = {
   'numToStr/Comment.nvim';
   'norcalli/nvim-colorizer.lua';
   'folke/todo-comments.nvim';
+  'folke/zen-mode.nvim';
 
   -- git
   'tpope/vim-fugitive';

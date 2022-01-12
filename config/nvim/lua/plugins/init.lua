@@ -17,6 +17,7 @@ require('plugins.telescope')
 require('plugins.treesitter')
 require('plugins.todo-comments')
 require('plugins.vim-test')
+require('plugins.zen-mode')
 
 -- load theme last
 require('plugins.theme')
