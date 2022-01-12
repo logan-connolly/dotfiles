@@ -43,6 +43,8 @@ require('telescope').setup {
       '__pycache__/',
       'venv/',
       'node_modules/',
+      'package-lock.json',
+      'yarn.lock',
     },
 
     mappings = {
