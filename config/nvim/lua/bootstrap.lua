@@ -17,6 +17,8 @@ local packages = {
   'nvim-telescope/telescope.nvim';
   {'nvim-telescope/telescope-fzy-native.nvim', run = 'git submodule update --init --recursive'};
   'nvim-telescope/telescope-file-browser.nvim';
+  {'dhruvmanila/telescope-bookmarks.nvim'};
+  'tami5/sqlite.lua';
   'nvim-lua/plenary.nvim';
 
   -- treesitter

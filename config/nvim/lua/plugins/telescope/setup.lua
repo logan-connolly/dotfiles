@@ -58,13 +58,20 @@ require('telescope').setup {
     fzy_native = {
       override_generic_sorter = true,
       override_file_sorter = true,
-    }
+    },
+    bookmarks = {
+      selected_browser = 'firefox_dev',
+      url_open_command = 'xdg-open',
+      full_path = true,
+      firefox_profile_name = nil,
+    },
   }
 }
 
 -- Load extensions
 require('telescope').load_extension('fzy_native')
 require('telescope').load_extension('file_browser')
+require('telescope').load_extension('bookmarks')
 
 -- Custom functions
 local M = {}
