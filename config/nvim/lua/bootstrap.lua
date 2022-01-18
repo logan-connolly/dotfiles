@@ -35,8 +35,9 @@ local packages = {
   'folke/zen-mode.nvim';
 
   -- git
-  'tpope/vim-fugitive';
   'lewis6991/gitsigns.nvim';
+  'TimUntersberger/neogit';
+  'sindrets/diffview.nvim';
 
   -- test/debug
   'vim-test/vim-test';
