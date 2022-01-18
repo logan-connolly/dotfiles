@@ -19,10 +19,6 @@ local autocmds = {
     transparent_bg = {
       { 'ColorScheme', '*', [[hi Normal ctermbg=none guibg=none]]}
     };
-    fugitive_diff_colors = {
-      { 'VimEnter', '*', [[hi diffAdded guifg=#9ece6a]]},
-      { 'VimEnter', '*', [[hi diffRemoved guifg=#f7768e]]}
-    };
     ftplugin_settings = {
       { 'Filetype', 'dockerfile,lua,sh,zsh', [[setlocal tabstop=2 shiftwidth=2 expandtab]] },
       { 'Filetype', 'markdown', [[setlocal tabstop=2 shiftwidth=2 expandtab wrap linebreak]] }
