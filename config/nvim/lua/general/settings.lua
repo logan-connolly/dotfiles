@@ -4,6 +4,7 @@ vim.g.python3_host_prog = '/usr/bin/python'
 
 -- global scope settings
 vim.o.syntax = 'on'
+vim.o.guicursor = ''
 vim.o.encoding = 'UTF-8'
 vim.o.exrc = true
 vim.o.number = true
@@ -27,7 +28,6 @@ vim.o.cmdheight = 1
 vim.o.termguicolors = true
 vim.o.completeopt = 'menuone,noinsert,noselect'
 vim.o.hidden = true
-vim.o.smartcase = true
 vim.o.clipboard = 'unnamedplus'
 
 -- window scope settings
