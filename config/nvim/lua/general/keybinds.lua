@@ -25,6 +25,9 @@ map('t', '<c-v><esc>', '<esc>', { noremap = true })
 -- delete without registering word
 map('v', 'X', '"_d', { noremap = true })
 
+-- close tab
+map('n', '<leader>X', '<cmd>tabc<cr>', { noremap = true, silent = true })
+
 -- yank all the content of file to global register
 map('n', '<leader>Y', 'gg"+yG', { noremap = true })
 
