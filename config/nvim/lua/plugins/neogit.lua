@@ -12,3 +12,4 @@ local opts = { noremap = true, silent = true }
 
 map('n', '<leader>gm', [[<cmd>lua require'neogit'.open({ "commit" })<cr>]], opts)
 map('n', '<leader>gs', [[<cmd>lua require'neogit'.open()<cr>]], opts)
+map('n', '<leader>gh', [[<cmd>DiffviewFileHistory<cr>]], opts)
