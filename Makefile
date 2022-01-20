@@ -17,4 +17,4 @@ symlink:
 clone:
 	bash $(current_dir)/scripts/clone-repos.sh
 
-setup: install neovim symlink clone
+setup: install neovim paq symlink clone
