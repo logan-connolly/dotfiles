@@ -63,6 +63,7 @@ rsync
 rxvt-unicode
 scrot
 signal-desktop
+starship
 sxiv
 tldr
 tlp

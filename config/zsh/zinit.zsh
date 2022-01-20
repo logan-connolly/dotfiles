@@ -21,9 +21,6 @@ zinit light-mode for \
 
 ### End of Zinit's installer chunk
 
-# load shell prompt
-zinit light romkatv/powerlevel10k
-
 # load git aliases
 zinit light davidde/git
 

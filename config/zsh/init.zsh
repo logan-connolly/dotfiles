@@ -10,3 +10,6 @@ compinit
 
 # Setup kitty complete
 kitty + complete setup zsh | source /dev/stdin
+
+# Set theme
+eval "$(starship init zsh)"
