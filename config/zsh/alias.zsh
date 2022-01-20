@@ -24,16 +24,13 @@ alias dcd='docker-compose down'
 alias gi='git init --quiet'
 alias gcm='git commit -m'
 
-# nnn
+# list files
 alias nnn='nnn_cd'
 alias l='nnn -dc'
-alias ls='ls --color=auto'
-alias ll='ls -lh'
-alias la='ls -lah'
-alias l.='ls -lh -d .*'
-
-# ignore files/dirs with tree
-alias tree="tree -I '__pycache__|.git|venv|node_modules'"
+alias ls='exa'
+alias ll='exa --long --icons'
+alias la='exa --all --long --icons'
+alias tree="exa --icons --tree -I '__pycache__|.git|venv|node_modules'"
 
 # network aliases
 alias nml="nmcli device wifi list"

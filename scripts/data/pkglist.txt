@@ -15,6 +15,7 @@ docker-compose
 duf
 dunst
 easytag
+exa
 fd
 feh
 firefox-developer-edition
@@ -68,7 +69,6 @@ sxiv
 tldr
 tlp
 tmux
-tree
 ttf-jetbrains-mono
 typescript
 udiskie

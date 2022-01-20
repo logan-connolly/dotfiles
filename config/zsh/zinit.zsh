@@ -40,9 +40,6 @@ zinit ice depth=1
 zinit light jeffreytse/zsh-vi-mode
 ZVM_CURSOR_STYLE_ENABLED=false
 
-# k - pretty printing ls
-zinit light supercrabtree/k
-
 # For postponing loading `fzf`
 zinit ice lucid wait
 zinit snippet OMZP::fzf
