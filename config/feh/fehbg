@@ -1,3 +1,3 @@
 #!/bin/sh
 
-feh --no-fehbg --bg-scale ~/.config/feh/bg.png
+feh --no-fehbg --bg-scale ~/.config/feh/bg.jpg

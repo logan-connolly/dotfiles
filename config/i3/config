@@ -12,12 +12,12 @@ gaps inner 18
 gaps outer 0
 
 # Tokyonight            border  backgr. text    indicat child_b
-client.focused          #4e5173 #1a1b26 #9ece6a #4e5173 #acb0d0
-client.focused_inactive #4e5173 #1a1b26 #c5c8c6 #4e5173 #4e5173
-client.unfocused        #4e5173 #1a1b26 #c5c8c6 #4e5173 #4e5173
-client.urgent           #4e5173 #1a1b26 #c5c8c6 #4e5173 #4e5173
-client.placeholder      #4e5173 #1a1b26 #c5c8c6 #4e5173 #4e5173
-client.background       #1a1b26
+client.focused          #4e5173 #26233a #f6c177 #4e5173 #acb0d0
+client.focused_inactive #4e5173 #26233a #c5c8c6 #4e5173 #4e5173
+client.unfocused        #4e5173 #26233a #c5c8c6 #4e5173 #4e5173
+client.urgent           #4e5173 #26233a #c5c8c6 #4e5173 #4e5173
+client.placeholder      #4e5173 #26233a #c5c8c6 #4e5173 #4e5173
+client.background       #26233a
 
 # Window border
 new_window pixel 1

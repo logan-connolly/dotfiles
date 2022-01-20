@@ -8,7 +8,7 @@
 window {
   padding: 1em;
 
-  border-color: #33467C;
+  border-color: #393552;
   border:       5px;
   border-radius: 10px;
 
@@ -50,7 +50,7 @@ button-iggy2 {
 
 listview, inputbar, message {
   padding: 0.5em;
-  border-color: #33467C;
+  border-color: #393552;
   border:        5px;
   border-radius: 10px;
   background-color: black/70%;
@@ -75,7 +75,7 @@ element-icon {
 }
 
 element  selected {
-  border-color: #33467C;
+  border-color: #393552;
   border:       5px;
   border-radius: 10px;
   background-color: grey/20%;
@@ -104,7 +104,7 @@ icon-ms-ic1,icon-ms-ic2 {
     vertical-align: 0.8;
     expand:        false;
     border:       0px 0px 5px ;
-    border-color: #33467C;
+    border-color: #6e6a86;
 }
 
 mode-switcher {
@@ -115,7 +115,7 @@ mode-switcher {
 button {
     text-color: white;
     border:       0px 0px 5px ;
-    border-color: #33467C;
+    border-color: #6e6a86;
     border-radius:    10px 10px 0 0;
     background-image: linear-gradient(to bottom, grey/50%, black/70%);
     horizontal-align: 0.5;
@@ -126,7 +126,7 @@ button selected.normal {
     padding: 0px;
 
     border:       5px 5px 0px ;
-    border-color: #33467C;
+    border-color: #6e6a86;
     border-radius:    10px 10px 0 0;
     background-image: linear-gradient(to bottom, grey, black/70%);
 }

@@ -24,12 +24,12 @@ background-alpha = #001a1b26
 foreground = #a9b1d6
 white = #a9b1d6
 grey = #4e5173
-red = #f7768e
-blue = #7aa2f7
-green = #9ece6a
-purple = #9a7ecc
-teal = #4abaaf
-yellow = #e0af68
+red = #eb6f92
+blue = #3e8fb0
+green = #9ccfd8
+purple = #c4a7e7
+teal = #ea9a97
+yellow = #f6c177
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
