@@ -19,7 +19,7 @@ pseudo-transparency = true
 
 [color]
 default = #1a1b26
-background = #001a1b26
+background = #1a1b26
 background-alpha = #001a1b26
 foreground = #e0def4
 white = #a9b1d6
@@ -39,7 +39,7 @@ height = 21
 fixed-center = true
 bottom = false
 
-background = ${color.background-alpha}
+background = ${color.background}
 foreground = ${color.foreground}
 
 line-size = 3
