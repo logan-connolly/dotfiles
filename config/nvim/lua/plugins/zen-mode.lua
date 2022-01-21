@@ -39,12 +39,6 @@ require("zen-mode").setup {
       font = "+4", -- font size increment
     },
   },
-  -- callback where you can add custom code when the Zen window opens
-  on_open = function(win)
-  end,
-  -- callback where you can add custom code when the Zen window closes
-  on_close = function()
-  end,
 }
 
 local map = vim.api.nvim_set_keymap
