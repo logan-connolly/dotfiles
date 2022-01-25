@@ -14,12 +14,10 @@ local packages = {
   'hrsh7th/vim-vsnip';
 
   -- telescope
+  'nvim-lua/plenary.nvim';
   'nvim-telescope/telescope.nvim';
   {'nvim-telescope/telescope-fzy-native.nvim', run = 'git submodule update --init --recursive'};
   'nvim-telescope/telescope-file-browser.nvim';
-  {'dhruvmanila/telescope-bookmarks.nvim'};
-  'tami5/sqlite.lua';
-  'nvim-lua/plenary.nvim';
 
   -- treesitter
   {'nvim-treesitter/nvim-treesitter', run = function() vim.cmd(':TSUpdate') end};
@@ -44,6 +42,9 @@ local packages = {
   'vim-test/vim-test';
   'mfussenegger/nvim-dap';
   'mfussenegger/nvim-dap-python';
+
+  -- docs
+  {'iamcco/markdown-preview.nvim', run = function() vim.fn['mkdp#util#install']() end};
 
   -- performance
   'dstein64/vim-startuptime';
