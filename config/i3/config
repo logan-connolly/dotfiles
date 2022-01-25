@@ -106,16 +106,13 @@ bar {
 	tray_output none
 
   status_command /usr/bin/bumblebee-status \
-	  -m cmus arch_update pomodoro pasink memory bluetooth battery date time \
+	  -m cmus pomodoro pasink memory bluetooth battery date time \
 		-p memory.format="{used}/{total}" time.format="%H:%M" date.format="%b %d" \
 		-t dracula-powerline
 
 	colors {
-	  separator #268bd2
-		background #232136
-		statusline #839496
-		focused_workspace #e0def4 #6272A4" #e0def4
-		active_workspace #e0def4 #6272A4" #e0def4
+		focused_workspace #e0def4 #6272A4 #e0def4
+		active_workspace #e0def4 #6272A4 #e0def4
 		inactive_workspace #817c9c  #232136 
 		urgent_workspace #eb6f92 #eb6f92 #e0def4
 	}
