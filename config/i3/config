@@ -99,6 +99,28 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
 
+# Status bar with bumblebee
+bar {
+  font pango:Inconsolata 10
+  position top
+	tray_output none
+
+  status_command /usr/bin/bumblebee-status \
+	  -m cmus arch_update pomodoro pasink memory bluetooth battery date time \
+		-p memory.format="{used}/{total}" time.format="%H:%M" date.format="%b %d" \
+		-t dracula-powerline
+
+	colors {
+	  separator #268bd2
+		background #232136
+		statusline #839496
+		focused_workspace #e0def4 #6272A4" #e0def4
+		active_workspace #e0def4 #6272A4" #e0def4
+		inactive_workspace #817c9c  #232136 
+		urgent_workspace #eb6f92 #eb6f92 #e0def4
+	}
+}
+
 # Set shutdown, restart and locking
 set $Locker $HOME/.config/i3/lock && sleep 1
 set $mode_system System (l) lock, (s) suspend, (r) reboot, (Shift+s) shutdown
@@ -172,4 +194,3 @@ exec --no-startup-id start-pulseaudio-x11
 exec --no-startup-id setxkbmap -layout us,de -option 'grp:alt_shift_toggle'
 exec --no-startup-id picom -b
 exec --no-startup-id $HOME/.config/i3/locker
-exec --no-startup-id $HOME/.config/polybar/i3wmthemer_bar_launch.sh

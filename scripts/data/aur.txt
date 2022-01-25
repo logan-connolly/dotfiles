@@ -1,8 +1,8 @@
+bumblebee-status
 jmtpfs
 nordvpn-bin
 notion-app
 pfetch
-polybar
 xidlehook
 termsyn-font
 siji-ng

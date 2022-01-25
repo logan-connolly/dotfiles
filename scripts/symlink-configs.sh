@@ -32,7 +32,6 @@ symlink_dirs() {
   symlink_dir $CONFIG_DIR/nvim ~/.config/nvim
   symlink_dir $CONFIG_DIR/rofi ~/.config/rofi
   symlink_dir $CONFIG_DIR/picom ~/.config/picom
-  symlink_dir $CONFIG_DIR/polybar ~/.config/polybar
   symlink_dir $CONFIG_DIR/tmux ~/.config/tmux
   symlink_dir $CONFIG_DIR/zathura ~/.config/zathura
   symlink_dir $CONFIG_DIR/zsh ~/.config/zsh
