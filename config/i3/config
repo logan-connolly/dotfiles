@@ -101,19 +101,20 @@ bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart du
 
 # Status bar with bumblebee
 bar {
-  font pango:Inconsolata 10
+  font pango:Jetbrains Mono 9
   position top
 	tray_output none
+	workspace_min_width 40
 
   status_command /usr/bin/bumblebee-status \
-	  -m cmus pomodoro pasink memory bluetooth battery date time \
-		-p memory.format="{used}/{total}" time.format="%H:%M" date.format="%b %d" \
-		-t dracula-powerline
+	  -m cmus pomodoro pasink bluetooth battery date time \
+		-p time.format="%H:%M" date.format="%a, %b %d" \
+		-t rose-pine
 
 	colors {
-		focused_workspace #e0def4 #6272A4 #e0def4
-		active_workspace #e0def4 #6272A4 #e0def4
-		inactive_workspace #817c9c  #232136 
+		focused_workspace #232136 #ea9a97 #232136
+		active_workspace #232136 #ea9a97 #232136
+		inactive_workspace #232136  #393552 #817c9c
 		urgent_workspace #eb6f92 #eb6f92 #e0def4
 	}
 }

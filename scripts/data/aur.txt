@@ -1,4 +1,4 @@
-bumblebee-status
+bumblebee-status-git
 jmtpfs
 nordvpn-bin
 notion-app
