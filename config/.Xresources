@@ -20,7 +20,7 @@
 *color7: #acb0d0
 *color15: #acb0d0
 
-URxvt.font: xft:mononoki Nerd Font Mono:size=11.5
+URxvt.font: xft:Jetbrains Mono:size=11.5
 URxvt.depth:                      32
 URxvt*scrollBar:                  false
 URxvt*mouseWheelScrollPage:       false
