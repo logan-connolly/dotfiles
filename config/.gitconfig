@@ -3,13 +3,8 @@
   email = logan.connolly@protonmail.com
 [core]
   editor = nvim
+	excludesfile = ~/.gitignore_global
 [pull]
   rebase = false
-[mergetool "fugitive"]
-	cmd = nvim -f -c \"Gvdiffsplit!\" \"$MERGED\"
-[merge]
-	tool = fugitive
-[mergetool]
-  prompt = false
 [init]
   defaultBranch = master
