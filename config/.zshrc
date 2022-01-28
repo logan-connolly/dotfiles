@@ -6,3 +6,5 @@ source "${zsh_dir}/global.zsh"
 source "${zsh_dir}/environment.zsh"
 source "${zsh_dir}/history.zsh"
 source "${zsh_dir}/alias.zsh"
+
+eval "$(direnv hook zsh)"

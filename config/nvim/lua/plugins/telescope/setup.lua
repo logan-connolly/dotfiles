@@ -42,6 +42,7 @@ require('telescope').setup {
       '.git/',
       '__pycache__/',
       'venv/',
+      '.direnv/',
       'node_modules/',
       'package-lock.json',
       'yarn.lock',

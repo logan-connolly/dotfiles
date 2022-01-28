@@ -8,6 +8,7 @@ BIN_DIR=$PARENT_DIR/bin
 symlink_files() {
   ln -vsf $CONFIG_DIR/.flake8 ~/.flake8
   ln -vsf $CONFIG_DIR/.gitconfig ~/.gitconfig
+  ln -vsf $CONFIG_DIR/.gitignore_global ~/.gitignore_global
   ln -vsf $CONFIG_DIR/.inputrc ~/.inputrc
   ln -vsf $CONFIG_DIR/.pylintrc ~/.pylintrc
   ln -vsf $CONFIG_DIR/.xinitrc ~/.xinitrc
@@ -25,6 +26,7 @@ symlink_dir() {
 }
 
 symlink_dirs() {
+  symlink_dir $CONFIG_DIR/direnv ~/.config/direnv
   symlink_dir $CONFIG_DIR/dunst ~/.config/dunst
   symlink_dir $CONFIG_DIR/feh ~/.config/feh
   symlink_dir $CONFIG_DIR/i3 ~/.config/i3
