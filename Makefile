@@ -3,7 +3,7 @@
 current_dir := $(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
 
 install:
-	bash $(current_dir)/scripts/install-packages.sh
+	bash $(current_dir)/scripts/install-pacman-pkgs.sh $(pkg_file)
 
 neovim:
 	bash $(current_dir)/scripts/install-neovim.sh
@@ -16,5 +16,3 @@ symlink:
 
 clone:
 	bash $(current_dir)/scripts/clone-repos.sh
-
-setup: install neovim paq symlink clone
