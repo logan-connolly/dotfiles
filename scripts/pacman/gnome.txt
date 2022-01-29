@@ -1,0 +1,10 @@
+gdm
+gnome-shell
+gnome-control-center
+gnome-keyring
+gnome-menus
+gnome-screenshot
+gnome-system-monitor
+gnome-tweak-tool
+xdg-user-dirs
+chrome-gnome-shell

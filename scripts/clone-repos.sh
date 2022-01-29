@@ -22,5 +22,23 @@ clone_node_debug() {
   gulp build
 }
 
+install_nnn_plugins() {
+	curl -Ls https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs | sh
+}
+
+setup_npm_global() {
+	mkdir -p $HOME/.npm-global
+	npm config set prefix '~/.npm-global'
+}
+
+install_npm_packages() {
+	setup_npm_global
+	general="eslint live-server neovim prettier castnow"
+	lsp="typescript typescript-language-server vls pyright vscode-css-languageserver-bin"
+	npm install -g $general $lsp
+}
+
 clone_lua_language_server
 clone_node_debug
+install_nnn_plugins
+install_npm_packages
