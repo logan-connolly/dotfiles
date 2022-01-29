@@ -77,3 +77,8 @@ Update global NPM packages:
 ```shell
 npx npm-check-updates -g
 ```
+
+### Gnome Extensions
+
+Common extensions used in Gnome: [vitals](https://extensions.gnome.org/extension/1460/vitals/), [blur my shell](https://extensions.gnome.org/extension/3193/blur-my-shell/), [sound input & output device chooser](https://extensions.gnome.org/extension/906/sound-output-device-chooser/), [tile assistant](https://extensions.gnome.org/extension/3733/tiling-assistant/), [extension list](https://extensions.gnome.org/extension/3088/extension-list/), [screenshot tool](https://extensions.gnome.org/extension/1112/screenshot-tool/), [gtk title bar](https://extensions.gnome.org/extension/1732/gtk-title-bar/)
+
