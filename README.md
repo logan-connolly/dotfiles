@@ -4,12 +4,7 @@
 
 ## Prerequisites
 
-Fresh install of [arch](https://archlinux.org/) using [arch bootstrap repo](https://github.com/logan-connolly/bootstrap-arch).
-
-Additional Resources for installing Arch:
-
-- https://wiki.archlinux.org/index.php/installation_guide
-- https://averagelinuxuser.com/a-step-by-step-arch-linux-installation-guide/
+Fresh install of [arch](https://archlinux.org/) using [bootstrap-arch](https://github.com/logan-connolly/bootstrap-arch).
 
 ## Installation
 
