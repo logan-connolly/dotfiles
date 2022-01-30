@@ -10,6 +10,9 @@ alias firefox='firefox-developer-edition'
 alias v='nvim'
 alias vim='nvim -u "NORC"'
 
+# direnv
+alias di='echo dotenv > .envrc && touch .env && direnv allow'
+
 # tmux
 alias tmux='direnv exec / tmux'
 alias tm='tmux-sessionizer'
