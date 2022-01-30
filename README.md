@@ -22,19 +22,17 @@ Additional Resources for installing Arch:
 # Clone dotfiles repo
 git clone https://github.com/logan-connolly/dotfiles.git && cd dotfiles
 
-# Install common dependencies
-make install pkg_file=scripts/pacman/common.pkglist
-
-# Install desktop environment dependencies (gnome, i3, etc.)
+# Install system and desktop environment dependencies through pacman
+make install pkg_file=scripts/pacman/system.pkglist
 make install pkg_file=scripts/pacman/gnome.pkglist
-
-# Install neovim from source and add plugins
-make neovim
-make paq
-
-# Link configurations to destination
-make symlink
 
 # Clone repos that cannot be installed by pacman
 make clone
+
+# Install neovim from source and add plugins through paq
+make neovim
+make paq
+
+# Link configurations to target destinations
+make config
 ```

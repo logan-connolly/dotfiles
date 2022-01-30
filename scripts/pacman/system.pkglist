@@ -37,6 +37,7 @@ ripgrep
 rsync
 signal-desktop
 starship
+thunderbird
 tldr
 jk
 tmux
@@ -57,6 +58,7 @@ zathura
 zathura-pdf-poppler
 zsh
 jmtpfs
+nerd-fonts-jetbrains-mono
 nordvpn-bin
 notion-app
 pfetch
