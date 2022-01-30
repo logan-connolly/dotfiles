@@ -14,7 +14,7 @@ neovim: # Build and install latest neovim from source
 paq: # Install neovim plugins using paq bootstrap
 	nvim --headless -u NONE -c 'lua require("bootstrap").bootstrap_paq()'
 
-config: # Link configuration files to proper locations
+links: # Link configuration files to proper locations
 	bash $(current_dir)/scripts/symlink-configs.sh
 
 services: # Enable services, adapt user groups and setup firewall
