@@ -1,36 +1,31 @@
-# My Dotfiles
+# Dotfiles
 
-![](docs/screenshots/01-screenshot.png)
+⚠️ **Warning:** use at your own risk.
 
 ## Prerequisites
 
-### Arch + i3
-
-Fresh install of [arch](https://archlinux.org/) and [i3](https://i3wm.org/) using [guide](docs/guides/arch-install.txt).
-
-Additional Resources:
-
-- https://wiki.archlinux.org/index.php/installation_guide
-- https://averagelinuxuser.com/a-step-by-step-arch-linux-installation-guide/
-
-### Paru package manager
-
-Install [paru](https://github.com/Morganamilo/paru) for downloading AUR packages:
-
-```shell
-sudo pacman -S --needed base-devel
-git clone https://aur.archlinux.org/paru.git
-cd paru
-makepkg -si
-```
+Fresh install of [arch](https://archlinux.org/) using [bootstrap-arch](https://github.com/logan-connolly/bootstrap-arch).
 
 ## Installation
 
-**Warning:** use at your own risk.
-
-Clone [dotfiles](https://github.com/logan-connolly/dotfiles) repository and install setup:
-
 ```shell
+# Clone dotfiles repo
 git clone https://github.com/logan-connolly/dotfiles.git && cd dotfiles
-make setup
+
+# Install system and desktop environment dependencies through pacman
+make install pkg_file=scripts/pacman/system.pkglist
+make install pkg_file=scripts/pacman/gnome.pkglist
+
+# Clone repos that cannot be installed by pacman
+make clone
+
+# Install neovim from source and add plugins through paq
+make neovim
+make paq
+
+# Link configurations to target destinations
+make config
+
+# Enable services, add groups to user and setup firewall
+make services
 ```

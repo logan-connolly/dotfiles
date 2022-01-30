@@ -1,8 +1,0 @@
-bumblebee-status-git
-jmtpfs
-nordvpn-bin
-notion-app
-pfetch
-xidlehook
-termsyn-font
-siji-ng
