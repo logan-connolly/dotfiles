@@ -17,5 +17,8 @@ paq: # Install neovim plugins using paq bootstrap
 config: # Link configuration files to proper locations
 	bash $(current_dir)/scripts/symlink-configs.sh
 
+services: # Enable services, adapt user groups and setup firewall
+	bash $(current_dir)/scripts/enable-services.sh
+
 help: # Show this help
 	@egrep -h '\s#\s' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?# "}; {printf "\033[36m%-20s\033[0m %s\n", $$1, $$2}'
