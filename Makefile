@@ -2,8 +2,14 @@
 
 current_dir := $(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
 
-pacman: # Install pacman deps, passing `pkg_file` to pkglist file
-	bash $(current_dir)/scripts/install-pacman-pkgs.sh $(pkg_file)
+system: # Install system pacman deps
+	bash $(current_dir)/scripts/install-pacman-pkgs.sh ./pacman/system.pkglist
+
+gnome: # Install Gnome desktop environment
+	bash $(current_dir)/scripts/install-pacman-pkgs.sh ./pacman/gnome.pkglist
+
+i3: # Install i3 desktop environment
+	bash $(current_dir)/scripts/install-pacman-pkgs.sh ./pacman/i3.pkglist
 
 clone: # Install system deps that can't be installed with pacman
 	bash $(current_dir)/scripts/clone-repos.sh

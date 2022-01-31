@@ -10,7 +10,8 @@ docker-compose
 exa
 fd
 firefox-developer-edition
-fzf git
+fzf
+git
 httpie
 imagemagick
 kitty
