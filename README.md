@@ -31,3 +31,9 @@ make config
 # Enable services, add groups to user and setup firewall
 make services
 ```
+
+## Troubleshooting
+
+#### Failed to commit transaction
+
+When installing pacman packages after a fresh install, it can be that the encryption keys are not up-to-date. Solve this by running the following command `sudo pacman-key --refresh-keys`
