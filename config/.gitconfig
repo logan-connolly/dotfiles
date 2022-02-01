@@ -1,10 +1,23 @@
 [user]
   name = Logan Connolly
   email = logan.connolly@protonmail.com
+
 [core]
   editor = nvim
-	excludesfile = ~/.gitignore_global
+  excludesfile = ~/.gitignore_global
+
+[merge]
+  tool = "nvim"
+
+[mergetool]
+  keepBackup = false
+  prompt = false
+
+[mergetool "nvim"]
+  cmd = "nvim -d -c \"wincmd l\" -c \"norm ]c\" \"$LOCAL\" \"$MERGED\" \"$REMOTE\""
+
 [pull]
   rebase = false
+
 [init]
   defaultBranch = master
