@@ -10,7 +10,7 @@ modify_user() {
 }
 
 enable_services() {
-  services="bluetooth docker gdm reflector"
+  services="bluetooth docker reflector"
   echo "Enabling the following services: $services"
   for service in $services
   do
