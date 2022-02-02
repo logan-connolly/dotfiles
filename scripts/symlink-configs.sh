@@ -15,7 +15,7 @@ symlink_dir() {
 common_links() {
   ln -vsf $CONFIG_DIR/.gitconfig ~/.gitconfig
   ln -vsf $CONFIG_DIR/.gitignore_global ~/.gitignore_global
-  ln -vsf $CONFIG_DIR/xinit/.xinitrc.gnome ~/.xinitrc
+  ln -vsf $CONFIG_DIR/.xinitrc ~/.xinitrc
   ln -vsf $CONFIG_DIR/.Xresources ~/.Xresources
   ln -vsf $CONFIG_DIR/.zshrc ~/.zshrc
   ln -vsf $CONFIG_DIR/.zprofile ~/.zprofile
@@ -28,20 +28,4 @@ common_links() {
   symlink_dir $BIN_DIR ~/.local/bin
 }
 
-i3_links() {
-  ln -vsf $CONFIG_DIR/mimeapps.list ~/.config/mimeapps.list
-  ln -vsf $CONFIG_DIR/xinit/.xinitrc.i3 ~/.xinitrc
-  symlink_dir $CONFIG_DIR/dunst ~/.config/dunst
-  symlink_dir $CONFIG_DIR/feh ~/.config/feh
-  symlink_dir $CONFIG_DIR/i3 ~/.config/i3
-  symlink_dir $CONFIG_DIR/rofi ~/.config/rofi
-  symlink_dir $CONFIG_DIR/picom ~/.config/picom
-}
-
 common_links
-
-if pgrep -x "i3" > /dev/null
-then
-  echo "i3 is running, running i3 symlinks"
-  i3_links
-fi

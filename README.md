@@ -16,17 +16,17 @@ git clone https://github.com/logan-connolly/dotfiles.git && cd dotfiles
 make system
 
 # Install desktop environment
-make gnome
+make desktop
 
 # Clone repos that cannot be installed by pacman
 make clone
 
+# Link configurations to target destinations
+make config
+
 # Install neovim from source and add plugins through paq
 make neovim
 make paq
-
-# Link configurations to target destinations
-make config
 
 # Enable services, add groups to user and setup firewall
 make services

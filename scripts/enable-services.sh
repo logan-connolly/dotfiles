@@ -9,8 +9,13 @@ modify_user() {
   done
 }
 
+enable_firewall() {
+  sudo ufw enable
+  echo "ufw firewall enabled."
+}
+
 enable_services() {
-  services="bluetooth docker gdm reflector"
+  services="bluetooth docker reflector gdm"
   echo "Enabling the following services: $services"
   for service in $services
   do
@@ -18,11 +23,6 @@ enable_services() {
   done
 }
 
-enable_firewall() {
-  sudo ufw enable
-  echo "ufw firewall enabled."
-}
-
 modify_user
-enable_services
 enable_firewall
+enable_services
