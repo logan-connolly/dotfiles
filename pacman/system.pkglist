@@ -54,7 +54,7 @@ virtualbox-guest-iso
 virtualbox-host-modules-arch
 xsel
 yarn
-youtube-dl
+yt-dlp
 zathura
 zathura-pdf-poppler
 zsh
