@@ -3,7 +3,6 @@ local lspkind = require('lspkind')
 
 -- Adds VSCode like pictograms
 lspkind.init {
-  with_text = true,
   symbol_map = {
     Text = '',
     Method = 'ƒ',
