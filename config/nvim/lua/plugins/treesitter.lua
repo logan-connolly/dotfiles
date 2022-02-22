@@ -1,10 +1,3 @@
-local update_treesitter = function() vim.cmd(':TSUpdate') end
-
-require 'paq' {
-  {'nvim-treesitter/nvim-treesitter', run = update_treesitter};
-  'nvim-treesitter/nvim-treesitter-refactor';
-}
-
 require('nvim-treesitter.configs').setup{
   ensure_installed = 'maintained',
   highlight = {

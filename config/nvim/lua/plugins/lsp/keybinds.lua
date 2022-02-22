@@ -3,8 +3,7 @@ local opts = { noremap = true, silent = true }
 
 map('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>', opts)
 map('n', 'rn', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
-map('n', 'gh', '<cmd>lua vim.lsp.buf.references()<cr>', opts)
-map('n', 'ga', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
+map('n', 'gr', "<cmd>Trouble lsp_references<cr>", {silent = true, noremap = true})
 map('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>', opts)
 map('n', 'gs', '<cmd>lua vim.lsp.buf.signature_help()<cr>', opts)
 map('n', '<leader>k', '<cmd>lua vim.diagnostic.goto_prev()<cr>', opts)

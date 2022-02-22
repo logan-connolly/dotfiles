@@ -53,4 +53,3 @@ map("n", "<leader>tp", "<cmd>Trouble workspace_diagnostics<cr>", {silent = true,
 map("n", "<leader>tb", "<cmd>Trouble document_diagnostics<cr>", {silent = true, noremap = true})
 map("n", "<leader>tl", "<cmd>Trouble loclist<cr>", {silent = true, noremap = true})
 map("n", "<leader>ql", "<cmd>Trouble quickfix<cr>", {silent = true, noremap = true})
-map("n", "gR", "<cmd>Trouble lsp_references<cr>", {silent = true, noremap = true})
