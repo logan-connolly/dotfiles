@@ -12,20 +12,19 @@ symlink_dir() {
   ln -vs $dot_config_dir $output_config_dir
 }
 
-common_links() {
+create_links() {
   ln -vsf $CONFIG_DIR/.gitconfig ~/.gitconfig
   ln -vsf $CONFIG_DIR/.gitignore_global ~/.gitignore_global
   ln -vsf $CONFIG_DIR/.xinitrc ~/.xinitrc
   ln -vsf $CONFIG_DIR/.Xresources ~/.Xresources
-  ln -vsf $CONFIG_DIR/.zshrc ~/.zshrc
   ln -vsf $CONFIG_DIR/.zprofile ~/.zprofile
   symlink_dir $CONFIG_DIR/direnv ~/.config/direnv
+  symlink_dir $CONFIG_DIR/fish ~/.config/fish
   symlink_dir $CONFIG_DIR/kitty ~/.config/kitty
   symlink_dir $CONFIG_DIR/nvim ~/.config/nvim
   symlink_dir $CONFIG_DIR/tmux ~/.config/tmux
   symlink_dir $CONFIG_DIR/zathura ~/.config/zathura
-  symlink_dir $CONFIG_DIR/zsh ~/.config/zsh
   symlink_dir $BIN_DIR ~/.local/bin
 }
 
-common_links
+create_links

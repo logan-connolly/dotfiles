@@ -10,6 +10,8 @@ docker-compose
 exa
 fd
 firefox-developer-edition
+fish
+fisher
 fzf
 git
 httpie
@@ -57,7 +59,6 @@ yarn
 yt-dlp
 zathura
 zathura-pdf-poppler
-zsh
 jmtpfs
 nerd-fonts-jetbrains-mono
 nordvpn-bin
