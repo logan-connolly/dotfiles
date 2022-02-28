@@ -22,7 +22,7 @@ make desktop
 make clone
 
 # Link configurations to target destinations
-make config
+make links
 
 # Install neovim from source and add plugins through paq
 make neovim
