@@ -7,11 +7,16 @@ local packages = {
   'mhartington/formatter.nvim';
 
   -- completion
+  'hrsh7th/nvim-cmp';
   'hrsh7th/cmp-buffer';
   'hrsh7th/cmp-nvim-lsp';
-  'hrsh7th/cmp-vsnip';
-  'hrsh7th/nvim-cmp';
-  'hrsh7th/vim-vsnip';
+  'hrsh7th/cmp-path';
+  'hrsh7th/cmp-nvim-lua';
+
+  -- snippets
+  'L3MON4D3/LuaSnip';
+  'saadparwaiz1/cmp_luasnip';
+  'rafamadriz/friendly-snippets';
 
   -- telescope
   'nvim-lua/plenary.nvim';
@@ -41,9 +46,6 @@ local packages = {
   'vim-test/vim-test';
   'mfussenegger/nvim-dap';
   'mfussenegger/nvim-dap-python';
-
-  -- docs
-  {'iamcco/markdown-preview.nvim', run = function() vim.fn['mkdp#util#install']() end};
 
   -- performance
   'dstein64/vim-startuptime';
@@ -83,4 +85,12 @@ local function bootstrap_paq()
   paq.install()
 end
 
-return { bootstrap_paq = bootstrap_paq }
+local function clean_paq()
+  local paq = require('paq')
+  paq.clean()
+end
+
+return {
+  bootstrap_paq = bootstrap_paq,
+  clean_paq = clean_paq,
+}

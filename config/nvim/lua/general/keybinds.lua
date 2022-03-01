@@ -56,3 +56,6 @@ map('v', '>', '>gv', { noremap = true })
 
 -- open file according to mimetype
 map('n', '<leader>o', '<cmd>!xdg-open %<cr><cr>', { noremap = true })
+
+-- source dotfiles
+map('n', '<leader>sd', '<cmd>source ~/.config/nvim/init.lua<cr>', { noremap = true })
