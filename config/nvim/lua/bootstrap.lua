@@ -24,7 +24,6 @@ local packages = {
   'nvim-treesitter/nvim-treesitter-refactor';
 
   -- misc
-  'mattn/emmet-vim';
   'famiu/bufdelete.nvim';
   'phaazon/hop.nvim';
   'numToStr/Comment.nvim';
