@@ -32,10 +32,11 @@ setup_npm_global() {
 }
 
 install_npm_packages() {
-	setup_npm_global
-	general="eslint live-server neovim prettier castnow"
-	lsp="typescript typescript-language-server vls pyright vscode-css-languageserver-bin"
-	npm install -g $general $lsp
+  setup_npm_global
+  js="typescript-language-server vls @volar/server typescript eslint live-server prettier"
+  css="vscode-langservers-extracted @tailwindcss/language-server"
+  misc="neovim pyright @ansible/ansible-language-server"
+  npm install -g $js $css $misc
 }
 
 clone_lua_language_server
