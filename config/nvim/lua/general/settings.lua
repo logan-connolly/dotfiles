@@ -28,7 +28,6 @@ vim.o.cmdheight = 1
 vim.o.termguicolors = true
 vim.o.completeopt = 'menuone,noinsert,noselect'
 vim.o.hidden = true
-vim.o.clipboard = 'unnamedplus'
 
 -- window scope settings
 vim.wo.number = true

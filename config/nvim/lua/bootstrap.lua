@@ -50,6 +50,7 @@ local packages = {
   -- performance
   'dstein64/vim-startuptime';
   'lewis6991/impatient.nvim';
+  'nathom/filetype.nvim';
 
   -- theme
   'kyazdani42/nvim-web-devicons';
