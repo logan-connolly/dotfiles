@@ -13,6 +13,9 @@ alias vim='nvim -u "NORC"'
 # direnv
 alias di='echo dotenv > .envrc && touch .env && direnv allow'
 
+# python
+alias pu='pip install -U pip setuptools wheel'
+
 # docker
 alias dc='docker-compose'
 
@@ -21,6 +24,7 @@ alias tmux='direnv exec / tmux'
 alias tm='tmux-sessionizer'
 alias tml='tmux list-sessions'
 alias tmka='tmux ls | cut -d: -f1 | xargs -I {} sh -c "tmux kill-session -t {}"'
+
 # list files
 alias l='nnn -de'
 alias ls='exa'
@@ -30,16 +34,18 @@ alias tree="exa --icons --tree -I '__pycache__|.git|venv|node_modules'"
 
 # git
 alias ga='git add'
+alias gb='git branch'
 alias gd='git diff'
 alias gi='git init --quiet'
-alias gl='git pull'
-alias gp='git push'
+alias gl='git log'
+alias gp='git pull'
+alias gP='git push'
 alias gs='git status'
 alias gc='git commit'
 alias gcm='git commit -m'
 alias gcam='git commit -a -m'
-alias gcom='git checkout master'
 alias gco='git checkout'
+alias gcom='git checkout master'
 alias gcob='git checkout -b'
 alias glo='git log --oneline --decorate'
 alias gan='git commit --amend --no-edit'
