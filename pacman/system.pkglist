@@ -58,7 +58,7 @@ xsel
 yarn
 yt-dlp
 zathura
-zathura-pdf-poppler
+zathura-pdf-mupdf
 jmtpfs
 nerd-fonts-jetbrains-mono
 nordvpn-bin
