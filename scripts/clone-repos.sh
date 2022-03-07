@@ -22,6 +22,12 @@ clone_node_debug() {
   gulp build
 }
 
+clone_tpm_package_manager() {
+  repo=https://github.com/tmux-plugins/tpm
+  path="$HOME/.config/tmux/plugins/tpm"
+  clone_repo $repo $path
+}
+
 install_nnn_plugins() {
 	curl -Ls https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs | sh
 }
@@ -41,5 +47,6 @@ install_npm_packages() {
 
 clone_lua_language_server
 clone_node_debug
+clone_tpm_package_manager
 install_nnn_plugins
 install_npm_packages
