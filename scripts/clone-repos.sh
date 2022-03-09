@@ -45,8 +45,18 @@ install_npm_packages() {
   npm install -g $js $css $misc
 }
 
+install_debugpy_env() {
+  mkdir -p ~/.local/opt
+  python -m venv ~/.local/opt/debugpy
+  source ~/.local/opt/debugpy/bin/activate
+  pip install -U pip setuptools wheel
+  pip install debugpy
+  deactivate
+}
+
 clone_lua_language_server
 clone_node_debug
 clone_tpm_package_manager
 install_nnn_plugins
 install_npm_packages
+install_debugpy_env
