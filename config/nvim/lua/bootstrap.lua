@@ -45,6 +45,7 @@ local packages = {
   -- test/debug
   'vim-test/vim-test';
   'mfussenegger/nvim-dap';
+  'rcarriga/nvim-dap-ui';
   'mfussenegger/nvim-dap-python';
 
   -- performance
