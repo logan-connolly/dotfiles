@@ -17,7 +17,7 @@
   cmd = "nvim -d -c \"wincmd l\" -c \"norm ]c\" \"$LOCAL\" \"$MERGED\" \"$REMOTE\""
 
 [pull]
-  rebase = false
+  rebase = true
 
 [init]
   defaultBranch = master
