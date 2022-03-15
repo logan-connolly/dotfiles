@@ -51,9 +51,6 @@ udisks2
 ufw
 unzip
 vim
-virtualbox
-virtualbox-guest-iso
-virtualbox-host-modules-arch
 xsel
 yarn
 yt-dlp
