@@ -20,6 +20,7 @@ kitty
 lua
 lua-language-server
 luarocks
+magic-wormhole
 ncdu
 nnn
 nodejs
