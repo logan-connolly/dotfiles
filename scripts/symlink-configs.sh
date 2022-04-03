@@ -14,6 +14,8 @@ symlink_dir() {
 
 create_links() {
   ln -vsf $CONFIG_DIR/.gitconfig ~/.gitconfig
+  ln -vsf $CONFIG_DIR/.gitconfig-personal ~/.gitconfig-personal
+  ln -vsf $CONFIG_DIR/.gitconfig-work ~/.gitconfig-work
   ln -vsf $CONFIG_DIR/.gitignore_global ~/.gitignore_global
   ln -vsf $CONFIG_DIR/.xinitrc ~/.xinitrc
   ln -vsf $CONFIG_DIR/.Xresources ~/.Xresources

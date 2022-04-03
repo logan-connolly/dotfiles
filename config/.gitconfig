@@ -1,6 +1,7 @@
-[user]
-  name = Logan Connolly
-  email = logan.connolly@protonmail.com
+[includeIf "gitdir:~/projects/personal/"]
+  path = ~/.gitconfig-personal
+[includeIf "gitdir:~/projects/work/"]
+  path = ~/.gitconfig-work
 
 [core]
   editor = nvim
