@@ -21,7 +21,8 @@ alias dc='docker-compose'
 
 # tmux
 alias tmux='direnv exec / tmux'
-alias tm='tmux-sessionizer'
+alias tmw='tmux-sessionizer ~/projects/work'
+alias tmp='tmux-sessionizer ~/projects/personal'
 alias tml='tmux list-sessions'
 alias tmka='tmux ls | cut -d: -f1 | xargs -I {} sh -c "tmux kill-session -t {}"'
 

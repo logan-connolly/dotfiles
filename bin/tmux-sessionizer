@@ -1,9 +1,10 @@
 #!/bin/bash
 
 if [[ $# -eq 1 ]]; then
-	selected=$1
+	selected=$(find $1 -mindepth 1 -maxdepth 1 -type d | sort | fzf --reverse --header 'Select project:')
 else
-	selected=$(find $HOME/projects -mindepth 1 -maxdepth 1 -type d | sort | fzf --reverse --header 'Select project:')
+  echo "error: expected to receive directory argument"
+  exit 1
 fi
 
 if [[ -z $selected ]]; then
