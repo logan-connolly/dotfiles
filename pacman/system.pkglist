@@ -33,8 +33,10 @@ openssh
 pulseaudio
 pulseaudio-bluetooth
 pulseaudio-alsa
+python-poetry
 python-pre-commit
 python-pynvim
+python-pyenv
 qbittorrent
 reflector
 ripgrep
