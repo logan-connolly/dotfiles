@@ -12,6 +12,7 @@ alias vim='nvim -u "NORC"'
 
 # direnv
 alias di='echo dotenv > .envrc && touch .env && direnv allow'
+alias dip='echo "layout pyenv 3.9.10" >> .envrc && direnv allow'
 
 # python
 alias pu='pip install -U pip setuptools wheel'
