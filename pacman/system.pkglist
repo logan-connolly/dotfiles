@@ -36,7 +36,7 @@ pulseaudio-alsa
 python-poetry
 python-pre-commit
 python-pynvim
-python-pyenv
+pyenv
 qbittorrent
 reflector
 ripgrep
