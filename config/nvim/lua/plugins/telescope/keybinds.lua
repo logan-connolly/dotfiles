@@ -7,7 +7,6 @@ map('n', '<leader>fw', [[<cmd>lua require'telescope.builtin'.grep_string({ searc
 map('n', '<leader>fb', [[<cmd>lua require'telescope.builtin'.buffers()<cr>]], opts)
 map('n', '<leader>fh', [[<cmd>lua require'telescope.builtin'.help_tags()<cr>]], opts)
 map('n', '<leader>fp', [[<cmd>lua require'plugins.telescope.setup'.search_plugins()<cr>]], opts)
-map('n', '<leader>ft', '<cmd>TodoTelescope<cr>', opts)
 map('n', '<leader>fg', [[<cmd>lua require'telescope.builtin'.git_status()<cr>]], opts)
 map('n', '<leader>fl', [[<cmd>lua require'telescope.builtin'.git_commits()<cr>]], opts)
 map('n', '<leader>fB', [[<cmd>lua require'telescope.builtin'.git_branches()<cr>]], opts)
