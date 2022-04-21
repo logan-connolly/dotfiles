@@ -14,8 +14,11 @@ clone: # Install system deps that can't be installed with pacman
 neovim: # Build and install latest neovim from source
 	bash $(current_dir)/scripts/install-neovim.sh
 
-paq: # Install neovim plugins using paq bootstrap
+paq-install: # Install neovim plugins using paq bootstrap
 	nvim --headless -u NONE -c 'lua require("bootstrap").bootstrap_paq()'
+
+paq-clean: # Remove neovim plugins using paq bootstrap
+	nvim --headless -u NONE -c 'lua require("bootstrap").clean_paq()'
 
 links: # Link configuration files to proper locations
 	bash $(current_dir)/scripts/symlink-configs.sh
