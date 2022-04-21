@@ -3,6 +3,8 @@ local cmp = require('cmp')
 
 cmp.setup({
   mapping = {
+    ['<c-n>'] = cmp.mapping.select_next_item(),
+    ['<c-p>'] = cmp.mapping.select_prev_item(),
     ['<c-Space>'] = cmp.mapping.complete(),
     ['<c-e>'] = cmp.mapping.close(),
     ['<cr>'] = cmp.mapping.confirm({ select = true }),
