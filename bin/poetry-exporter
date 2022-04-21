@@ -1,0 +1,6 @@
+#!/bin/bash
+
+echo "Exporting dependencies under requirements/"
+mkdir -p ./requirements
+poetry export -o ./requirements/production.txt  --without-hashes
+poetry export --dev -o ./requirements/development.txt  --without-hashes
