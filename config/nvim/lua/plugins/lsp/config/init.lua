@@ -4,6 +4,7 @@ local lspconfig = require('lspconfig')
 local server_configs = {
   ansiblels = {},
   cssls = {},
+  gopls = {},
   pyright = require'plugins.lsp.config.python'.settings,
   sumneko_lua = require'plugins.lsp.config.sumneko'.settings,
   tsserver = {},
