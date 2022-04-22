@@ -56,7 +56,7 @@ local packages = {
   -- theme
   'kyazdani42/nvim-web-devicons';
   'hoob3rt/lualine.nvim';
-  'rose-pine/neovim';
+  'wittyjudge/gruvbox-material.nvim';
 }
 
 local function clone_paq()
