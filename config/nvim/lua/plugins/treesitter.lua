@@ -1,4 +1,8 @@
 require('nvim-treesitter.configs').setup{
+  ensure_installed = {
+    "bash", "css", "go", "graphql", "html", "javascript", "json", "lua", "nix",
+    "python", "toml", "typescript", "vue", "yaml",
+  },
   highlight = {
     enable = true,
   },
