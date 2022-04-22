@@ -38,7 +38,7 @@ alias tree="exa --icons --tree -I '__pycache__|.git|venv|node_modules'"
 # git
 alias ga='git add'
 alias gb='git branch'
-alias gd='git diff'
+alias gd='git diff --ignore-space-change'
 alias gi='git init --quiet'
 alias gl='git pull'
 alias gp='git push'
