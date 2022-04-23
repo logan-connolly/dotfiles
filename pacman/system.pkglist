@@ -15,6 +15,7 @@ fish
 fisher
 fzf
 git
+github-cli
 gopls
 httpie
 imagemagick
