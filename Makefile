@@ -20,6 +20,9 @@ paq-install: # Install neovim plugins using paq bootstrap
 paq-clean: # Remove neovim plugins using paq bootstrap
 	nvim --headless -u NONE -c 'lua require("bootstrap").clean_paq()'
 
+paq-update: # Update neovim plugins using paq bootstrap
+	nvim --headless -u NONE -c 'lua require("bootstrap").update_paq()'
+
 links: # Link configuration files to proper locations
 	bash $(current_dir)/scripts/symlink-configs.sh
 
