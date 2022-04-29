@@ -25,6 +25,9 @@ local autocmds = {
     },
     autoformat_buffer = {
       { 'BufWritePost', '*.html,*.css,*.vue,*.js,*.ts,*.py,*.yaml,*.yml', [[FormatWrite]] }
+    },
+    format_golang = {
+      { 'BufWritePre', '*.go', [[lua vim.lsp.buf.formatting()]] }
     }
 }
 

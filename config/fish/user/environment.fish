@@ -1,5 +1,5 @@
 # prepend paths to $PATH
-fish_add_path --prepend ~/.local/bin ~/.npm-global/bin ~/.poetry/bin
+fish_add_path --prepend ~/.local/bin ~/.npm-global/bin ~/.poetry/bin ~/go/bin
 
 # default programs
 set -x EDITOR "nvim"
