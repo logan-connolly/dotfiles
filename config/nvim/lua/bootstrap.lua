@@ -92,13 +92,7 @@ local function clean_paq()
   paq.clean()
 end
 
-local function update_paq()
-  local paq = require('paq')
-  paq.update()
-end
-
 return {
   bootstrap_paq = bootstrap_paq,
   clean_paq = clean_paq,
-  update_paq = update_paq,
 }
