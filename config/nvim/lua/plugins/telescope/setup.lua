@@ -55,6 +55,13 @@ require('telescope').setup {
       },
     }
   },
+  pickers = {
+    buffers = { theme = "dropdown" },
+    find_files = { theme = "dropdown" },
+    git_files = { theme = "dropdown" },
+    grep_string = { theme = "dropdown" },
+    treesitter = { theme = "dropdown" },
+  },
   extensions = {
     fzy_native = {
       override_generic_sorter = true,
