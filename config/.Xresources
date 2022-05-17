@@ -1,24 +1,31 @@
-/* tokyonight */
-*foreground: #a9b1d6
-*background: #1a1b26
-*cursorColor: #a9b1d6
-*borderColor: #1a1b26
-*color0: #1a1b26
-*color8: #4e5173
-*color1: #F7768E
-*color9: #F7768E
-*color2: #9ECE6A
-*color10: #9ECE6A
-*color3: #E0AF68
-*color11: #E0AF68
-*color4: #7AA2F7
-*color12: #7AA2F7
-*color5: #9a7ecc
-*color13: #9a7ecc
-*color6: #4abaaf
-*color14: #4abaaf
-*color7: #acb0d0
-*color15: #acb0d0
+! hard contrast: *background: #1d2021
+*background: #282828
+! soft contrast: *background: #32302f
+*foreground: #ebdbb2
+! Black + DarkGrey
+*color0:  #282828
+*color8:  #928374
+! DarkRed + Red
+*color1:  #cc241d
+*color9:  #fb4934
+! DarkGreen + Green
+*color2:  #98971a
+*color10: #b8bb26
+! DarkYellow + Yellow
+*color3:  #d79921
+*color11: #fabd2f
+! DarkBlue + Blue
+*color4:  #458588
+*color12: #83a598
+! DarkMagenta + Magenta
+*color5:  #b16286
+*color13: #d3869b
+! DarkCyan + Cyan
+*color6:  #689d6a
+*color14: #8ec07c
+! LightGrey + White
+*color7:  #a89984
+*color15: #ebdbb2
 
 URxvt.font: xft:Jetbrains Mono:size=11.5
 URxvt.depth:                      32
