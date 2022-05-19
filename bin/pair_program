@@ -1,0 +1,17 @@
+#!/bin/bash
+
+PAIR_DIR=$1
+SHARED_GROUP=$2
+
+echo "Creating a tmux session: ${SHARED_GROUP} at ${PAIR_DIR}"
+tmux -S $PAIR_DIR new -s $SHARED_GROUP
+
+echo "Chown shared dir (${PAIR_DIR}) to ${PAIR_DIR} (root priviledges needed)"
+sudo chgrp $SHARED_GROUP $PAIR_DIR
+chmod 770 $PAIR_DIR
+
+echo "Attaching to session ..."
+tmux -S $PAIR_DIR attach -s $SHARED_GROUP
+
+echo "Attach remotely with:"
+echo "$ tmux -S $PAIR_DIR attach -s $SHARED_GROUP"
