@@ -33,9 +33,9 @@ noto-fonts-emoji
 noto-fonts-extra
 npm
 openssh
-pulseaudio
-pulseaudio-bluetooth
-pulseaudio-alsa
+pipewire-jack
+pipewire-alsa
+pipewire-pulse
 python-poetry
 python-pre-commit
 python-pynvim
