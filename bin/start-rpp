@@ -1,0 +1,28 @@
+#!/bin/bash
+
+init_ngrok_session() {
+  echo "Starting ngrok tmux session ..."
+  tmux new-session -s ngrok -d
+  tmux send -t ngrok "ngrok tcp --region=eu 22" ENTER
+}
+
+ngrok_status() {
+  url=""
+  while [ "$url" == "" ] || [ "$url" == "null" ]
+  do
+    echo "Could not detect running ngrok instance"
+    echo "Sleeping for 5 seconds and then retrying..."
+    echo
+    sleep 2
+    url=$(curl http://localhost:4040/api/tunnels 2>/dev/null | jq -r .tunnels[0].public_url)
+  done
+
+  host=$(echo "$url" | cut -d / -f 3 | cut -d : -f 1)
+  port=$(echo "$url" | cut -d / -f 3 | cut -d : -f 2)
+
+  echo "Send your pair the following ssh command:"
+  echo "ssh -p ${port} $(whoami)@${host}"
+}
+
+init_ngrok_session
+ngrok_status
