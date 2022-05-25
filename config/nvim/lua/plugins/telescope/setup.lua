@@ -67,6 +67,9 @@ require('telescope').setup {
       override_generic_sorter = true,
       override_file_sorter = true,
     },
+    file_browser = {
+      theme = "dropdown",
+    }
   }
 }
 
