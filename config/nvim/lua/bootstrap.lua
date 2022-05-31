@@ -36,6 +36,7 @@ local packages = {
   'folke/todo-comments.nvim';
   'folke/trouble.nvim';
   'folke/zen-mode.nvim';
+  'ThePrimeagen/harpoon';
 
   -- git
   'lewis6991/gitsigns.nvim';
