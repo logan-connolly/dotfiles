@@ -16,6 +16,9 @@ end
 require('dap-python').setup('~/.local/opt/debugpy/bin/python')
 require('dap-python').test_runner = 'pytest'
 
+-- golang settings
+require('dap-go').setup()
+
 -- javascript settings
 dap.adapters.node2 = {
   type = 'executable',
@@ -41,7 +44,8 @@ vim.keymap.set("n", "<F2>", ":lua require'dap'.step_into()<CR>")
 vim.keymap.set("n", "<F12>", ":lua require'dap'.step_out()<CR>")
 vim.keymap.set("n", "<leader>b", ":lua require'dap'.toggle_breakpoint()<CR>")
 vim.keymap.set("n", "<leader>B", ":lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>")
-vim.keymap.set("n", "<leader>dt", ":lua require('dap-python').test_method()<CR>")
+vim.keymap.set("n", "<leader>dp", ":lua require('dap-python').test_method()<CR>")
+vim.keymap.set("n", "<leader>dg", ":lua require('dap-go').debug_test()<CR>")
 
 -- options
 vim.fn.sign_define('DapBreakpoint', {text='🔴', texthl='', linehl='', numhl=''})
