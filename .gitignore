@@ -1,5 +1,9 @@
 __pycache__/
 *.netrwhist
-config/tmux/plugins
-config/fish/fish_variables
 bin/poetry
+config/tmux/plugins
+config/fish/completions/
+config/fish/conf.d/
+config/fish/functions/
+config/fish/fish_plugins
+config/fish/fish_variables
