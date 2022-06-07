@@ -11,6 +11,13 @@ desktop: # Install desktop environment
 clone: # Install system deps that can't be installed with pacman
 	bash $(current_dir)/scripts/clone-repos.sh
 
+fisher-clean: # Clean fish plugins and generated settings
+	rm -rf config/fish/completions/ config/fish/conf.d/ config/fish/functions/
+	rm config/fish/fish_plugins config/fish/fish_variables
+
+fisher-install: # Install fish plugins with fisher
+	fish $(current_dir)/bin/fisher-install.fish
+
 neovim: # Build and install latest neovim from source
 	bash $(current_dir)/scripts/install-neovim.sh
 
