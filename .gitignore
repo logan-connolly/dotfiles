@@ -2,3 +2,4 @@ __pycache__/
 *.netrwhist
 config/tmux/plugins
 config/fish/fish_variables
+bin/poetry
