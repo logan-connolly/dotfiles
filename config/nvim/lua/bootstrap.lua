@@ -13,11 +13,6 @@ local packages = {
   'hrsh7th/cmp-path';
   'hrsh7th/cmp-nvim-lua';
 
-  -- snippets
-  'L3MON4D3/LuaSnip';
-  'saadparwaiz1/cmp_luasnip';
-  'rafamadriz/friendly-snippets';
-
   -- telescope
   'nvim-lua/plenary.nvim';
   'nvim-telescope/telescope.nvim';

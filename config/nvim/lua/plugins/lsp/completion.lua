@@ -12,14 +12,8 @@ cmp.setup({
   sources = {
     { name = 'nvim_lua' },
     { name = 'nvim_lsp' },
-    { name = 'luasnip' },
     { name = 'path' },
     { name = 'buffer', keyword_length = 5},
-  },
-  snippet = {
-    expand = function(args)
-      require("luasnip").lsp_expand(args.body)
-    end
   },
   formatting = {
     format = function(entry, vim_item)
@@ -30,7 +24,6 @@ cmp.setup({
         treesitter = '',
         path = 'ﱮ',
         buffer = '﬘',
-        luasnip = '',
       })[entry.source.name]
       return vim_item
     end,
