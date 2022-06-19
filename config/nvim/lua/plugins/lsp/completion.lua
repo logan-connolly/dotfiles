@@ -2,6 +2,11 @@ local lspkind = require('lspkind')
 local cmp = require('cmp')
 
 cmp.setup({
+  snippet = {
+    expand = function(args)
+      require("luasnip").lsp_expand(args.body)
+    end,
+  },
   mapping = {
     ['<c-n>'] = cmp.mapping.select_next_item(),
     ['<c-p>'] = cmp.mapping.select_prev_item(),
@@ -10,6 +15,7 @@ cmp.setup({
     ['<cr>'] = cmp.mapping.confirm({ select = true }),
   },
   sources = {
+    { name = 'luasnip' },
     { name = 'nvim_lua' },
     { name = 'nvim_lsp' },
     { name = 'path' },
