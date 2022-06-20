@@ -1,52 +1,26 @@
--- open dapui automatically
+-- general dap settings
+local dap = require("dap")
+require("nvim-dap-virtual-text").setup()
 require("dapui").setup()
-local dap, dapui = require("dap"), require("dapui")
 
-dap.listeners.after.event_initialized["dapui_config"] = function()
-  dapui.open()
-end
-dap.listeners.before.event_terminated["dapui_config"] = function()
-  dapui.close()
-end
-dap.listeners.before.event_exited["dapui_config"] = function()
-  dapui.close()
-end
+vim.keymap.set("n", "<F5>", function() dap.continue() end)
+vim.keymap.set("n", "<F3>", function() dap.step_over() end)
+vim.keymap.set("n", "<F2>", function() dap.step_into() end)
+vim.keymap.set("n", "<F12>", function() dap.step_out() end)
+vim.keymap.set("n", "<leader>b", function() dap.toggle_breakpoint() end)
+vim.keymap.set("n", "<leader>B", function() dap.set_breakpoint(vim.fn.input('❔:')) end)
+vim.keymap.set("n", "<leader>do", function() require("dapui").toggle() end)
 
--- python settings
-require('dap-python').setup('~/.local/opt/debugpy/bin/python')
-require('dap-python').test_runner = 'pytest'
-
--- golang settings
-require('dap-go').setup()
-
--- javascript settings
-dap.adapters.node2 = {
-  type = 'executable',
-  command = 'node',
-  args = {'~/.local/opt/vscode-node-debug2/out/src/nodeDebug.js'}
-}
-dap.configurations.javascript = {
-  {
-    type = 'node2',
-    request = 'launch',
-    program = '${workspaceFolder}/${file}',
-    cwd = vim.fn.getcwd(),
-    sourceMaps = true,
-    protocol = 'inspector',
-    console = 'integratedTerminal',
-  },
-}
-
--- keymaps
-vim.keymap.set("n", "<F5>", ":lua require'dap'.continue()<CR>")
-vim.keymap.set("n", "<F3>", ":lua require'dap'.step_over()<CR>")
-vim.keymap.set("n", "<F2>", ":lua require'dap'.step_into()<CR>")
-vim.keymap.set("n", "<F12>", ":lua require'dap'.step_out()<CR>")
-vim.keymap.set("n", "<leader>b", ":lua require'dap'.toggle_breakpoint()<CR>")
-vim.keymap.set("n", "<leader>B", ":lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>")
-vim.keymap.set("n", "<leader>dp", ":lua require('dap-python').test_method()<CR>")
-vim.keymap.set("n", "<leader>dg", ":lua require('dap-go').debug_test()<CR>")
-
--- options
 vim.fn.sign_define('DapBreakpoint', {text='🔴', texthl='', linehl='', numhl=''})
 vim.fn.sign_define('DapStopped', {text='🟢', texthl='', linehl='', numhl=''})
+
+-- python settings
+local dap_py = require("dap-python")
+dap_py.setup('~/.local/opt/debugpy/bin/python')
+dap_py.test_runner = 'pytest'
+vim.keymap.set("n", "<leader>dp", function() dap_py.test_method() end)
+
+-- golang settings
+local dap_go = require("dap-go")
+dap_go.setup()
+vim.keymap.set("n", "<leader>dg", function() dap_go.debug_test() end)
