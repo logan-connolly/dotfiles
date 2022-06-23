@@ -2,14 +2,17 @@ local neogit = require('neogit')
 
 neogit.setup {
   disable_commit_confirmation = true,
+  disable_context_highlighting = true,
   integrations = {
     diffview = true
   }
 }
 
-local map = vim.api.nvim_set_keymap
-local opts = { noremap = true, silent = true }
+-- neogit
+vim.keymap.set('n', '<leader>gs', function() neogit.open() end)
+vim.keymap.set('n', '<leader>gm', function() neogit.open({ "commit" }) end)
 
-map('n', '<leader>gm', [[<cmd>lua require'neogit'.open({ "commit" })<cr>]], opts)
-map('n', '<leader>gs', [[<cmd>lua require'neogit'.open()<cr>]], opts)
-map('n', '<leader>gh', [[<cmd>DiffviewFileHistory<cr>]], opts)
+-- diffview
+vim.keymap.set('n', '<leader>ghp', function() vim.api.nvim_command("DiffviewFileHistory") end)
+vim.keymap.set('n', '<leader>ghb', function() vim.api.nvim_command("DiffviewFileHistory %") end)
+vim.keymap.set('n', '<leader>ghd', function() vim.api.nvim_command("DiffviewOpen") end)
