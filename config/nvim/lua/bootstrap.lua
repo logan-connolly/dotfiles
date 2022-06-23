@@ -45,6 +45,7 @@ local packages = {
   'vim-test/vim-test';
   'mfussenegger/nvim-dap';
   'rcarriga/nvim-dap-ui';
+  'theHamsta/nvim-dap-virtual-text';
   'mfussenegger/nvim-dap-python';
   'leoluz/nvim-dap-go';
 
