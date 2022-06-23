@@ -1,8 +1,10 @@
 -- general dap settings
 local dap = require("dap")
-require("nvim-dap-virtual-text").setup()
-require("dapui").setup()
+local dapui = require("dapui")
+local daptext = require("nvim-dap-virtual-text")
 
+dapui.setup()
+daptext.setup()
 vim.keymap.set("n", "<F5>", function() dap.continue() end)
 vim.keymap.set("n", "<F3>", function() dap.step_over() end)
 vim.keymap.set("n", "<F2>", function() dap.step_into() end)
@@ -10,7 +12,6 @@ vim.keymap.set("n", "<F12>", function() dap.step_out() end)
 vim.keymap.set("n", "<leader>b", function() dap.toggle_breakpoint() end)
 vim.keymap.set("n", "<leader>B", function() dap.set_breakpoint(vim.fn.input('❔:')) end)
 vim.keymap.set("n", "<leader>do", function() require("dapui").toggle() end)
-
 vim.fn.sign_define('DapBreakpoint', {text='🔴', texthl='', linehl='', numhl=''})
 vim.fn.sign_define('DapStopped', {text='🟢', texthl='', linehl='', numhl=''})
 
@@ -24,3 +25,11 @@ vim.keymap.set("n", "<leader>dp", function() dap_py.test_method() end)
 local dap_go = require("dap-go")
 dap_go.setup()
 vim.keymap.set("n", "<leader>dg", function() dap_go.debug_test() end)
+
+-- add hooks for closing UI when debugging session terminates
+dap.listeners.before.event_terminated["dapui_config"] = function()
+  dapui.close()
+end
+dap.listeners.before.event_exited["dapui_config"] = function()
+  dapui.close()
+end
