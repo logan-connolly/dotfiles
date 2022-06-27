@@ -13,6 +13,7 @@ vim.keymap.set('n', '<leader>fp', function() custom.search_plugins() end)
 vim.keymap.set('n', '<leader>fg', function() builtin.git_status() end)
 vim.keymap.set('n', '<leader>fl', function() builtin.git_commits() end)
 vim.keymap.set('n', '<leader>fn', function() builtin.treesitter() end)
+vim.keymap.set('n', '<leader>fd', function() telescope.extensions.dap.list_breakpoints() end)
 
 vim.keymap.set('n', '-', function()
   telescope.extensions.file_browser.file_browser({ cwd = utils.buffer_dir() })

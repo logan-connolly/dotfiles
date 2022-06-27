@@ -21,6 +21,7 @@ local packages = {
   'nvim-telescope/telescope.nvim';
   {'nvim-telescope/telescope-fzy-native.nvim', run = 'git submodule update --init --recursive'};
   'nvim-telescope/telescope-file-browser.nvim';
+  'nvim-telescope/telescope-dap.nvim';
 
   -- treesitter
   {'nvim-treesitter/nvim-treesitter', run = function() vim.cmd(':TSUpdate') end};
