@@ -5,6 +5,7 @@ local packages = {
   'neovim/nvim-lspconfig';
   'onsails/lspkind-nvim';
   'mhartington/formatter.nvim';
+  'simrat39/symbols-outline.nvim';
 
   -- completion
   'hrsh7th/nvim-cmp';
