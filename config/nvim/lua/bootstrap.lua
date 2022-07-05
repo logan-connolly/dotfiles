@@ -26,7 +26,6 @@ local packages = {
 
   -- treesitter
   {'nvim-treesitter/nvim-treesitter', run = function() vim.cmd(':TSUpdate') end};
-  'nvim-treesitter/nvim-treesitter-refactor';
 
   -- misc
   'famiu/bufdelete.nvim';
