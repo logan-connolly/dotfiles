@@ -21,6 +21,9 @@ fisher-install: # Install fish plugins with fisher
 neovim: # Build and install latest neovim from source
 	bash $(current_dir)/scripts/install-neovim.sh
 
+profile-neovim: # Profile startup performance of neovim
+	AK_PROFILER=1 nvim 2>&1 >/dev/null | less
+
 paq-install: # Install neovim plugins using paq bootstrap
 	nvim --headless -u NONE -c 'lua require("bootstrap").bootstrap_paq()'
 
