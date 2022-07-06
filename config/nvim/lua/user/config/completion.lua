@@ -1,10 +1,15 @@
-local lspkind = require('lspkind')
-local cmp = require('cmp')
+local cmp_ok, cmp = pcall(require, 'cmp')
+local luasnip_ok, luasnip = pcall(require, 'luasnip')
+local lspkind_ok, lspkind = pcall(require, 'lspkind')
+if not cmp_ok or not luasnip_ok or not lspkind_ok then
+  vim.notify("Unable to load cmp config")
+  return
+end
 
 cmp.setup({
   snippet = {
     expand = function(args)
-      require("luasnip").lsp_expand(args.body)
+      luasnip.lsp_expand(args.body)
     end,
   },
   mapping = {
@@ -22,16 +27,9 @@ cmp.setup({
     { name = 'buffer', keyword_length = 5},
   },
   formatting = {
-    format = function(entry, vim_item)
-      vim_item.kind = string.format('%s %s', lspkind.presets.default[vim_item.kind], vim_item.kind)
-      vim_item.menu = ({
-        nvim_lsp = 'ﲳ',
-        nvim_lua = '',
-        treesitter = '',
-        path = 'ﱮ',
-        buffer = '﬘',
-      })[entry.source.name]
-      return vim_item
-    end,
-  },
+    format = lspkind.cmp_format({
+      mode = 'symbol_text',
+      maxwidth = 50,
+    })
+  }
 })

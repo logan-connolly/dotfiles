@@ -18,20 +18,8 @@ fisher-clean: # Clean fish plugins and generated settings
 fisher-install: # Install fish plugins with fisher
 	fish $(current_dir)/bin/fisher-install.fish
 
-neovim: # Build and install latest neovim from source
+neovim: # Build and install latest neovim from source and sync plugins
 	bash $(current_dir)/scripts/install-neovim.sh
-
-profile-neovim: # Profile startup performance of neovim
-	AK_PROFILER=1 nvim 2>&1 >/dev/null | less
-
-paq-install: # Install neovim plugins using paq bootstrap
-	nvim --headless -u NONE -c 'lua require("bootstrap").bootstrap_paq()'
-
-paq-clean: # Remove neovim plugins using paq bootstrap
-	nvim --headless -u NONE -c 'lua require("bootstrap").clean_paq()'
-
-paq-update: # Update neovim plugins using paq bootstrap
-	nvim --headless -u NONE -c 'lua require("bootstrap").update_paq()'
 
 links: # Link configuration files to proper locations
 	bash $(current_dir)/scripts/symlink-configs.sh

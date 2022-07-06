@@ -12,21 +12,15 @@ map('n', '<c-l>', '<c-w>l', { noremap = true })
 -- disable Q keymap
 map('n', 'Q', '<nop>', { noremap = true })
 
--- close buffer
-map('n', '<leader>Q', '<cmd>bufdo bdelete<cr>', { noremap = true })
-
 -- terminal keymaps
-map('n', '<leader>;', '<cmd>split term://zsh<cr>i', { noremap = true })
-map('n', "<leader>'", '<cmd>vsplit term://zsh<cr>i', { noremap = true })
+map('n', '<leader>;', '<cmd>split term://fish<cr>i', { noremap = true })
+map('n', "<leader>'", '<cmd>vsplit term://fish<cr>i', { noremap = true })
 map('t', '<esc>', '<c-\\><c-n>', { noremap = true })
 map('t', '<M-[>', '<esc>', { noremap = true })
 map('t', '<c-v><esc>', '<esc>', { noremap = true })
 
 -- delete without registering word
 map('v', 'X', '"_d', { noremap = true })
-
--- close tab
-map('n', '<leader>X', '<cmd>tabc<cr>', { noremap = true, silent = true })
 
 -- yank all the content of file to global register
 map('n', '<leader>Y', 'gg"+yG', { noremap = true })
@@ -40,9 +34,11 @@ map('i', '.', '.<c-g>u', { noremap = true })
 map('i', '!', '!<c-g>u', { noremap = true })
 map('i', '?', '?<c-g>u', { noremap = true })
 
--- navigate while staying centered
+-- navigate search while staying centered
 map('n', 'n', 'nzzzv', { noremap = true })
 map('n', 'N', 'Nzzzv', { noremap = true })
+
+-- Bring up line from below wile staying centered
 map('n', 'J', 'mzJ`z', { noremap = true })
 
 -- open quickfixlist
@@ -57,5 +53,14 @@ map('v', '>', '>gv', { noremap = true })
 -- open file according to mimetype
 map('n', '<leader>o', '<cmd>!xdg-open %<cr><cr>', { noremap = true })
 
+-- delete all buffers
+map('n', '<leader>Q', '<cmd>bufdo bdelete<cr>', { noremap = true })
+
+-- close tab
+map('n', '<leader>X', '<cmd>tabc<cr>', { noremap = true, silent = true })
+
 -- source dotfiles
-map('n', '<leader>sd', '<cmd>source ~/.config/nvim/init.lua<cr>', { noremap = true })
+vim.keymap.set('n', '<c-s>', function()
+  vim.cmd('source ' .. vim.fn.expand('%'))
+  vim.notify('neovim config sourced')
+end)
