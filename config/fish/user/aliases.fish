@@ -8,7 +8,6 @@ alias firefox='firefox-developer-edition'
 
 # neovim
 alias v='nvim'
-alias vim='nvim -u "NORC"'
 
 # direnv
 alias di='echo dotenv > .envrc && touch .env && direnv allow'
@@ -24,7 +23,7 @@ alias dc='docker-compose'
 # tmux
 alias tmux='direnv exec / tmux'
 alias tmw='tmux-sessionizer ~/projects/work'
-alias tmp='tmux-sessionizer ~/projects/personal'
+alias tmf='tmux-sessionizer ~/projects/personal'
 alias tml='tmux list-sessions'
 alias tmka='tmux ls | cut -d: -f1 | xargs -I {} sh -c "tmux kill-session -t {}"'
 
