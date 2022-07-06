@@ -23,9 +23,6 @@ local autocmds = {
       { 'Filetype', 'dockerfile,lua,sh,zsh', [[setlocal tabstop=2 shiftwidth=2 expandtab]] },
       { 'Filetype', 'markdown', [[setlocal tabstop=2 shiftwidth=2 expandtab wrap linebreak]] }
     },
-    autoformat_buffer = {
-      { 'BufWritePost', '*.html,*.css,*.vue,*.js,*.ts,*.py,*.yaml,*.yml', [[FormatWrite]] }
-    },
     format_golang = {
       { 'BufWritePre', '*.go', [[lua vim.lsp.buf.format { async = true }]] }
     }

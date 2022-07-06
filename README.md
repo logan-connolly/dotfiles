@@ -24,9 +24,8 @@ make clone
 # Link configurations to target destinations
 make links
 
-# Install neovim from source and add plugins through paq
+# Install neovim from source and sync plugins
 make neovim
-make paq
 
 # Enable services, add groups to user and setup firewall
 make services

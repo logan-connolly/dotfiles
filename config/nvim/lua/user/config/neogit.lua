@@ -1,4 +1,8 @@
-local neogit = require('neogit')
+local neogit_ok, neogit = pcall(require, 'neogit')
+if not neogit_ok then
+  vim.notify("Unable to load neogit config")
+  return
+end
 
 neogit.setup {
   disable_commit_confirmation = true,
@@ -7,7 +11,6 @@ neogit.setup {
     diffview = true
   }
 }
-
 -- neogit
 vim.keymap.set('n', '<leader>gs', function() neogit.open() end)
 vim.keymap.set('n', '<leader>gm', function() neogit.open({ "commit" }) end)

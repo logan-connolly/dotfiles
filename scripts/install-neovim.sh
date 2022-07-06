@@ -15,4 +15,9 @@ build_install() {
 }
 
 [ ! -d "${NEOVIM_DIR}" ] && clone_repo
+
+echo "Building and installing neovim…"
 build_install
+
+echo "Syncing plugins…"
+nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'

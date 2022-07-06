@@ -1,3 +1,2 @@
-require('general')
-require('plugins')
-require('profiler')
+require('user.general')
+require('user.plugins')
