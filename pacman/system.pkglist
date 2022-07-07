@@ -37,6 +37,8 @@ openssh
 pipewire-jack
 pipewire-alsa
 pipewire-pulse
+python-black
+python-isort
 python-poetry
 python-pre-commit
 python-pynvim

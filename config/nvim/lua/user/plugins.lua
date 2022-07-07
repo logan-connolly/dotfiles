@@ -133,6 +133,7 @@ packer.startup(function(use)
   use { 'folke/todo-comments.nvim', config = function() require('user.config.todo-comments') end}
   use { 'lewis6991/gitsigns.nvim', config = function() require("user.config.gitsigns") end }
   use { 'vim-test/vim-test', config = function() require('user.config.vim-test') end }
+  use { 'jose-elias-alvarez/null-ls.nvim', config = function() require('user.config.null-ls') end}
 
   -- theme
   use 'kyazdani42/nvim-web-devicons'

@@ -54,9 +54,16 @@ install_debugpy_env() {
   deactivate
 }
 
+install_go_mods() {
+  echo "Installing go mods for formatting"
+  go install golang.org/x/tools/cmd/goimports@latest
+  go install mvdan.cc/gofumpt@latest
+}
+
 clone_lua_language_server
 clone_node_debug
 clone_tpm_package_manager
 install_nnn_plugins
 install_npm_packages
 install_debugpy_env
+install_go_mods
