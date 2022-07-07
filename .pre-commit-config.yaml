@@ -1,0 +1,8 @@
+repos:
+- repo: https://github.com/JohnnyMorganz/StyLua
+  rev: v0.13.1
+  hooks:
+    - id: stylua
+      name: stylelua-nvim
+      entry: stylua ./config/nvim
+      pass_filenames: false

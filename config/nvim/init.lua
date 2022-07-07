@@ -1,2 +1,2 @@
-require('user.general')
-require('user.plugins')
+require("user.general")
+require("user.plugins")
