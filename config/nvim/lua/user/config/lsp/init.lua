@@ -47,6 +47,7 @@ vim.g.completion_matching_strategy_list = {'exact', 'substring', 'fuzzy'}
 
 -- Custom keymaps
 vim.keymap.set('n', 'gd', function() vim.lsp.buf.definition() end)
+vim.keymap.set('n', 'gr', function() vim.lsp.buf.references() end)
 vim.keymap.set('n', 'K', function() vim.lsp.buf.hover() end)
 vim.keymap.set('n', '<leader>rn', function() vim.lsp.buf.rename() end)
 vim.keymap.set('n', '<leader>k', function() vim.diagnostic.goto_prev() end)

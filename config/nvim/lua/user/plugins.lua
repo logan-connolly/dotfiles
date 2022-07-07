@@ -147,6 +147,7 @@ packer.startup(function(use)
 
 end)
 
+-- keymaps for compiling and profiling plugins
 vim.keymap.set('n', '<leader>pc', function()
   vim.cmd('PackerCompile profile=true')
   vim.notify('Packer plugins were compiled')
