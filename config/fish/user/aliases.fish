@@ -28,7 +28,6 @@ alias tml='tmux list-sessions'
 alias tmka='tmux ls | cut -d: -f1 | xargs -I {} sh -c "tmux kill-session -t {}"'
 
 # list files
-alias l='nnn -de'
 alias ls='exa'
 alias ll='exa --long --icons'
 alias la='exa --all --long --icons'
