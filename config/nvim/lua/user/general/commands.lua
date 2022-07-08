@@ -24,7 +24,7 @@ local autocmds = {
 		{ "Filetype", "markdown", [[setlocal tabstop=2 shiftwidth=2 expandtab wrap linebreak]] },
 	},
 	format_golang = {
-		{ "BufWritePre", "*.go,*.py", [[lua vim.lsp.buf.format { async = false }]] },
+		{ "BufWritePre", "*.go,*.py", [[lua vim.lsp.buf.format { async = true }]] },
 	},
 }
 
