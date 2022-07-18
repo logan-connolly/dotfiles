@@ -1,0 +1,6 @@
+#!/bin/bash
+
+wmctrl -s 1
+discord 1> /dev/null 2> /dev/null &
+signal-desktop 1> /dev/null 2> /dev/null &
+notion-app 1> /dev/null 2> /dev/null &
