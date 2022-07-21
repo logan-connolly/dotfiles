@@ -50,3 +50,10 @@ layout_postgres() {
 		echo "CREATE DATABASE $USER;" | postgres --single -E postgres
 	fi
 }
+
+use_nodejs() {
+    NODE_VERSION="$1"
+
+    type nvm >/dev/null 2>&1 || . ~/.nvm/nvm.sh
+    nvm use "$NODE_VERSION"
+}
