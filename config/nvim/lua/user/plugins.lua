@@ -112,20 +112,8 @@ packer.startup(function(use)
 	use({
 		"mfussenegger/nvim-dap",
 		requires = {
-			{
-				"rcarriga/nvim-dap-ui",
-				ft = dap_support,
-				config = function()
-					require("dapui").setup()
-				end,
-			},
-			{
-				"theHamsta/nvim-dap-virtual-text",
-				ft = dap_support,
-				config = function()
-					require("nvim-dap-virtual-text").setup()
-				end,
-			},
+			{ "rcarriga/nvim-dap-ui", ft = dap_support },
+			{ "theHamsta/nvim-dap-virtual-text", ft = dap_support },
 			{ "mfussenegger/nvim-dap-python", ft = "python" },
 			{ "leoluz/nvim-dap-go", ft = "go" },
 		},

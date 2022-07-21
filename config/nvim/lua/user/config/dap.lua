@@ -1,10 +1,27 @@
 local dap_ok, dap = pcall(require, "dap")
 local dapui_ok, dapui = pcall(require, "dapui")
+local daptext_ok, daptext = pcall(require, "nvim-dap-virtual-text")
 
-if not dap_ok or not dapui_ok then
+if not dap_ok or not dapui_ok or not daptext_ok then
 	vim.notify("Unable to load dap config")
 	return
 end
+
+dapui.setup({
+	layouts = {
+		{
+			elements = { "console" },
+			size = 0.20,
+			position = "bottom",
+		},
+		{
+			elements = { "repl" },
+			size = 0.20,
+			position = "bottom",
+		},
+	},
+})
+daptext.setup()
 
 -- icon settings
 vim.fn.sign_define("DapBreakpoint", { text = "🔴", texthl = "", linehl = "", numhl = "" })
@@ -12,7 +29,7 @@ vim.fn.sign_define("DapStopped", { text = "🟢", texthl = "", linehl = "", numh
 
 -- event hooks
 dap.listeners.after.event_initialized["dapui_config"] = function()
-	dapui.open()
+	dapui.open(1)
 end
 dap.listeners.before.event_terminated["dapui_config"] = function()
 	dapui.close()
@@ -26,7 +43,7 @@ vim.keymap.set("n", "<F5>", function()
 	dap.continue()
 end)
 vim.keymap.set("n", "<F4>", function()
-  dap.terminate()
+	dap.terminate()
 end)
 vim.keymap.set("n", "<F3>", function()
 	dap.step_over()
@@ -43,11 +60,18 @@ end)
 vim.keymap.set("n", "<leader>B", function()
 	dap.set_breakpoint(vim.fn.input("❔:"))
 end)
+vim.keymap.set("n", "<leader>de", function()
+	dap.set_exception_breakpoints({ "raised", "uncaught" })
+	vim.notify("⚡ Exception breakpoints were set!")
+end)
 vim.keymap.set("n", "<leader>dk", function()
-  require'dap.ui.widgets'.hover()
+	require("dap.ui.widgets").hover()
 end)
 vim.keymap.set("n", "<leader>do", function()
 	dapui.toggle()
+end)
+vim.keymap.set("n", "<leader>dx", function()
+	dapui.close()
 end)
 
 -- python
