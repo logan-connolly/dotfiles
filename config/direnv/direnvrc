@@ -51,9 +51,12 @@ layout_postgres() {
 	fi
 }
 
-use_nodejs() {
-    NODE_VERSION="$1"
+use_nvm() {
+  local node_version=$1
 
-    type nvm >/dev/null 2>&1 || . ~/.nvm/nvm.sh
-    nvm use "$NODE_VERSION"
+  nvm_sh=~/.nvm/nvm.sh
+  if [[ -e $nvm_sh ]]; then
+    source $nvm_sh
+    nvm use $node_version
+  fi
 }
