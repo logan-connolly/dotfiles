@@ -1,7 +1,11 @@
-local map = vim.api.nvim_set_keymap
+local vim_test_ok, _ = pcall(require, "harpoon")
+if not vim_test_ok then
+	vim.notify("Unable to load vim-test config")
+	return
+end
 
-map("n", "<leader>tt", "<cmd>TestNearest<cr>", {})
-map("n", "<leader>tf", "<cmd>TestFile<cr>", {})
-map("n", "<leader>ta", "<cmd>TestSuite<cr>", {})
-map("n", "<leader>tl", "<cmd>TestLast<cr>", {})
-map("n", "<leader>tv", "<cmd>TestVisit<cr>", {})
+vim.keymap.set("n", "<leader>tt", function() vim.cmd("TestNearest") end)
+vim.keymap.set("n", "<leader>tf", function() vim.cmd("TestFile") end)
+vim.keymap.set("n", "<leader>ta", function() vim.cmd("TestSuite") end)
+vim.keymap.set("n", "<leader>tl", function() vim.cmd("TestLast") end)
+vim.keymap.set("n", "<leader>tv", function() vim.cmd("TestVisit") end)
