@@ -13,7 +13,7 @@ neogit.setup({
 })
 -- neogit
 vim.keymap.set("n", "<leader>gs", function()
-	neogit.open()
+	neogit.open({ kind = "split" })
 end)
 vim.keymap.set("n", "<leader>gm", function()
 	neogit.open({ "commit" })
