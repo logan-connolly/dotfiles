@@ -15,8 +15,14 @@ neogit.setup({
 vim.keymap.set("n", "<leader>gs", function()
 	neogit.open({ kind = "split" })
 end)
-vim.keymap.set("n", "<leader>gm", function()
+vim.keymap.set("n", "<leader>gc", function()
 	neogit.open({ "commit" })
+end)
+vim.keymap.set("n", "<leader>gp", function()
+	neogit.open({ "push" })
+end)
+vim.keymap.set("n", "<leader>gl", function()
+	neogit.open({ "pull" })
 end)
 
 -- diffview
