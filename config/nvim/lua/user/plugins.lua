@@ -97,6 +97,7 @@ packer.startup(function(use)
 		end,
 		requires = {
 			{ "nvim-lua/plenary.nvim" },
+			{ "stevearc/dressing.nvim" },
 			{ "nvim-telescope/telescope-fzy-native.nvim" },
 			{ "nvim-telescope/telescope-file-browser.nvim" },
 			{
@@ -188,6 +189,12 @@ packer.startup(function(use)
 		"jose-elias-alvarez/null-ls.nvim",
 		config = function()
 			require("user.config.null-ls")
+		end,
+	})
+	use({
+		"ziontee113/icon-picker.nvim",
+		config = function()
+			require("user.config.icons")
 		end,
 	})
 
