@@ -20,7 +20,7 @@ local autocmds = {
 		{ "ColorScheme", "*", [[hi Normal ctermbg=none guibg=none]] },
 	},
 	ftplugin_settings = {
-		{ "Filetype", "dockerfile,lua,sh,zsh", [[setlocal tabstop=2 shiftwidth=2 expandtab]] },
+		{ "Filetype", "dockerfile,sh,zsh", [[setlocal tabstop=2 shiftwidth=2 expandtab]] },
 		{ "Filetype", "markdown", [[setlocal tabstop=2 shiftwidth=2 expandtab wrap linebreak]] },
 	},
 	format_golang = {
