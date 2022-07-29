@@ -8,8 +8,18 @@ local utils = require("telescope.utils")
 local builtin = require("telescope.builtin")
 local actions = require("telescope.actions")
 local action_layout = require("telescope.actions.layout")
+local action_state = require("telescope.actions.state")
 local sorters = require("telescope.sorters")
 local previewers = require("telescope.previewers")
+
+-- custom action for yanking the telescope symbol selection
+actions.yank_symbol = function(prompt_bufnr)
+	local selection = action_state.get_selected_entry()
+	vim.schedule(function()
+		actions.close(prompt_bufnr)
+		vim.fn.setreg("+", selection.value[1])
+	end)
+end
 
 telescope.setup({
 	defaults = {
@@ -60,6 +70,7 @@ telescope.setup({
 		mappings = {
 			i = {
 				["<c-q>"] = actions.send_to_qflist,
+				["<c-y>"] = actions.yank_symbol,
 				["<c-s>"] = action_layout.toggle_preview,
 			},
 		},
@@ -69,6 +80,7 @@ telescope.setup({
 		find_files = { theme = "dropdown" },
 		git_files = { theme = "dropdown" },
 		grep_string = { theme = "dropdown" },
+		symbols = { theme = "dropdown" },
 		treesitter = { theme = "dropdown" },
 	},
 	extensions = {
@@ -113,6 +125,9 @@ vim.keymap.set("n", "<leader>fl", function()
 end)
 vim.keymap.set("n", "<leader>fn", function()
 	builtin.treesitter()
+end)
+vim.keymap.set("n", "<leader>fi", function()
+	builtin.symbols({ sources = { "emoji", "gitmoji" } })
 end)
 
 -- file browser

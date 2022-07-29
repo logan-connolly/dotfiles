@@ -100,6 +100,7 @@ packer.startup(function(use)
 			{ "stevearc/dressing.nvim" },
 			{ "nvim-telescope/telescope-fzy-native.nvim" },
 			{ "nvim-telescope/telescope-file-browser.nvim" },
+			{ "nvim-telescope/telescope-symbols.nvim" },
 			{
 				"ThePrimeagen/harpoon",
 				config = function()
@@ -189,12 +190,6 @@ packer.startup(function(use)
 		"jose-elias-alvarez/null-ls.nvim",
 		config = function()
 			require("user.config.null-ls")
-		end,
-	})
-	use({
-		"ziontee113/icon-picker.nvim",
-		config = function()
-			require("user.config.icons")
 		end,
 	})
 
