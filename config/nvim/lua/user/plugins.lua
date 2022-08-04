@@ -148,7 +148,10 @@ packer.startup(function(use)
 	})
 
 	-- misc
-	use({ "norcalli/nvim-colorizer.lua", ft = { "css", "javascript", "html" } })
+	use({
+		"norcalli/nvim-colorizer.lua",
+		--ft = { "css", "javascript", "html" }
+	})
 	use({
 		"numToStr/Comment.nvim",
 		config = function()
@@ -202,9 +205,12 @@ packer.startup(function(use)
 		end,
 	})
 	use({
-		"hoob3rt/lualine.nvim",
+		"feline-nvim/feline.nvim",
+		requires = {
+			{ "SmiteshP/nvim-gps" },
+		},
 		config = function()
-			require("user.config.lualine")
+			require("user.config.feline")
 		end,
 	})
 
