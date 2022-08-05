@@ -1,7 +1,14 @@
 -- based on: https://github.com/crivotz/nv-ide
-local lsp = require("feline.providers.lsp")
-local vi_mode_utils = require("feline.providers.vi_mode")
-local gps = require("nvim-gps")
+local lsp_ok, lsp = pcall(require, "feline.providers.lsp")
+local vi_mode_utils_ok, vi_mode_utils = pcall(require, "feline.providers.vi_mode")
+local gps_ok, gps = pcall(require, "nvim-gps")
+local devicons_ok, devicons = pcall(require, "nvim-web-devicons")
+
+if not lsp_ok or not vi_mode_utils_ok or not gps_ok or not devicons_ok then
+	vim.notify("Unable to load feline config")
+	return
+end
+
 
 local force_inactive = {
 	filetypes = {},
@@ -39,13 +46,13 @@ local colors = {
 local vi_mode_colors = {
 	NORMAL = "green",
 	OP = "green",
-	INSERT = "red",
+	INSERT = "skyblue",
 	CONFIRM = "red",
-	VISUAL = "skyblue",
-	LINES = "skyblue",
-	BLOCK = "skyblue",
-	REPLACE = "violet",
-	["V-REPLACE"] = "violet",
+	VISUAL = "orange",
+	LINES = "orange",
+	BLOCK = "orange",
+	REPLACE = "red",
+	["V-REPLACE"] = "red",
 	ENTER = "cyan",
 	MORE = "cyan",
 	SELECT = "orange",
@@ -190,7 +197,7 @@ components.active[3][1] = {
 	provider = function()
 		local filename = vim.fn.expand("%:t")
 		local extension = vim.fn.expand("%:e")
-		local icon = require("nvim-web-devicons").get_icon(filename, extension)
+		local icon = devicons.get_icon(filename, extension)
 		if icon == nil then
 			icon = ""
 		end
@@ -200,7 +207,7 @@ components.active[3][1] = {
 		local val = {}
 		local filename = vim.fn.expand("%:t")
 		local extension = vim.fn.expand("%:e")
-		local icon, name = require("nvim-web-devicons").get_icon(filename, extension)
+		local icon, name = devicons.get_icon(filename, extension)
 		if icon ~= nil then
 			val.fg = vim.fn.synIDattr(vim.fn.hlID(name), "fg")
 		else
@@ -219,7 +226,7 @@ components.active[3][2] = {
 		local val = {}
 		local filename = vim.fn.expand("%:t")
 		local extension = vim.fn.expand("%:e")
-		local icon, name = require("nvim-web-devicons").get_icon(filename, extension)
+		local icon, name = devicons.get_icon(filename, extension)
 		if icon ~= nil then
 			val.fg = vim.fn.synIDattr(vim.fn.hlID(name), "fg")
 		else
