@@ -1,24 +1,16 @@
 -- based on: https://github.com/crivotz/nv-ide
-local lsp_ok, lsp = pcall(require, "feline.providers.lsp")
 local vi_mode_utils_ok, vi_mode_utils = pcall(require, "feline.providers.vi_mode")
-local gps_ok, gps = pcall(require, "nvim-gps")
 local devicons_ok, devicons = pcall(require, "nvim-web-devicons")
 
-if not lsp_ok or not vi_mode_utils_ok or not gps_ok or not devicons_ok then
+if not vi_mode_utils_ok or not devicons_ok then
 	vim.notify("Unable to load feline config")
 	return
 end
-
 
 local force_inactive = {
 	filetypes = {},
 	buftypes = {},
 	bufnames = {},
-}
-
-local winbar_components = {
-	active = { {}, {}, {} },
-	inactive = { {}, {}, {} },
 }
 
 local components = {
@@ -81,49 +73,31 @@ local vi_mode_text = {
 	CONFIRM = "|>",
 }
 
-local buffer_not_empty = function()
-	if vim.fn.empty(vim.fn.expand("%:t")) ~= 1 then
-		return true
-	end
-	return false
-end
-
-local checkwidth = function()
-	local squeeze_width = vim.fn.winwidth(0) / 2
-	if squeeze_width > 40 then
-		return true
-	end
-	return false
-end
-
 force_inactive.filetypes = {
-	"NvimTree",
-	"dbui",
 	"packer",
-	"startify",
-	"fugitive",
-	"fugitiveblame",
 }
 
 force_inactive.buftypes = {
 	"terminal",
 }
 
--- STATUSLINE
+-- STATUSLINE: bottom statusbar
+
 -- LEFT
 
 -- vi-mode
 components.active[1][1] = {
-	provider = " NVIM ",
+	provider = function()
+		return vi_mode_utils.get_vim_mode()
+	end,
 	hl = function()
 		local val = {}
-
-		val.bg = vi_mode_utils.get_mode_color()
-		val.fg = "black"
+		val.fg = vi_mode_utils.get_mode_color()
+		val.bg = "black"
 		val.style = "bold"
-
 		return val
 	end,
+	left_sep = " ",
 	right_sep = " ",
 }
 -- vi-symbol
@@ -138,32 +112,33 @@ components.active[1][2] = {
 		val.style = "bold"
 		return val
 	end,
-	right_sep = " ",
+	right_sep = "  ",
 }
 -- filename
 components.active[1][3] = {
 	provider = function()
-		return vim.fn.expand("%:F")
+		return vim.fn.expand("%:t")
 	end,
 	hl = {
 		fg = "white",
 		bg = "bg",
 		style = "bold",
 	},
+	right_sep = "  ",
 }
--- MID
 
 -- gitBranch
-components.active[2][1] = {
+components.active[1][4] = {
 	provider = "git_branch",
 	hl = {
 		fg = "yellow",
 		bg = "bg",
 		style = "bold",
 	},
+	right_sep = " ",
 }
 -- diffAdd
-components.active[2][2] = {
+components.active[1][5] = {
 	provider = "git_diff_added",
 	hl = {
 		fg = "green",
@@ -172,7 +147,7 @@ components.active[2][2] = {
 	},
 }
 -- diffModfified
-components.active[2][3] = {
+components.active[1][6] = {
 	provider = "git_diff_changed",
 	hl = {
 		fg = "orange",
@@ -181,7 +156,7 @@ components.active[2][3] = {
 	},
 }
 -- diffRemove
-components.active[2][4] = {
+components.active[1][7] = {
 	provider = "git_diff_removed",
 	hl = {
 		fg = "red",
@@ -189,6 +164,8 @@ components.active[2][4] = {
 		style = "bold",
 	},
 }
+
+-- MID
 
 -- RIGHT
 
@@ -236,7 +213,7 @@ components.active[3][2] = {
 		val.style = "bold"
 		return val
 	end,
-	right_sep = " ",
+	right_sep = "  ",
 }
 -- fileSize
 components.active[3][3] = {
@@ -251,29 +228,7 @@ components.active[3][3] = {
 	},
 	right_sep = " ",
 }
--- fileFormat
 components.active[3][4] = {
-	provider = function()
-		return "" .. vim.bo.fileformat:upper() .. ""
-	end,
-	hl = {
-		fg = "white",
-		bg = "bg",
-		style = "bold",
-	},
-	right_sep = " ",
-}
--- fileEncode
-components.active[3][5] = {
-	provider = "file_encoding",
-	hl = {
-		fg = "white",
-		bg = "bg",
-		style = "bold",
-	},
-	right_sep = " ",
-}
-components.active[3][6] = {
 	provider = "position",
 	hl = {
 		fg = "white",
@@ -283,7 +238,7 @@ components.active[3][6] = {
 	right_sep = " ",
 }
 -- linePercent
-components.active[3][7] = {
+components.active[3][5] = {
 	provider = "line_percentage",
 	hl = {
 		fg = "white",
@@ -293,144 +248,11 @@ components.active[3][7] = {
 	right_sep = " ",
 }
 -- scrollBar
-components.active[3][8] = {
+components.active[3][6] = {
 	provider = "scroll_bar",
 	hl = {
 		fg = "yellow",
 		bg = "bg",
-	},
-}
-
--- INACTIVE
-
--- fileType
-components.inactive[1][1] = {
-	provider = "file_type",
-	hl = {
-		fg = "white",
-		bg = "grey",
-		style = "bold",
-	},
-	left_sep = {
-		str = " ",
-		hl = {
-			fg = "NONE",
-			bg = "grey",
-		},
-	},
-	right_sep = {
-		{
-			str = " ",
-			hl = {
-				fg = "NONE",
-				bg = "grey",
-			},
-		},
-		" ",
-	},
-}
-
--- WINBAR
--- LEFT
-
--- nvimGps
-winbar_components.active[1][1] = {
-	provider = function()
-		return gps.get_location()
-	end,
-	enabled = function()
-		return gps.is_available()
-	end,
-	hl = {
-		fg = "orange",
-		style = "bold",
-	},
-}
-
--- MID
-
--- RIGHT
-
--- LspName
-winbar_components.active[3][1] = {
-	provider = "lsp_client_names",
-	hl = {
-		fg = "yellow",
-		style = "bold",
-	},
-	right_sep = " ",
-}
--- diagnosticErrors
-winbar_components.active[3][2] = {
-	provider = "diagnostic_errors",
-	enabled = function()
-		return lsp.diagnostics_exist(vim.diagnostic.severity.ERROR)
-	end,
-	hl = {
-		fg = "red",
-		style = "bold",
-	},
-}
--- diagnosticWarn
-winbar_components.active[3][3] = {
-	provider = "diagnostic_warnings",
-	enabled = function()
-		return lsp.diagnostics_exist(vim.diagnostic.severity.WARN)
-	end,
-	hl = {
-		fg = "yellow",
-		style = "bold",
-	},
-}
--- diagnosticHint
-winbar_components.active[3][4] = {
-	provider = "diagnostic_hints",
-	enabled = function()
-		return lsp.diagnostics_exist(vim.diagnostic.severity.HINT)
-	end,
-	hl = {
-		fg = "cyan",
-		style = "bold",
-	},
-}
--- diagnosticInfo
-winbar_components.active[3][5] = {
-	provider = "diagnostic_info",
-	enabled = function()
-		return lsp.diagnostics_exist(vim.diagnostic.severity.INFO)
-	end,
-	hl = {
-		fg = "skyblue",
-		style = "bold",
-	},
-}
-
--- INACTIVE
-
--- fileType
-winbar_components.inactive[1][1] = {
-	provider = "file_type",
-	hl = {
-		fg = "white",
-		bg = "grey",
-		style = "bold",
-	},
-	left_sep = {
-		str = " ",
-		hl = {
-			fg = "NONE",
-			bg = "grey",
-		},
-	},
-	right_sep = {
-		{
-			str = " ",
-			hl = {
-				fg = "NONE",
-				bg = "grey",
-			},
-		},
-		" ",
 	},
 }
 
@@ -440,10 +262,5 @@ require("feline").setup({
 	default_fg = colors.fg,
 	vi_mode_colors = vi_mode_colors,
 	components = components,
-	force_inactive = force_inactive,
-})
-
-require("feline").winbar.setup({
-	components = winbar_components,
 	force_inactive = force_inactive,
 })

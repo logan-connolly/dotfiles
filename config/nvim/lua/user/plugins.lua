@@ -206,9 +206,6 @@ packer.startup(function(use)
 	})
 	use({
 		"feline-nvim/feline.nvim",
-		requires = {
-			{ "SmiteshP/nvim-gps" },
-		},
 		config = function()
 			require("user.config.feline")
 		end,
