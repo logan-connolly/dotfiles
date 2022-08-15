@@ -48,7 +48,12 @@ local dap_support = { "python", "go" }
 
 packer.startup(function(use)
 	-- package manager
-	use("wbthomason/packer.nvim")
+	use({
+		"wbthomason/packer.nvim",
+		config = function()
+			require("user.config.packer")
+		end,
+	})
 
 	-- performance
 	use("lewis6991/impatient.nvim")
@@ -216,13 +221,4 @@ packer.startup(function(use)
 	if PACKER_BOOTSTRAP then
 		require("packer").sync()
 	end
-end)
-
--- keymaps for compiling and profiling plugins
-vim.keymap.set("n", "<leader>pc", function()
-	vim.cmd("PackerCompile profile=true")
-	vim.notify("Packer plugins were compiled")
-end)
-vim.keymap.set("n", "<leader>pp", function()
-	vim.cmd("PackerProfile")
 end)
