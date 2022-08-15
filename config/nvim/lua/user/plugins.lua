@@ -26,12 +26,14 @@ vim.cmd([[
 -- Use a protected call so we don't error out on first use
 local status_ok, packer = pcall(require, "packer")
 if not status_ok then
+	vim.notify("Unable to load packer")
 	return
 end
 
 local impatient_ok, _ = pcall(require, "impatient")
 if not impatient_ok then
 	vim.notify("Unable to use impatient to boost performance")
+	return
 end
 
 -- Have packer use a popup window
@@ -42,6 +44,11 @@ packer.init({
 		end,
 	},
 })
+
+-- load general vim settings
+require("user.general.settings")
+require("user.general.commands")
+require("user.general.keybinds")
 
 local lsp_support = { "css", "html", "javascript", "python", "go", "typescript", "vue", "lua" }
 local dap_support = { "python", "go" }
