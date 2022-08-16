@@ -4,7 +4,6 @@ if not telescope_ok then
 	return
 end
 
-local utils = require("telescope.utils")
 local builtin = require("telescope.builtin")
 local actions = require("telescope.actions")
 local action_layout = require("telescope.actions.layout")
@@ -88,15 +87,11 @@ telescope.setup({
 			override_generic_sorter = true,
 			override_file_sorter = true,
 		},
-		file_browser = {
-			theme = "dropdown",
-		},
 	},
 })
 
 -- Load extensions
 telescope.load_extension("fzy_native")
-telescope.load_extension("file_browser")
 
 -- builtin
 vim.keymap.set("n", "<leader>ff", function()
@@ -130,7 +125,3 @@ vim.keymap.set("n", "<leader>fi", function()
 	builtin.symbols({ sources = { "emoji", "gitmoji" } })
 end)
 
--- file browser
-vim.keymap.set("n", "-", function()
-	telescope.extensions.file_browser.file_browser({ cwd = utils.buffer_dir() })
-end)
