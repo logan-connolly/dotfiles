@@ -64,3 +64,8 @@ vim.keymap.set("n", "<c-s>", function()
 	vim.cmd("source " .. vim.fn.expand("%"))
 	vim.notify("neovim config sourced")
 end)
+
+-- file browser
+vim.keymap.set("n", "-", function()
+	vim.cmd("Lexplore! %:p:h")
+end)

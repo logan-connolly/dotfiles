@@ -4,8 +4,7 @@ vim.g.python3_host_prog = "/usr/bin/python"
 
 -- global scope settings
 vim.o.syntax = "on"
-vim.o.guicursor = ""
-vim.o.encoding = "UTF-8"
+vim.o.guicursor = "" vim.o.encoding = "UTF-8"
 vim.o.exrc = true
 vim.o.number = true
 vim.o.incsearch = true
@@ -44,3 +43,31 @@ vim.bo.expandtab = true
 vim.bo.smartindent = true
 vim.bo.autoindent = true
 vim.bo.swapfile = false
+
+-- netrw settings
+vim.g.netrw_banner = 0
+vim.g.netrw_liststyle = 3
+vim.g.netrw_browse_split = 4
+vim.g.netrw_winsize = 25
+
+-- disable builtins
+local disabled_built_ins = {
+    "gzip",
+    "zip",
+    "zipPlugin",
+    "tar",
+    "tarPlugin",
+    "getscript",
+    "getscriptPlugin",
+    "vimball",
+    "vimballPlugin",
+    "2html_plugin",
+    "logipat",
+    "rrhelper",
+    "spellfile_plugin",
+    "matchit"
+}
+
+for _, plugin in pairs(disabled_built_ins) do
+    vim.g["loaded_" .. plugin] = 1
+end

@@ -45,11 +45,6 @@ packer.init({
 	},
 })
 
--- load general vim settings
-require("user.general.settings")
-require("user.general.commands")
-require("user.general.keybinds")
-
 local lsp_support = { "css", "html", "javascript", "python", "go", "typescript", "vue", "lua" }
 local dap_support = { "python", "go" }
 
