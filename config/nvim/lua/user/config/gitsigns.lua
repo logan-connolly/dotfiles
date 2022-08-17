@@ -1,4 +1,10 @@
-require("gitsigns").setup({
+local gitsigns_ok, gitsigns = pcall(require, "gitsigns")
+if not gitsigns_ok then
+	vim.notify("Unable to load gitsigns config")
+	return
+end
+
+gitsigns.setup({
 	on_attach = function(bufnr)
 		local gs = package.loaded.gitsigns
 

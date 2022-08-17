@@ -1,4 +1,5 @@
 -- based on: https://github.com/crivotz/nv-ide
+local feline_ok, feline = pcall(require, "feline")
 local vi_mode_utils_ok, vi_mode_utils = pcall(require, "feline.providers.vi_mode")
 local devicons_ok, devicons = pcall(require, "nvim-web-devicons")
 
@@ -256,7 +257,7 @@ components.active[3][6] = {
 	},
 }
 
-require("feline").setup({
+feline.setup({
 	theme = colors,
 	default_bg = colors.bg,
 	default_fg = colors.fg,

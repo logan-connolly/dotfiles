@@ -124,4 +124,3 @@ end)
 vim.keymap.set("n", "<leader>fi", function()
 	builtin.symbols({ sources = { "emoji", "gitmoji" } })
 end)
-
