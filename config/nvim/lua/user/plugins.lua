@@ -30,12 +30,6 @@ if not status_ok then
 	return
 end
 
-local impatient_ok, _ = pcall(require, "impatient")
-if not impatient_ok then
-	vim.notify("Unable to use impatient to boost performance")
-	return
-end
-
 -- Have packer use a popup window
 packer.init({
 	display = {
