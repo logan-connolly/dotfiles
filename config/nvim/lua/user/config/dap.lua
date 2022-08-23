@@ -77,7 +77,7 @@ end)
 -- python
 local dap_py_ok, dap_py = pcall(require, "dap-python")
 if dap_py_ok then
-	dap_py.setup("~/.local/opt/debugpy/bin/python")
+	dap_py.setup()
 	dap_py.test_runner = "pytest"
 	vim.keymap.set("n", "<leader>dp", function()
 		dap_py.test_method()

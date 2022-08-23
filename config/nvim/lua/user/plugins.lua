@@ -39,7 +39,6 @@ packer.init({
 	},
 })
 
-local lsp_support = { "css", "html", "javascript", "python", "go", "typescript", "vue", "lua" }
 local dap_support = { "python", "go" }
 
 packer.startup(function(use)
@@ -67,10 +66,14 @@ packer.startup(function(use)
 
 	-- language support
 	use({
-		"neovim/nvim-lspconfig",
-		requires = { { "hrsh7th/cmp-nvim-lsp", ft = lsp_support } },
-		ft = lsp_support,
+		"williamboman/mason.nvim",
+		requires = {
+			{ "williamboman/mason-lspconfig.nvim" },
+			{ "neovim/nvim-lspconfig" },
+			{ "hrsh7th/cmp-nvim-lsp" },
+		},
 		config = function()
+			require("user.config.mason")
 			require("user.config.lsp")
 		end,
 	})

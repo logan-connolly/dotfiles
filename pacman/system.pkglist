@@ -4,11 +4,11 @@ bat
 btop
 cmake
 cmus
-delve
 direnv
 discord
 docker
 docker-compose
+duf
 exa
 fd
 firefox-developer-edition
@@ -17,12 +17,10 @@ fisher
 fzf
 git
 github-cli
-gopls
 httpie
 imagemagick
 kitty
 lua
-lua-language-server
 luarocks
 magic-wormhole
 ncdu
@@ -37,10 +35,7 @@ openssh
 pipewire-jack
 pipewire-alsa
 pipewire-pulse
-python-black
-python-isort
 python-poetry
-python-pre-commit
 python-pynvim
 pyenv
 qbittorrent
@@ -49,7 +44,6 @@ ripgrep
 rsync
 signal-desktop
 starship
-thunderbird
 tldr
 tig
 tmux
