@@ -8,14 +8,11 @@ end
 -- LSP servers with optional settings
 local language = require("user.config.lsp.language")
 local server_configs = {
-	ansiblels = {},
-	cssls = {},
 	gopls = {},
 	pyright = language.python,
 	sumneko_lua = language.sumneko,
 	tsserver = {},
 	tailwindcss = {},
-	vuels = {},
 }
 
 -- Configure each LSP by attaching completion and capabilities

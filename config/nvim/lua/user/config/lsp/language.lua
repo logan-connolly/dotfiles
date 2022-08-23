@@ -27,11 +27,7 @@ M.python = {
 	end,
 }
 
-local sumneko_root_path = "~/.local/opt/lua-language-server"
-local sumneko_binary = "/usr/bin/lua-language-server"
-
 M.sumneko = {
-	cmd = { sumneko_binary, "-E", sumneko_root_path .. "/main.lua" },
 	settings = {
 		Lua = {
 			runtime = { version = "LuaJIT" },
