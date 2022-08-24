@@ -65,7 +65,12 @@ vim.keymap.set("n", "<c-s>", function()
 	vim.notify("neovim config sourced")
 end)
 
--- file browser
+-- file browser in buffer dir
 vim.keymap.set("n", "-", function()
 	vim.cmd("Lexplore! %:p:h")
+end)
+
+-- file browser in project root
+vim.keymap.set("n", "_", function()
+	vim.cmd("Lexplore!")
 end)
