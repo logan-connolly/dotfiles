@@ -77,14 +77,3 @@ Update global NPM packages:
 ```shell
 npx npm-check-updates -g
 ```
-
-### Gnome Extensions
-
-Common extensions that I use in Gnome:
-
-- [blur my shell](https://extensions.gnome.org/extension/3193/blur-my-shell/)
-- [tile assistant](https://extensions.gnome.org/extension/3733/tiling-assistant/)
-- [screenshot tool](https://extensions.gnome.org/extension/1112/screenshot-tool/)
-- [gtk title bar](https://extensions.gnome.org/extension/1732/gtk-title-bar/)
-- [sound input & output device chooser](https://extensions.gnome.org/extension/906/sound-output-device-chooser/)
-- [time++ (pomodoro)](https://extensions.gnome.org/extension/1238/time/)

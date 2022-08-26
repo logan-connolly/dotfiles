@@ -5,8 +5,9 @@ current_dir := $(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
 system: # Install system pacman deps
 	bash $(current_dir)/scripts/install-pacman-pkgs.sh ./pacman/system.pkglist
 
-desktop: # Install desktop environment
-	bash $(current_dir)/scripts/install-pacman-pkgs.sh ./pacman/desktop.pkglist
+gnome-desktop: # Install gnome desktop environment
+	bash $(current_dir)/scripts/install-pacman-pkgs.sh ./pacman/gnome.pkglist
+	bash $(current_dir)/scripts/install-gnome-desktop-theme.sh
 
 clone: # Install system deps that can't be installed with pacman
 	bash $(current_dir)/scripts/clone-repos.sh

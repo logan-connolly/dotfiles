@@ -15,8 +15,8 @@ git clone https://github.com/logan-connolly/dotfiles.git && cd dotfiles
 # Install system dependencies
 make system
 
-# Install desktop environment
-make desktop
+# Install gnome desktop environment
+make gnome-desktop
 
 # Clone repos that cannot be installed by pacman
 make clone
