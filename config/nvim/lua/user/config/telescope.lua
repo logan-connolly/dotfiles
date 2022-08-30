@@ -77,7 +77,7 @@ telescope.setup({
 	pickers = {
 		buffers = { theme = "dropdown" },
 		find_files = { theme = "dropdown" },
-		git_files = { theme = "dropdown" },
+		git_status = { theme = "dropdown" },
 		grep_string = { theme = "dropdown" },
 		symbols = { theme = "dropdown" },
 		treesitter = { theme = "dropdown" },
