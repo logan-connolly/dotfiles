@@ -4,8 +4,8 @@ if not vim_test_ok then
 	return
 end
 
-vim.g["test#strategy"] = "neovim"
-vim.g["test#neovim#start_normal"] = 1
+vim.g["test#strategy"] = "harpoon"
+vim.g["test#python#pytest#options"] = "-vv"
 
 vim.keymap.set("n", "<leader>tt", function()
 	vim.cmd("TestNearest")

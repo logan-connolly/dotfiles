@@ -28,6 +28,21 @@ local autocmds = {
 	format_golang = {
 		{ "BufWritePre", "*.go,*.py", [[lua vim.lsp.buf.format { async = true }]] },
 	},
+	dap_repl_autocompletion = {
+		{ "Filetype", "dap-repl", [[lua require('dap.ext.autocompl').attach()]] },
+	},
+	dap_debug_test_keymap = {
+		{
+			"Filetype",
+			"python",
+			[[lua vim.keymap.set("n", "<leader>dt", function() require("dap-python").test_method() end)]],
+		},
+		{
+			"Filetype",
+			"go",
+			[[lua vim.keymap.set("n", "<leader>dt", function() require("dap-go").debug_test() end)]],
+		},
+	},
 }
 
 nvim_create_augroups(autocmds)
