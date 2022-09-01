@@ -129,15 +129,20 @@ packer.startup(function(use)
 		end,
 	})
 
-	-- neogit
+	-- git
 	use({
-		"TimUntersberger/neogit",
+		"sindrets/diffview.nvim",
 		requires = {
 			{ "nvim-lua/plenary.nvim" },
-			{ "sindrets/diffview.nvim" },
 		},
 		config = function()
-			require("user.config.neogit")
+			require("user.config.diffview")
+		end,
+	})
+	use({
+		"lewis6991/gitsigns.nvim",
+		config = function()
+			require("user.config.gitsigns")
 		end,
 	})
 
