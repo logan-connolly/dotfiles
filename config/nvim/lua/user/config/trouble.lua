@@ -6,9 +6,9 @@ end
 
 trouble.setup({})
 
-vim.keymap.set("n", "<leader>tb", function()
+vim.keymap.set("n", "<leader>tp", function()
 	vim.cmd("Trouble document_diagnostics")
 end)
-vim.keymap.set("n", "<leader>tp", function()
+vim.keymap.set("n", "<leader>tP", function()
 	vim.cmd("Trouble workspace_diagnostics")
 end)

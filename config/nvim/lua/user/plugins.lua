@@ -46,7 +46,13 @@ packer.startup(function(use)
 	use({
 		"wbthomason/packer.nvim",
 		config = function()
-			require("user.config.packer")
+			vim.keymap.set("n", "<leader>pc", function()
+				vim.cmd("PackerCompile profile=true")
+				vim.notify("Packer plugins were compiled")
+			end)
+			vim.keymap.set("n", "<leader>pp", function()
+				vim.cmd("PackerProfile")
+			end)
 		end,
 	})
 
@@ -71,10 +77,12 @@ packer.startup(function(use)
 			{ "williamboman/mason-lspconfig.nvim" },
 			{ "neovim/nvim-lspconfig" },
 			{ "hrsh7th/cmp-nvim-lsp" },
+			{ "jose-elias-alvarez/null-ls.nvim" },
 		},
 		config = function()
 			require("user.config.mason")
 			require("user.config.lsp")
+			require("user.config.null-ls")
 		end,
 	})
 
@@ -114,7 +122,7 @@ packer.startup(function(use)
 		},
 	})
 
-	-- debugging
+	-- debug / test
 	use({
 		"mfussenegger/nvim-dap",
 		requires = {
@@ -126,6 +134,12 @@ packer.startup(function(use)
 		ft = dap_support,
 		config = function()
 			require("user.config.dap")
+		end,
+	})
+	use({
+		"vim-test/vim-test",
+		config = function()
+			require("user.config.vim-test")
 		end,
 	})
 
@@ -152,15 +166,13 @@ packer.startup(function(use)
 		ft = "markdown",
 		run = "cd app && yarn install",
 		config = function()
-			require("user.config.markdown")
+			vim.keymap.set("n", "<leader>pm", function()
+				vim.cmd("MarkdownPreviewToggle")
+			end)
 		end,
 	})
 
 	-- misc
-	use({
-		"norcalli/nvim-colorizer.lua",
-		--ft = { "css", "javascript", "html" }
-	})
 	use({
 		"numToStr/Comment.nvim",
 		config = function()
@@ -170,7 +182,9 @@ packer.startup(function(use)
 	use({
 		"famiu/bufdelete.nvim",
 		config = function()
-			require("user.config.bufdelete")
+			vim.keymap.set("n", "<leader>x", function()
+				require("bufdelete").bufdelete(0, true)
+			end)
 		end,
 	})
 	use({
@@ -186,27 +200,10 @@ packer.startup(function(use)
 			require("user.config.todo-comments")
 		end,
 	})
-	use({
-		"lewis6991/gitsigns.nvim",
-		config = function()
-			require("user.config.gitsigns")
-		end,
-	})
-	use({
-		"vim-test/vim-test",
-		config = function()
-			require("user.config.vim-test")
-		end,
-	})
-	use({
-		"jose-elias-alvarez/null-ls.nvim",
-		config = function()
-			require("user.config.null-ls")
-		end,
-	})
+	use({ "norcalli/nvim-colorizer.lua" })
+	use({ "kyazdani42/nvim-web-devicons" })
 
 	-- theme
-	use("kyazdani42/nvim-web-devicons")
 	use({
 		"wittyjudge/gruvbox-material.nvim",
 		config = function()
