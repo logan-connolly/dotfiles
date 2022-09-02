@@ -1,4 +1,11 @@
-require("nvim-treesitter.configs").setup({
+local treesitter_ok, treesitter = pcall(require, "nvim-treesitter.configs")
+local treesitter_ctx_ok, treesitter_ctx = pcall(require, "treesitter-context")
+if not treesitter_ok or not treesitter_ctx_ok then
+	vim.notify("Unable to load treesitter config")
+	return
+end
+
+treesitter.setup({
 	ensure_installed = {
 		"bash",
 		"css",
@@ -18,15 +25,6 @@ require("nvim-treesitter.configs").setup({
 	highlight = {
 		enable = true,
 	},
-	incremental_selection = {
-		enable = true,
-		keymaps = {
-			init_selection = "fv",
-			node_incremental = "fj",
-			node_decremental = "fh",
-			scope_incremental = "fu",
-		},
-	},
 	indent = {
 		enable = false,
 	},
@@ -34,3 +32,4 @@ require("nvim-treesitter.configs").setup({
 		enable = true,
 	},
 })
+treesitter_ctx.setup({})
