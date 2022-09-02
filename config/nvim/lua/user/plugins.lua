@@ -145,6 +145,12 @@ packer.startup(function(use)
 
 	-- git
 	use({
+		"tpope/vim-fugitive",
+		config = function()
+			require("user.config.fugitive")
+		end,
+	})
+	use({
 		"sindrets/diffview.nvim",
 		requires = {
 			{ "nvim-lua/plenary.nvim" },
