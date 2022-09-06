@@ -15,7 +15,7 @@ enable_firewall() {
 }
 
 enable_services() {
-  services="bluetooth docker reflector gdm"
+  services="bluetooth docker gdm"
   echo "Enabling the following services: $services"
   for service in $services
   do

@@ -4,7 +4,7 @@
 
 ## Prerequisites
 
-Fresh install of [arch](https://archlinux.org/) using [bootstrap-arch](https://github.com/logan-connolly/bootstrap-arch).
+Fresh minimal installation of [Arch](https://archlinux.org/).
 
 ## Installation
 
@@ -26,6 +26,9 @@ make links
 
 # Install neovim from source and sync plugins
 make neovim
+
+# Sync application configurations
+make config
 
 # Enable services, add groups to user and setup firewall
 make services

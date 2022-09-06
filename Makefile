@@ -12,6 +12,9 @@ gnome-desktop: # Install gnome desktop environment
 clone: # Install system deps that can't be installed with pacman
 	bash $(current_dir)/scripts/clone-repos.sh
 
+config: # Sync application configurations
+	bash $(current_dir)/scripts/configure.sh
+
 fisher-clean: # Clean fish plugins and generated settings
 	rm -rf config/fish/completions/ config/fish/conf.d/ config/fish/functions/
 	rm config/fish/fish_plugins config/fish/fish_variables
