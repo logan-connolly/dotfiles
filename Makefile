@@ -9,6 +9,7 @@ system: # Install system pacman deps
 gnome-desktop: # Install gnome desktop environment
 	bash $(current_dir)/scripts/install-pacman-pkgs.sh ./pacman/gnome.pkglist
 	bash $(current_dir)/scripts/install-gnome-desktop-theme.sh
+	cat $(current_dir)/config/dconf/user.conf | dconf load /
 
 clone: # Install system deps that can't be installed with pacman
 	bash $(current_dir)/scripts/clone-repos.sh
