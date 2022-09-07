@@ -1,7 +1,7 @@
 #!/bin/bash
 
 configure_poetry() {
-  poetry config virtualenvs.in-project
+  poetry config virtualenvs.in-project true
 }
 
 configure_pacman() {

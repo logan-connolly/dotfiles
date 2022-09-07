@@ -4,6 +4,7 @@ current_dir := $(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
 
 system: # Install system pacman deps
 	bash $(current_dir)/scripts/install-pacman-pkgs.sh ./pacman/system.pkglist
+	bash $(current_dir)/scripts/configure-system-apps.sh
 
 gnome-desktop: # Install gnome desktop environment
 	bash $(current_dir)/scripts/install-pacman-pkgs.sh ./pacman/gnome.pkglist
@@ -11,9 +12,6 @@ gnome-desktop: # Install gnome desktop environment
 
 clone: # Install system deps that can't be installed with pacman
 	bash $(current_dir)/scripts/clone-repos.sh
-
-config: # Sync application configurations
-	bash $(current_dir)/scripts/configure.sh
 
 fisher-clean: # Clean fish plugins and generated settings
 	rm -rf config/fish/completions/ config/fish/conf.d/ config/fish/functions/
