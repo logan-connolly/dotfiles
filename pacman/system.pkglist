@@ -15,6 +15,7 @@ fisher
 fzf
 git
 github-cli
+go
 httpie
 imagemagick
 kitty
@@ -37,6 +38,7 @@ openssh
 pfetch
 python-poetry
 python-pynvim
+python-psycopg2
 pyenv
 ripgrep
 rsync
@@ -54,6 +56,7 @@ ufw
 unzip
 vim
 xclip
+xterm
 yarn
 yt-dlp
 zathura

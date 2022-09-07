@@ -25,7 +25,7 @@ dapui.setup({
 })
 daptext.setup()
 dap_go.setup()
-dap_py.setup()
+dap_py.setup("~/.local/share/nvim/mason/packages/debugpy/venv/bin/python")
 dap_py.test_runner = "pytest"
 
 -- icon settings

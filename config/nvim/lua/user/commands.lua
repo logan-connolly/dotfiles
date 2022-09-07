@@ -35,12 +35,12 @@ local autocmds = {
 		{
 			"Filetype",
 			"python",
-			[[lua vim.keymap.set("n", "<leader>dt", function() require("dap-python").test_method() end)]],
+			[[lua vim.keymap.set("n", "<leader>td", function() require("dap-python").test_method() end)]],
 		},
 		{
 			"Filetype",
 			"go",
-			[[lua vim.keymap.set("n", "<leader>dt", function() require("dap-go").debug_test() end)]],
+			[[lua vim.keymap.set("n", "<leader>td", function() require("dap-go").debug_test() end)]],
 		},
 	},
 }

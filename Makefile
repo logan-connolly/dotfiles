@@ -18,14 +18,19 @@ clone: # Install system deps that can't be installed with pacman
 	bash $(current_dir)/scripts/clone-repos.sh
 
 fisher-clean: # Clean fish plugins and generated settings
-	rm -rf config/fish/completions/ config/fish/conf.d/ config/fish/functions/
-	rm config/fish/fish_plugins config/fish/fish_variables
+	git clean -xdf config/fish
 
 fisher-install: # Install fish plugins with fisher
 	fish $(current_dir)/bin/fisher-install.fish
 
 neovim: # Build and install latest neovim from source and sync plugins
 	bash $(current_dir)/scripts/install-neovim.sh
+
+neovim-plugins: # Sync neovim packer plugins
+	nvim -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
+
+neovim-servers: # Sync neovim lsp servers, formatters and linters
+	nvim -c 'lua require("user.config.mason").bootstrap()'
 
 links: # Link configuration files to proper locations
 	bash $(current_dir)/scripts/symlink-configs.sh
