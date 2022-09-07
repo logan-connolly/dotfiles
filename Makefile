@@ -11,6 +11,9 @@ gnome-desktop: # Install gnome desktop environment
 	bash $(current_dir)/scripts/install-gnome-desktop-theme.sh
 	cat $(current_dir)/config/dconf/user.conf | dconf load /
 
+laptop: # Install deps and configs that are relevant for laptops
+	bash $(current_dir)/scripts/configure-laptop.sh
+
 clone: # Install system deps that can't be installed with pacman
 	bash $(current_dir)/scripts/clone-repos.sh
 
