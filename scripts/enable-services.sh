@@ -1,7 +1,7 @@
 #!/bin/bash
 
 modify_user_groups() {
-  groups="docker nordvpn"
+  groups="docker"
   echo "Adding the following groups to user $USER: $groups"
   for group in $groups
   do
