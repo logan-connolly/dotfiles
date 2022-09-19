@@ -58,13 +58,3 @@ map("n", "<leader>Q", "<cmd>bufdo bdelete<cr>", { noremap = true })
 
 -- close tab
 map("n", "<leader>X", "<cmd>tabc<cr>", { noremap = true, silent = true })
-
--- file browser in buffer dir
-vim.keymap.set("n", "-", function()
-	vim.cmd("Lexplore! %:p:h")
-end)
-
--- file browser in project root
-vim.keymap.set("n", "_", function()
-	vim.cmd("Lexplore!")
-end)
