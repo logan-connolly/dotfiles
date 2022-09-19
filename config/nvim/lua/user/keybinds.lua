@@ -59,12 +59,6 @@ map("n", "<leader>Q", "<cmd>bufdo bdelete<cr>", { noremap = true })
 -- close tab
 map("n", "<leader>X", "<cmd>tabc<cr>", { noremap = true, silent = true })
 
--- source dotfiles
-vim.keymap.set("n", "<c-s>", function()
-	vim.cmd("source " .. vim.fn.expand("%"))
-	vim.notify("neovim config sourced")
-end)
-
 -- file browser in buffer dir
 vim.keymap.set("n", "-", function()
 	vim.cmd("Lexplore! %:p:h")
