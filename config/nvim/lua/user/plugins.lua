@@ -202,12 +202,6 @@ packer.startup(function(use)
 			require("user.config.trouble")
 		end,
 	})
-	use({
-		"folke/todo-comments.nvim",
-		config = function()
-			require("user.config.todo-comments")
-		end,
-	})
 	use({ "norcalli/nvim-colorizer.lua" })
 	use({ "kyazdani42/nvim-web-devicons" })
 
