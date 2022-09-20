@@ -4,7 +4,6 @@ alias cat='bat --theme="base16-256"'
 alias yank='xsel --clipboard'
 alias ywd='pwd | yank'
 alias ssh='kitty +kitten ssh'
-alias firefox='firefox-developer-edition'
 
 # neovim
 alias v='nvim'

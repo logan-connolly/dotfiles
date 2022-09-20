@@ -20,6 +20,7 @@ create_links() {
   ln -vsf $CONFIG_DIR/.xinitrc ~/.xinitrc
   ln -vsf $CONFIG_DIR/.Xresources ~/.Xresources
   ln -vsf $CONFIG_DIR/.zprofile ~/.zprofile
+  symlink_dir $CONFIG_DIR/dconf/applications ~/.local/share/applications
   symlink_dir $CONFIG_DIR/direnv ~/.config/direnv
   symlink_dir $CONFIG_DIR/fish ~/.config/fish
   symlink_dir $CONFIG_DIR/kitty ~/.config/kitty
