@@ -54,8 +54,7 @@ udisks2
 ufw
 unzip
 vim
-xclip
-xterm
+wl-clipboard
 yarn
 yt-dlp
 zathura
