@@ -33,7 +33,7 @@ vim.o.clipboard = "unnamedplus"
 -- window scope settings
 vim.wo.number = true
 vim.wo.relativenumber = true
-vim.wo.signcolumn = "yes"
+vim.wo.signcolumn = "yes:2"
 vim.wo.scrolloff = 8
 vim.wo.sidescrolloff = 8
 vim.wo.wrap = false
