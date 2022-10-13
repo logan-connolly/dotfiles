@@ -41,8 +41,9 @@ set recolor                     "true"
 # set recolor-keephue             true      # keep original color
 set recolor-keephue             "true"
 
-# Hides statusbar
-set guioptions none
+# Hides statusbar (if possible)
+set guioptions "none"
+set window-title-basename "true"
 
 set statusbar-v-padding  15
 set statusbar-h-padding  75
