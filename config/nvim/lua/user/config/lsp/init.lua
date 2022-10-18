@@ -17,7 +17,7 @@ local server_configs = {
 
 -- Configure each LSP by attaching completion and capabilities
 local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = cmp_lsp.update_capabilities(capabilities)
+capabilities = cmp_lsp.default_capabilities(capabilities)
 for server, config in pairs(server_configs) do
 	config.capabilities = capabilities
 	lspconfig[server].setup(config)

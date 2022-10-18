@@ -8,10 +8,10 @@ end
 
 local lsp_servers = {
 	"gopls",
-	"lua-language-server",
 	"pyright",
-	"typescript-language-server",
-	"tailwindcss-language-server",
+	"sumneko_lua",
+	"tailwindcss",
+	"tsserver",
 }
 
 local dap_servers = {
