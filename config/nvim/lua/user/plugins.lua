@@ -168,15 +168,12 @@ packer.startup(function(use)
 		end,
 	})
 
-	-- markdown
+	-- neorg
 	use({
-		"iamcco/markdown-preview.nvim",
-		ft = "markdown",
-		run = "cd app && yarn install",
+		"nvim-neorg/neorg",
+		run = ":Neorg sync-parsers",
 		config = function()
-			vim.keymap.set("n", "<leader>pm", function()
-				vim.cmd("MarkdownPreviewToggle")
-			end)
+			require("user.config.neorg")
 		end,
 	})
 
@@ -205,11 +202,17 @@ packer.startup(function(use)
 	use({ "norcalli/nvim-colorizer.lua" })
 	use({ "kyazdani42/nvim-web-devicons" })
 	use({
-		'kyazdani42/nvim-tree.lua',
-		tag = 'nightly',
+		"kyazdani42/nvim-tree.lua",
+		tag = "nightly",
 		config = function()
 			require("user.config.nvim-tree")
 		end,
+	})
+	use({
+		"folke/zen-mode.nvim",
+		config = function ()
+			require("user.config.zen")
+		end
 	})
 
 	-- theme

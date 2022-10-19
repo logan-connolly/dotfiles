@@ -16,6 +16,7 @@ treesitter.setup({
 		"json",
 		"lua",
 		"nix",
+		"norg",
 		"python",
 		"toml",
 		"typescript",

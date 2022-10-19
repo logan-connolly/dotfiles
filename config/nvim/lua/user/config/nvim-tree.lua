@@ -8,7 +8,7 @@ end
 nvim_tree.setup({
 	view = {
 		side = "right",
-	}
+	},
 })
 
 vim.keymap.set("n", "-", function()
