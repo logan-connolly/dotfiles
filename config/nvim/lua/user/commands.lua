@@ -24,6 +24,7 @@ local autocmds = {
 	ftplugin_settings = {
 		{ "Filetype", "dockerfile,sh,zsh", [[setlocal tabstop=2 shiftwidth=2 expandtab]] },
 		{ "Filetype", "markdown", [[setlocal tabstop=2 shiftwidth=2 expandtab wrap linebreak]] },
+		{ "Filetype", "norg", [[setlocal wrap linebreak]] },
 	},
 	format_golang = {
 		{ "BufWritePre", "*.go,*.py", [[lua vim.lsp.buf.format { async = true }]] },

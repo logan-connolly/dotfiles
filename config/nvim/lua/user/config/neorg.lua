@@ -16,6 +16,12 @@ neorg.setup({
 				},
 			},
 		},
+		["core.export"] = {},
+		["core.export.markdown"] = {
+				config = {
+						extensions = "all",
+				},
+		},
 		["core.norg.concealer"] = {
 			config = {
 				markup_preset = "conceal",
@@ -56,6 +62,10 @@ vim.keymap.set("n", "<leader>na", "<cmd>Neorg gtd capture<cr>")
 vim.keymap.set("n", "<leader>nv", "<cmd>Neorg gtd views<cr>")
 vim.keymap.set("n", "<leader>ne", "<cmd>Neorg gtd edit<cr>")
 vim.keymap.set("n", "<leader>nf", "<cmd>Neorg presenter start<cr>")
+
+vim.keymap.set("n", "<leader>nx", function()
+	vim.cmd("Neorg export to-file " .. vim.fn.expand("%:r") .. ".md")
+end)
 
 local kb = "<cmd>Neorg keybind all "
 
