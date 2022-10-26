@@ -34,7 +34,6 @@ noto-fonts-emoji
 noto-fonts-extra
 npm
 openssh
-pfetch
 python-poetry
 python-pynvim
 python-psycopg2
