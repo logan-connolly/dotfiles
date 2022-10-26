@@ -11,8 +11,8 @@ neorg.setup({
 			config = {
 				autochdir = true,
 				workspaces = {
-					gtd = "~/notes/gtd",
-					journal = "~/notes/journal",
+					gtd = "~/Sync/notes/gtd",
+					journal = "~/Sync/notes/journal",
 				},
 			},
 		},
