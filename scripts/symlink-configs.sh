@@ -26,6 +26,7 @@ create_links() {
   symlink_dir $CONFIG_DIR/kitty ~/.config/kitty
   symlink_dir $CONFIG_DIR/nvim ~/.config/nvim
   symlink_dir $CONFIG_DIR/tmux ~/.config/tmux
+  symlink_dir $CONFIG_DIR/vifm ~/.config/vifm
   symlink_dir $CONFIG_DIR/zathura ~/.config/zathura
   symlink_dir $BIN_DIR ~/.local/bin
 }

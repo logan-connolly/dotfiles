@@ -9,6 +9,7 @@ docker-compose
 duf
 exa
 fd
+feh
 firefox
 fish
 fisher
@@ -51,6 +52,7 @@ udiskie
 udisks2
 ufw
 unzip
+vifm
 vim
 wl-clipboard
 yarn
