@@ -6,10 +6,6 @@ clone_tpm_package_manager() {
   git clone https://github.com/tmux-plugins/tpm $path
 }
 
-install_nnn_plugins() {
-	curl -Ls https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs | sh
-}
-
 install_global_npm_packages() {
 	mkdir -p $HOME/.npm-global
 	npm config set prefix '~/.npm-global'
@@ -18,5 +14,4 @@ install_global_npm_packages() {
 
 
 clone_tpm_package_manager
-install_nnn_plugins
 install_global_npm_packages
