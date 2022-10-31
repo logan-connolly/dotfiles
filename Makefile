@@ -23,12 +23,6 @@ fisher-clean: # Clean fish plugins and generated settings
 fisher-install: # Install fish plugins with fisher
 	fish $(current_dir)/bin/fisher-install.fish
 
-neovim: # Build and install latest neovim from source and sync plugins
-	bash $(current_dir)/scripts/install-neovim.sh
-
-neovim-plugins: # Sync neovim packer plugins
-	nvim -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
-
 neovim-servers: # Sync neovim lsp servers, formatters and linters
 	nvim -c 'lua require("user.config.mason").bootstrap()'
 
