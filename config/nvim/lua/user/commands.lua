@@ -1,49 +1,44 @@
-local cmd = vim.api.nvim_command
+-- highlight on yank
+vim.api.nvim_create_autocmd(
+	{ "TextYankPost" },
+	{ pattern = { "*" }, command = [[silent! lua vim.highlight.on_yank() {higroup='IncSearch', timeout=400}]] }
+)
 
-local function nvim_create_augroups(definitions)
-	for group_name, definition in pairs(definitions) do
-		cmd("augroup " .. group_name)
-		cmd("autocmd!")
-		for _, def in ipairs(definition) do
-			local command = table.concat(vim.tbl_flatten({ "autocmd", def }), " ")
-			cmd(command)
-		end
-		cmd("augroup END")
-	end
-end
+-- transparent background
+vim.api.nvim_create_autocmd({ "ColorScheme" }, {
+	pattern = { "*" },
+	command = [[hi Normal ctermbg=none guibg=none | hi NonText ctermbg=NONE guibg=NONE | hi EndOfBuffer ctermbg=NONE guibg=NONE]],
+})
 
-local autocmds = {
-	lua_highlight = {
-		{ "TextYankPost", "*", [[silent! lua vim.highlight.on_yank() {higroup='IncSearch', timeout=400}]] },
-	},
-	transparent_bg = {
-		{ "ColorScheme", "*", [[hi Normal ctermbg=none guibg=none]] },
-		{ "ColorScheme", "*", [[hi NonText ctermbg=NONE guibg=NONE]] },
-		{ "ColorScheme", "*", [[hi EndOfBuffer ctermbg=NONE guibg=NONE]] },
-	},
-	ftplugin_settings = {
-		{ "Filetype", "dockerfile,sh,zsh", [[setlocal tabstop=2 shiftwidth=2 expandtab]] },
-		{ "Filetype", "markdown", [[setlocal tabstop=2 shiftwidth=2 expandtab wrap linebreak]] },
-		{ "Filetype", "norg", [[setlocal wrap linebreak]] },
-	},
-	format_golang = {
-		{ "BufWritePre", "*.go,*.py", [[lua vim.lsp.buf.format { async = true }]] },
-	},
-	dap_repl_autocompletion = {
-		{ "Filetype", "dap-repl", [[lua require('dap.ext.autocompl').attach()]] },
-	},
-	dap_debug_test_keymap = {
-		{
-			"Filetype",
-			"python",
-			[[lua vim.keymap.set("n", "<leader>td", function() require("dap-python").test_method() end)]],
-		},
-		{
-			"Filetype",
-			"go",
-			[[lua vim.keymap.set("n", "<leader>td", function() require("dap-go").debug_test() end)]],
-		},
-	},
-}
+-- filetype space and indentation
+vim.api.nvim_create_autocmd(
+	{ "Filetype" },
+	{ pattern = { "dockerfile", "sh" }, command = [[setlocal tabstop=2 shiftwidth=2 expandtab]] }
+)
+vim.api.nvim_create_autocmd(
+	{ "Filetype" },
+	{ pattern = { "markdown" }, command = [[setlocal tabstop=2 shiftwidth=2 expandtab wrap linebreak]] }
+)
+vim.api.nvim_create_autocmd({ "Filetype" }, { pattern = { "norg" }, command = [[setlocal wrap linebreak]] })
 
-nvim_create_augroups(autocmds)
+-- format on save
+vim.api.nvim_create_autocmd(
+	{ "BufWritePre" },
+	{ pattern = { "*.go", "*.py" }, command = [[lua vim.lsp.buf.format { async = true }]] }
+)
+
+-- add autocomplete for dap repl
+vim.api.nvim_create_autocmd(
+	{ "Filetype" },
+	{ pattern = { "dap-repl" }, command = [[lua require('dap.ext.autocompl').attach()]] }
+)
+
+-- debug test keymaps
+vim.api.nvim_create_autocmd({ "Filetype" }, {
+	pattern = { "python" },
+	command = [[lua vim.keymap.set("n", "<leader>td", function() require("dap-python").test_method() end)]],
+})
+vim.api.nvim_create_autocmd({ "Filetype" }, {
+	pattern = { "go" },
+	command = [[lua vim.keymap.set("n", "<leader>td", function() require("dap-go").debug_test() end)]],
+})
