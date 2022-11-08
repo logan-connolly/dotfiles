@@ -29,9 +29,9 @@ dap_py.setup("~/.local/share/nvim/mason/packages/debugpy/venv/bin/python")
 dap_py.test_runner = "pytest"
 
 -- icon settings
-vim.fn.sign_define("DapBreakpoint", { text = "🔴", texthl = "", linehl = "", numhl = "" })
-vim.fn.sign_define("DapStopped", { text = "🟢", texthl = "", linehl = "", numhl = "" })
-vim.fn.sign_define("DapBreakpointCondition", { text = "🤔", texthl = "", linehl = "", numhl = "" })
+vim.fn.sign_define("DapBreakpoint", { text = "", texthl = "DiagnosticSignError", linehl = "", numhl = "" })
+vim.fn.sign_define("DapStopped", { text = "", texthl = "DiagnosticSignWarn", linehl = "Visual", numhl = "DiagnosticSignWarn" })
+vim.fn.sign_define("DapBreakpointCondition", { text = "", texthl = "DiagnosticSignWarn", linehl = "", numhl = "" })
 
 -- event hooks
 dap.listeners.after.event_initialized["dapui_config"] = function()
