@@ -9,7 +9,7 @@ neorg.setup({
 		["core.defaults"] = {},
 		["core.norg.dirman"] = {
 			config = {
-				autochdir = true,
+				autochdir = false,
 				workspaces = {
 					gtd = "~/Sync/notes/gtd",
 					journal = "~/Sync/notes/journal",
@@ -57,7 +57,6 @@ neorg.setup({
 	},
 })
 
-vim.keymap.set("n", "<leader>nt", "<cmd>Neorg workspace gtd<cr>")
 vim.keymap.set("n", "<leader>na", "<cmd>Neorg gtd capture<cr>")
 vim.keymap.set("n", "<leader>nv", "<cmd>Neorg gtd views<cr>")
 vim.keymap.set("n", "<leader>ne", "<cmd>Neorg gtd edit<cr>")

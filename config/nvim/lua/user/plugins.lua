@@ -171,6 +171,7 @@ packer.startup(function(use)
 	-- neorg
 	use({
 		"nvim-neorg/neorg",
+		ft = "norg",
 		run = ":Neorg sync-parsers",
 		config = function()
 			require("user.config.neorg")
