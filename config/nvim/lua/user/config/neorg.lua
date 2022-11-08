@@ -18,19 +18,19 @@ neorg.setup({
 		},
 		["core.export"] = {},
 		["core.export.markdown"] = {
-				config = {
-						extensions = "all",
-				},
+			config = {
+				extensions = "all",
+			},
 		},
 		["core.norg.concealer"] = {
 			config = {
 				markup_preset = "conceal",
 				icon_preset = "diamond",
-			}
+			},
 		},
 		["core.norg.completion"] = {
 			config = {
-				engine = "nvim-cmp"
+				engine = "nvim-cmp",
 			},
 		},
 		["core.gtd.base"] = {
@@ -42,16 +42,16 @@ neorg.setup({
 			config = {
 				workspace = "journal",
 				strategy = "nested",
-      },
-    },
+			},
+		},
 		["core.presenter"] = {
 			config = {
-					zen_mode = "zen-mode",
-					slide_count = {
-							enable = true,
-							position = "top",
-							count_format = "[%d/%d]",
-					},
+				zen_mode = "zen-mode",
+				slide_count = {
+					enable = true,
+					position = "top",
+					count_format = "[%d/%d]",
+				},
 			},
 		},
 	},

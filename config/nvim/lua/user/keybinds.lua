@@ -61,5 +61,5 @@ map("n", "<leader>X", "<cmd>tabc<cr>", { noremap = true, silent = true })
 
 -- open up todos
 vim.keymap.set("n", "<leader>nt", function()
-	vim.cmd('e ~/Sync/notes/gtd/index.norg')
+	vim.cmd("e ~/Sync/notes/gtd/index.norg")
 end)

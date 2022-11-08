@@ -25,24 +25,24 @@ capabilities.textDocument.completion.completionItem.commitCharactersSupport = tr
 capabilities.textDocument.completion.completionItem.tagSupport = { valueSet = { 1 } }
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 capabilities.textDocument.completion.completionItem.resolveSupport = {
-    properties = { "documentation", "detail", "additionalTextEdits" },
+	properties = { "documentation", "detail", "additionalTextEdits" },
 }
 capabilities.textDocument.codeAction = {
-    dynamicRegistration = false,
-    codeActionLiteralSupport = {
-        codeActionKind = {
-            valueSet = {
-                "",
-                "quickfix",
-                "refactor",
-                "refactor.extract",
-                "refactor.inline",
-                "refactor.rewrite",
-                "source",
-                "source.organizeImports",
-            },
-        },
-    },
+	dynamicRegistration = false,
+	codeActionLiteralSupport = {
+		codeActionKind = {
+			valueSet = {
+				"",
+				"quickfix",
+				"refactor",
+				"refactor.extract",
+				"refactor.inline",
+				"refactor.rewrite",
+				"source",
+				"source.organizeImports",
+			},
+		},
+	},
 }
 capabilities = cmp_lsp.default_capabilities(capabilities)
 

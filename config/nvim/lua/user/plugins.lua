@@ -211,9 +211,9 @@ packer.startup(function(use)
 	})
 	use({
 		"folke/zen-mode.nvim",
-		config = function ()
+		config = function()
 			require("user.config.zen")
-		end
+		end,
 	})
 
 	-- theme
