@@ -1,8 +1,6 @@
 # general aliases
 alias o='xdg-open'
-alias cat='bat --theme="base16-256"'
-alias yank='xsel --clipboard'
-alias ywd='pwd | yank'
+alias pcat='bat --theme="base16-256"'
 alias ssh='kitty +kitten ssh'
 
 # neovim
@@ -27,7 +25,6 @@ alias tml='tmux list-sessions'
 alias tmka='tmux ls | cut -d: -f1 | xargs -I {} sh -c "tmux kill-session -t {}"'
 
 # list files
-alias ls='exa'
 alias ll='exa --long --icons'
 alias la='exa --all --long --icons'
 alias tree="exa --icons --tree -I '__pycache__|.git|venv|node_modules'"
