@@ -24,7 +24,7 @@ vim.api.nvim_create_autocmd({ "Filetype" }, { pattern = { "norg" }, command = [[
 -- format on save
 vim.api.nvim_create_autocmd(
 	{ "BufWritePre" },
-	{ pattern = { "*.go", "*.py" }, command = [[lua vim.lsp.buf.format { async = true }]] }
+	{ pattern = { "*.go", "*.py", "*.lua" }, command = [[lua vim.lsp.buf.format { async = true }]] }
 )
 
 -- add autocomplete for dap repl
