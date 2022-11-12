@@ -153,15 +153,6 @@ packer.startup(function(use)
 		end,
 	})
 	use({
-		"sindrets/diffview.nvim",
-		requires = {
-			{ "nvim-lua/plenary.nvim" },
-		},
-		config = function()
-			require("user.config.diffview")
-		end,
-	})
-	use({
 		"lewis6991/gitsigns.nvim",
 		config = function()
 			require("user.config.gitsigns")
