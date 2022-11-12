@@ -12,7 +12,6 @@ neorg.setup({
 				autochdir = false,
 				workspaces = {
 					gtd = "~/Sync/notes/gtd",
-					journal = "~/Sync/notes/journal",
 				},
 			},
 		},
@@ -38,29 +37,12 @@ neorg.setup({
 				workspace = "gtd",
 			},
 		},
-		["core.norg.journal"] = {
-			config = {
-				workspace = "journal",
-				strategy = "nested",
-			},
-		},
-		["core.presenter"] = {
-			config = {
-				zen_mode = "zen-mode",
-				slide_count = {
-					enable = true,
-					position = "top",
-					count_format = "[%d/%d]",
-				},
-			},
-		},
 	},
 })
 
 vim.keymap.set("n", "<leader>na", "<cmd>Neorg gtd capture<cr>")
 vim.keymap.set("n", "<leader>nv", "<cmd>Neorg gtd views<cr>")
 vim.keymap.set("n", "<leader>ne", "<cmd>Neorg gtd edit<cr>")
-vim.keymap.set("n", "<leader>nf", "<cmd>Neorg presenter start<cr>")
 
 vim.keymap.set("n", "<leader>nx", function()
 	vim.cmd("Neorg export to-file " .. vim.fn.expand("%:r") .. ".md")
@@ -71,6 +53,5 @@ local kb = "<cmd>Neorg keybind all "
 vim.keymap.set("n", "<leader>nd", kb .. "core.norg.qol.todo_items.todo.task_done<cr>")
 vim.keymap.set("n", "<leader>np", kb .. "core.norg.qol.todo_items.todo.task_pending<cr>")
 vim.keymap.set("n", "<leader>nu", kb .. "core.norg.qol.todo_items.todo.task_undone<cr>")
-vim.keymap.set("n", "<leader>nn", kb .. "core.norg.dirman.new.note<cr>")
 vim.keymap.set("n", "<leader>nj", kb .. "core.integrations.treesitter.next.heading<cr>")
 vim.keymap.set("n", "<leader>nk", kb .. "core.integrations.treesitter.previous.heading<cr>")
