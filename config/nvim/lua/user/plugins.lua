@@ -39,8 +39,6 @@ packer.init({
 	},
 })
 
-local dap_support = { "python", "go" }
-
 packer.startup(function(use)
 	-- package manager
 	use({
@@ -75,11 +73,10 @@ packer.startup(function(use)
 
 	-- language support
 	use({
-		"williamboman/mason.nvim",
+		"neovim/nvim-lspconfig",
 		requires = {
+			{ "williamboman/mason.nvim" },
 			{ "williamboman/mason-lspconfig.nvim" },
-			{ "neovim/nvim-lspconfig" },
-			{ "hrsh7th/cmp-nvim-lsp" },
 			{ "jose-elias-alvarez/null-ls.nvim" },
 		},
 		config = function()
@@ -94,6 +91,7 @@ packer.startup(function(use)
 		"hrsh7th/nvim-cmp",
 		requires = {
 			{ "hrsh7th/cmp-buffer" },
+			{ "hrsh7th/cmp-nvim-lsp" },
 			{ "hrsh7th/cmp-path" },
 			{ "hrsh7th/cmp-nvim-lua", ft = "lua" },
 			{ "L3MON4D3/LuaSnip" },
@@ -125,7 +123,7 @@ packer.startup(function(use)
 		},
 	})
 
-	-- debug / test
+	-- debug
 	use({
 		"mfussenegger/nvim-dap",
 		requires = {
@@ -138,6 +136,8 @@ packer.startup(function(use)
 			require("user.config.dap")
 		end,
 	})
+
+	-- testing
 	use({
 		"vim-test/vim-test",
 		config = function()

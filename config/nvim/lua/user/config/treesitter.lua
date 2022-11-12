@@ -15,7 +15,6 @@ treesitter.setup({
 		"javascript",
 		"json",
 		"lua",
-		"nix",
 		"norg",
 		"python",
 		"toml",
@@ -23,14 +22,8 @@ treesitter.setup({
 		"vue",
 		"yaml",
 	},
-	highlight = {
-		enable = true,
-	},
-	indent = {
-		enable = false,
-	},
-	autotag = {
-		enable = true,
-	},
+	highlight = { enable = true },
+	indent = { enable = false },
 })
+
 treesitter_ctx.setup({})
