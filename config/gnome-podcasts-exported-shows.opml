@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<opml version="2.0">
+  <head>
+    <title>GNOME Podcasts Subscriptions</title>
+  </head>
+  <body>
+    <outline text="Developer Tea" title="Developer Tea" type="rss" xmlUrl="https://feeds.simplecast.com/dLRotFGk" htmlUrl="http://www.developertea.com/" />
+    <outline text="Go Time: Golang, Software Engineering" title="Go Time: Golang, Software Engineering" type="rss" xmlUrl="https://changelog.com/gotime/feed" htmlUrl="https://changelog.com/gotime" />
+    <outline text="Hotel Matze" title="Hotel Matze" type="rss" xmlUrl="https://hotelmatze.podigee.io/feed/mp3" htmlUrl="https://mitvergnuegen.com/hotelmatze/" />
+    <outline text="Podcast – Software Engineering Daily" title="Podcast – Software Engineering Daily" type="rss" xmlUrl="https://softwareengineeringdaily.com/category/podcast/feed/" htmlUrl="https://softwareengineeringdaily.com/" />
+    <outline text="Practical AI: Machine Learning, Data Science" title="Practical AI: Machine Learning, Data Science" type="rss" xmlUrl="https://changelog.com/practicalai/feed" htmlUrl="https://changelog.com/practicalai" />
+    <outline text="Ship It! SRE, Platform Engineering, DevOps" title="Ship It! SRE, Platform Engineering, DevOps" type="rss" xmlUrl="https://changelog.com/shipit/feed" htmlUrl="https://changelog.com/shipit" />
+    <outline text="Soft Skills Engineering" title="Soft Skills Engineering" type="rss" xmlUrl="https://softskills.audio/feed.xml" htmlUrl="https://softskills.audio/" />
+    <outline text="The Backend Engineering Show with Hussein Nasser" title="The Backend Engineering Show with Hussein Nasser" type="rss" xmlUrl="https://anchor.fm/s/1eb6d14/podcast/rss" htmlUrl="https://database.husseinnasser.com/" />
+    <outline text="The Changelog: Software Development, Open Source" title="The Changelog: Software Development, Open Source" type="rss" xmlUrl="https://changelog.com/podcast/feed" htmlUrl="https://changelog.com/podcast" />
+    <outline text="The Rabbit Hole: The Definitive Developer&apos;s Podcast" title="The Rabbit Hole: The Definitive Developer&apos;s Podcast" type="rss" xmlUrl="https://feeds.libsyn.com/96306/rss" htmlUrl="https://www.stridenyc.com/" />
+  </body>
+</opml>
