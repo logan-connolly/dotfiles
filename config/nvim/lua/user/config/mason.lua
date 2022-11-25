@@ -7,7 +7,9 @@ if not mason_ok or not mason_lsp_ok then
 end
 
 local lsp_servers = {
+	"cssls",
 	"gopls",
+	"html",
 	"pyright",
 	"sumneko_lua",
 	"tailwindcss",

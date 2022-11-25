@@ -8,7 +8,9 @@ end
 -- LSP servers with optional settings
 local language = require("user.config.lsp.language")
 local server_configs = {
+	cssls = {},
 	gopls = {},
+	html = {},
 	pyright = language.python,
 	sumneko_lua = language.sumneko,
 	tsserver = {},
