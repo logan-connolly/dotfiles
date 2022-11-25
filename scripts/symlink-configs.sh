@@ -19,7 +19,7 @@ create_links() {
   ln -vsf $CONFIG_DIR/.gitignore_global ~/.gitignore_global
   ln -vsf $CONFIG_DIR/.xinitrc ~/.xinitrc
   ln -vsf $CONFIG_DIR/.Xresources ~/.Xresources
-  ln -vsf $CONFIG_DIR/.zprofile ~/.zprofile
+  ln -vsf $CONFIG_DIR/starship.toml ~/.config/starship.toml
   symlink_dir $CONFIG_DIR/dconf/applications ~/.local/share/applications
   symlink_dir $CONFIG_DIR/direnv ~/.config/direnv
   symlink_dir $CONFIG_DIR/fish ~/.config/fish

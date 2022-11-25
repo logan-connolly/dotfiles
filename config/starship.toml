@@ -1,0 +1,17 @@
+[package]
+disabled = true
+
+[git_branch]
+format = "[$symbol$branch(:$remote_branch)]($style) "
+
+[golang]
+format = '[${symbol}(${version} )]($style)'
+
+[lua]
+format = '[${symbol}(${version} )]($style)'
+
+[nodejs]
+format = '[${symbol}(${version} )]($style)'
+
+[python]
+format = '[${symbol}(${version} )]($style)'
