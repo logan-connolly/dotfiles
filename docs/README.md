@@ -66,3 +66,27 @@ Update global NPM packages:
 ```shell
 npx npm-check-updates -g
 ```
+
+### Mudita Center Setup
+
+Install dependencies:
+
+```shell
+paru -S fuse2 mudita-center-appimage
+```
+
+Need to first make your user a member of the dialout group and log out and back in:
+
+```shell
+sudo groupadd dialout
+sudo usermod -a -G dialout $USER
+logout
+```
+
+Then you will want to plugin your phone via USB-C and change the permission for the device:
+
+```shell
+sudo chmod a+rw /dev/ttyACM0
+```
+
+Now launch the app with `mudita-center`.
