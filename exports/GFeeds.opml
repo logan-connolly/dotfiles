@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+  <head>
+    <title>Subscriptions</title>
+  </head>
+  <body>
+
+            <outline
+                title="37signals Dev"
+                text="The 37signals Dev blog is brought to you by the people who build Basecamp and HEY ✌️❤️"
+                type="rss"
+                xmlUrl="https://dev.37signals.com/feed/posts.xml"
+                htmlUrl="https://dev.37signals.com"
+                category="swe"
+            />
+        
+            <outline
+                title="Go (Golang) Programming Blog - Ardan Labs on"
+                text="Recent content in Go (Golang) Programming Blog - Ardan Labs on"
+                type="rss"
+                xmlUrl="https://www.ardanlabs.com/blog/index.xml"
+                htmlUrl="https://www.ardanlabs.com/blog/"
+                category="golang"
+            />
+        
+  </body>
+</opml>
