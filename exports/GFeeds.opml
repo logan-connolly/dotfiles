@@ -23,5 +23,14 @@
                 category="golang"
             />
         
+            <outline
+                title="Martin Fowler"
+                text="Master feed of news and updates from martinfowler.com"
+                type="rss"
+                xmlUrl="https://martinfowler.com/bliki/bliki.atom"
+                htmlUrl="https://martinfowler.com"
+                category="swe"
+            />
+        
   </body>
 </opml>
