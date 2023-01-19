@@ -1,7 +1,6 @@
 bat
 btop
 cmake
-cmus
 direnv
 discord
 docker
@@ -21,6 +20,7 @@ httpie
 imagemagick
 kitty
 lazygit
+lollypop
 lua
 luarocks
 magic-wormhole
