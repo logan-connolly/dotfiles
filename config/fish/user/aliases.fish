@@ -8,7 +8,7 @@ alias v='nvim'
 
 # direnv
 alias di='echo dotenv > .envrc && touch .env && direnv allow'
-alias dipy='echo "layout pyenv 3.9.10" >> .envrc && direnv allow'
+alias dipy='echo "layout pyenv 3.11.1" >> .envrc && direnv allow'
 alias didb='echo "layout postgres" >> .envrc && direnv allow'
 
 # python
