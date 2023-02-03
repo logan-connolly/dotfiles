@@ -23,7 +23,6 @@ return {
 			{ "K", "<cmd>lua vim.lsp.buf.hover()<cr>", desc = "Check signature help" },
 			{ "<c-k>", "<cmd>lua vim.lsp.buf.signature_help()<cr>", desc = "Check signature help", mode = "i" },
 			{ "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<cr>", desc = "Rename symbol" },
-			{ "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<cr>", desc = "Rename symbol" },
 			{ "<leader>k", "<cmd>lua vim.diagnostic.goto_prev()<cr>", desc = "Go to prev diagnostic issue" },
 			{ "<leader>j", "<cmd>lua vim.diagnostic.goto_next()<cr>", desc = "Go to next diagnostic issue" },
 			{ "<leader>l", "<cmd>lua vim.diagnostic.open_float()<cr>", desc = "Get diagnostic issue under cursor" },
