@@ -43,6 +43,29 @@ return {
 		},
 	},
 
+	-- git mergetool
+	{
+		"akinsho/git-conflict.nvim",
+		lazy = false,
+		config = true,
+		opts = {
+			default_mappings = false,
+			highlights = {
+				incoming = "DiffAdd",
+				current = "DiffChange",
+			},
+		},
+		keys = {
+			{ "<leader>mo", "<cmd>GitConflictChooseOurs<cr>", desc = "Choose ours (current)" },
+			{ "<leader>mt", "<cmd>GitConflictChooseTheirs<cr>", desc = "Choose theirs (incoming)" },
+			{ "<leader>mb", "<cmd>GitConflictChooseBoth<cr>", desc = "Choose both" },
+			{ "<leader>mn", "<cmd>GitConflictChooseNone<cr>", desc = "Choose none" },
+			{ "<leader>m]", "<cmd>GitConflictNextConflict<cr>", desc = "Move to next conflict" },
+			{ "<leader>m[", "<cmd>GitConflictPrevConflict<cr>", desc = "Move to prev conflict" },
+			{ "<leader>ml", "<cmd>GitConflictListQf<cr>", desc = "List merge conflicts" },
+		},
+	},
+
 	-- git signs
 	{
 		"lewis6991/gitsigns.nvim",
