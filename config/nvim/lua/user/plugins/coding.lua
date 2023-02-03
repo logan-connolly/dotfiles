@@ -153,6 +153,7 @@ return {
 	-- testing
 	{
 		"vim-test/vim-test",
+		event = "VeryLazy",
 		config = function()
 			vim.g["test#strategy"] = "harpoon"
 			vim.g["test#python#pytest#options"] = "-vv"
