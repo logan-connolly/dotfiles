@@ -1,0 +1,182 @@
+return {
+	-- common utils
+	{ "nvim-lua/plenary.nvim" },
+
+	-- performance
+	{ "dstein64/vim-startuptime", cmd = "StartupTime" },
+
+	-- file explorer
+	{
+		"nvim-neo-tree/neo-tree.nvim",
+		cmd = "Neotree",
+		keys = {
+			{
+				"-",
+				function()
+					require("neo-tree.command").execute({ toggle = true, dir = vim.loop.cwd() })
+				end,
+				desc = "Explorer NeoTree (cwd)",
+			},
+		},
+		deactivate = function()
+			vim.cmd([[Neotree close]])
+		end,
+		init = function()
+			vim.g.neo_tree_remove_legacy_commands = 1
+			if vim.fn.argc() == 1 then
+				local stat = vim.loop.fs_stat(vim.fn.argv(0))
+				if stat and stat.type == "directory" then
+					require("neo-tree")
+				end
+			end
+		end,
+		opts = {
+			filesystem = {
+				bind_to_cwd = false,
+				follow_current_file = true,
+			},
+			window = {
+				mappings = {
+					["<space>"] = "none",
+				},
+			},
+		},
+	},
+
+	-- git signs
+	{
+		"lewis6991/gitsigns.nvim",
+		event = "BufReadPre",
+		opts = {
+			signs = {
+				add = { text = "▎" },
+				change = { text = "▎" },
+				delete = { text = "契" },
+				topdelete = { text = "契" },
+				changedelete = { text = "▎" },
+				untracked = { text = "▎" },
+			},
+			on_attach = function(buffer)
+				local gs = package.loaded.gitsigns
+
+				local function map(mode, l, r, desc)
+					vim.keymap.set(mode, l, r, { buffer = buffer, desc = desc })
+				end
+
+				-- stylua: ignore start
+				map("n", "]h", gs.next_hunk, "Next Hunk")
+				map("n", "[h", gs.prev_hunk, "Prev Hunk")
+				map({ "n", "v" }, "<leader>hs", ":Gitsigns stage_hunk<CR>", "Stage Hunk")
+				map({ "n", "v" }, "<leader>hr", ":Gitsigns reset_hunk<CR>", "Reset Hunk")
+				map("n", "<leader>hS", gs.stage_buffer, "Stage Buffer")
+				map("n", "<leader>hu", gs.undo_stage_hunk, "Undo Stage Hunk")
+				map("n", "<leader>hR", gs.reset_buffer, "Reset Buffer")
+				map("n", "<leader>hp", gs.preview_hunk, "Preview Hunk")
+				map("n", "<leader>hb", function() gs.blame_line({ full = true }) end, "Blame Line")
+				map("n", "<leader>hd", gs.diffthis, "Diff This")
+				map("n", "<leader>hD", function() gs.diffthis("~") end, "Diff This ~")
+				map({ "o", "x" }, "ih", ":<C-U>Gitsigns select_hunk<CR>", "GitSigns Select Hunk")
+			end,
+		},
+	},
+
+	-- references
+	{
+		"RRethy/vim-illuminate",
+		event = "BufReadPost",
+		opts = { delay = 200 },
+		config = function(_, opts)
+			require("illuminate").configure(opts)
+			vim.api.nvim_create_autocmd("FileType", {
+				callback = function()
+					local buffer = vim.api.nvim_get_current_buf()
+					pcall(vim.keymap.del, "n", "]]", { buffer = buffer })
+					pcall(vim.keymap.del, "n", "[[", { buffer = buffer })
+				end,
+			})
+		end,
+		-- stylua: ignore
+		keys = {
+			{ "]]", function() require("illuminate").goto_next_reference(false) end, desc = "Next Reference", },
+			{ "[[", function() require("illuminate").goto_prev_reference(false) end, desc = "Prev Reference" },
+		},
+	},
+
+	-- buffer remove
+	{
+		"echasnovski/mini.bufremove",
+		-- stylua: ignore
+		keys = {
+			{ "<leader>x", function() require("mini.bufremove").delete(0, false) end, desc = "Delete Buffer" },
+			{ "<leader>X", function() require("mini.bufremove").delete(0, true) end, desc = "Delete Buffer (Force)" },
+		},
+	},
+
+	-- better diagnostics list and others
+	{
+		"folke/trouble.nvim",
+		cmd = { "TroubleToggle", "Trouble" },
+		opts = { use_diagnostic_signs = true },
+		keys = {
+			{ "<leader>xx", "<cmd>TroubleToggle document_diagnostics<cr>", desc = "Document Diagnostics (Trouble)" },
+			{ "<leader>xX", "<cmd>TroubleToggle workspace_diagnostics<cr>", desc = "Workspace Diagnostics (Trouble)" },
+		},
+	},
+
+	-- neorg
+	{
+		"nvim-neorg/neorg",
+		ft = "norg",
+		config = function()
+			require("neorg").setup({
+				load = {
+					["core.defaults"] = {},
+					["core.export"] = {},
+					["core.export.markdown"] = {
+						config = {
+							extensions = "all",
+						},
+					},
+					["core.norg.concealer"] = {
+						config = {
+							markup_preset = "conceal",
+							icon_preset = "diamond",
+						},
+					},
+					["core.norg.completion"] = {
+						config = {
+							engine = "nvim-cmp",
+						},
+					},
+				},
+			})
+		end,
+		keys = {
+			{
+				"<leader>nd",
+				"<cmd>Neorg keybind all core.norg.qol.todo_items.todo.task_done<cr>",
+				desc = "Mark as done",
+			},
+			{
+				"<leader>np",
+				"<cmd>Neorg keybind all core.norg.qol.todo_items.todo.task_pending<cr>",
+				desc = "Mark as pending",
+			},
+			{
+				"<leader>nu",
+				"<cmd>Neorg keybind all core.norg.qol.todo_items.todo.task_undone<cr>",
+				desc = "Mark as undone",
+			},
+			{
+				"<leader>nj",
+				"<cmd>Neorg keybind all core.integrations.treesitter.next.heading<cr>",
+				desc = "Go to next heading",
+			},
+			{
+				"<leader>nk",
+				"<cmd>Neorg keybind all core.integrations.treesitter.previous.heading<cr>",
+				desc = "Go to prev heading",
+			},
+		},
+	},
+}
