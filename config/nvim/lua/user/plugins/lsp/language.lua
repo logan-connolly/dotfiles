@@ -24,6 +24,17 @@ end
 M.python = {
 	before_init = function(_, config)
 		config.settings.python.pythonPath = get_python_path(config.root_dir)
+		vim.keymap.set("n", "<leader>td", function()
+			require("dap-python").test_method()
+		end)
+	end,
+}
+
+M.golang = {
+	before_init = function(_, config)
+		vim.keymap.set("n", "<leader>td", function()
+			require("dap-go").debug_test()
+		end)
 	end,
 }
 

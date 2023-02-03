@@ -48,7 +48,7 @@ return {
 			-- LSP Server Settings
 			servers = {
 				cssls = {},
-				gopls = {},
+				gopls = language.golang,
 				html = {},
 				pyright = language.python,
 				sumneko_lua = language.sumneko,
