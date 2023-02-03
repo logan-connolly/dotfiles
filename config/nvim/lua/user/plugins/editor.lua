@@ -2,9 +2,6 @@ return {
 	-- common utils
 	{ "nvim-lua/plenary.nvim" },
 
-	-- performance
-	{ "dstein64/vim-startuptime", cmd = "StartupTime" },
-
 	-- file explorer
 	{
 		"nvim-neo-tree/neo-tree.nvim",
