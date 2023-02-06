@@ -160,6 +160,7 @@ return {
 		end,
 		keys = {
 			{ "<leader>tt", "<cmd>TestNearest<cr>", desc = "Test closest" },
+			{ "<leader>tf", "<cmd>TestFile<cr>", desc = "Test file" },
 			{ "<leader>ta", "<cmd>TestSuite<cr>", desc = "Test suite" },
 			{ "<leader>tl", "<cmd>TestLast<cr>", desc = "Test last" },
 			{ "<leader>tv", "<cmd>TestVisit<cr>", desc = "Test visit" },
