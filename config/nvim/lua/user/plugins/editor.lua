@@ -64,7 +64,7 @@ return {
 	-- git mergetool
 	{
 		"akinsho/git-conflict.nvim",
-		lazy = false,
+		event = "VeryLazy",
 		config = true,
 		opts = {
 			default_mappings = false,

@@ -95,7 +95,7 @@ return {
 	-- status line
 	{
 		"feline-nvim/feline.nvim",
-		lazy = false,
+		event = "VeryLazy",
 		config = function()
 			local vi_mode_utils_ok, vi_mode_utils = pcall(require, "feline.providers.vi_mode")
 			local devicons_ok, devicons = pcall(require, "nvim-web-devicons")
