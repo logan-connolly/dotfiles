@@ -15,7 +15,7 @@ return {
 			wk.register({
 				mode = { "n", "v" },
 				["g"] = { name = "+goto" },
-				["-"] = { name = "+launch" },
+				["\\"] = { name = "+launch" },
 				["<leader>g"] = { name = "+git" },
 				["<leader>h"] = { name = "+hunks" },
 				["<leader>f"] = { name = "+find" },
@@ -40,9 +40,9 @@ return {
 		},
 		keys = {
 			{ "<Esc><Esc>", [[<C-\><C-n>]], mode = "t", desc = "Switch to normal mode", silent = true },
-			{ "--", "<cmd> ToggleTerm <cr>", mode = { "n", "t", "i" }, desc = "Terminal" },
+			{ "\\\\", "<cmd> ToggleTerm <cr>", mode = { "n", "t" }, desc = "Terminal" },
 			{
-				"-g",
+				"\\g",
 				function()
 					require("user.core.util").toggle_lazygit()
 				end,
@@ -50,7 +50,7 @@ return {
 				desc = "Lazygit",
 			},
 			{
-				"-t",
+				"\\t",
 				function()
 					require("user.core.util").toggle_btop()
 				end,
@@ -58,7 +58,7 @@ return {
 				desc = "Btop",
 			},
 			{
-				"-f",
+				"\\f",
 				function()
 					require("user.core.util").toggle_vifm()
 				end,
