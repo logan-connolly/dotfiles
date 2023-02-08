@@ -1,65 +1,31 @@
-local map = vim.api.nvim_set_keymap
+-- Navigation
+vim.keymap.set("n", "<c-j>", "<c-w>j", { remap = false, desc = "Move to split below" })
+vim.keymap.set("n", "<c-k>", "<c-w>k", { remap = false, desc = "Move to split above" })
+vim.keymap.set("n", "<c-h>", "<c-w>h", { remap = false, desc = "Move to left split" })
+vim.keymap.set("n", "<c-l>", "<c-w>l", { remap = false, desc = "Move to right split" })
+vim.keymap.set("n", "n", "nzzzv", { remap = false, desc = "Next search result" })
+vim.keymap.set("n", "N", "Nzzzv", { remap = false, desc = "Prev search result" })
 
--- escape with crtl+c
-map("i", "<c-c>", "<esc>", { noremap = true })
+-- Buffers and Tabs
+vim.keymap.set("n", "<leader>Q", "<cmd>bufdo bdelete<cr>", { remap = false, desc = "Delete all buffers" })
+vim.keymap.set("n", "<leader>X", "<cmd>tabc<cr>", { remap = false, silent = true, desc = "Close current tab" })
 
--- navigate splits
-map("n", "<c-j>", "<c-w>j", { noremap = true })
-map("n", "<c-k>", "<c-w>k", { noremap = true })
-map("n", "<c-h>", "<c-w>h", { noremap = true })
-map("n", "<c-l>", "<c-w>l", { noremap = true })
+-- Editing
+vim.keymap.set("v", "D", '"_d', { remap = false, desc = "Delete without registering" })
+vim.keymap.set("n", "Y", "y$", { remap = false, desc = "Yank to end of line" })
+vim.keymap.set("n", "<leader>Y", 'gg"+yG', { remap = false, desc = "Yank entire buffer" })
+vim.keymap.set("n", "J", "mzJ`z", { remap = false, desc = "Bring up line from below" })
+vim.keymap.set("v", "<", "<gv", { remap = false, desc = "Move indentation to left" })
+vim.keymap.set("v", ">", ">gv", { remap = false, desc = "Move indentation to right" })
+vim.keymap.set("n", "ql", "<cmd>copen<cr>", { remap = false, desc = "Open quickfixlist" })
+vim.keymap.set("n", "qj", "<cmd>cnext<cr>", { remap = false, desc = "Next quickfixlist item" })
+vim.keymap.set("n", "qk", "<cmd>cprev<cr>", { remap = false, desc = "Prev quickfixlist item" })
 
--- disable Q keymap
-map("n", "Q", "<nop>", { noremap = true })
-
--- terminal keymaps
-map("n", "<leader>;", "<cmd>split term://fish<cr>i", { noremap = true })
-map("n", "<leader>'", "<cmd>vsplit term://fish<cr>i", { noremap = true })
-map("t", "<esc>", "<c-\\><c-n>", { noremap = true })
-map("t", "<M-[>", "<esc>", { noremap = true })
-map("t", "<c-v><esc>", "<esc>", { noremap = true })
-
--- delete without registering word
-map("v", "X", '"_d', { noremap = true })
-
--- yank all the content of file to global register
-map("n", "<leader>Y", 'gg"+yG', { noremap = true })
-
--- yank to end of line
-map("n", "Y", "y$", { noremap = true })
-
--- undo break points
-map("i", ",", ",<c-g>u", { noremap = true })
-map("i", ".", ".<c-g>u", { noremap = true })
-map("i", "!", "!<c-g>u", { noremap = true })
-map("i", "?", "?<c-g>u", { noremap = true })
-
--- navigate search while staying centered
-map("n", "n", "nzzzv", { noremap = true })
-map("n", "N", "Nzzzv", { noremap = true })
-
--- Bring up line from below wile staying centered
-map("n", "J", "mzJ`z", { noremap = true })
-
--- open quickfixlist
-map("n", "ql", "<cmd>copen<cr>", { noremap = true })
-map("n", "qj", "<cmd>cnext<cr>", { noremap = true })
-map("n", "qk", "<cmd>cprev<cr>", { noremap = true })
-
--- reselect after indent
-map("v", "<", "<gv", { noremap = true })
-map("v", ">", ">gv", { noremap = true })
-
--- open file according to mimetype
-map("n", "<leader>o", "<cmd>!xdg-open %<cr><cr>", { noremap = true })
-
--- delete all buffers
-map("n", "<leader>Q", "<cmd>bufdo bdelete<cr>", { noremap = true })
-
--- close tab
-map("n", "<leader>X", "<cmd>tabc<cr>", { noremap = true, silent = true })
-
--- open up notes file tree
-vim.keymap.set("n", "<leader>na", function()
-	vim.cmd("e ~/Sync/notes")
-end)
+-- Misc
+vim.keymap.set("n", "<s-tab>", "za", { remap = false, silent = true, desc = "Toggle fold" })
+vim.keymap.set("i", "<c-c>", "<esc>", { remap = false, desc = "Escape with ctrl-c" })
+vim.keymap.set("n", "Q", "<nop>", { remap = false, desc = "Deactivate Q" })
+vim.keymap.set("i", ",", ",<c-g>u", { remap = false, desc = "Undo break point on ," })
+vim.keymap.set("i", ".", ".<c-g>u", { remap = false, desc = "Undo break point on ." })
+vim.keymap.set("i", "!", "!<c-g>u", { remap = false, desc = "Undo break point on !" })
+vim.keymap.set("i", "?", "?<c-g>u", { remap = false, desc = "Undo break point on ?" })
