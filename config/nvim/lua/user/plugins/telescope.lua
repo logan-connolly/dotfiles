@@ -26,6 +26,7 @@ function M.config()
 	local borderless = true
 	telescope.setup({
 		defaults = {
+			path_display = { shorten = 2 },
 			layout_strategy = "horizontal",
 			layout_config = {
 				width = 0.95,
