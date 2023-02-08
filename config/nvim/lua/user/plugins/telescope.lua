@@ -7,11 +7,12 @@ local M = {
 	},
 	keys = {
 		{ "<leader>ff", "<cmd> Telescope find_files <CR>", desc = "Search Files" },
+		{ "<leader>fr", "<cmd> Telescope git_files hidden=true <CR>", desc = "Git Files" },
 		{ "<leader>fF", "<cmd> Telescope find_files follow=true no_ignore=true hidden=true <CR>", desc = "Search All" },
 		{ "<leader>fw", "<cmd> Telescope live_grep <CR>", desc = "Live Grep" },
 		{ "<leader>fb", "<cmd> Telescope buffers <CR>", desc = "Find Buffers" },
 		{ "<leader>fh", "<cmd> Telescope help_tags <CR>", desc = "Help Page" },
-		{ "<leader>fr", "<cmd> Telescope oldfiles <CR>", desc = "Search Recent" },
+		{ "<leader>fo", "<cmd> Telescope oldfiles <CR>", desc = "Search Recent" },
 		{ "<leader>fk", "<cmd> Telescope keymaps <CR>", desc = "Show Keys" },
 		{ "<leader>fg", "<cmd> Telescope git_status <CR>", desc = "Show Git Status" },
 		{ "<leader>fs", "<cmd> Telescope treesitter <CR>", desc = "Show Treesitter Symbols" },
@@ -54,10 +55,10 @@ function M.config()
 			mappings = {
 				i = {
 					["<C-Down>"] = function(...)
-						return require("telescope.actions").cycle_history_next(...)
+						return actions.cycle_history_next(...)
 					end,
 					["<C-Up>"] = function(...)
-						return require("telescope.actions").cycle_history_prev(...)
+						return actions.cycle_history_prev(...)
 					end,
 				},
 			},
