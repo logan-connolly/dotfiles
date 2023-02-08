@@ -3,7 +3,9 @@ local M = {
 	cmd = { "Telescope" },
 	lazy = true,
 	dependencies = {
+		{ "nvim-lua/plenary.nvim" },
 		{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+		{ "nvim-telescope/telescope-file-browser.nvim" },
 	},
 	keys = {
 		{ "<leader>ff", "<cmd> Telescope find_files <CR>", desc = "Search Files" },
@@ -17,6 +19,15 @@ local M = {
 		{ "<leader>fg", "<cmd> Telescope git_status <CR>", desc = "Show Git Status" },
 		{ "<leader>fs", "<cmd> Telescope treesitter <CR>", desc = "Show Treesitter Symbols" },
 		{ "<leader>fn", "<cmd> Telescope find_files cwd=~/Sync/notes <CR>", desc = "Show Notes" },
+		{
+			"-",
+			function()
+				require("telescope").extensions.file_browser.file_browser({
+					cwd = require("telescope.utils").buffer_dir(),
+				})
+			end,
+			desc = "File browser (vinegar)",
+		},
 	},
 }
 
@@ -70,6 +81,7 @@ function M.config()
 	})
 
 	telescope.load_extension("fzf")
+	telescope.load_extension("file_browser")
 end
 
 return M

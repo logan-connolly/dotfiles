@@ -1,7 +1,4 @@
 return {
-	-- common utils
-	{ "nvim-lua/plenary.nvim" },
-
 	-- which key
 	{
 		"folke/which-key.nvim",
