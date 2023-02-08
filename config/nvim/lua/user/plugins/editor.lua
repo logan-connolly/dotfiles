@@ -15,6 +15,7 @@ return {
 			wk.register({
 				mode = { "n", "v" },
 				["g"] = { name = "+goto" },
+				["-"] = { name = "+launch" },
 				["<leader>g"] = { name = "+git" },
 				["<leader>h"] = { name = "+hunks" },
 				["<leader>f"] = { name = "+find" },
@@ -23,40 +24,46 @@ return {
 		end,
 	},
 
-	-- file explorer
+	-- toggleterm
 	{
-		"nvim-neo-tree/neo-tree.nvim",
-		cmd = "Neotree",
-		keys = {
-			{
-				"-",
-				function()
-					require("neo-tree.command").execute({ toggle = true, dir = vim.loop.cwd() })
-				end,
-				desc = "Explorer NeoTree (cwd)",
+		"akinsho/toggleterm.nvim",
+		event = "VeryLazy",
+		config = true,
+		opts = {
+			direction = "float",
+			close_on_exit = true,
+			float_opts = {
+				border = "curved",
+				width = 130,
+				height = 35,
 			},
 		},
-		deactivate = function()
-			vim.cmd([[Neotree close]])
-		end,
-		init = function()
-			vim.g.neo_tree_remove_legacy_commands = 1
-			if vim.fn.argc() == 1 then
-				local stat = vim.loop.fs_stat(vim.fn.argv(0))
-				if stat and stat.type == "directory" then
-					require("neo-tree")
-				end
-			end
-		end,
-		opts = {
-			filesystem = {
-				bind_to_cwd = false,
-				follow_current_file = true,
+		keys = {
+			{ "<Esc><Esc>", [[<C-\><C-n>]], mode = "t", desc = "Switch to normal mode", silent = true },
+			{ "--", "<cmd> ToggleTerm <cr>", mode = { "n", "t", "i" }, desc = "Terminal" },
+			{
+				"-g",
+				function()
+					require("user.core.util").toggle_lazygit()
+				end,
+				mode = { "n", "t" },
+				desc = "Lazygit",
 			},
-			window = {
-				mappings = {
-					["<space>"] = "none",
-				},
+			{
+				"-t",
+				function()
+					require("user.core.util").toggle_btop()
+				end,
+				mode = { "n", "t" },
+				desc = "Btop",
+			},
+			{
+				"-f",
+				function()
+					require("user.core.util").toggle_vifm()
+				end,
+				mode = { "n", "t" },
+				desc = "Vifm",
 			},
 		},
 	},

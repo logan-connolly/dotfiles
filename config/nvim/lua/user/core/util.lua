@@ -175,4 +175,31 @@ function M.lazy_notify()
 	timer:start(500, 0, replay)
 end
 
+local _lazygit = nil
+function M.toggle_lazygit()
+	if not _lazygit then
+		local Terminal = require("toggleterm.terminal").Terminal
+		_lazygit = Terminal:new({ cmd = "lazygit", hidden = true })
+	end
+	_lazygit:toggle()
+end
+
+local _vifm = nil
+function M.toggle_vifm()
+	if not _vifm then
+		local Terminal = require("toggleterm.terminal").Terminal
+		_vifm = Terminal:new({ cmd = "vifm " .. M.get_root(), hidden = true })
+	end
+	_vifm:toggle()
+end
+
+local _btop = nil
+function M.toggle_btop()
+	if not _btop then
+		local Terminal = require("toggleterm.terminal").Terminal
+		_btop = Terminal:new({ cmd = "btop", hidden = true })
+	end
+	_btop:toggle()
+end
+
 return M
