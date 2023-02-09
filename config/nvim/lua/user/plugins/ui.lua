@@ -12,7 +12,6 @@ return {
 	-- better vim.ui
 	{
 		"stevearc/dressing.nvim",
-		lazy = true,
 		init = function()
 			---@diagnostic disable-next-line: duplicate-set-field
 			vim.ui.select = function(...)
@@ -28,10 +27,10 @@ return {
 	},
 
 	-- icons
-	{ "nvim-tree/nvim-web-devicons", lazy = true },
+	{ "nvim-tree/nvim-web-devicons" },
 
 	-- ui components
-	{ "MunifTanjim/nui.nvim", lazy = true },
+	{ "MunifTanjim/nui.nvim" },
 
 	-- dashboard
 	{
@@ -81,7 +80,7 @@ return {
 			require("alpha").setup(dashboard.opts)
 
 			vim.api.nvim_create_autocmd("User", {
-				pattern = "LazyVimStarted",
+				pattern = "VeryLazy",
 				callback = function()
 					local stats = require("lazy").stats()
 					local ms = (math.floor(stats.startuptime * 100 + 0.5) / 100)

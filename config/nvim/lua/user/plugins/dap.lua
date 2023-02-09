@@ -1,6 +1,5 @@
 local M = {
 	"mfussenegger/nvim-dap",
-
 	dependencies = {
 		{ "theHamsta/nvim-dap-virtual-text", config = true },
 		{ "leoluz/nvim-dap-go", config = true },

@@ -79,60 +79,6 @@ return {
 		end,
 	},
 
-	-- harpoon
-	{
-		"ThePrimeagen/harpoon",
-		keys = {
-			{ "<leader>fa", "<cmd> lua require('harpoon.mark').add_file()<cr>", desc = "Add file to harpoon" },
-			{ "<leader>fm", "<cmd> lua require('harpoon.ui').toggle_quick_menu()<cr>", desc = "Show harpoon menu" },
-			{ "<leader>fN", "<cmd> lua require('harpoon.ui').nav_next()<cr>", desc = "Navigate to next file" },
-			{ "<leader>fP", "<cmd> lua require('harpoon.ui').nav_prev()<cr>", desc = "Navigate to prev file" },
-			{ "<leader>1", "<cmd> lua require('harpoon.ui').nav_file(1)<cr>", desc = "Navigate to file 1" },
-			{ "<leader>2", "<cmd> lua require('harpoon.ui').nav_file(2)<cr>", desc = "Navigate to file 2" },
-			{ "<leader>3", "<cmd> lua require('harpoon.ui').nav_file(3)<cr>", desc = "Navigate to file 3" },
-			{ "<leader>4", "<cmd> lua require('harpoon.ui').nav_file(4)<cr>", desc = "Navigate to file 4" },
-			{ "<leader>5", "<cmd> lua require('harpoon.ui').nav_file(5)<cr>", desc = "Navigate to file 5" },
-			{ "<leader>6", "<cmd> lua require('harpoon.ui').nav_file(6)<cr>", desc = "Navigate to file 6" },
-			{ "<leader>7", "<cmd> lua require('harpoon.ui').nav_file(7)<cr>", desc = "Navigate to file 7" },
-			{ "<leader>8", "<cmd> lua require('harpoon.ui').nav_file(8)<cr>", desc = "Navigate to file 8" },
-		},
-	},
-
-	-- surround
-	{
-		"echasnovski/mini.surround",
-		keys = { "gz" },
-		config = function()
-			require("mini.surround").setup({
-				mappings = {
-					add = "gza", -- Add surrounding in Normal and Visual modes
-					delete = "gzd", -- Delete surrounding
-					find = "gzf", -- Find surrounding (to the right)
-					find_left = "gzF", -- Find surrounding (to the left)
-					highlight = "gzh", -- Highlight surrounding
-					replace = "gzr", -- Replace surrounding
-					update_n_lines = "gzn", -- Update `n_lines`
-				},
-			})
-		end,
-	},
-
-	-- comments
-	{
-		"echasnovski/mini.comment",
-		event = "VeryLazy",
-		opts = {
-			hooks = {
-				pre = function()
-					--require("ts_context_commentstring.internal").update_commentstring({})
-				end,
-			},
-		},
-		config = function(_, opts)
-			require("mini.comment").setup(opts)
-		end,
-	},
-
 	-- git
 	{
 		"tpope/vim-fugitive",
@@ -147,6 +93,65 @@ return {
 			{ "<leader>gd", "<cmd>G diff %<cr>", desc = "Git diff (file)" },
 			{ "<leader>gD", "<cmd>G diff<cr>", desc = "Git diff (workspace)" },
 			{ "<leader>gb", "<cmd>G blame<cr>", desc = "Git blame" },
+		},
+	},
+
+	-- git mergetool
+	{
+		"akinsho/git-conflict.nvim",
+		event = "VeryLazy",
+		config = true,
+		opts = {
+			default_mappings = false,
+			highlights = {
+				incoming = "DiffAdd",
+				current = "DiffChange",
+			},
+		},
+		keys = {
+			{ "<leader>mo", "<cmd>GitConflictChooseOurs<cr>", desc = "Choose ours (current)" },
+			{ "<leader>mt", "<cmd>GitConflictChooseTheirs<cr>", desc = "Choose theirs (incoming)" },
+			{ "<leader>mb", "<cmd>GitConflictChooseBoth<cr>", desc = "Choose both" },
+			{ "<leader>mn", "<cmd>GitConflictChooseNone<cr>", desc = "Choose none" },
+			{ "<leader>m]", "<cmd>GitConflictNextConflict<cr>", desc = "Move to next conflict" },
+			{ "<leader>m[", "<cmd>GitConflictPrevConflict<cr>", desc = "Move to prev conflict" },
+			{ "<leader>ml", "<cmd>GitConflictListQf<cr>", desc = "List merge conflicts" },
+		},
+	},
+
+	-- git signs
+	{
+		"lewis6991/gitsigns.nvim",
+		event = "BufReadPre",
+		opts = {
+			signs = {
+				add = { text = "▎" },
+				change = { text = "▎" },
+				delete = { text = "契" },
+				topdelete = { text = "契" },
+				changedelete = { text = "▎" },
+				untracked = { text = "▎" },
+			},
+			on_attach = function(buffer)
+				local gs = package.loaded.gitsigns
+
+				local function map(mode, l, r, desc)
+					vim.keymap.set(mode, l, r, { buffer = buffer, desc = desc })
+				end
+
+				-- stylua: ignore start
+				map("n", "<leader>h]", gs.next_hunk, "Next Hunk")
+				map("n", "<leader>h[", gs.prev_hunk, "Prev Hunk")
+				map({ "n", "v" }, "<leader>hs", ":Gitsigns stage_hunk<CR>", "Stage Hunk")
+				map({ "n", "v" }, "<leader>hr", ":Gitsigns reset_hunk<CR>", "Reset Hunk")
+				map("n", "<leader>hS", gs.stage_buffer, "Stage Buffer")
+				map("n", "<leader>hu", gs.undo_stage_hunk, "Undo Stage Hunk")
+				map("n", "<leader>hR", gs.reset_buffer, "Reset Buffer")
+				map("n", "<leader>hp", gs.preview_hunk, "Preview Hunk")
+				map("n", "<leader>hb", function() gs.blame_line({ full = true }) end, "Blame Line")
+				map("n", "<leader>hd", gs.diffthis, "Diff This")
+				map("n", "<leader>hD", function() gs.diffthis("~") end, "Diff This ~")
+			end,
 		},
 	},
 

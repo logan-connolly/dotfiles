@@ -65,64 +65,28 @@ return {
 		},
 	},
 
-	-- git mergetool
+	-- harpoon
 	{
-		"akinsho/git-conflict.nvim",
-		event = "VeryLazy",
-		config = true,
-		opts = {
-			default_mappings = false,
-			highlights = {
-				incoming = "DiffAdd",
-				current = "DiffChange",
-			},
-		},
+		"ThePrimeagen/harpoon",
 		keys = {
-			{ "<leader>mo", "<cmd>GitConflictChooseOurs<cr>", desc = "Choose ours (current)" },
-			{ "<leader>mt", "<cmd>GitConflictChooseTheirs<cr>", desc = "Choose theirs (incoming)" },
-			{ "<leader>mb", "<cmd>GitConflictChooseBoth<cr>", desc = "Choose both" },
-			{ "<leader>mn", "<cmd>GitConflictChooseNone<cr>", desc = "Choose none" },
-			{ "<leader>m]", "<cmd>GitConflictNextConflict<cr>", desc = "Move to next conflict" },
-			{ "<leader>m[", "<cmd>GitConflictPrevConflict<cr>", desc = "Move to prev conflict" },
-			{ "<leader>ml", "<cmd>GitConflictListQf<cr>", desc = "List merge conflicts" },
+			{ "<leader>fa", "<cmd> lua require('harpoon.mark').add_file()<cr>", desc = "Add file to harpoon" },
+			{ "<leader>fm", "<cmd> lua require('harpoon.ui').toggle_quick_menu()<cr>", desc = "Show harpoon menu" },
+			{ "<leader>fN", "<cmd> lua require('harpoon.ui').nav_next()<cr>", desc = "Navigate to next file" },
+			{ "<leader>fP", "<cmd> lua require('harpoon.ui').nav_prev()<cr>", desc = "Navigate to prev file" },
+			{ "<leader>1", "<cmd> lua require('harpoon.ui').nav_file(1)<cr>", desc = "Navigate to file 1" },
+			{ "<leader>2", "<cmd> lua require('harpoon.ui').nav_file(2)<cr>", desc = "Navigate to file 2" },
+			{ "<leader>3", "<cmd> lua require('harpoon.ui').nav_file(3)<cr>", desc = "Navigate to file 3" },
+			{ "<leader>4", "<cmd> lua require('harpoon.ui').nav_file(4)<cr>", desc = "Navigate to file 4" },
 		},
 	},
 
-	-- git signs
+	-- comments
 	{
-		"lewis6991/gitsigns.nvim",
-		event = "BufReadPre",
-		opts = {
-			signs = {
-				add = { text = "▎" },
-				change = { text = "▎" },
-				delete = { text = "契" },
-				topdelete = { text = "契" },
-				changedelete = { text = "▎" },
-				untracked = { text = "▎" },
-			},
-			on_attach = function(buffer)
-				local gs = package.loaded.gitsigns
-
-				local function map(mode, l, r, desc)
-					vim.keymap.set(mode, l, r, { buffer = buffer, desc = desc })
-				end
-
-				-- stylua: ignore start
-				map("n", "]h", gs.next_hunk, "Next Hunk")
-				map("n", "[h", gs.prev_hunk, "Prev Hunk")
-				map({ "n", "v" }, "<leader>hs", ":Gitsigns stage_hunk<CR>", "Stage Hunk")
-				map({ "n", "v" }, "<leader>hr", ":Gitsigns reset_hunk<CR>", "Reset Hunk")
-				map("n", "<leader>hS", gs.stage_buffer, "Stage Buffer")
-				map("n", "<leader>hu", gs.undo_stage_hunk, "Undo Stage Hunk")
-				map("n", "<leader>hR", gs.reset_buffer, "Reset Buffer")
-				map("n", "<leader>hp", gs.preview_hunk, "Preview Hunk")
-				map("n", "<leader>hb", function() gs.blame_line({ full = true }) end, "Blame Line")
-				map("n", "<leader>hd", gs.diffthis, "Diff This")
-				map("n", "<leader>hD", function() gs.diffthis("~") end, "Diff This ~")
-				map({ "o", "x" }, "ih", ":<C-U>Gitsigns select_hunk<CR>", "GitSigns Select Hunk")
-			end,
-		},
+		"echasnovski/mini.comment",
+		event = "VeryLazy",
+		config = function(_, opts)
+			require("mini.comment").setup(opts)
+		end,
 	},
 
 	-- references
