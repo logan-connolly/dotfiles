@@ -38,7 +38,7 @@ M.golang = {
 	end,
 }
 
-M.sumneko = {
+M.lua = {
 	settings = {
 		Lua = {
 			runtime = { version = "LuaJIT" },

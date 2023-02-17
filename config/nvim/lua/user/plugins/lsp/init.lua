@@ -51,7 +51,7 @@ return {
 				gopls = language.golang,
 				html = {},
 				pyright = language.python,
-				sumneko_lua = language.sumneko,
+				lua_ls = language.lua,
 				tsserver = {},
 			},
 			-- you can do any additional lsp server setup here
