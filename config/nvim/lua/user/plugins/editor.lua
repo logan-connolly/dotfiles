@@ -32,8 +32,8 @@ return {
 			close_on_exit = true,
 			float_opts = {
 				border = "curved",
-				width = 130,
-				height = 35,
+				width = 180,
+				height = 65,
 			},
 		},
 		keys = {
