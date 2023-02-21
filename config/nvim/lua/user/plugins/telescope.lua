@@ -17,7 +17,6 @@ local M = {
 		{ "<leader>fk", "<cmd> Telescope keymaps <CR>", desc = "Show Keys" },
 		{ "<leader>fg", "<cmd> Telescope git_status <CR>", desc = "Show Git Status" },
 		{ "<leader>fs", "<cmd> Telescope treesitter <CR>", desc = "Show Treesitter Symbols" },
-		{ "<leader>fn", "<cmd> Telescope find_files cwd=~/Sync/notes <CR>", desc = "Show Notes" },
 		{
 			"-",
 			function()

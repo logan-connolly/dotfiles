@@ -17,6 +17,7 @@ return {
 				["<leader>h"] = { name = "+hunks" },
 				["<leader>f"] = { name = "+find" },
 				["<leader>m"] = { name = "+mergetool" },
+				["<leader>n"] = { name = "+neorg" },
 			})
 		end,
 	},
@@ -135,57 +136,42 @@ return {
 	-- neorg
 	{
 		"nvim-neorg/neorg",
-		ft = "norg",
+		event = "VeryLazy",
+		keys = {
+			{ "<leader>nn", "<cmd>Neorg workspace notes<cr>", desc = "Open notes" },
+			{ "<leader>nw", "<cmd>Neorg workspace work<cr>", desc = "Open work notes" },
+			{ "<leader>nr", "<cmd>Neorg return<cr>", desc = "Return back to project" },
+		},
+		init = function()
+			-- adjust fold level of norg files
+			vim.wo.foldlevel = 1
+		end,
 		config = function()
 			require("neorg").setup({
 				load = {
 					["core.defaults"] = {},
+					["core.norg.concealer"] = {
+						config = {
+							icon_preset = "diamond",
+						},
+					},
+					["core.norg.dirman"] = {
+						config = {
+							workspaces = {
+								notes = "~/notes",
+								work = "~/notes/work",
+							},
+							default = "notes",
+						},
+					},
 					["core.export"] = {},
 					["core.export.markdown"] = {
 						config = {
 							extensions = "all",
 						},
 					},
-					["core.norg.concealer"] = {
-						config = {
-							markup_preset = "conceal",
-							icon_preset = "diamond",
-						},
-					},
-					["core.norg.completion"] = {
-						config = {
-							engine = "nvim-cmp",
-						},
-					},
 				},
 			})
 		end,
-		keys = {
-			{
-				"<leader>nd",
-				"<cmd>Neorg keybind all core.norg.qol.todo_items.todo.task_done<cr>",
-				desc = "Mark as done",
-			},
-			{
-				"<leader>np",
-				"<cmd>Neorg keybind all core.norg.qol.todo_items.todo.task_pending<cr>",
-				desc = "Mark as pending",
-			},
-			{
-				"<leader>nu",
-				"<cmd>Neorg keybind all core.norg.qol.todo_items.todo.task_undone<cr>",
-				desc = "Mark as undone",
-			},
-			{
-				"<leader>nj",
-				"<cmd>Neorg keybind all core.integrations.treesitter.next.heading<cr>",
-				desc = "Go to next heading",
-			},
-			{
-				"<leader>nk",
-				"<cmd>Neorg keybind all core.integrations.treesitter.previous.heading<cr>",
-				desc = "Go to prev heading",
-			},
-		},
 	},
 }
