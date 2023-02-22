@@ -44,4 +44,6 @@ vim.wo.colorcolumn = "90"
 vim.bo.expandtab = true
 vim.bo.smartindent = true
 vim.bo.autoindent = true
-vim.bo.swapfile = false
+
+-- opts
+vim.opt.swapfile = false
