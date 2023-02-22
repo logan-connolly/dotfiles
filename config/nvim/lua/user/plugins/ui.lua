@@ -9,6 +9,13 @@ return {
 		end,
 	},
 
+	-- simple notifier
+	{
+		"vigoux/notifier.nvim",
+		event = "VeryLazy",
+		config = true,
+	},
+
 	-- better vim.ui
 	{
 		"stevearc/dressing.nvim",
