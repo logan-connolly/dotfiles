@@ -103,13 +103,8 @@ return {
 		"feline-nvim/feline.nvim",
 		event = "VeryLazy",
 		config = function()
-			local vi_mode_utils_ok, vi_mode_utils = pcall(require, "feline.providers.vi_mode")
-			local devicons_ok, devicons = pcall(require, "nvim-web-devicons")
-
-			if not vi_mode_utils_ok or not devicons_ok then
-				vim.notify("Unable to load feline dependencies")
-				return
-			end
+			local vi_mode_utils = require("feline.providers.vi_mode")
+			local devicons = require("nvim-web-devicons")
 
 			local force_inactive = {
 				filetypes = {},
