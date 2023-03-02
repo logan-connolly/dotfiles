@@ -3,6 +3,7 @@ local M = {
 	dependencies = {
 		{ "theHamsta/nvim-dap-virtual-text", config = true },
 		{ "leoluz/nvim-dap-go", config = true },
+		{ "ofirgall/goto-breakpoints.nvim" },
 		{
 			"mfussenegger/nvim-dap-python",
 			config = function()
@@ -57,6 +58,14 @@ function M.init()
 	vim.keymap.set("n", "<F2>", function()
 		require("dap").step_into()
 	end, { desc = "Step Into" })
+
+	vim.keymap.set("n", "<leader>dn", function()
+		require("goto-breakpoints").next()
+	end, { desc = "Next breakpoint" })
+
+	vim.keymap.set("n", "<leader>dN", function()
+		require("goto-breakpoints").prev()
+	end, { desc = "Prev breakpoint" })
 
 	vim.keymap.set("n", "<leader>dk", function()
 		require("dap.ui.widgets").hover()
