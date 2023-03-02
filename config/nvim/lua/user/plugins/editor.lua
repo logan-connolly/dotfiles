@@ -109,8 +109,8 @@ return {
 		cmd = { "TroubleToggle", "Trouble" },
 		opts = { use_diagnostic_signs = true },
 		keys = {
-			{ "<leader>tt", "<cmd>TroubleToggle document_diagnostics<cr>", desc = "Document Diagnostics (Trouble)" },
-			{ "<leader>tT", "<cmd>TroubleToggle workspace_diagnostics<cr>", desc = "Workspace Diagnostics (Trouble)" },
+			{ "<leader>ft", "<cmd>TroubleToggle document_diagnostics<cr>", desc = "Document Diagnostics (Trouble)" },
+			{ "<leader>fT", "<cmd>TroubleToggle workspace_diagnostics<cr>", desc = "Workspace Diagnostics (Trouble)" },
 		},
 	},
 
