@@ -2,6 +2,7 @@
 alias o='xdg-open'
 alias pcat='bat --theme="base16-256"'
 alias ssh='kitty +kitten ssh'
+alias yank='wl-copy'
 
 # neovim
 alias v='nvim'
@@ -56,6 +57,7 @@ alias gl='git log'
 alias glf='git log -p'
 alias glo='git log --oneline --decorate'
 alias gls='git log --stat'
+alias glb='git log --pretty="- %s" origin/master..'
 alias gp='git push'
 alias gpf='git push --force-with-lease'
 alias gpl='git pull'
