@@ -126,6 +126,9 @@ return {
 		init = function()
 			-- adjust fold level of norg files
 			vim.wo.foldlevel = 1
+			-- adjust concealer level for links
+			vim.wo.conceallevel = 3
+			vim.wo.concealcursor = "nc"
 		end,
 		config = function()
 			require("neorg").setup({
