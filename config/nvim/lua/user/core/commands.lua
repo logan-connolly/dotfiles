@@ -26,3 +26,9 @@ vim.api.nvim_create_autocmd(
 	{ "Filetype" },
 	{ pattern = { "dap-repl" }, command = [[lua require('dap.ext.autocompl').attach()]] }
 )
+
+-- set concealer and fold level for neorg
+vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
+	pattern = { "*.norg" },
+	command = [[set conceallevel=3 concealcursor=nc foldlevel=1]],
+})
