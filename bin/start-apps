@@ -1,5 +1,0 @@
-#!/bin/bash
-
-notion-app 1> /dev/null 2> /dev/null &
-discord 1> /dev/null 2> /dev/null &
-signal-desktop 1> /dev/null 2> /dev/null &
