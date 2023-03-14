@@ -63,6 +63,14 @@ return {
 				mode = { "n", "t" },
 				desc = "Vifm",
 			},
+			{
+				"\\l",
+				function()
+					require("user.core.util").toggle_logs()
+				end,
+				mode = { "n", "t" },
+				desc = "Logs",
+			},
 		},
 	},
 

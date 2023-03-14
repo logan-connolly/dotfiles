@@ -202,4 +202,13 @@ function M.toggle_btop()
 	_btop:toggle()
 end
 
+local _logs = nil
+function M.toggle_logs()
+	if not _logs then
+		local Terminal = require("toggleterm.terminal").Terminal
+		_logs = Terminal:new({ cmd = "make logs", hidden = true })
+	end
+	_logs:toggle()
+end
+
 return M
