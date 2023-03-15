@@ -14,10 +14,6 @@ enable_firewall() {
   echo "ufw firewall enabled."
 }
 
-enable_syncthing() {
-  sudo systemctl enable --now syncthing@${USER}.service
-}
-
 enable_services() {
   services="bluetooth docker gdm"
   echo "Enabling the following services: $services"
@@ -29,5 +25,4 @@ enable_services() {
 
 modify_user
 enable_firewall
-enable_syncthing
 enable_services
