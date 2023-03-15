@@ -36,7 +36,6 @@ noto-fonts-emoji
 noto-fonts-extra
 npm
 openssh
-python-pynvim
 python-psycopg2
 pyenv
 ripgrep
