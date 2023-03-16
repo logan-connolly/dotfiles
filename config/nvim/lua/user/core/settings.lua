@@ -1,33 +1,26 @@
--- global variables
+-- global variables and options
 vim.g.mapleader = " "
 vim.g.python3_host_prog = "/usr/bin/python"
+vim.opt.swapfile = false
 
 -- global scope settings
 vim.o.syntax = "on"
 vim.o.guicursor = ""
-vim.o.encoding = "UTF-8"
 vim.o.exrc = true
-vim.o.number = true
-vim.o.incsearch = true
 vim.o.showmode = false
 vim.o.compatible = false
-vim.o.errorbells = false
 vim.o.tabstop = 2
 vim.o.softtabstop = 2
 vim.o.shiftwidth = 2
 vim.o.splitright = true
 vim.o.splitbelow = true
-vim.o.background = "dark"
 vim.o.mouse = "a"
 vim.o.hlsearch = false
 vim.o.updatetime = 50
 vim.o.shortmess = vim.o.shortmess .. "c"
 vim.o.writebackup = false
-vim.o.backup = false
-vim.o.cmdheight = 1
 vim.o.termguicolors = true
 vim.o.completeopt = "menuone,noinsert,noselect"
-vim.o.hidden = true
 vim.o.clipboard = "unnamedplus"
 vim.o.ttimeoutlen = 0
 
@@ -44,6 +37,3 @@ vim.wo.colorcolumn = "90"
 vim.bo.expandtab = true
 vim.bo.smartindent = true
 vim.bo.autoindent = true
-
--- opts
-vim.opt.swapfile = false
