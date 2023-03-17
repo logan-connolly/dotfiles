@@ -125,6 +125,12 @@ function M.config()
 	dap.listeners.before.event_exited["dapui_config"] = function()
 		dapui.close({})
 	end
+
+	-- add autocomplete for dap repl
+	vim.api.nvim_create_autocmd(
+		{ "Filetype" },
+		{ pattern = { "dap-repl" }, command = [[lua require('dap.ext.autocompl').attach()]] }
+	)
 end
 
 return M

@@ -5,6 +5,12 @@ return {
 		lazy = false, -- make sure we load this during startup if it is your main colorscheme
 		priority = 1000, -- make sure to load this before all the other start plugins
 		config = function()
+			-- transparent background
+			vim.api.nvim_create_autocmd({ "ColorScheme" }, {
+				pattern = { "*" },
+				command = [[hi Normal ctermbg=none guibg=none | hi NonText ctermbg=NONE guibg=NONE | hi EndOfBuffer ctermbg=NONE guibg=NONE]],
+			})
+
 			vim.cmd("colorscheme gruvbox-material")
 		end,
 	},

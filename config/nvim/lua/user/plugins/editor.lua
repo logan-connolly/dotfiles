@@ -157,6 +157,11 @@ return {
 					},
 				},
 			})
+			-- set concealer and fold level for neorg
+			vim.api.nvim_create_autocmd({ "Filetype" }, {
+				pattern = { "norg" },
+				command = [[setlocal wrap linebreak conceallevel=3 concealcursor=nc foldlevel=1]],
+			})
 		end,
 	},
 }
