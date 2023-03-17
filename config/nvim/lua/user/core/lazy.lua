@@ -5,16 +5,7 @@ require("lazy").setup({
 	defaults = {
 		lazy = true,
 	},
-	install = { colorscheme = { "gruvbox-material", "habamax" } },
-	checker = { enabled = false },
-	diff = {
-		cmd = "terminal_git",
-	},
 	performance = {
-		cache = {
-			enabled = true,
-			-- disable_events = {},
-		},
 		rtp = {
 			disabled_plugins = {
 				"getscript",
