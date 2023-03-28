@@ -146,8 +146,8 @@ return {
 			}
 
 			local colors = {
-				bg = "#282828",
-				black = "#282828",
+				bg = "#1D2122m",
+				black = "#1D2122m",
 				grey = "#292929",
 				yellow = "#d8a657",
 				cyan = "#89b482",
