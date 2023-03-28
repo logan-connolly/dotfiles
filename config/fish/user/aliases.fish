@@ -28,7 +28,7 @@ alias tmka='tmux ls | cut -d: -f1 | xargs -I {} sh -c "tmux kill-session -t {}"'
 # list files
 alias ll='exa --long --icons'
 alias la='exa --all --long --icons'
-alias tree="exa --icons --tree -I '__pycache__|.git|venv|node_modules'"
+alias tree="exa --icons --tree -I '__pycache__|.git|venv|node_modules|*.egg-info'"
 
 # lazygit
 alias lg='lazygit'
