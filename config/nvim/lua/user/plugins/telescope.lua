@@ -76,6 +76,11 @@ function M.config()
 			selection_caret = " ",
 			winblend = borderless and 0 or 10,
 		},
+		pickers = {
+			oldfiles = {
+				cwd_only = true,
+			},
+		},
 	})
 
 	telescope.load_extension("fzf")
