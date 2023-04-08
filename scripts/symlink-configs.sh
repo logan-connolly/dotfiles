@@ -13,10 +13,10 @@ symlink_dir() {
 }
 
 create_links() {
-  ln -vsf $CONFIG_DIR/.gitconfig ~/.gitconfig
-  ln -vsf $CONFIG_DIR/.gitconfig-personal ~/.gitconfig-personal
-  ln -vsf $CONFIG_DIR/.gitconfig-work ~/.gitconfig-work
-  ln -vsf $CONFIG_DIR/.gitignore_global ~/.gitignore_global
+  ln -vsf $CONFIG_DIR/git/.gitconfig ~/.gitconfig
+  ln -vsf $CONFIG_DIR/git/.gitconfig-personal ~/.gitconfig-personal
+  ln -vsf $CONFIG_DIR/git/.gitconfig-work ~/.gitconfig-work
+  ln -vsf $CONFIG_DIR/git/.gitignore_global ~/.gitignore_global
   ln -vsf $CONFIG_DIR/starship.toml ~/.config/starship.toml
   symlink_dir $CONFIG_DIR/dconf/applications ~/.local/share/applications
   symlink_dir $CONFIG_DIR/direnv ~/.config/direnv
