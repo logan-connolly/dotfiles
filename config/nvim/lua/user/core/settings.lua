@@ -23,6 +23,7 @@ vim.o.termguicolors = true
 vim.o.completeopt = "menuone,noinsert,noselect"
 vim.o.clipboard = "unnamedplus"
 vim.o.ttimeoutlen = 0
+vim.o.pumheight = 7
 
 -- window scope settings
 vim.wo.number = true
