@@ -89,7 +89,7 @@ return {
 			local capabilities =
 				require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
-			-- override hover options
+			-- override popup hover options
 			vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
 				border = "rounded",
 			})
@@ -97,6 +97,7 @@ return {
 				border = "rounded",
 			})
 			vim.api.nvim_set_hl(0, "NormalFloat", { ctermbg = 0 })
+			vim.api.nvim_set_hl(0, "FloatBorder", { fg = "#7C6F64" })
 
 			local function setup(server)
 				local server_opts = servers[server] or {}
