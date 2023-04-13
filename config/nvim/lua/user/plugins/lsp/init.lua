@@ -89,12 +89,14 @@ return {
 			local capabilities =
 				require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
+			-- override hover options
 			vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
 				border = "rounded",
 			})
 			vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
 				border = "rounded",
 			})
+			vim.api.nvim_set_hl(0, "NormalFloat", { ctermbg = 0 })
 
 			local function setup(server)
 				local server_opts = servers[server] or {}
