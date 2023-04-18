@@ -16,6 +16,7 @@ fzf
 git
 github-cli
 go
+gdu
 httpie
 imagemagick
 kitty
@@ -25,7 +26,6 @@ lua
 luarocks
 magic-wormhole
 mpv
-ncdu
 neovim
 nerd-fonts-jetbrains-mono
 nodejs
