@@ -30,11 +30,7 @@ return {
 		opts = {
 			direction = "float",
 			close_on_exit = true,
-			float_opts = {
-				border = "curved",
-				width = 180,
-				height = 65,
-			},
+			float_opts = { border = "curved" },
 		},
 		keys = {
 			{ "<Esc><Esc>", [[<C-\><C-n>]], mode = "t", desc = "Switch to normal mode", silent = true },
