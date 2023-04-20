@@ -18,6 +18,7 @@ create_links() {
   ln -vsf $CONFIG_DIR/git/.gitconfig-work ~/.gitconfig-work
   ln -vsf $CONFIG_DIR/git/.gitignore_global ~/.gitignore_global
   ln -vsf $CONFIG_DIR/starship.toml ~/.config/starship.toml
+  symlink_dir $CONFIG_DIR/aerc ~/.config/aerc
   symlink_dir $CONFIG_DIR/dconf/applications ~/.local/share/applications
   symlink_dir $CONFIG_DIR/direnv ~/.config/direnv
   symlink_dir $CONFIG_DIR/fish ~/.config/fish

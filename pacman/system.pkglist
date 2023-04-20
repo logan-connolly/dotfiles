@@ -1,3 +1,4 @@
+aerc
 bat
 btop
 cmake
@@ -37,6 +38,8 @@ noto-fonts-emoji
 noto-fonts-extra
 npm
 openssh
+pandoc-bin
+protonmail-bridge-bin
 python-psycopg2
 pyenv
 ripgrep

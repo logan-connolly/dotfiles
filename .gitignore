@@ -1,6 +1,7 @@
 __pycache__/
 *.netrwhist
 bin/poetry
+config/aerc/accounts.conf
 config/nvim/plugin
 config/tmux/plugins
 config/fish/completions/
