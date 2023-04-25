@@ -131,12 +131,12 @@ return {
 			require("neorg").setup({
 				load = {
 					["core.defaults"] = {},
-					["core.norg.concealer"] = {
+					["core.concealer"] = {
 						config = {
 							icon_preset = "diamond",
 						},
 					},
-					["core.norg.dirman"] = {
+					["core.dirman"] = {
 						config = {
 							workspaces = {
 								notes = "~/notes",
