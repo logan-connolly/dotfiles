@@ -1,0 +1,6 @@
+#!/bin/bash 
+cd ~/.password-store 
+passfile=$(fzf --query ".gpg ")
+# pass take the pass file name withput .gpg ext
+passfile=$(echo $passfile | sed -e "s/\.gpg//")
+pass -c $passfile
