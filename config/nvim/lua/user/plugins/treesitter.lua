@@ -1,7 +1,6 @@
 return {
 	{
 		"nvim-treesitter/nvim-treesitter",
-		tag = "v0.8.4",
 		build = ":TSUpdate",
 		event = "BufReadPost",
 		keys = {
